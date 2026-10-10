@@ -21,6 +21,8 @@ var physics_steps_per_frame: Array=[]
 var worst_frame_interval: Dictionary={}
 var unit_ray_totals: Dictionary={}
 var ai_query_totals: Dictionary={}
+var unit_ray_metadata: Dictionary={}
+var ai_query_metadata: Dictionary={}
 var viewport_rid: RID
 var render_cpu: Array=[]
 var render_gpu: Array=[]
@@ -33,15 +35,23 @@ func record_physics(started: int,world=null):
 	pending_physics_ms+=elapsed;pending_physics_steps+=1
 	if world==null:return
 	for key in world.last_step_profile.get("unit_rays",{}):
-		unit_ray_totals[key]=float(unit_ray_totals.get(key,0))+float(world.last_step_profile.unit_rays[key])
+		var value=world.last_step_profile.unit_rays[key]
+		if value is int or value is float:
+			unit_ray_totals[key]=float(unit_ray_totals.get(key,0))+float(value)
+		else:
+			unit_ray_metadata[key]=value.duplicate(true) if value is Dictionary or value is Array else value
 	if elapsed>float(worst_physics.get("total_ms",-1)):worst_physics={"total_ms":elapsed,"simulation_time":world.time,"stages":world.last_step_profile.duplicate(true)}
 	for key in world.last_step_profile:
-		if not str(key).ends_with("_ms"):continue
+		if not str(key).ends_with("_ms") or not (world.last_step_profile[key] is int or world.last_step_profile[key] is float):continue
 		if not physics_stages.has(key):physics_stages[key]=[]
 		physics_stages[key].append(world.last_step_profile[key])
 	for key in world.last_step_profile.get("ai_detail",{}):
+		var value=world.last_step_profile.ai_detail[key]
+		if not (value is int or value is float):
+			ai_query_metadata[key]=value.duplicate(true) if value is Dictionary or value is Array else value
+			continue
 		if not str(key).ends_with("_ms"):
-			ai_query_totals[key]=float(ai_query_totals.get(key,0))+float(world.last_step_profile.ai_detail[key])
+			ai_query_totals[key]=float(ai_query_totals.get(key,0))+float(value)
 			continue
 		var name="ai_"+str(key)
 		if not physics_stages.has(name):physics_stages[name]=[]
@@ -56,15 +66,16 @@ func record_frame(started: int,delta: float,world,active_play: bool=true):
 	if elapsed_ms>float(worst_presentation.get("total_ms",-1)):
 		worst_presentation={"total_ms":elapsed_ms,"simulation_time":world.time,"stages":last_frame.duplicate(true)}
 	for key in last_frame:
-		if not str(key).ends_with("_ms"):continue
+		if not str(key).ends_with("_ms") or not (last_frame[key] is int or last_frame[key] is float):continue
 		if not stage_samples.has(key):stage_samples[key]=[]
 		stage_samples[key].append(last_frame[key])
 	for key in last_frame.get("render_batches",{}):
+		if not (last_frame.render_batches[key] is int or last_frame.render_batches[key] is float):continue
 		var name="batch_"+str(key)
 		if not stage_samples.has(name):stage_samples[name]=[]
 		stage_samples[name].append(last_frame.render_batches[key])
 	for key in last_frame.get("fx_detail",{}):
-		if not str(key).ends_with("_ms"):continue
+		if not str(key).ends_with("_ms") or not (last_frame.fx_detail[key] is int or last_frame.fx_detail[key] is float):continue
 		var name="fx_"+str(key)
 		if not stage_samples.has(name):stage_samples[name]=[]
 		stage_samples[name].append(last_frame.fx_detail[key])
@@ -105,6 +116,8 @@ func record_frame(started: int,delta: float,world,active_play: bool=true):
 	result.physics_steps_per_frame=step_counts;result.worst_frame_interval=worst_frame_interval
 	result.unit_ray_totals=unit_ray_totals
 	result.ai_query_totals=ai_query_totals
+	result.unit_ray_metadata=unit_ray_metadata
+	result.ai_query_metadata=ai_query_metadata
 	result.worst_presentation=worst_presentation;result.presentation_stages={}
 	for key in stage_samples:result.presentation_stages[key]=summary(stage_samples[key])
 	result.worst_physics=worst_physics;result.physics_stages={}
@@ -130,5 +143,5 @@ func record_frame(started: int,delta: float,world,active_play: bool=true):
 	worst_presentation={};stage_samples.clear()
 	worst_physics={};physics_stages.clear()
 	physics_per_frame.clear();physics_steps_per_frame.clear();worst_frame_interval={};unit_ray_totals={}
-	ai_query_totals={}
+	ai_query_totals={};unit_ray_metadata={};ai_query_metadata={}
 	render_cpu.clear();render_gpu.clear();active_intervals.clear()

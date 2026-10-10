@@ -1061,13 +1061,15 @@ func build_unit_index():
 	unit_grid_active=true
 	unit_ray_index.begin(units,profile_ai)
 	for unit in units:
-		index_unit(unit)
+		index_unit(unit,false)
 
-func index_unit(unit: Dictionary):
+func index_unit(unit: Dictionary,refresh_ray: bool=true):
 	# Client prediction works on a cloned unit; only authority belongs in the tree.
 	if int(unit.id)<0 or int(unit.id)>=units.size() or not is_same(units[int(unit.id)],unit):return
-	if unit_ray_index.entries.size()!=units.size():unit_ray_index.begin(units,profile_ai)
-	unit_ray_index.update(unit)
+	# begin() already refreshed every ray entry during the full build.
+	if refresh_ray:
+		if unit_ray_index.entries.size()!=units.size():unit_ray_index.begin(units,profile_ai)
+		unit_ray_index.update(unit)
 	if not unit_grid_active:return
 	var cell=Vector2i(floori(unit.position.x/2),floori(unit.position.y/2))
 	if unit.get("steering_cell",Vector2i(2147483647,2147483647))==cell:return

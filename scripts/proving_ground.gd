@@ -1,5 +1,5 @@
 extends Node3D
-const BUILD_VERSION="2026.10.09.3"
+const BUILD_VERSION="2026.10.10.3"
 const MOUNTED_VIEW_SIZES={"armedJeep":30.0,"scoutCar":34.0,"apc":32.0,"ifv":36.0,"lightTank":36.0,"tank":40.0,"heavyTank":42.0,"hmg":32.0,"fieldGun":38.0}
 @export var start_in_style_range=false
 const StyleRange=preload("res://scripts/style_range.gd")
