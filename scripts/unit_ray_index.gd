@@ -42,7 +42,7 @@ func update(unit: Dictionary):
 	if not by_id.has(unit.id) or tree.nodes.is_empty():return
 	var rank: int=by_id[unit.id]
 	var entry: Dictionary=entries[rank];var span=EMPTY_SPAN
-	if unit.alive:
+	if unit.alive and not unit.get("hanlue_extracted",false) and not unit.get("hanlue_escaped",false):
 		var extent=BODY_HALF+COMMON_RADIUS+.0001
 		span=Vector4i(floori((unit.position.x-extent)/CELL),floori((unit.position.x+extent)/CELL),floori((unit.position.y-extent)/CELL),floori((unit.position.y+extent)/CELL))
 		tree.update(rank,Rect2(unit.position-Vector2.ONE*BODY_HALF,Vector2.ONE*BODY_HALF*2),unit,.25)

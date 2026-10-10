@@ -6,8 +6,9 @@ const Motion=preload("res://scripts/render_motion.gd")
 const Flight=preload("res://scripts/vehicle_impact_motion.gd")
 const RADIUS=.28
 # Arcade impact weights, not real vehicle masses.
-const WEIGHT={"armedJeep":1.0,"scoutCar":1.25,"apc":1.8,"ifv":2.0,"lightTank":2.15,"tank":2.7,"heavyTank":3.2}
+const WEIGHT={"truck":1.4,"armedJeep":1.0,"scoutCar":1.25,"apc":1.8,"ifv":2.0,"lightTank":2.15,"tank":2.7,"heavyTank":3.2}
 const IMPACT={
+	"truck":{"damage":11.0,"lift":4.0,"throw":1.14},
 	"armedJeep":{"damage":8.0,"lift":3.6,"throw":1.08},
 	"scoutCar":{"damage":10.0,"lift":3.9,"throw":1.12},
 	"apc":{"damage":13.0,"lift":4.2,"throw":1.18},
@@ -97,7 +98,7 @@ static func resolve(world,v: Dictionary,contact: Dictionary,end: Dictionary,velo
 			Reaction.register_hit(u,impulse,"body",amount,false)
 			u.vehicle_flight=Flight.create(Vector3(u.position.x,u.elevation,u.position.y),impulse,Reaction.death_choice(u,impulse))
 			u.vertical_speed=impulse.y;u.grounded=false;u.vehicle_push=Vector2.ZERO
-			if u.mounted>=0:world.vehicles[u.mounted].driver=false;u.mounted=-1
+			if u.mounted>=0:release_mount(world,u)
 			u.vault={};u.ladder={};u.sprinting=false;u.flash=0
 			preload("res://scripts/grenade_throw_control.gd").cancel(u)
 			preload("res://scripts/melee_action.gd").cancel(u)
@@ -115,7 +116,7 @@ static func resolve(world,v: Dictionary,contact: Dictionary,end: Dictionary,velo
 		v.contact_kick=Vector2(normal.dot(forward),-normal.dot(side))*minf(.018,closing*.003)/sqrt(weight)
 	if u.position!=original:
 		# Interrupt scripted attachment paths so the next update cannot snap the body back.
-		if u.mounted>=0:world.vehicles[u.mounted].driver=false;u.mounted=-1
+		if u.mounted>=0:release_mount(world,u)
 		u.vault={};u.ladder={};u.sprinting=false
 		Motion.after_unit(u,world.time,1.0/60)
 	return {"cleared":not u.alive or free,"velocity":velocity,"yaw":yaw}
@@ -139,3 +140,9 @@ static func tick_unit(world,u: Dictionary,delta: float) -> void:
 	var moved=push(world,u,velocity*delta)
 	u.velocity+=moved/maxf(.001,delta)
 	u.vehicle_push=velocity*exp(-delta*7.0) if moved.length()>=velocity.length()*delta*.5 else Vector2.ZERO
+
+static func release_mount(world,u: Dictionary) -> void:
+	var mount: Dictionary=world.vehicles[u.mounted]
+	if int(mount.get("driver_id",-1))==int(u.id):mount.driver=false;mount.driver_id=-1
+	if mount.has("passenger_ids"):mount.passenger_ids.erase(u.id)
+	u.mounted=-1;u.hanlue_passenger=false

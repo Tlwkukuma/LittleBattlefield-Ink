@@ -23,6 +23,7 @@ static func plate(parts: Array,at: Vector3,lower: Vector3,upper: Vector3,offset:
 
 static func body(kind: String,r: float,source_width: float) -> Array:
 	var parts=[]
+	if kind=="truck":return preload("res://scripts/hanlue_truck.gd").collision_parts()
 	match kind:
 		"armedJeep":
 			box(parts,Vector3(0,.38,0),Vector3(r*1.32,.12,r*2.55))
@@ -67,6 +68,7 @@ static func body(kind: String,r: float,source_width: float) -> Array:
 	return parts
 
 static func turret(kind: String,r: float) -> Array:
+	if kind=="truck":return []
 	var parts=[]
 	match kind:
 		"armedJeep":box(parts,Vector3(0,1.49,0),Vector3(.38,.14,.38))

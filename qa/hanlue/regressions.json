@@ -1,0 +1,76 @@
+{
+  "engine": "Godot 4.6.3 stable official",
+  "scope": "frozen initialization, native layout, math, resource and synthetic rules; no full AI or battle",
+  "checks": [
+    {
+      "script": "qa/ai_cover_context_contract.gd",
+      "result": "AI_COVER_CONTEXT checks=12 failures=0; cache math only",
+      "script_errors": false
+    },
+    {
+      "script": "qa/ai_fire_context_contract.gd",
+      "result": "AI_FIRE_CONTEXT checks=19 failures=0; scalar state only",
+      "script_errors": false
+    },
+    {
+      "script": "qa/ai_recovery_commit_contract.gd",
+      "result": "AI_RECOVERY_COMMIT checks=11 failures=0; scalar state only",
+      "script_errors": false
+    },
+    {
+      "script": "qa/campaign_bounding_contract.gd",
+      "result": "CAMPAIGN_BOUNDING_CONTRACT checks=8 failures=0",
+      "script_errors": false
+    },
+    {
+      "script": "qa/campaign_execution_contract.gd",
+      "result": "EXECUTION_CONTRACT checks=14 failures=0; no battle steps or model requests",
+      "script_errors": false
+    },
+    {
+      "script": "qa/campaign_3d_contract.gd",
+      "result": "CAMPAIGN_3D_CONTRACT checks=174 failures=0",
+      "script_errors": false
+    },
+    {
+      "script": "qa/campaign_asset_contract.gd",
+      "result": "CAMPAIGN_ASSET_CONTRACT checks=93 failures=0",
+      "script_errors": false
+    },
+    {
+      "script": "qa/campaign_source_data_contract.gd",
+      "result": "campaign_source_data_contract: 11332 checks, 0 failures",
+      "script_errors": false
+    },
+    {
+      "script": "qa/ai_restored_continuity_contract.gd",
+      "result": "AI_RESTORED_CONTINUITY checks=44 failures=0; scalar state only, no simulation",
+      "script_errors": false
+    },
+    {
+      "script": "qa/campaign_source_placement_contract.gd",
+      "result": "campaign_source_placement_contract: 29607 checks, 0 failures; zero simulation ticks",
+      "script_errors": false
+    },
+    {
+      "script": "qa/projectile_unit_index_contract.gd",
+      "result": "PROJECTILE_UNIT_INDEX {\"benchmark\":[{\"build_p50_ms\":0.217,\"full_scan_p50_ms\":0.713,\"index_counts\":{\"build_ms\":0.174,\"candidates\":38,\"full_scan_candidates\":300,\"quadtree\":{\"bounds_tests\":0,\"entries\":60,\"node_visits\":0,\"nodes\":45,\"queries\":0,\"reinserts\":60},\"queries\":5},\"indexed_with_build_p50_ms\":0.551,\"length_m\":0.12,\"rays\":5,\"samples\":25},{\"build_p50_ms\":0.307,\"full_scan_p50_ms\":5.46,\"index_counts\":{\"build_ms\":0.421,\"candidates\":207,\"full_scan_candidates\":2100,\"quadtree\":{\"bounds_tests\":0,\"entries\":60,\"node_visits\":0,\"nodes\":45,\"queries\":0,\"reinserts\":60},\"queries\":35},\"indexed_with_build_p50_ms\":2.171,\"length_m\":0.12,\"rays\":35,\"samples\":25},{\"build_p50_ms\":0.305,\"full_scan_p50_ms\":13.554,\"index_counts\":{\"build_ms\":0.205,\"candidates\":476,\"full_scan_candidates\":4800,\"quadtree\":{\"bounds_tests\":0,\"entries\":60,\"node_visits\":0,\"nodes\":45,\"queries\":0,\"reinserts\":60},\"queries\":80},\"indexed_with_build_p50_ms\":4.639,\"length_m\":0.12,\"rays\":80,\"samples\":25},{\"build_p50_ms\":0.24,\"full_scan_p50_ms\":0.792,\"index_counts\":{\"build_ms\":0.435,\"candidates\":60,\"full_scan_candidates\":300,\"quadtree\":{\"bounds_tests\":0,\"entries\":60,\"node_visits\":0,\"nodes\":45,\"queries\":0,\"reinserts\":60},\"queries\":5},\"indexed_with_build_p50_ms\":0.684,\"length_m\":8.0,\"rays\":5,\"samples\":25},{\"build_p50_ms\":0.299,\"full_scan_p50_ms\":7.607,\"index_counts\":{\"build_ms\":0.203,\"candidates\":293,\"full_scan_candidates\":2100,\"quadtree\":{\"bounds_tests\":0,\"entries\":60,\"node_visits\":0,\"nodes\":45,\"queries\":0,\"reinserts\":60},\"queries\":35},\"indexed_with_build_p50_ms\":4.012,\"length_m\":8.0,\"rays\":35,\"samples\":25},{\"build_p50_ms\":0.309,\"full_scan_p50_ms\":17.416,\"index_counts\":{\"build_ms\":0.232,\"candidates\":690,\"full_scan_candidates\":4800,\"quadtree\":{\"bounds_tests\":0,\"entries\":60,\"node_visits\":0,\"nodes\":45,\"queries\":0,\"reinserts\":60},\"queries\":80},\"indexed_with_build_p50_ms\":8.948,\"length_m\":8.0,\"rays\":80,\"samples\":25},{\"build_p50_ms\":0.329,\"full_scan_p50_ms\":1.777,\"index_counts\":{\"build_ms\":0.402,\"candidates\":58,\"full_scan_candidates\":300,\"quadtree\":{\"bounds_tests\":21,\"entries\":60,\"node_visits\":37,\"nodes\":45,\"queries\":1,\"reinserts\":60},\"queries\":5},\"indexed_with_build_p50_ms\":1.705,\"length_m\":25.0,\"rays\":5,\"samples\":25},{\"build_p50_ms\":0.312,\"full_scan_p50_ms\":13.505,\"index_counts\":{\"build_ms\":0.39,\"candidates\":272,\"full_scan_candidates\":2100,\"quadtree\":{\"bounds_tests\":159,\"entries\":60,\"node_visits\":267,\"nodes\":45,\"queries\":7,\"reinserts\":60},\"queries\":35},\"indexed_with_build_p50_ms\":9.817,\"length_m\":25.0,\"rays\":35,\"samples\":25},{\"build_p50_ms\":0.353,\"full_scan_p50_ms\":31.243,\"index_counts\":{\"build_ms\":0.27,\"candidates\":677,\"full_scan_candidates\":4800,\"quadtree\":{\"bounds_tests\":414,\"entries\":60,\"node_visits\":707,\"nodes\":45,\"queries\":19,\"reinserts\":60},\"queries\":80},\"indexed_with_build_p50_ms\":22.378,\"length_m\":25.0,\"rays\":80,\"samples\":25}],\"checks\":68429,\"exact_unit_hits\":467,\"failures\":0,\"shots\":0,\"simulation_time\":0,\"units\":60}",
+      "script_errors": false
+    },
+    {
+      "script": "qa/cpu-rebuild-contract.gd",
+      "result": "CPU_REBUILD_CONTRACT {\"after_updates\":60,\"before_updates\":120,\"checks\":4345,\"failures\":0,\"simulation_time\":0.0,\"units\":60}",
+      "script_errors": false
+    },
+    {
+      "script": "qa/loading_telemetry_contract.gd",
+      "result": "LOADING_TELEMETRY_CONTRACT {\"drawn\":false,\"failures\":[],\"time\":0,\"units\":60}",
+      "script_errors": false
+    },
+    {
+      "script": "qa/tactical_ui_contract.gd",
+      "result": "TACTICAL_UI_CONTRACT {\"checks\":1270,\"failures\":[],\"shots\":0,\"simulation_time\":0,\"theme_builds\":1}",
+      "script_errors": false
+    }
+  ]
+}

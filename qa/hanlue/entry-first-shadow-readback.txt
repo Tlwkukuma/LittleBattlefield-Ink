@@ -1,0 +1,50 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":0,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":0,"finished_ms":9,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":9,"stage":"初始化地形与世界（整段作业）","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":9,"finished_ms":731,"stage":"初始化地形与世界（整段作业）","total":0}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":731,"stage":"构建地形网格（整段作业）","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":731,"finished_ms":2731,"stage":"构建地形网格（整段作业）","total":0}
+CAMPAIGN_LOADING {"done":1,"elapsed_ms":2731,"stage":"构建物件","total":353}
+CAMPAIGN_LOADING_DONE {"done":353,"elapsed_ms":2731,"finished_ms":3742,"stage":"构建物件","total":353}
+CAMPAIGN_LOADING {"done":1,"elapsed_ms":3742,"stage":"构建载具","total":18}
+CAMPAIGN_LOADING_DONE {"done":18,"elapsed_ms":3742,"finished_ms":5127,"stage":"构建载具","total":18}
+CAMPAIGN_LOADING {"done":1,"elapsed_ms":5127,"stage":"构建人员","total":7}
+CAMPAIGN_LOADING_DONE {"done":7,"elapsed_ms":5127,"finished_ms":5156,"stage":"构建人员","total":7}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":5156,"stage":"配置批次与效果（整段作业）","total":0}
+CAMPAIGN_LOADING_READY {"drawn":false,"elapsed_ms":5317,"stages":[{"done":0,"elapsed_ms":0,"finished_ms":9,"stage":"等待加载画面","total":0},{"done":0,"elapsed_ms":9,"finished_ms":731,"stage":"初始化地形与世界（整段作业）","total":0},{"done":0,"elapsed_ms":731,"finished_ms":2731,"stage":"构建地形网格（整段作业）","total":0},{"done":353,"elapsed_ms":2731,"finished_ms":3742,"stage":"构建物件","total":353},{"done":18,"elapsed_ms":3742,"finished_ms":5127,"stage":"构建载具","total":18},{"done":7,"elapsed_ms":5127,"finished_ms":5156,"stage":"构建人员","total":7},{"done":0,"elapsed_ms":5156,"stage":"配置批次与效果（整段作业）","total":0}]}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":1,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":1,"finished_ms":67,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":67,"stage":"读取关卡资料","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":67,"finished_ms":68,"stage":"读取关卡资料","total":0}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":68,"stage":"初始化地形与世界（整段作业）","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":68,"finished_ms":3794,"stage":"初始化地形与世界（整段作业）","total":0}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":3795,"stage":"构建地形网格（整段作业）","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":3795,"finished_ms":6120,"stage":"构建地形网格（整段作业）","total":0}
+CAMPAIGN_LOADING {"done":1,"elapsed_ms":6120,"stage":"构建物件","total":16}
+CAMPAIGN_LOADING_DONE {"done":16,"elapsed_ms":6120,"finished_ms":6251,"stage":"构建物件","total":16}
+CAMPAIGN_LOADING {"done":1,"elapsed_ms":6251,"stage":"构建载具","total":3}
+CAMPAIGN_LOADING_DONE {"done":3,"elapsed_ms":6251,"finished_ms":6335,"stage":"构建载具","total":3}
+CAMPAIGN_LOADING {"done":1,"elapsed_ms":6335,"stage":"构建人员","total":24}
+CAMPAIGN_LOADING_DONE {"done":24,"elapsed_ms":6335,"finished_ms":6470,"stage":"构建人员","total":24}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":6470,"stage":"配置批次与效果（整段作业）","total":0}
+CAMPAIGN_LOADING_READY {"drawn":false,"elapsed_ms":9016,"stages":[{"done":0,"elapsed_ms":1,"finished_ms":67,"stage":"等待加载画面","total":0},{"done":0,"elapsed_ms":67,"finished_ms":68,"stage":"读取关卡资料","total":0},{"done":0,"elapsed_ms":68,"finished_ms":3794,"stage":"初始化地形与世界（整段作业）","total":0},{"done":0,"elapsed_ms":3795,"finished_ms":6120,"stage":"构建地形网格（整段作业）","total":0},{"done":16,"elapsed_ms":6120,"finished_ms":6251,"stage":"构建物件","total":16},{"done":3,"elapsed_ms":6251,"finished_ms":6335,"stage":"构建载具","total":3},{"done":24,"elapsed_ms":6335,"finished_ms":6470,"stage":"构建人员","total":24},{"done":0,"elapsed_ms":6470,"stage":"配置批次与效果（整段作业）","total":0}]}
+FAIL retired actor shadow removed
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":0,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":0,"finished_ms":36,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":37,"stage":"读取关卡资料","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":37,"finished_ms":39,"stage":"读取关卡资料","total":0}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":39,"stage":"初始化地形与世界（整段作业）","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":39,"finished_ms":3628,"stage":"初始化地形与世界（整段作业）","total":0}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":3629,"stage":"构建地形网格（整段作业）","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":3629,"finished_ms":5939,"stage":"构建地形网格（整段作业）","total":0}
+CAMPAIGN_LOADING {"done":1,"elapsed_ms":5940,"stage":"构建物件","total":16}
+CAMPAIGN_LOADING_DONE {"done":16,"elapsed_ms":5940,"finished_ms":6127,"stage":"构建物件","total":16}
+CAMPAIGN_LOADING {"done":1,"elapsed_ms":6127,"stage":"构建载具","total":3}
+CAMPAIGN_LOADING_DONE {"done":3,"elapsed_ms":6127,"finished_ms":6200,"stage":"构建载具","total":3}
+CAMPAIGN_LOADING {"done":1,"elapsed_ms":6201,"stage":"构建人员","total":24}
+CAMPAIGN_LOADING_DONE {"done":24,"elapsed_ms":6201,"finished_ms":6343,"stage":"构建人员","total":24}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":6343,"stage":"配置批次与效果（整段作业）","total":0}
+CAMPAIGN_LOADING_READY {"drawn":false,"elapsed_ms":7863,"stages":[{"done":0,"elapsed_ms":0,"finished_ms":36,"stage":"等待加载画面","total":0},{"done":0,"elapsed_ms":37,"finished_ms":39,"stage":"读取关卡资料","total":0},{"done":0,"elapsed_ms":39,"finished_ms":3628,"stage":"初始化地形与世界（整段作业）","total":0},{"done":0,"elapsed_ms":3629,"finished_ms":5939,"stage":"构建地形网格（整段作业）","total":0},{"done":16,"elapsed_ms":5940,"finished_ms":6127,"stage":"构建物件","total":16},{"done":3,"elapsed_ms":6127,"finished_ms":6200,"stage":"构建载具","total":3},{"done":24,"elapsed_ms":6201,"finished_ms":6343,"stage":"构建人员","total":24},{"done":0,"elapsed_ms":6343,"stage":"配置批次与效果（整段作业）","total":0}]}
+HANLUE_ENTRY checks=26 failures=1; no gameplay inputs/ticks

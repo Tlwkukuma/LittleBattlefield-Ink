@@ -8,6 +8,7 @@ const Collision=preload("res://scripts/vehicle_collision.gd")
 const Contact=preload("res://scripts/vehicle_contact_response.gd")
 const Vertical=preload("res://scripts/vehicle_vertical_motion.gd")
 const TUNING={
+	"truck":{"launch":3.4,"stop":1.1,"steer":.48,"response":6.7,"suspension":.13,"boost":1.0,"power":1.0,"slide_grip":1.0,"slide_yaw":1.25},
 	"armedJeep":{"launch":2.1,"stop":.85,"steer":.55,"response":10.5,"suspension":.16,"boost":1.32,"power":1.65,"slide_grip":.85,"slide_yaw":1.85},
 	"scoutCar":{"launch":2.5,"stop":1.0,"steer":.50,"response":9.0,"suspension":.15,"boost":1.28,"power":1.55,"slide_grip":1.05,"slide_yaw":1.70},
 	"apc":{"launch":2.7,"stop":1.15,"steer":1.05,"response":7.7,"suspension":.14,"boost":1.22,"power":1.45,"slide_grip":1.85,"slide_yaw":1.35},
@@ -152,7 +153,7 @@ static func update_wheels(view: Dictionary,v: Dictionary,terrain,delta: float) -
 		if not wheel.has_meta("drive_rest"):
 			wheel.set_meta("drive_rest",wheel.position);wheel.set_meta("drive_basis",wheel.basis);wheel.set_meta("drive_spin",0.0)
 		var rest: Vector3=wheel.get_meta("drive_rest")
-		var radius=.23 if tracks else .29 if v.type=="armedJeep" else .31
+		var radius=.38 if v.type=="truck" else .23 if tracks else .29 if v.type=="armedJeep" else .31
 		var speed=float(v.speed)-(signf(rest.x)*float(v.yaw_rate)*absf(rest.x)*scale.x if tracks else 0.0)
 		if tracks or rest.z>0:speed*=1.0-float(v.get("handbrake_input",0))
 		var spin=float(wheel.get_meta("drive_spin"))+speed*delta/(radius*scale.y)

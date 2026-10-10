@@ -40,7 +40,7 @@ static func update(view: Dictionary,v: Dictionary,time: float,render_pose: Dicti
 	var body: Basis=render_pose.get("body",Dimensions.body_basis(v))
 	view.root.position=render_pose.get("position",Vector3(v.position.x,float(v.get("elevation",0)),v.position.y))
 	view.body.basis=body.scaled_local(scale)
-	if not render_pose.is_empty() and not v.destroyed:
+	if not render_pose.is_empty() and not v.destroyed and not v.modes.is_empty():
 		var shot: Dictionary=v.profile.weapons[v.modes[v.mode]];var response=Feedback.profile(shot)
 		var age=time-float(v.get("shot_time",-100))
 		var carry=float(response.body)*Feedback.pulse(age-.025,.055,float(response.settle)+.10)
@@ -48,6 +48,9 @@ static func update(view: Dictionary,v: Dictionary,time: float,render_pose: Dicti
 		view.body.basis=Basis(axis,carry)*view.body.basis
 	view.turret.position=body*Dimensions.turret_offset(v)
 	view.turret.basis=Basis(render_pose.get("turret",Dimensions.turret_basis(v))).scaled_local(scale)
+	if v.modes.is_empty():
+		view.appearance.sync()
+		return
 	var active: String=v.modes[v.mode]
 	var visited: Array=[]
 	for mode in view.channels:
@@ -87,6 +90,7 @@ static func update(view: Dictionary,v: Dictionary,time: float,render_pose: Dicti
 	if v.destroyed and wreck_age>1.8:view.settled_wreck_pose=wreck_pose
 
 static func resolve(view: Dictionary,v: Dictionary,time: float) -> Dictionary:
+	if v.modes.is_empty():return {}
 	update(view,v,time)
 	var c: Dictionary=view.channels[v.modes[v.mode]]
 	return {"position":c.muzzle.global_position,"forward":-c.muzzle.global_basis.z.normalized(),

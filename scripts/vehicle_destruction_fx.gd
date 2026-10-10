@@ -38,7 +38,7 @@ static func engine_point(v: Dictionary) -> Vector3:
 	var local=Vector3(0,float(d.deck),-float(d.half.x)*.64 if v.type=="armedJeep" else float(d.half.x)*.60)
 	return Vector3(v.position.x,float(v.get("elevation",0)),v.position.y)+Dimensions.body_basis(v)*local
 
-func near(v: Dictionary) -> bool:return Vector2(v.position).distance_squared_to(world.player.position)<=RANGE_SQUARED
+func near(v: Dictionary) -> bool:return not bool(v.get("hanlue_escaped",false)) and Vector2(v.position).distance_squared_to(world.player.position)<=RANGE_SQUARED
 
 func spawn(at: Vector3,size: Vector3,color: Color,kind: int,life: float) -> void:
 	var frame=Engine.get_process_frames()
@@ -113,7 +113,7 @@ func _process(delta: float):
 	for i in range(emitters.size()-1,-1,-1):
 		var entry: Dictionary=emitters[i];var v: Dictionary=entry.vehicle
 		var age=maxf(0,clock-float(v.get("destroy_time",clock)))
-		if (v.destroyed and age>24) or (not v.destroyed and v.health/v.max_health>.35):emitters.remove_at(i);continue
+		if v.get("hanlue_escaped",false) or (v.destroyed and age>24) or (not v.destroyed and v.health/v.max_health>.35):emitters.remove_at(i);continue
 		if not near(v):continue
 		var power=strength(v);var origin=engine_point(v)
 		if clock>=float(entry.smoke_at):

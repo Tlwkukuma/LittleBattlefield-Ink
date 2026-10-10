@@ -1,5 +1,5 @@
 extends Node3D
-const BUILD_VERSION="2026.10.10.4"
+const BUILD_VERSION="2026.10.10.5"
 const MOUNTED_VIEW_SIZES={"armedJeep":30.0,"scoutCar":34.0,"apc":32.0,"ifv":36.0,"lightTank":36.0,"tank":40.0,"heavyTank":42.0,"hmg":32.0,"fieldGun":38.0}
 @export var start_in_style_range=false
 const StyleRange=preload("res://scripts/style_range.gd")
@@ -170,6 +170,7 @@ func _ready():
 	for arg in OS.get_cmdline_user_args():
 		if arg.begins_with("--capture="):capture_path=arg.trim_prefix("--capture=");qa_mode=true
 		if arg=="--qa":qa_mode=true
+		if arg=="--hanlue":startup_chapter=101
 		if arg.begins_with("--campaign-chapter="):startup_chapter=clampi(int(arg.trim_prefix("--campaign-chapter=")),1,10)
 		# Debug profiling and explicit user-play recording are separate opt-ins.
 	var environment=WorldEnvironment.new();var setting=Environment.new();setting.background_mode=Environment.BG_COLOR;setting.background_color=Color("c0bbcc");setting.ambient_light_source=Environment.AMBIENT_SOURCE_COLOR;setting.ambient_light_color=Color.WHITE;setting.ambient_light_energy=.8;environment.environment=setting;scene_environment=setting;add_child(environment)
@@ -194,8 +195,8 @@ func _ready():
 		return
 	loading_ui.drawn=DisplayServer.get_name()!="headless"
 	atlas=load("res://assets/original/weapon_atlas.png")
-	plan=CampaignCatalog.plan(catalog,startup_chapter) if startup_chapter>0 else StyleRange.plan(catalog) if start_in_style_range or "--range2" in OS.get_cmdline_user_args() else load(ORCHARD_LEVEL_PATH).plan(catalog) if "--level01" in OS.get_cmdline_user_args() else TerrainShowcase.plan(catalog) if "--terrain" in OS.get_cmdline_user_args() else catalog.range_plan()
-	if startup_chapter>0:plan.godot3d.campaign_checkpoint=campaign_progress.can_play(startup_chapter)
+	plan=preload("res://scripts/hanlue_layout.gd").plan(catalog) if startup_chapter==101 else CampaignCatalog.plan(catalog,startup_chapter) if startup_chapter>0 else StyleRange.plan(catalog) if start_in_style_range or "--range2" in OS.get_cmdline_user_args() else load(ORCHARD_LEVEL_PATH).plan(catalog) if "--level01" in OS.get_cmdline_user_args() else TerrainShowcase.plan(catalog) if "--terrain" in OS.get_cmdline_user_args() else catalog.range_plan()
+	if startup_chapter>0:plan.godot3d.campaign_checkpoint=startup_chapter!=101 and campaign_progress.can_play(startup_chapter)
 	var startup_ok=await rebuild(plan,true)
 	if startup_generation!=loading_generation:return
 	loading_active=false
@@ -1100,7 +1101,7 @@ func update_views(delta: float):
 		if u.player and u.get("throw_state",{}).is_empty() and u.get("melee",{}).is_empty():u.aim_point=aim
 		var view: Dictionary=actors[u.id];var physical_position=Vector3(u.position.x,u.elevation,u.position.y)
 		var physical_world=world_frame*physical_position
-		view.root.visible=u.alive and not world.enclosed(u)
+		view.root.visible=world.mission_unit_active(u) and not world.enclosed(u)
 		var rendered_position=RenderMotion.sample(u,fraction,world.time,1.0/Engine.physics_ticks_per_second)
 		var translate_batch: bool=crowd_batches!=null and not u.player and u.mounted<0
 		if view.has("render_translation"):view.render_translation.offset=Vector3.ZERO
@@ -1128,7 +1129,7 @@ func update_views(delta: float):
 		if crowd_batches!=null:crowd_batches.register(view,int(u.team))
 		var floor_height=world.ground_height(u.position,.05,u.elevation+.025)
 		for marker in view.ground_markers:marker.node.position.y=marker.height+floor_height-u.elevation
-		if u.mounted>=0:
+		if u.mounted>=0 and not u.get("hanlue_passenger",false):
 			preload("res://scripts/medical_motion.gd").hide_props(view)
 			EmplacementMotion.update_operator(view,u,vehicle_views[u.mounted],lan.render_vehicle(world.vehicles[u.mounted]),delta,world.time)
 			continue
@@ -1142,6 +1143,8 @@ func update_views(delta: float):
 	pose_cursor=(pose_cursor+7)%maxi(1,world.units.size())
 	for v in world.vehicles:
 		if v.emplacement:continue
+		vehicle_views[v.id].root.visible=not v.get("hanlue_escaped",false)
+		if v.get("hanlue_escaped",false):continue
 		var presented=lan.render_vehicle(v)
 		var view: Dictionary=vehicle_views[v.id];VehicleRig.update(view,presented,world.time,VehicleRenderMotion.sample(presented,fraction))
 		VehicleDynamics.update_wheels(view,v,world.terrain,delta)
@@ -1287,6 +1290,8 @@ func toggle_editor():
 		rebuild(editor.plan);message("测试当前布局 · C 蹲伏，Z 卧倒，Tab 武器库，F8 返回编辑")
 		if debug_ui!=null:debug_ui.set_open(false)
 func reset_range():
+	if world.is_hanlue():
+		start_hanlue();return
 	if bool(plan.get("godot3d",{}).get("campaign_offline",false)):
 		start_campaign_chapter(int(plan.godot3d.campaign_chapter),str(plan.godot3d.get("campaign_tactic","T01")))
 		return
@@ -1354,6 +1359,8 @@ func _unhandled_input(event: InputEvent):
 		else:world.player.throw_low=low
 		return
 	if event is InputEventKey and event.pressed and not event.echo:
+		if world.is_hanlue() and not armory.visible and event.keycode in [KEY_Y,KEY_J,KEY_K]:
+			hanlue_command("signal" if event.keycode==KEY_Y else "withdraw" if event.keycode==KEY_J else "shift");get_viewport().set_input_as_handled();return
 		if event.keycode in [KEY_1,KEY_2,KEY_3,KEY_4,KEY_5]:
 			if weapon_shortcut_available():
 				if event.keycode==KEY_5 and world.player.mounted<0:use_quick_medicine()
@@ -1435,13 +1442,23 @@ func holster_weapon():
 		trigger_pressed=false;weapon_input_latched=true
 		if scope_view!=null:scope_view.cancel()
 
+func start_hanlue():
+	start_campaign_chapter(101,"H01")
+
+func hanlue_command(command: String):
+	if not world.is_hanlue() or world.campaign.hanlue==null or world.campaign.phase!="playing":return
+	if command=="signal":world.campaign.hanlue.begin_ambush()
+	elif command=="withdraw":world.campaign.hanlue.request_withdrawal()
+	elif command=="shift":world.hanlue_tactics.shift_positions()
+	if campaign_ui!=null:campaign_ui.refresh()
+
 func start_campaign_chapter(number: int,tactic: String="T01"):
 	if loading_active:return
 	var direct_retry=number==startup_chapter and int(plan.get("godot3d",{}).get("campaign_chapter",0))==number
-	if not campaign_progress.can_play(number) and not direct_retry:message("请先完成前一关");return
+	if number!=101 and not campaign_progress.can_play(number) and not direct_retry:message("请先完成前一关");return
 	if lan!=null and lan.active():lan.stop()
 	loading_chapter=number;loading_tactic=tactic
-	_start_loading("正在准备第 %02d 关"%number)
+	_start_loading("正在准备 H01 韩略村伏击" if number==101 else "正在准备第 %02d 关"%number)
 	var generation=loading_generation
 	# The loading canvas must be presented before plan construction or world setup.
 	await get_tree().process_frame
@@ -1449,9 +1466,9 @@ func start_campaign_chapter(number: int,tactic: String="T01"):
 	if not _loading_valid(generation):_finish_loading(false,generation);return
 	loading_ui.drawn=DisplayServer.get_name()!="headless"
 	loading_ui.update_stage("读取关卡资料",0,0)
-	var chapter_plan=CampaignCatalog.plan(catalog,number,tactic)
+	var chapter_plan=preload("res://scripts/hanlue_layout.gd").plan(catalog) if number==101 else CampaignCatalog.plan(catalog,number,tactic)
 	if chapter_plan.is_empty():loading_ui.failure="关卡资料无法载入";_finish_loading(false,generation);return
-	chapter_plan.godot3d.campaign_checkpoint=campaign_progress.can_play(number)
+	chapter_plan.godot3d.campaign_checkpoint=number!=101 and campaign_progress.can_play(number)
 	if debug_ui!=null:debug_ui.set_open(false)
 	paused=false;editing=false;close_view=false;roof_mode=0;zoom=25;armory.hide()
 	if editor!=null:editor.panel.hide()
@@ -1468,7 +1485,7 @@ func start_campaign_chapter(number: int,tactic: String="T01"):
 	if home_ui!=null:home_ui.hide_menu()
 	# Every offline entry and retry is frozen in the same existing equipment briefing.
 	armory.show();campaign_ui.refresh()
-	message(str(plan.title)+"已准备 · 选择战术，按 Tab 或“继续战斗”开始")
+	message(str(plan.title)+("已准备 · Y 伏击信号 / J 撤离 / K 调整阵位" if number==101 else "已准备 · 选择战术，按 Tab 或“继续战斗”开始"))
 	if not campaign_progress.last_error.is_empty():message(campaign_progress.last_error)
 
 func _ensure_loading_ui():

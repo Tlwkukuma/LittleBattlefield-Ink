@@ -8,7 +8,7 @@ static func bind(data: Dictionary):
 	for kind in RUNNING_GEAR:data.vehicles[kind].trackHealth=RUNNING_GEAR[kind]
 
 static func gear_name(v: Dictionary) -> String:
-	return "轮胎" if v.type in ["armedJeep","scoutCar"] else "履带"
+	return "轮胎" if v.type in ["armedJeep","scoutCar","truck"] else "履带"
 
 static func ratio(v: Dictionary) -> float:
 	return clampf(float(v.track_health)/maxf(1,float(v.max_track)),0,1) if v.max_track>0 else 1.0

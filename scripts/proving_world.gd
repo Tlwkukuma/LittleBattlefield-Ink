@@ -14,6 +14,8 @@ const CampaignDirector=preload("res://scripts/campaign_director.gd")
 var campaign=CampaignRules.new()
 var campaign_ai=CampaignAI.new()
 var campaign_director=CampaignDirector.new()
+var hanlue_transport
+var hanlue_tactics
 const Melee=preload("res://scripts/melee_action.gd")
 const Reaction=preload("res://scripts/combat_reaction.gd")
 const AimGeometry=preload("res://scripts/aim_geometry.gd")
@@ -109,6 +111,7 @@ func setup(source_plan: Dictionary,source_catalog) -> Dictionary:
 	terrain.configure(compiled,catalog,plan)
 	preload("res://scripts/terrain_landforms.gd").ground_objects(compiled,terrain)
 	campaign=CampaignRules.new();campaign_ai=CampaignAI.new();campaign_director=CampaignDirector.new()
+	hanlue_transport=null;hanlue_tactics=null
 	invulnerable=not bool(plan.get("godot3d",{}).get("campaign",false));auto_targets=invulnerable;ai_enabled=not invulnerable
 	houses=compiled.houses;housing_support.revision=-1
 	vehicles=[];units=[];projectiles=[];support_dirty={};time=0;sequence=0;shots=0;hits=0;kills=0;broken=0;damage_total=0;topology_revision=0
@@ -171,11 +174,35 @@ func setup(source_plan: Dictionary,source_catalog) -> Dictionary:
 	unit_ray_index.begin(units)
 	if campaign_active():
 		rebuild_navigation()
-		campaign_director.configure(self)
+		if is_hanlue():
+			hanlue_transport=preload("res://scripts/hanlue_transport.gd").new()
+			if not hanlue_transport.configure(self):
+				campaign.phase="placement_failed";campaign.reason=hanlue_transport.last_error;compiled.setup_ok=false;return compiled
+			campaign.hanlue=preload("res://scripts/hanlue_mission.gd").new()
+			if not campaign.hanlue.configure(self):
+				campaign.phase="placement_failed";compiled.setup_ok=false;return compiled
+			hanlue_tactics=preload("res://scripts/hanlue_tactics.gd").new();hanlue_tactics.configure(self)
+		else:campaign_director.configure(self)
 	setup_ok=true;compiled.setup_ok=true;compiled.placement_report=placement_report;compiled.last_spawn_failure={}
 	return compiled
 
+func is_hanlue() -> bool:return bool(plan.get("godot3d",{}).get("hanlue",false))
+
+static func mission_unit_active(unit: Dictionary) -> bool:
+	return bool(unit.get("alive",false)) and not bool(unit.get("hanlue_extracted",false)) and not bool(unit.get("hanlue_escaped",false))
+
+func retire_mission_unit(unit: Dictionary,reason: String) -> void:
+	unit["hanlue_extracted" if reason=="extracted" else "hanlue_escaped"]=true
+	unit.velocity=Vector2.ZERO;unit.requested_velocity=Vector2.ZERO;unit.path=[];unit.aim_valid=false;unit.aiming=false
+	FireControl.cancel(unit,true);ThrowControl.cancel(unit);Melee.cancel(unit)
+	unit.hit_shapes=[]
+	campaign_ai.capture_reservations.claims.erase(unit.id);campaign_ai.tactics.standpoints.erase(unit.id)
+	index_unit(unit)
+	event.emit({"type":"mission_retired","unit":unit,"reason":reason})
+
 func _observe_campaign_event(data: Dictionary):
+	if hanlue_transport!=null:hanlue_transport.observe_event(data)
+	if campaign.hanlue!=null:campaign.hanlue.observe_event(data)
 	if data.get("type","") in ["respawn","death"]:index_unit(data.unit)
 	if campaign_active() and campaign_ai.has_method("observe_event"):campaign_ai.observe_event(data)
 
@@ -190,6 +217,8 @@ func add_unit(at: Vector2,controlled: bool) -> Dictionary:
 	return u
 
 func add_vehicle(spec: Dictionary) -> Dictionary:
+	if str(spec.get("type",""))=="truck":
+		spec=spec.duplicate(true);spec.profile_override=preload("res://scripts/hanlue_truck.gd").profile()
 	var emplacement=bool(spec.get("emplacement",false))
 	var profile: Dictionary=spec.get("profile_override",(catalog.data.emplacements if emplacement else catalog.data.vehicles).get(spec.type,{}))
 	if profile.is_empty():return {}
@@ -213,7 +242,7 @@ func mounted_weapon(v: Dictionary) -> Dictionary:return v.profile if v.emplaceme
 func active_weapon() -> Dictionary:return mounted_weapon(vehicles[player.mounted]) if player.mounted>=0 else weapon_for(player)
 
 func enclosed(u: Dictionary) -> bool:
-	return u.mounted>=0 and not vehicles[u.mounted].emplacement
+	return u.mounted>=0 and not vehicles[u.mounted].emplacement and not bool(u.get("hanlue_passenger",false))
 func active_state() -> Dictionary:
 	if player.mounted>=0:
 		var v: Dictionary=vehicles[player.mounted]
@@ -379,8 +408,10 @@ func step(delta: float,movement: Vector2,aim: Vector2,trigger: bool,pressed: boo
 	if profile_ai:campaign_ai.step_profile.clear()
 	time+=delta
 	loot.tick(self,delta)
-	if campaign_active():campaign_director.tick(delta)
-	if campaign_active() and ai_enabled:campaign_ai.vehicle_ai.tick()
+	if campaign_active():
+		if hanlue_tactics!=null:hanlue_tactics.tick(delta)
+		else:campaign_director.tick(delta)
+	if campaign_active() and ai_enabled and not is_hanlue():campaign_ai.vehicle_ai.tick()
 	var profile_director=Time.get_ticks_usec() if profile_ai else 0
 	build_unit_index()
 	var fair_order=UnitSchedule.use_offline_order(campaign_active(),offline_ai_order,network_inputs)
@@ -389,6 +420,7 @@ func step(delta: float,movement: Vector2,aim: Vector2,trigger: bool,pressed: boo
 		UnitSchedule.fill_offline_order(units,ai_order_tick,ai_unit_order)
 	for unit_index in range(units.size()):
 		var u: Dictionary=units[int(ai_unit_order[unit_index]) if fair_order else unit_index]
+		if u.get("hanlue_extracted",false) or u.get("hanlue_escaped",false):continue
 		var control: Dictionary=local_control if u.player else network_inputs.get(int(u.id),{})
 		var human=not control.is_empty()
 		var unit_delta=UnitSchedule.elapsed(u,delta,simulation_tick,staggered)
@@ -457,6 +489,9 @@ func step(delta: float,movement: Vector2,aim: Vector2,trigger: bool,pressed: boo
 	var profile_units=Time.get_ticks_usec() if profile_ai else 0
 	unit_grid_active=false
 	for v in vehicles:
+		if v.type=="truck" and hanlue_transport!=null:
+			hanlue_transport.update_vehicle(v,delta);index_vehicle(v);continue
+		if v.get("hanlue_escaped",false):continue
 		v.flash=maxf(0,v.flash-delta);v.recoil=move_toward(v.recoil,0,delta*2)
 		if v.destroyed:
 			if not v.emplacement and (v.get("airborne",false) or absf(float(v.get("fall_speed",0)))>.001):
@@ -530,6 +565,7 @@ func tick_state(state: Dictionary,w: Dictionary,delta: float) -> void:
 	auto_reload(state,w)
 
 func fire(u: Dictionary,w: Dictionary,state: Dictionary,origin: Vector2,angle: float,height: float,target: Vector2,mount_id: int=-1) -> bool:
+	if is_hanlue() and not u.player and int(u.team)==0 and campaign.hanlue!=null and campaign.hanlue.trigger.is_empty():return false
 	if mount_id<0 and Equipment.busy(u):return false
 	if w.kind=="mortar":
 		if mount_id<0:
@@ -826,7 +862,7 @@ func trace_3d(origin: Vector3,direction: Vector3,distance: float,p: Dictionary={
 	if walls_only:return best
 	var source_id: int=int(p.get("source",-1));var team_id: int=int(p.get("team",-99));var already_hit: Array=p.get("hit",[])
 	for u: Dictionary in unit_ray_candidates(start,start+travel*limit,radius):
-		if not u.alive or u.id==source_id or u.team==team_id or u.id in already_hit or enclosed(u):continue
+		if not mission_unit_active(u) or u.id==source_id or u.team==team_id or u.id in already_hit or enclosed(u):continue
 		if p.get("camera_pick",false) and u.get("camera_hidden",false):continue
 		var base: Vector3=Vector3(u.position.x,u.elevation,u.position.y)
 		if AimGeometry.box_hit(origin,direction,base-Vector3(1.6,.1,1.6)-pad,base+Vector3(1.6,2.2,1.6)+pad,limit)==INF:continue
@@ -884,7 +920,7 @@ func blast(at: Vector2,radius: float,damage: float,w: Dictionary,blast_height: f
 		var hit=trace_3d(Vector3(at.x,blast_height,at.y),offset.normalized(),offset.length(),{},true)
 		exposure[u.id]=float(hit.target.get("transmission",.2)) if not hit.is_empty() else 1.0
 	for u in affected:
-		if not u.alive or enclosed(u):continue
+		if not mission_unit_active(u) or enclosed(u):continue
 		var distance=Vector3(u.position.x-at.x,u.elevation+stance_height(u.stance)*.55-blast_height,u.position.y-at.y).length()
 		if distance>radius:continue
 		var fall=clampf(1-distance/radius,.08,1)
@@ -915,13 +951,13 @@ func blast_units(at: Vector2,radius: float,height: float) -> Array:
 	if not unit_ray_index.active:unit_ray_index.begin(units,profile_ai)
 	var affected: Array=[]
 	for u: Dictionary in unit_ray_index.tree.query(Rect2(at-Vector2.ONE*radius,Vector2.ONE*radius*2),true,profile_ai):
-		if not u.alive or enclosed(u):continue
+		if not mission_unit_active(u) or enclosed(u):continue
 		var offset=Vector3(u.position.x-at.x,u.elevation+stance_height(u.stance)*.55-height,u.position.y-at.y)
 		if offset.length()<=radius:affected.append(u)
 	return affected
 
 func damage_unit(u: Dictionary,amount: float,impulse: Vector3,w: Dictionary,explosive: bool,headshot: bool=false,hit_height: float=-1.0,hit_region: String="",hit_position: Vector3=Vector3.INF,hit_direction: Vector3=Vector3.ZERO,source_id: int=-1,source_epoch: int=-1) -> void:
-	if not u.alive or (u.player and invulnerable):return
+	if not mission_unit_active(u) or (u.player and invulnerable):return
 	if headshot and not explosive:
 		amount*=2.0
 		if not u.get("helmet_lost",false):
@@ -938,7 +974,10 @@ func damage_unit(u: Dictionary,amount: float,impulse: Vector3,w: Dictionary,expl
 	event.emit({"type":"damage","unit":u,"amount":amount,"region":region,"direction":u.last_impact.get("direction","front"),"point":point,"incoming":incoming,"fatal":u.health<=0,"explosive":explosive,"weapon":w,"source_id":source_id,"source_epoch":source_epoch})
 	if u.health<=0:
 		if u.mounted>=0:
-			var mount: Dictionary=vehicles[u.mounted];mount.driver=false;mount.driver_id=-1;u.mounted=-1
+			var mount: Dictionary=vehicles[u.mounted]
+			if int(mount.get("driver_id",-1))==int(u.id):mount.driver=false;mount.driver_id=-1
+			if mount.has("passenger_ids"):mount.passenger_ids.erase(u.id)
+			u.mounted=-1
 			if campaign_active():campaign_ai.vehicle_ai.navigation_changed(mount)
 		u.alive=false;u.death_age=0;u.death_velocity=impulse;u.death_position=Vector3(u.position.x,u.elevation,u.position.y);u.death_roll=rng.randf_range(-.45,.45)
 		if campaign_active():campaign.casualties[u.team]+=1
@@ -1010,7 +1049,7 @@ func damage_vehicle(v: Dictionary,amount: float,source: Vector2,w: Dictionary,ex
 	if v.destroyed:return
 	var relative=wrapf((source-v.position).angle()-v.angle,-PI,PI)
 	var sector="front" if absf(relative)<PI*.25 else ("rear" if absf(relative)>PI*.75 else "side")
-	var armored=not v.emplacement and v.type!="armedJeep"
+	var armored=not v.emplacement and v.type not in ["armedJeep","truck"]
 	var anti_tank=w.get("name","") in ["Anti-Tank Launcher","RPG"]
 	var applied=amount
 	if not explosive and w.kind not in ["autocannon","canister"]:applied=minf(applied,v.max_health*.28/maxi(1,int(w.get("pellets",1))))
@@ -1031,7 +1070,8 @@ func damage_vehicle(v: Dictionary,amount: float,source: Vector2,w: Dictionary,ex
 			var falling=float(v.get("fall_speed",0));var airborne=bool(v.get("airborne",false));var descending=bool(v.get("descending",false))
 			VehicleDynamics.reset(v);v.fall_speed=falling;v.airborne=airborne;v.descending=descending
 		if player.mounted==v.id:leave_vehicle(true)
-		if campaign_active():campaign_ai.vehicle_ai.destroyed(v)
+		if v.type=="truck" and hanlue_transport!=null:hanlue_transport.destroyed(v)
+		elif campaign_active():campaign_ai.vehicle_ai.destroyed(v)
 		event.emit({"type":"vehicle_destroyed","vehicle":v})
 		blast(v.position,float(v.profile.get("effects",{}).get("radius",160))/SCALE,145,{"kind":"shell","name":"载具殉爆","vehicle_detonation":true},float(v.get("elevation",0))+.6)
 
@@ -1082,6 +1122,10 @@ func index_unit(unit: Dictionary,refresh_ray: bool=true):
 	if refresh_ray:
 		if unit_ray_index.entries.size()!=units.size():unit_ray_index.begin(units,profile_ai)
 		unit_ray_index.update(unit)
+	if not mission_unit_active(unit):
+		if unit.has("steering_cell"):
+			unit_grid.get(unit.steering_cell,[]).erase(unit);unit.erase("steering_cell")
+		return
 	if not unit_grid_active:return
 	var cell=Vector2i(floori(unit.position.x/2),floori(unit.position.y/2))
 	if unit.get("steering_cell",Vector2i(2147483647,2147483647))==cell:return
@@ -1146,16 +1190,17 @@ func index_vehicle(v: Dictionary):
 	if vehicles.size()<=4:return
 	if int(v.id)<0 or int(v.id)>=vehicles.size() or not is_same(vehicles[int(v.id)],v):return
 	if vehicle_tree_count!=vehicles.size():sync_vehicle_index();return
+	if v.get("hanlue_escaped",false):vehicle_tree.remove(v.id);return
 	VehicleDimensions.might_contain(v,v.position,0)
 	var radius=float(v.body_query_radius)
 	vehicle_tree.update(v.id,Rect2(v.position-Vector2.ONE*radius,Vector2.ONE*radius*2),v,.3)
 
 func vehicle_candidates(bounds_rect: Rect2) -> Array:
-	if vehicles.size()<=4:return vehicles
+	if vehicles.size()<=4:return vehicles.filter(func(v):return not v.get("hanlue_escaped",false)) if is_hanlue() else vehicles
 	sync_vehicle_index();return vehicle_tree.query(bounds_rect,true,profile_ai)
 
 func vehicle_ray_candidates(a: Vector2,b: Vector2,pad: float) -> Array:
-	if vehicles.size()<=4:return vehicles
+	if vehicles.size()<=4:return vehicles.filter(func(v):return not v.get("hanlue_escaped",false)) if is_hanlue() else vehicles
 	sync_vehicle_index();return vehicle_tree.segment(a,b,pad,true,profile_ai)
 
 func blocked(point: Vector2,radius: float=.3,height: float=1.8,ignore_vehicle: int=-1,base_height: float=0) -> bool:
@@ -1314,6 +1359,7 @@ func enter_vehicle(index: int) -> bool:
 
 func mount_unit(unit: Dictionary,index: int) -> bool:
 	if index<0 or index>=vehicles.size() or vehicles[index].destroyed:return false
+	if vehicles[index].type=="truck":return false
 	if vehicles[index].driver or unit.mounted>=0 or not unit.alive or not unit.grounded or not unit.vault.is_empty() or not unit.ladder.is_empty():return false
 	var destination: Vector2=Emplacement.operator_position(vehicles[index]) if vehicles[index].emplacement else vehicles[index].position
 	var mortar=vehicles[index].type==PortableMortar.KIND
@@ -1340,6 +1386,7 @@ func mount_unit(unit: Dictionary,index: int) -> bool:
 func nearest_vehicle() -> int:
 	var index=-1;var nearest=3.5
 	for v in vehicles:
+		if v.type=="truck" or v.get("hanlue_escaped",false):continue
 		var distance=player.position.distance_to(v.position)
 		if v.type==PortableMortar.KIND and (distance>2.2 or absf(float(player.elevation)-float(v.elevation))>.35):continue
 		if not v.destroyed and not v.driver and distance<nearest:nearest=distance;index=v.id

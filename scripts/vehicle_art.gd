@@ -38,6 +38,8 @@ static func build(parent: Node3D, v: Dictionary) -> Dictionary:
 	var kind: String = v.type
 	var turret_height: float = 1.18
 	match kind:
+		"truck":
+			preload("res://scripts/hanlue_truck.gd").build(body,wheels)
 		"armedJeep":
 			jeep(body, turret, r, wheels)
 			turret_height = 1.62
@@ -54,7 +56,7 @@ static func build(parent: Node3D, v: Dictionary) -> Dictionary:
 			tank(body, turret, r, kind, wheels, root)
 			turret_height = 1.17 if kind == "lightTank" else 1.33 if kind == "tank" else 1.45
 	var channels = weapons(turret, kind, r, turret_height, v.profile.weapons)
-	identification(body,turret,kind,r,Style.Livery.team_id(v.get("team",-1)))
+	if kind!="truck":identification(body,turret,kind,r,Style.Livery.team_id(v.get("team",-1)))
 	wear_layers(body, r, kind, root)
 	var keep: Array = wheels + root.wear + root.intact_tracks + root.broken_tracks
 	root.finish_group(body, keep)
@@ -366,6 +368,7 @@ static func weapon_channel(parent: Node3D,mode: String,at: Vector3,w: Dictionary
 
 static func weapons(parent: Node3D,kind: String,r: float,height: float,profiles: Dictionary) -> Dictionary:
 	var channels: Dictionary={}
+	if kind=="truck":return channels
 	var start=Vector3(0,height,-r*.53)
 	match kind:
 		"armedJeep":

@@ -1,6 +1,7 @@
 extends RefCounted
 ## Vehicle-specific travel limits and rolling contact with low rocks and fallen timber.
 const PROFILES={
+	"truck":{"label":"公路轮式运输","rock":.25,"step":.18,"clearance":.30,"grade":.42,"cross":.30,"articulation":.20,"compression":.10,"pace":.42},
 	"armedJeep":{"label":"高机动越野","rock":.82,"step":.32,"clearance":.36,"grade":.72,"cross":.48,"articulation":.28,"compression":.12,"pace":.60},
 	"scoutCar":{"label":"轻型轮式","rock":.60,"step":.24,"clearance":.30,"grade":.60,"cross":.42,"articulation":.23,"compression":.10,"pace":.52},
 	"apc":{"label":"运输履带","rock":.78,"step":.40,"clearance":.36,"grade":.68,"cross":.48,"articulation":.49,"compression":0.0,"pace":.48},

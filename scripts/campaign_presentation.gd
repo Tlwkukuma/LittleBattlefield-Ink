@@ -17,6 +17,12 @@ var result_title: Label
 var result_detail: Label
 var result_restart_button: Button
 var result_next_button: Button
+var tactic_heading: Label
+var hanlue_markers: Array=[]
+var hanlue_actions: VBoxContainer
+var hanlue_signal: Button
+var hanlue_withdraw: Button
+var hanlue_shift: Button
 var equipment_heading: Label
 var title: Label
 var controls: Label
@@ -34,7 +40,7 @@ func build(host,training: VBoxContainer,parent: VBoxContainer):
 	equipment_heading=game.label(equipment_box,"石墙果园 · 随身装备",20)
 	configure_equipment_heading(equipment_heading)
 	briefing=game.label(equipment_box,"",14);briefing.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;briefing.custom_minimum_size.x=265
-	game.label(equipment_box,"进攻战术 · 开战前选择，战斗中修改下局生效",14)
+	tactic_heading=game.label(equipment_box,"进攻战术 · 开战前选择，战斗中修改下局生效",14)
 	plan_choice=OptionButton.new();equipment_box.add_child(plan_choice);plan_choice.focus_mode=Control.FOCUS_NONE
 	for id in preload("res://scripts/campaign_plan.gd").NAMES:
 		plan_choice.add_item(id+" · "+preload("res://scripts/campaign_plan.gd").NAMES[id]);plan_choice.set_item_metadata(plan_choice.item_count-1,id)
@@ -43,6 +49,10 @@ func build(host,training: VBoxContainer,parent: VBoxContainer):
 		var id=str(plan_choice.get_item_metadata(index));game.plan.godot3d.campaign_tactic=id
 		if game.world.time<.001:game.world.campaign_director.plan_executor.select(id)
 		game.get_viewport().gui_release_focus())
+	hanlue_actions=VBoxContainer.new();equipment_box.add_child(hanlue_actions)
+	hanlue_signal=game.button(hanlue_actions,"伏击信号  Y",func():game.hanlue_command("signal"))
+	hanlue_withdraw=game.button(hanlue_actions,"下令撤离  J",func():game.hanlue_command("withdraw"))
+	hanlue_shift=game.button(hanlue_actions,"调整四组阵位  K",func():game.hanlue_command("shift"))
 	for i in range(4):
 		var index=i
 		var row=HBoxContainer.new();equipment_box.add_child(row)
@@ -83,6 +93,9 @@ func sync_mode():
 	if roof_button!=null:roof_button.visible=not active
 	if game.is_style_range():editor_button.hide();roof_button.hide()
 	controls_mode=-1;summary_age=0;hud_summary.clear()
+	hanlue_actions.visible=game.world.is_hanlue()
+	plan_choice.visible=not game.world.is_hanlue()
+	tactic_heading.visible=not game.world.is_hanlue()
 	equipment_heading.text=str(game.plan.get("title","石墙果园"))+" · 随身装备"
 	var tactic_names=preload("res://scripts/campaign_plan.gd").names_for(game.plan)
 	for index in range(plan_choice.item_count):
@@ -94,12 +107,20 @@ func sync_mode():
 	result_panel.hide()
 
 func rebuild_world():
+	for marker in hanlue_markers:
+		if is_instance_valid(marker):marker.queue_free()
+	hanlue_markers.clear()
 	for view in objective_views:
 		if is_instance_valid(view.flag):view.flag.queue_free()
 	if is_instance_valid(control_ring):control_ring.queue_free()
 	objective_views=[];control_ring=null
 	if not game.world.campaign_active():return
 	control_ring=Art.ring(game.stage,Vector3.ZERO,.48,Art.BLUE.lightened(.2),.025)
+	if game.world.is_hanlue():
+		for zone in game.world.campaign.hanlue.extraction_zones:
+			var at: Vector2=zone.position
+			var marker=Art.ring(game.stage,Vector3(at.x,game.world.terrain.height(at)+.04,at.y),zone.radius,Color("78ac91"),.045)
+			hanlue_markers.append(marker)
 	for point in game.world.campaign.points:
 		var flag=preload("res://scripts/objective_flag.gd").new();game.stage.add_child(flag);flag.build(game,point)
 		objective_views.append({"point":point,"flag":flag})
@@ -131,6 +152,7 @@ func refresh(delta: float=0):
 			var toward: Vector2=point.position-game.world.player.position
 			var bearing=["东","东南","南","西南","西","西北","北","东北"][posmod(int(round(toward.angle()/(PI/4))),8)]
 			occupation+="  ·  %s %d m"%[bearing,int(toward.length())]
+		if campaign.hanlue!=null:occupation=campaign.objective_text()
 		if not campaign.mission.is_empty():occupation=campaign.objective_text()+" · "+occupation
 		hud_summary={"remaining":[counts[0]+reserves[0],counts[1]+reserves[1]],"total":[int(game.plan.deployment.blue.totalForce),int(game.plan.deployment.red.totalForce)],"objective":occupation}
 		if not point.is_empty():
@@ -144,10 +166,14 @@ func refresh(delta: float=0):
 			status.text="蓝军在场 %d / %d · 预备 %d\n红军在场 %d / %d · 预备 %d\n%s\n%s"%[counts[0],campaign.maximum[0],reserves[0],counts[1],campaign.maximum[1],reserves[1],occupation,game.world.campaign_director.status_text()]
 	if is_instance_valid(control_ring):
 		var unit: Dictionary=game.world.player
-		control_ring.visible=unit.alive and unit.mounted<0
+		control_ring.visible=game.world.mission_unit_active(unit) and unit.mounted<0
 		control_ring.position=Vector3(unit.position.x,game.world.ground_height(unit.position,.05,unit.elevation+.025)+.035,unit.position.y)
 	for view in objective_views:
 		if update_summary:view.flag.refresh(game)
+	if campaign.hanlue!=null:
+		hanlue_signal.disabled=not campaign.hanlue.is_concealed()
+		hanlue_withdraw.disabled=campaign.hanlue.stage in ["withdrawal","result"]
+		hanlue_shift.disabled=hanlue_withdraw.disabled
 	if game.armory.visible:
 		plan_choice.disabled=game.lan!=null and game.lan.is_client()
 		var chosen=str(game.plan.godot3d.get("campaign_tactic","T01"))
@@ -189,9 +215,12 @@ func refresh(delta: float=0):
 			game.armory.hide()
 		result_title.text="十章战役 · 完成" if ending else str(game.plan.get("title","第一关"))+(" · 胜利" if campaign.phase=="won" else " · 战败")
 		result_detail.text="从果园到村落，十章行动全部完成。\n最终阵地已稳固，战役进度已保存。" if ending else result_reason(str(campaign.phase),str(campaign.reason),point)+("。下一关已解锁。" if checkpoint and campaign.phase=="won" else "")
-		if offline and not checkpoint:result_detail.text+="\n此关尚未解锁；直接启动的结果不计入战役进度。"
+		if offline and not checkpoint and not game.world.is_hanlue():result_detail.text+="\n此关尚未解锁；直接启动的结果不计入战役进度。"
 		if checkpoint and game.campaign_progress.dirty:result_detail.text=result_detail.text.replace("战役进度已保存。","进度尚未保存。")+"\n"+game.campaign_progress.last_error
 		result_detail.text+="\n蓝军在场 %d · 预备 %d\n红军在场 %d · 预备 %d"%[counts[0],reserves[0],counts[1],reserves[1]]
+		if game.world.is_hanlue():
+			result_title.text="H01 韩略村 · "+("任务完成" if campaign.phase=="won" else "行动结束")
+			result_detail.text+="\n历史背景启发的玩法缩编；不计入原十章进度。"
 		result_panel.show()
 
 static func result_reason(phase: String,reason: String,point: Dictionary) -> String:

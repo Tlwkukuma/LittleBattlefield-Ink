@@ -240,6 +240,7 @@ func path_between(a: Vector2,b: Vector2) -> Array:
 func update(unit: Dictionary,delta: float) -> void:
 	if unit.mounted>=0:return
 	var world=world_ref.get_ref()
+	if world.hanlue_tactics!=null and world.hanlue_tactics.hold_concealed(unit,delta):return
 	var profile_time=Time.get_ticks_usec() if world.profile_ai else 0
 	perception.tick(unit,delta)
 	unit.brain-=delta;unit.repath-=delta
@@ -309,7 +310,7 @@ func update(unit: Dictionary,delta: float) -> void:
 		world.ai_budget_usec-=maxi(0,int(Time.get_ticks_usec()-started)-(before_budget-int(world.ai_budget_usec)))
 	if not unit.has("ai_tactic"):unit.ai_tactic={"goal":base_goal,"hold":false,"state":"advance","stance":0}
 	var action: Dictionary=unit.ai_tactic;var goal: Vector2=action.goal
-	var boarding_goal=vehicle_ai.goal(unit)
+	var boarding_goal=Vector2.INF if world.is_hanlue() else vehicle_ai.goal(unit)
 	if boarding_goal.is_finite():
 		action={"goal":boarding_goal,"hold":false,"state":"board-vehicle","stance":0};goal=boarding_goal
 	unit.ai_goal=goal;unit.ai_state=str(action.state)
@@ -352,7 +353,7 @@ func update(unit: Dictionary,delta: float) -> void:
 			accept_recovery(unit,escape,world.time)
 	else:unit.ai_stuck=0.0;progress.at=world.time
 	profile_part("recovery_ms",profile_time)
-	vehicle_ai.try_board(unit)
+	if not world.is_hanlue():vehicle_ai.try_board(unit)
 
 static func accept_recovery(unit: Dictionary,escape: Vector2,now: float) -> void:
 	var pending=unit.has("ai_recovery_search")

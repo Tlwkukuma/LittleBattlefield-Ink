@@ -6,7 +6,7 @@ const Collision=preload("res://scripts/vehicle_collision.gd")
 const Structure=preload("res://scripts/vehicle_structure_support.gd")
 
 static func tracked(v: Dictionary) -> bool:
-	return v.type not in ["armedJeep","scoutCar"]
+	return v.type not in ["armedJeep","scoutCar","truck"]
 
 static func surface(profile: Dictionary, tracks: bool) -> Dictionary:
 	var id: String=profile.id;var soft=clampf(float(profile.get("softness",0)),0,1)
@@ -49,7 +49,7 @@ static func sample_uncached(terrain,v: Dictionary,at: Vector2,angle: float,mater
 	var axle=half.x*(.75 if tracks else .61)
 	var gauge=half.y*.79
 	var forward=Vector2.from_angle(angle);var side=Vector2(-forward.y,forward.x)
-	var wheel_radius=(.31 if v.type=="scoutCar" else .29)*d.model_scale.y
+	var wheel_radius=(.38 if v.type=="truck" else .31 if v.type=="scoutCar" else .29)*d.model_scale.y
 	var rocks=Offroad.nearby(world,v,at,half.length()+wheel_radius)
 	var structures=Structure.nearby(world,v,at,half.length()+wheel_radius)
 	var sum=0.0;var along=0.0;var across=0.0;var xx=0.0;var zz=0.0

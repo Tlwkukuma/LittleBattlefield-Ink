@@ -17,6 +17,7 @@ var world_ref: WeakRef
 var stage_index=0
 var hold_elapsed=0.0
 var mission: Dictionary={}
+var hanlue
 const Placement=preload("res://scripts/campaign_placement.gd")
 var placement_report: Dictionary={}
 var last_spawn_failure: Dictionary={}
@@ -92,7 +93,7 @@ func active_counts() -> Array:
 	var counts=[0,0];var world=world_ref.get_ref()
 	if world==null:return counts
 	for unit in world.units:
-		if unit.alive:counts[int(unit.team)]+=1
+		if preload("res://scripts/mission_lifecycle.gd").active(unit):counts[int(unit.team)]+=1
 	return counts
 
 func summary() -> Dictionary:
@@ -102,15 +103,17 @@ func tick(delta: float) -> void:
 	if not active or phase!="playing":return
 	var world=world_ref.get_ref()
 	# A dead player must have an already-living ally. Reserves cannot rescue this state.
-	if not world.player.alive:
+	if not preload("res://scripts/mission_lifecycle.gd").active(world.player):
 		var ally=nearest_ally(world)
 		if ally.is_empty():
+			if hanlue!=null:
+				hanlue.tick(delta);return
 			# A living LAN teammate can still finish the campaign even when the
 			# host has no unoccupied soldier left to take over.
 			if not world.units.any(func(unit):return unit.alive and unit.team==0 and int(unit.get("network_peer_id",0))>0):finish("lost","无可接管的存活友军");return
 			takeover_wait=0.0
 		else:
-			takeover_wait=maxf(0,float(rules.get("handoffSeconds",1.18))-float(world.player.death_age))
+			takeover_wait=maxf(0,float(rules.get("handoffSeconds",1.18))-float(world.player.death_age)) if not world.player.alive else 0.0
 			if takeover_wait<=0:
 				var previous: Dictionary=world.player;previous.player=false;ally.player=true;world.player=ally
 				ally.velocity=Vector2.ZERO;ally.requested_velocity=Vector2.ZERO;ally.aim_valid=false;ally.aiming=false
@@ -118,6 +121,8 @@ func tick(delta: float) -> void:
 				world.event.emit({"type":"player_changed","unit":ally,"previous":previous})
 				world.event.emit({"type":"notice","text":"已接管最近友军 · 装备沿用该士兵配装"})
 	else:takeover_wait=0.0
+	if hanlue!=null:
+		hanlue.tick(delta);return
 	for point in points:
 		var presence=[0,0]
 		for unit in world.units:
@@ -138,6 +143,7 @@ func current_stage() -> Dictionary:
 	return stages[stage_index] if stage_index>=0 and stage_index<stages.size() else {}
 
 func objective_text() -> String:
+	if hanlue!=null:return hanlue.objective_text()
 	var stage=current_stage()
 	if stage.is_empty():return "占领据点，或耗尽敌方兵力"
 	var text=str(stage.get("briefing","夺取目标"))
@@ -185,7 +191,7 @@ static func advance_point(point: Dictionary,blue: int,red: int,delta: float) -> 
 func nearest_ally(world) -> Dictionary:
 	var nearest: Dictionary={};var distance=INF
 	for unit in world.units:
-		if not unit.alive or unit.team!=0 or unit.player or int(unit.get("network_peer_id",0))>0:continue
+		if not preload("res://scripts/mission_lifecycle.gd").active(unit) or unit.team!=0 or unit.player or int(unit.get("network_peer_id",0))>0:continue
 		var candidate=world.player.position.distance_squared_to(unit.position)
 		if candidate<distance:distance=candidate;nearest=unit
 	return nearest

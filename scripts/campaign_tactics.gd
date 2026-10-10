@@ -48,6 +48,9 @@ func reserve_position(unit_id: int,point: Vector2,seconds: float) -> bool:
 
 func decide(unit: Dictionary,goal: Vector2,contact: Dictionary,visible: bool) -> Dictionary:
 	var result=decide_action(unit,goal,contact,visible)
+	if unit.get("ai_order",{}).get("hanlue_withdraw",false):
+		result.goal=goal;result.hold=unit.position.distance_to(goal)<.45;result.state="withdraw";result.stance=0
+		return result
 	var world=world_ref.get_ref();var order: Dictionary=unit.get("ai_order",{})
 	# Existing finite bounding commitments own their members until the coordinator
 	# releases them. Unrelated support retries cannot cancel a healthy crossing.

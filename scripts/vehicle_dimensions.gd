@@ -6,6 +6,7 @@ const Parts=preload("res://scripts/vehicle_collision_parts.gd")
 ## Footprints include running gear, but exclude projecting barrels and antennae.
 const CHARACTER_HEIGHT = 1.94
 const PROFILES = {
+	"truck": {"footprint":Vector2(4.8,2.2),"source":Vector2(4.8,2.2),"deck":.9,"top":2.03,"turret":Vector2.ZERO,"cabin":true},
 	"armedJeep": {"footprint":Vector2(3.00,1.82),"source":Vector2(2.225703,1.441),"deck":.82,"top":1.69,"turret":Vector2(.29,.27),"cabin":true},
 	"scoutCar": {"footprint":Vector2(3.12,2.02),"source":Vector2(2.375203,1.6305),"deck":1.0,"top":1.42,"turret":Vector2(.45,.425)},
 	"apc": {"footprint":Vector2(3.68,2.39),"source":Vector2(2.832453,1.92725),"deck":1.24,"top":1.69,"turret":Vector2(.315,.389)},

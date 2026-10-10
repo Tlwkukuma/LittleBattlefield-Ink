@@ -6,7 +6,7 @@ const Dimensions=preload("res://scripts/vehicle_dimensions.gd")
 const Offroad=preload("res://scripts/vehicle_offroad.gd")
 const Runover=preload("res://scripts/vehicle_runover.gd")
 # Gameplay response, not real-world vehicle masses: restitution / maximum rebound speed.
-const REBOUND={"armedJeep":Vector2(.23,1.35),"scoutCar":Vector2(.20,1.15),"apc":Vector2(.15,.95),"ifv":Vector2(.14,.90),"lightTank":Vector2(.17,1.05),"tank":Vector2(.12,.80),"heavyTank":Vector2(.10,.65)}
+const REBOUND={"truck":Vector2(.18,1.0),"armedJeep":Vector2(.23,1.35),"scoutCar":Vector2(.20,1.15),"apc":Vector2(.15,.95),"ifv":Vector2(.14,.90),"lightTank":Vector2(.17,1.05),"tank":Vector2(.12,.80),"heavyTank":Vector2(.10,.65)}
 
 static func transition(v: Dictionary,support: Dictionary,point: Vector2) -> bool:
 	if not support.passable and not Ground.descending(v,support,point) and not recovering_support(v,support):return false

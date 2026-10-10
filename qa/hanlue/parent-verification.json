@@ -1,0 +1,46 @@
+{
+  "version": "2026.10.10.5",
+  "tested_at_utc": "2026-10-10T08:10:03.305745+00:00",
+  "code_base": "9558f6a1e798d179f6657d11a6224ab865dc1cb2",
+  "tested_change": "BUILD_VERSION only",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "checks": 141,
+  "failures": 0,
+  "results": [
+    {
+      "name": "import",
+      "exit_code": 0,
+      "log_sha256": "977bd1e04799b338cf3250d4559099089c7be9df0c59b738d6a3d9bb12aec734",
+      "summary": "Godot editor/import: no script errors"
+    },
+    {
+      "name": "rules",
+      "exit_code": 0,
+      "log_sha256": "4cf6bb280bca100bc3473f99052e944feb5940532167ad1961320ccb8fd5cb25",
+      "summary": "HANLUE_RULE_CONTRACT checks=26 failures=0 (synthetic rules only)"
+    },
+    {
+      "name": "deployment",
+      "exit_code": 0,
+      "log_sha256": "23ecccc3bf61f785ceb6732a98af7cccf16948b250478de17a4ce76a58ca1cd2",
+      "summary": "HANLUE_DEPLOYMENT checks=61 failures=0; zero battle ticks"
+    },
+    {
+      "name": "visibility",
+      "exit_code": 0,
+      "log_sha256": "4ac05a4918685ae1de1c5d930fcd2dd0fc6c693b90116e2be04b36dc00384e1a",
+      "summary": "HANLUE_VISIBILITY checks=15 failures=0; frozen geometry only"
+    },
+    {
+      "name": "entry",
+      "exit_code": 0,
+      "log_sha256": "eb381bd385c35fcc8e0e217c3194d89431a419d74385697e11a6a65b64e8a56b",
+      "summary": "HANLUE_ENTRY checks=39 failures=0; no gameplay inputs/ticks"
+    }
+  ],
+  "limits": [
+    "No complete AI/gameplay simulation or full playthrough",
+    "No GPU screenshot/shadow acceptance",
+    "Own-cloud headless entry ~27.81s and retry ~16.234s; not target-PC performance"
+  ]
+}

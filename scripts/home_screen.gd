@@ -66,6 +66,7 @@ func setup(host,show_immediately: bool=false):
 	recording.toggled.connect(func(enabled):
 		if game.has_method("set_play_recording"):game.set_play_recording(enabled))
 	play_button=make_button(main_view,"战役",run_campaign,24)
+	make_button(main_view,"历史战役 · H01 韩略村",func():game.start_hanlue(),24).name="HistoricalCampaign"
 	make_button(main_view,"局域网协作",open_lan,24).name="JoinCampaign"
 	make_button(main_view,"联合演武场",run_training,24).name="Training"
 	build_campaign_view()
@@ -176,7 +177,7 @@ func layout():
 	var x=22.0;var inner=width-44.0;var y=24.0
 	y=place(logo,x,y,inner,100)
 	y=place(main_view.get_node("HomeSubtitle"),x,y,inner,30)+24
-	for control in [play_button,main_view.get_node("JoinCampaign"),main_view.get_node("Training")]:y=place(control,x,y,inner,62)
+	for control in [play_button,main_view.get_node("HistoricalCampaign"),main_view.get_node("JoinCampaign"),main_view.get_node("Training")]:y=place(control,x,y,inner,62)
 	y=place(recording,x,y+10,inner,42)
 	var home_height=y+24
 	y=place(chapter_title,x,18,inner,50)

@@ -49,7 +49,7 @@ func tick(unit: Dictionary,delta: float) -> void:
 
 func can_see(unit: Dictionary,target: Dictionary) -> bool:
 	var world=world_ref.get_ref()
-	if not target.alive or target.team==unit.team:return false
+	if not preload("res://scripts/mission_lifecycle.gd").active(target) or target.team==unit.team:return false
 	var rules=profile(world.weapon_for(unit));var offset: Vector2=target.position-unit.position;var distance=offset.length()
 	if distance>rules.range+.3:return false
 	var allowance=minf(.13,.30/maxf(1.5,distance))
@@ -73,12 +73,12 @@ func confirm(unit: Dictionary,target_id: int) -> Dictionary:
 	remember_vision(unit,target)
 	return target
 
-func refresh(unit: Dictionary) -> Dictionary:
+func refresh(unit: Dictionary,visual_limit: int=MAX_VISUAL_CANDIDATES) -> Dictionary:
 	ensure(unit);var world=world_ref.get_ref();var rules=profile(world.weapon_for(unit))
 	unit.ai_visible_ids=[]
 	var candidates=[]
 	for target in world.units:
-		if not target.alive or target.team==unit.team:continue
+		if not preload("res://scripts/mission_lifecycle.gd").active(target) or target.team==unit.team:continue
 		var offset: Vector2=target.position-unit.position;var distance=offset.length()
 		if distance>rules.range+.3 or absf(wrapf(offset.angle()-unit.facing.angle(),-PI,PI))>rules.half_angle+.13:continue
 		candidates.append({"unit":target,"distance":distance})
@@ -86,6 +86,7 @@ func refresh(unit: Dictionary) -> Dictionary:
 	var chosen: Dictionary={};var score=INF
 	var cursor=int(unit.get("ai_scan_cursor",0))
 	var selected_indices=scan_indices(candidates,int(unit.get("ai_target",-1)),cursor)
+	if selected_indices.size()>visual_limit:selected_indices.resize(maxi(0,visual_limit))
 	if observe_structure(unit,rules) and selected_indices.size()>=MAX_VISUAL_CANDIDATES:selected_indices.pop_back()
 	unit.ai_scan_cursor=posmod(cursor+1,maxi(1,candidates.size()-2))
 	for index in selected_indices:
@@ -160,7 +161,7 @@ func observe_event(event: Dictionary) -> void:
 	var world=world_ref.get_ref();var kind=str(event.get("type",""))
 	if kind=="fracture" and str(event.object.get("source_id","")).begins_with("compound-"):
 		for unit in world.nearby_units(event.position,12):
-			if not unit.alive or unit.player or unit.team!=1 or unit.mounted>=0:continue
+			if not preload("res://scripts/mission_lifecycle.gd").active(unit) or unit.player or unit.team!=1 or unit.mounted>=0:continue
 			unit.ai_structure_probe={"position":event.position,"wall":event.object,"at":world.time}
 			unit.ai_alert_at=Vector2((Vector2(event.position)/2).round())*2;unit.ai_alert_until=world.time+1.5
 		return
@@ -171,7 +172,7 @@ func observe_event(event: Dictionary) -> void:
 		ensure(unit);return
 	if kind=="damage":
 		var unit: Dictionary=event.unit
-		if unit.player or not unit.alive:return
+		if unit.player or not preload("res://scripts/mission_lifecycle.gd").active(unit):return
 		ensure(unit);unit.ai_stress=clampf(float(unit.ai_stress)+.22+float(event.get("amount",0))/maxf(1,unit.max_health)*.75,0,1)
 		unit.ai_incoming_at=world.time
 		var incoming: Vector3=event.get("incoming",Vector3.ZERO)
@@ -182,7 +183,7 @@ func observe_event(event: Dictionary) -> void:
 	if kind=="explosion":
 		var at: Vector2=event.position;var radius=float(event.radius)
 		for unit in world.units:
-			if not unit.alive or unit.player:continue
+			if not preload("res://scripts/mission_lifecycle.gd").active(unit) or unit.player:continue
 			var distance=unit.position.distance_to(at)
 			if distance>radius*1.8:continue
 			ensure(unit);unit.ai_stress=minf(1,float(unit.ai_stress)+.40*clampf(1-distance/(radius*1.8),0,1))
@@ -213,7 +214,7 @@ func near_segment(projectile: Dictionary,start: Vector3,end: Vector3) -> void:
 	var family=str(projectile.weapon.get("archetype","assault"))
 	# The existing physical unit index provides a narrow candidate corridor.
 	for u in world.unit_ray_candidates(Vector2(start.x,start.z),Vector2(end.x,end.z),1.5):
-		if not u.alive or u.player or u.team==projectile.team or world.enclosed(u):continue
+		if not preload("res://scripts/mission_lifecycle.gd").active(u) or u.player or u.team==projectile.team or world.enclosed(u):continue
 		var body=world.CombatPose.chest(u);var nearest=Geometry3D.get_closest_point_to_segment(body,start,end)
 		var distance=body.distance_to(nearest)
 		if distance>=1.5:continue
@@ -232,7 +233,7 @@ func near_segment(projectile: Dictionary,start: Vector3,end: Vector3) -> void:
 func emit_sound(at: Vector2,height: float,team: int,source_id: int,radius: float,loudness: float) -> void:
 	var world=world_ref.get_ref();var transmission_cache={};var listeners=[]
 	for unit in world.units:
-		if not unit.alive or unit.player or unit.team==team or world.enclosed(unit):continue
+		if not preload("res://scripts/mission_lifecycle.gd").active(unit) or unit.player or unit.team==team or world.enclosed(unit):continue
 		var distance=unit.position.distance_to(at)
 		if distance<radius:listeners.append({"unit":unit,"distance":distance})
 	listeners.sort_custom(func(a,b):return a.distance<b.distance)
