@@ -64,7 +64,7 @@ func frontage() -> Vector2:
 	var world=world_ref.get_ref()
 	var metadata: Dictionary=world.plan.get("godot3d",{}).get("campaign_tactics",{})
 	if metadata.has("vehicle_frontage"):return world.catalog.position(metadata.vehicle_frontage,world.plan)
-	if int(world.plan.get("godot3d",{}).get("campaign_chapter",1))>1 and not world.campaign.points.is_empty():return world.campaign.points[0].position
+	if (bool(world.plan.get("godot3d",{}).get("source_layout",false)) or int(world.plan.get("godot3d",{}).get("campaign_chapter",1))>1) and not world.campaign.points.is_empty():return world.campaign.points[0].position
 	return world.catalog.position([2350,1100],world.plan)
 
 func cancel_reservation(id: int,cooldown: bool=true):

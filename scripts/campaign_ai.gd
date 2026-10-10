@@ -24,6 +24,7 @@ var step_profile: Dictionary={}
 var connectivity=preload("res://scripts/campaign_connectivity.gd").new()
 var capture_cells: Array=[]
 var capture_goal_cache: Dictionary={}
+var capture_reservations=preload("res://scripts/campaign_goal_reservations.gd").new()
 
 func profile_part(key: String,started: int) -> int:
 	if started==0:return 0
@@ -142,7 +143,7 @@ func refresh_cells(world,cell_budget: int=0) -> void:
 	if refresh_edges.is_empty():connectivity.begin(graph);refresh_capture_cells()
 
 func refresh_capture_cells() -> void:
-	capture_cells.clear();capture_goal_cache.clear();var world=world_ref.get_ref()
+	capture_cells.clear();capture_goal_cache.clear();capture_reservations.claims.clear();var world=world_ref.get_ref()
 	for point in world.campaign.points:
 		var candidates=[]
 		var extent=ceili(float(point.radius)+2)
@@ -166,21 +167,27 @@ func tick_connectivity() -> void:
 func same_component(a: Vector2,b: Vector2) -> bool:
 	return connectivity.connected(point_cell(a),point_cell(b))
 
-func capture_goal(origin: Vector2,slot: int=0,objective: int=0,wanted: Vector2=Vector2.INF) -> Vector2:
+func capture_goal(origin: Vector2,slot: int=0,objective: int=0,wanted: Vector2=Vector2.INF,owner_id: int=-1,task_key: String="") -> Vector2:
 	if not connectivity.ready or objective>=capture_cells.size():return Vector2.INF
 	var start=point_cell(origin);var candidates: Array=capture_cells[objective]
 	var cache_key=str(objective)+":"+str(slot)+":"+str(connectivity.labels.get(start,-1))
 	if wanted.is_finite():cache_key+=":"+str(Vector2i(wanted.round()))
-	if capture_goal_cache.has(cache_key):return capture_goal_cache[cache_key]
+	var world=world_ref.get_ref()
+	if owner_id>=0:
+		capture_reservations.prune(world.units,world.time)
+	if owner_id<0 and capture_goal_cache.has(cache_key):return capture_goal_cache[cache_key]
 	var point: Dictionary=world_ref.get_ref().campaign.points[objective]
 	var preferred: Vector2=point.position+Vector2.from_angle(float(slot)*2.39996)*minf(2.5,float(point.radius)*.35)
 	if wanted.is_finite():preferred=wanted+Vector2.from_angle(float(slot)*2.39996)*.65
 	var best=Vector2.INF;var score=INF
 	for id in candidates:
 		if graph.is_point_disabled(id) or not connectivity.connected(start,id):continue
-		var at=graph.get_point_position(id);var value=at.distance_squared_to(preferred)
+		var at=graph.get_point_position(id)
+		if owner_id>=0 and not capture_reservations.available(at,owner_id):continue
+		var value=at.distance_squared_to(preferred)
 		if value<score:score=value;best=at
-	capture_goal_cache[cache_key]=best
+	if owner_id<0:capture_goal_cache[cache_key]=best
+	elif best.is_finite():capture_reservations.reserve(world.units[owner_id],best,task_key,world.time)
 	return best
 
 func connected_goal(origin: Vector2,wanted: Vector2) -> Vector2:
@@ -336,15 +343,14 @@ func update(unit: Dictionary,delta: float) -> void:
 		unit.facing=Vector2.from_angle(rotate_toward(unit.facing.angle(),(unit.ai_alert_at-unit.position).angle(),delta*6))
 	world.move_unit(unit,tactics.steer(unit,velocity),delta)
 	profile_time=profile_part("movement_ms",profile_time)
-	if not unit.has("ai_progress_origin"):unit.ai_progress_origin=unit.position;unit.ai_last_progress_at=world.time
-	if unit.position.distance_to(unit.ai_progress_origin)>.6:
-		unit.ai_progress_origin=unit.position;unit.ai_last_progress_at=world.time;unit.ai_stuck=0.0
-	elif moving:
-		unit.ai_stuck=float(unit.get("ai_stuck",0))+delta
+	var progress: Dictionary=preload("res://scripts/campaign_member_progress.gd").sample(unit,unit.get("ai_member_progress",{}),base_goal,world.time)
+	unit.ai_member_progress=progress;unit.ai_last_progress_at=progress.at
+	if moving:
+		unit.ai_stuck=maxf(0,world.time-float(progress.at))
 		if unit.ai_stuck>1.1 and world.time>=float(unit.get("ai_recover_after",0)):
 			var escape=tactics.recover(unit,goal)
 			accept_recovery(unit,escape,world.time)
-	else:unit.ai_stuck=0.0
+	else:unit.ai_stuck=0.0;progress.at=world.time
 	profile_part("recovery_ms",profile_time)
 	vehicle_ai.try_board(unit)
 
@@ -376,7 +382,11 @@ func observe_event(event: Dictionary) -> void:
 		if not shooter.get("player",false) and shooter.get("alive",false):
 			shooter.ai_last_shot_at=world_ref.get_ref().time
 			shooter.ai_last_shot_target=int(shooter.get("ai_target",-1))
+			shooter.ai_last_shot_epoch=int(shooter.get("spawn_epoch",0))
+			shooter.ai_last_shot_target_epoch=int(shooter.get("ai_contacts",{}).get(int(shooter.get("ai_target",-1)),{}).get("spawn_epoch",-1))
 	perception.observe_event(event)
+	if event.get("type","") in ["respawn","death"]:
+		capture_reservations.claims.erase(event.unit.id);tactics.standpoints.erase(event.unit.id)
 	if event.get("type","")=="respawn":event.unit.erase("ai_order")
 
 func objective_goal(world,unit: Dictionary) -> Vector2:

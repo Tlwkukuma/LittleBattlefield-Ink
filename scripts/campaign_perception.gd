@@ -15,6 +15,7 @@ func configure(world) -> void:world_ref=weakref(world)
 
 static func ensure(unit: Dictionary) -> void:
 	if not unit.has("ai_contacts"):unit.ai_contacts={}
+	if not unit.has("ai_hearing_contacts"):unit.ai_hearing_contacts={}
 	if not unit.has("ai_visible_ids"):unit.ai_visible_ids=[]
 	if not unit.has("ai_stress"):unit.ai_stress=0.0
 
@@ -38,12 +39,13 @@ func tick(unit: Dictionary,delta: float) -> void:
 	# Stress responds every AI step; fading remembered contacts needs only 5 Hz.
 	if now<float(unit.get("ai_contacts_decay_at",-1)):return
 	unit.ai_contacts_decay_at=now+.18+float(unit.id%7)*.008
-	for id in unit.ai_contacts.keys():
-		var contact: Dictionary=unit.ai_contacts[id]
-		var life=6.0 if contact.source=="vision" else 2.8
-		var age=now-float(contact.observed_at)
-		if age>=life:unit.ai_contacts.erase(id);continue
-		contact.confidence=maxf(0,float(contact.get("initial_confidence",1.0))*(1-age/life))
+	for contacts in [unit.ai_contacts,unit.ai_hearing_contacts]:
+		for id in contacts.keys():
+			var contact: Dictionary=contacts[id]
+			var life=6.0 if contact.source=="vision" else 2.8
+			var age=now-float(contact.observed_at)
+			if age>=life:contacts.erase(id);continue
+			contact.confidence=maxf(0,float(contact.get("initial_confidence",1.0))*(1-age/life))
 
 func can_see(unit: Dictionary,target: Dictionary) -> bool:
 	var world=world_ref.get_ref()
@@ -140,11 +142,18 @@ func remember_vision(unit: Dictionary,target: Dictionary) -> void:
 
 func best_contact(unit: Dictionary) -> Dictionary:
 	ensure(unit);var best: Dictionary={};var score=-INF
-	for id in unit.ai_contacts:
-		var candidate: Dictionary=unit.ai_contacts[id]
-		var value=float(candidate.confidence)*4-unit.position.distance_to(candidate.position)*.04+(1.0 if candidate.source=="vision" else 0.0)
-		if value>score:
-			score=value;best=candidate.duplicate();best.id=id
+	var now=float(world_ref.get_ref().time)
+	for contacts in [unit.ai_contacts,unit.ai_hearing_contacts]:
+		for id in contacts:
+			var candidate: Dictionary=contacts[id]
+			if now-float(candidate.observed_at)>=(6.0 if candidate.source=="vision" else 2.8):continue
+			# A sound from the same source must neither replace nor outrank an
+			# unexpired visual observation. Its uncertainty remains independent.
+			if candidate.source=="hearing" and unit.ai_contacts.has(id) and now-float(unit.ai_contacts[id].observed_at)<6.0:continue
+			var value=float(candidate.confidence)*4-unit.position.distance_to(candidate.position)*.04+(1.0 if candidate.source=="vision" else 0.0)
+			if value>score:
+				score=value;best=candidate.duplicate();best.id=id
+
 	return best
 
 func observe_event(event: Dictionary) -> void:
@@ -236,13 +245,11 @@ func emit_sound(at: Vector2,height: float,team: int,source_id: int,radius: float
 		if strength<.075:continue
 		ensure(unit)
 		var key=source_id if source_id>=0 else -1000-int(unit.id)
-		var prior: Dictionary=unit.ai_contacts.get(key,{})
-		if not prior.is_empty() and prior.source=="vision" and world.time-float(prior.observed_at)<.8:continue
 		var error=1.1+distance*.08+(1-strength)*2.0+(1-transmission)*3.0
 		var estimate=at+Vector2.from_angle(world.rng.randf()*TAU)*error*world.rng.randf_range(.3,1)
 		estimate.x=clampf(estimate.x,-world.bounds.x+.5,world.bounds.x-.5);estimate.y=clampf(estimate.y,-world.bounds.y+.5,world.bounds.y-.5)
 		var confidence=clampf(.16+strength*.32,.15,.45)
-		unit.ai_contacts[key]={"position":estimate,"elevation":world.terrain.height(estimate),"observed_at":world.time,"confidence":confidence,"initial_confidence":confidence,"source":"hearing","uncertainty":error}
+		unit.ai_hearing_contacts[key]={"position":estimate,"elevation":world.terrain.height(estimate),"observed_at":world.time,"confidence":confidence,"initial_confidence":confidence,"source":"hearing","uncertainty":error}
 		unit.ai_alert_at=estimate;unit.ai_alert_until=world.time+1.3
 
 func hearing_transmission(world,origin: Vector3,endpoint: Vector3) -> float:

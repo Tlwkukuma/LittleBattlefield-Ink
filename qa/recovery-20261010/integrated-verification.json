@@ -1,0 +1,136 @@
+{
+  "date_utc": "2026-10-10T07:41:55.524461+00:00",
+  "engine": "4.6.3.stable.official.7d41c59c4",
+  "version": "2026.10.10.4",
+  "source_commit_before_release_metadata": "cd02598",
+  "uncommitted_tested_changes": [
+    "version bump",
+    "real menu recording integration contract",
+    "generated script UID files"
+  ],
+  "contract_count": 16,
+  "counted_checks": 322768,
+  "failures": 0,
+  "verification_scope": "Headless import and frozen state/layout/math/source placement checks. No gameplay stepping or player acceptance. No rendered screenshot claim.",
+  "tests": [
+    {
+      "test": "ai_cover_context_contract",
+      "exit_code": 0,
+      "checks": 12,
+      "log_sha256": "0493621907c82e43790d0cf1ffe24219bccdcac761367ca22a581d6d2fb01773",
+      "summary": "AI_COVER_CONTEXT checks=12 failures=0; cache math only"
+    },
+    {
+      "test": "ai_fire_context_contract",
+      "exit_code": 0,
+      "checks": 19,
+      "log_sha256": "df828959f2c106bcfff386a4e6cd05f86d6b8f34e4895b54853ad70c4da80f6a",
+      "summary": "AI_FIRE_CONTEXT checks=19 failures=0; scalar state only"
+    },
+    {
+      "test": "ai_recovery_commit_contract",
+      "exit_code": 0,
+      "checks": 11,
+      "log_sha256": "a6d494804bc9c84b210b83f09366c88f9aa9c6d8f81f16cf69562995556da49a",
+      "summary": "AI_RECOVERY_COMMIT checks=11 failures=0; scalar state only"
+    },
+    {
+      "test": "ai_restored_continuity_contract",
+      "exit_code": 0,
+      "checks": 44,
+      "log_sha256": "155a553e2794a6ad2417c531ee45714085c023b0599f67968b646542938f5523",
+      "summary": "AI_RESTORED_CONTINUITY checks=44 failures=0; scalar state only, no simulation"
+    },
+    {
+      "test": "campaign_3d_contract",
+      "exit_code": 0,
+      "checks": 174,
+      "log_sha256": "76f7e700ec2de08c4efa9d2daafb5607b9a26444ba1e3e6fda3deb4eb09dfc33",
+      "summary": "CAMPAIGN_3D_CONTRACT checks=174 failures=0"
+    },
+    {
+      "test": "campaign_asset_contract",
+      "exit_code": 0,
+      "checks": 93,
+      "log_sha256": "2b496de9bf7634954841eedd4554a1f8fd3e66bb6f9c873f9b670465bfb7f238",
+      "summary": "CAMPAIGN_ASSET_CONTRACT checks=93 failures=0"
+    },
+    {
+      "test": "campaign_bounding_contract",
+      "exit_code": 0,
+      "checks": 8,
+      "log_sha256": "4b1f5252df9d4a68246cb7ff35d06e2a83ba3bfe87409ef225dcadf2f3454cb5",
+      "summary": "CAMPAIGN_BOUNDING_CONTRACT checks=8 failures=0"
+    },
+    {
+      "test": "campaign_execution_contract",
+      "exit_code": 0,
+      "checks": 14,
+      "log_sha256": "bfe0f426695d891b2aedb1a9fc5be99b8274e70cfb7f5832e8da418f4ecefaac",
+      "summary": "EXECUTION_CONTRACT checks=14 failures=0; no battle steps or model requests"
+    },
+    {
+      "test": "campaign_source_data_contract",
+      "exit_code": 0,
+      "checks": 11332,
+      "log_sha256": "5b637fc1957f25e0605132b0cec9d7fa29040bfda0f2a9101bf2b977c5414818",
+      "summary": "campaign_source_data_contract: 11332 checks, 0 failures"
+    },
+    {
+      "test": "campaign_source_placement_contract",
+      "exit_code": 0,
+      "checks": 29607,
+      "log_sha256": "0d7428a18451d7aa6dcd11ae39b36b7b3742e44376d1b42efd7fa60d895d0812",
+      "summary": "campaign_source_placement_contract: 29607 checks, 0 failures; zero simulation ticks"
+    },
+    {
+      "test": "cpu-rebuild-contract",
+      "exit_code": 0,
+      "checks": 4345,
+      "log_sha256": "80ffd0336abb59033f033e1b5162e31e4701732cca3a61a7864904ad3cae14c1",
+      "summary": "CPU_REBUILD_CONTRACT {\"after_updates\":60,\"before_updates\":120,\"checks\":4345,\"failures\":0,\"simulation_time\":0.0,\"units\":60}"
+    },
+    {
+      "test": "handling_cpu_contract",
+      "exit_code": 0,
+      "checks": 198077,
+      "log_sha256": "e6f22783e75d21bf10c9024991255f5d05fb5f2cbaa942b5bdaebc6ee4d08836",
+      "summary": "HANDLING_CPU checks=198077 failures=0 profiles=101 tick_pairs=72720 baseline_profile_calls=5540 candidate_profile_calls=2020 baseline_braces=3520 candidate_braces=2020"
+    },
+    {
+      "test": "import",
+      "exit_code": 0,
+      "checks": null,
+      "log_sha256": "a7c813ae6c195eea79beadbd90231d1a9dd9a18bd82728e1cc28be238af9c310",
+      "summary": "Editor/import completed with no errors"
+    },
+    {
+      "test": "loading_telemetry_contract",
+      "exit_code": 0,
+      "checks": null,
+      "log_sha256": "313c20dc88b30f49aff24a715cf99482e86e01eedb780595b7981c62e7c5df76",
+      "summary": "LOADING_TELEMETRY_CONTRACT {\"drawn\":false,\"failures\":[],\"time\":0,\"units\":60}"
+    },
+    {
+      "test": "projectile_unit_index_contract",
+      "exit_code": 0,
+      "checks": 68429,
+      "log_sha256": "368d683f0a9cc5ea7e876a766dcf3d3f6a8f2b43aa70582edf8bfdbf2df073f7",
+      "summary": "PROJECTILE_UNIT_INDEX {\"benchmark\":[{\"build_p50_ms\":0.231,\"full_scan_p50_ms\":0.699,\"index_counts\":{\"build_ms\":0.148,\"candidates\":38,\"full_scan_candidates\":300,\"quadtree\":{\"bounds_tests\":0,\"entries\":60,\"node_visits\":0,\"nodes\":45,\"queries\":0,\"reinserts\":60},\"queries\":5},\"indexed_with_build_p50_ms\":0.493,\"length_m\":0.12,\"rays\":5,\"samples\":25},{\"build_p50_ms\":0.211,\"full_scan_p50_ms\":4.916,\"index_counts\":{\"build_ms\":0.335,\"candidates\":207,\"full_scan_candidates\":2100,\"quadtree\":{\"bounds_tests\":0,\"entries\":60,\"node_visits\":0,\"nodes\":45,\"queries\":0,\"reinserts\":60},\"queries\":35},\"indexed_with_build_p50_ms\":1.673,\"length_m\":0.12,\"rays\":35,\"samples\":25},{\"build_p50_ms\":0.241,\"full_scan_p50_ms\":11.222,\"index_counts\":{\"build_ms\":0.196,\"candidates\":476,\"full_scan_candidates\":4800,\"quadtree\":{\"bounds_tests\":0,\"entries\":60,\"node_visits\":0,\"nodes\":45,\"queries\":0,\"reinserts\":60},\"queries\":80},\"indexed_with_build_p50_ms\":3.481,\"length_m\":0.12,\"rays\":80,\"samples\":25},{\"build_p50_ms\":0.202,\"full_scan_p50_ms\":0.806,\"index_counts\":{\"build_ms\":0.154,\"candidates\":60,\"full_scan_candidates\":300,\"quadtree\":{\"bounds_tests\":0,\"entries\":60,\"node_visits\":0,\"nodes\":45,\"queries\":0,\"reinserts\":60},\"queries\":5},\"indexed_with_build_p50_ms\":0.51,\"length_m\":8.0,\"rays\":5,\"samples\":25},{\"build_p50_ms\":0.263,\"full_scan_p50_ms\":6.398,\"index_counts\":{\"build_ms\":0.206,\"candidates\":293,\"full_scan_candidates\":2100,\"quadtree\":{\"bounds_tests\":0,\"entries\":60,\"node_visits\":0,\"nodes\":45,\"queries\":0,\"reinserts\":60},\"queries\":35},\"indexed_with_build_p50_ms\":3.165,\"length_m\":8.0,\"rays\":35,\"samples\":25},{\"build_p50_ms\":0.272,\"full_scan_p50_ms\":15.11,\"index_counts\":{\"build_ms\":0.629,\"candidates\":690,\"full_scan_candidates\":4800,\"quadtree\":{\"bounds_tests\":0,\"entries\":60,\"node_visits\":0,\"nodes\":45,\"queries\":0,\"reinserts\":60},\"queries\":80},\"indexed_with_build_p50_ms\":6.96,\"length_m\":8.0,\"rays\":80,\"samples\":25},{\"build_p50_ms\":0.209,\"full_scan_p50_ms\":1.287,\"index_counts\":{\"build_ms\":0.194,\"candidates\":58,\"full_scan_candidates\":300,\"quadtree\":{\"bounds_tests\":21,\"entries\":60,\"node_visits\":37,\"nodes\":45,\"queries\":1,\"reinserts\":60},\"queries\":5},\"indexed_with_build_p50_ms\":1.266,\"length_m\":25.0,\"rays\":5,\"samples\":25},{\"build_p50_ms\":0.228,\"full_scan_p50_ms\":9.192,\"index_counts\":{\"build_ms\":0.241,\"candidates\":272,\"full_scan_candidates\":2100,\"quadtree\":{\"bounds_tests\":159,\"entries\":60,\"node_visits\":267,\"nodes\":45,\"queries\":7,\"reinserts\":60},\"queries\":35},\"indexed_with_build_p50_ms\":6.549,\"length_m\":25.0,\"rays\":35,\"samples\":25},{\"build_p50_ms\":0.282,\"full_scan_p50_ms\":22.703,\"index_counts\":{\"build_ms\":0.203,\"candidates\":677,\"full_scan_candidates\":4800,\"quadtree\":{\"bounds_tests\":414,\"entries\":60,\"node_visits\":707,\"nodes\":45,\"queries\":19,\"reinserts\":60},\"queries\":80},\"indexed_with_build_p50_ms\":15.188,\"length_m\":25.0,\"rays\":80,\"samples\":25}],\"checks\":68429,\"exact_unit_hits\":467,\"failures\":0,\"shots\":0,\"simulation_time\":0,\"units\":60}"
+    },
+    {
+      "test": "tactical_ui_contract",
+      "exit_code": 0,
+      "checks": 1238,
+      "log_sha256": "b5c05b5fabe0f832f71a0d410af826d67469b989b462c503d51d00d9a891ae7e",
+      "summary": "TACTICAL_UI_CONTRACT {\"checks\":1238,\"failures\":[],\"shots\":0,\"simulation_time\":0,\"theme_builds\":1}"
+    },
+    {
+      "test": "topdown_recoil_contract",
+      "exit_code": 0,
+      "checks": 9365,
+      "log_sha256": "af18221e7dc00c33292e4ecab3568d2e6439387890ca8942b0589380ef2d3a2d",
+      "summary": "TOPDOWN_RECOIL checks=9365 failures=0 carried=75 ids=m16a4,m416,scar-l,g36c,qbz,k2,aug,famas,akm,beryl-m762,mk47-mutant,groza,ace32,mini14,mk12,sks,slr,mk14,vss,dragunov,tommy-gun,ump,micro-uzi,vector,mp5k,mp9,p90,js9,kar98k,m24,awm,win94,lynx-amr,s12k,s1897,s686,dbs,sawed-off,o12,p18c,p92,skorpion,deagle,r1895,m249,mg3,rpd,ak-47,galil-ar,m4a4,m4a1-s,sg-553,awp,ssg-08,g3sg1,scar-20,mac-10,mp7,mp5-sd,ump-45,pp-bizon,nova,xm1014,mag-7,negev,glock-18,p2000,usp-s,p250,five-seven,tec-9,cz75-auto,dual-berettas,r8-revolver,minigun"
+    }
+  ]
+}

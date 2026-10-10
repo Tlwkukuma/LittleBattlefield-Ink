@@ -1,10 +1,11 @@
 extends Control
 
-const INK = Color("e4e1eb")
-const MUTED = Color("b5afc3")
+const Tactical=preload("res://scripts/tactical_ui.gd")
+const INK = Tactical.INK
+const MUTED = Tactical.MUTED
 const BLUE = Color("91b9ff")
 const RED = Color("df97a2")
-const PAPER = Color("393448")
+const PAPER = Tactical.PANEL
 var perf = ""
 var roof_label = "自动切顶"
 var room_label = ""
@@ -13,14 +14,14 @@ var world
 var camera: Camera3D
 var paused = false
 var inspection = false
-var font = SystemFont.new()
+var font = Tactical.font_resource()
 var toast = "沿街口推进 · 石墙可以击碎"
 var toast_time = 5.0
 var hit_time = 0.0
 var clock = 0.0
 
 func _ready() -> void:
-	font.font_names = PackedStringArray(["Microsoft YaHei UI", "Microsoft YaHei", "Noto Sans CJK SC", "sans-serif"])
+	Tactical.apply(self)
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 
@@ -34,7 +35,7 @@ func notify(message: String) -> void:
 	toast = message
 	toast_time = 3.0
 
-func panel(rect: Rect2, color: Color = PAPER, border: Color = Color("68627b")) -> void:
+func panel(rect: Rect2, color: Color = PAPER, border: Color = Tactical.BORDER) -> void:
 	draw_rect(Rect2(rect.position+Vector2(3,4),rect.size),Color(0.18,0.22,0.28,0.10))
 	draw_rect(rect,color)
 	draw_rect(rect,border,false,1)
@@ -112,7 +113,7 @@ func _draw() -> void:
 		text(Vector2(1174,813),"/ %03d" % int(world.player.reserve),17,MUTED)
 	text(Vector2(1294,845),"R  换弹",12,MUTED)
 	text(Vector2(1115,846),"全自动",11,MUTED)
-	panel(Rect2(378,818,684,44),Color("494259"))
+	panel(Rect2(378,818,684,44),Tactical.SURFACE)
 	text(Vector2(396,846),"W A S D  移动     鼠标  瞄准     左键  射击     R  换弹     滚轮  缩放     Esc  暂停",12)
 	if toast_time > 0 and world.result.is_empty():
 		centered(788,toast,15,INK)
@@ -143,7 +144,7 @@ func _draw() -> void:
 
 func minimap() -> void:
 	var rect = Rect2(1224,160,178,158)
-	panel(rect,Color("635c75"))
+	panel(rect,Tactical.PANEL)
 	text(Vector2(1238,181),"战术示意",10,MUTED)
 	var origin = Vector2(1312,247)
 	var factor = 3.8

@@ -1,0 +1,15 @@
+Godot Engine v4.6.3.stable.official.7d41c59c4 - https://godotengine.org
+
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":2,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":2,"finished_ms":2,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING {"done":3,"elapsed_ms":3,"stage":"正在整理真实资源与场景引用","total":10}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":1,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":1,"finished_ms":1,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING {"done":3,"elapsed_ms":1,"stage":"正在整理真实资源与场景引用","total":10}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":0,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":0,"finished_ms":0,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING {"done":3,"elapsed_ms":0,"stage":"正在整理真实资源与场景引用","total":10}
+CAMPAIGN_LOADING {"done":0,"elapsed_ms":1,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING_DONE {"done":0,"elapsed_ms":1,"finished_ms":1,"stage":"等待加载画面","total":0}
+CAMPAIGN_LOADING {"done":3,"elapsed_ms":1,"stage":"正在整理真实资源与场景引用","total":10}
+TACTICAL_UI_CONTRACT {"checks":1225,"failures":[],"shots":0,"simulation_time":0,"theme_builds":1}

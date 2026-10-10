@@ -94,8 +94,12 @@ const Quad=preload("res://scripts/collision_quadtree.gd")
 var obstacle_tree=Quad.new()
 var vehicle_tree=Quad.new()
 var vehicle_tree_count=-1
+var setup_ok=false
+var placement_report: Dictionary={}
+var last_spawn_failure: Dictionary={}
 
 func setup(source_plan: Dictionary,source_catalog) -> Dictionary:
+	setup_ok=false;placement_report={};last_spawn_failure={};player={}
 	loot.clear()
 	campaign_director.cancel()
 	if not event.is_connected(_observe_campaign_event):event.connect(_observe_campaign_event)
@@ -150,7 +154,14 @@ func setup(source_plan: Dictionary,source_catalog) -> Dictionary:
 	build_index()
 	for spec in compiled.vehicles:add_vehicle(spec)
 	if bool(plan.get("godot3d",{}).get("campaign",false)):
-		campaign.configure(self);campaign_ai.configure(self)
+		var placed=campaign.configure(self)
+		placement_report=campaign.placement_report
+		last_spawn_failure=campaign.last_spawn_failure.duplicate(true)
+		if not placed:
+			ai_enabled=false;navigation_dirty=false
+			compiled.setup_ok=false;compiled.placement_report=placement_report;compiled.last_spawn_failure=last_spawn_failure
+			return compiled
+		campaign_ai.configure(self)
 	else:
 		player=add_unit(catalog.position(plan.deployment.get("player",{"x":plan.world.w*.5,"y":plan.world.h*.65}),plan),true)
 		for target in compiled.targets:
@@ -161,6 +172,7 @@ func setup(source_plan: Dictionary,source_catalog) -> Dictionary:
 	if campaign_active():
 		rebuild_navigation()
 		campaign_director.configure(self)
+	setup_ok=true;compiled.setup_ok=true;compiled.placement_report=placement_report;compiled.last_spawn_failure={}
 	return compiled
 
 func _observe_campaign_event(data: Dictionary):
@@ -559,13 +571,13 @@ func fire(u: Dictionary,w: Dictionary,state: Dictionary,origin: Vector2,angle: f
 	var shot={"type":"shot","unit":u,"weapon":w,"position":muzzle,"height":height,"angle":angle,"mount":mount_id,"profile":profile}
 	shot.merge(resolved,false);event.emit(shot)
 	var pellets=int(w.get("pellets",1))
-	var shot_axis=Handling.shot_direction(forward3,spread,rng.randf()*TAU,rng.randf())
+	var shot_axis=Handling.shot_direction(forward3,spread,rng.randf()*TAU,rng.randf(),Handling.vertical_spread(w,spread))
 	var pellet_spread=float(Handling.profile(w).pellet);var pellet_rotation=rng.randf()*TAU
 	for i in range(pellets):
 		sequence+=1
 		# One aim error per trigger pull; pellets spread around that shared shell axis.
 		var azimuth=pellet_rotation+float(i)*2.399963+rng.randf_range(-.16,.16)
-		var flight=Handling.cone_direction(shot_axis,pellet_spread,azimuth,(float(i)+rng.randf())/pellets) if pellets>1 else shot_axis
+		var flight=Handling.cone_direction(shot_axis,pellet_spread,azimuth,(float(i)+rng.randf())/pellets,Handling.vertical_spread(w,pellet_spread,true)) if pellets>1 else shot_axis
 		var direction=Vector2(flight.x,flight.z).normalized()
 		var range_m=float(w.get("range",1300))/SCALE
 		var speed=float(profile.speed)

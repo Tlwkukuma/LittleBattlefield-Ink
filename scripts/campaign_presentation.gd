@@ -64,12 +64,13 @@ func build(host,training: VBoxContainer,parent: VBoxContainer):
 	result_panel=game.make_panel(game.ui,Vector2(-250,-190),Vector2(500,380))
 	result_panel.anchor_left=.5;result_panel.anchor_right=.5;result_panel.anchor_top=.5;result_panel.anchor_bottom=.5
 	var box=VBoxContainer.new();result_panel.add_child(box);box.add_theme_constant_override("separation",14)
-	result_title=game.label(box,"",30);result_title.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER
+	result_title=game.label(box,"",30);result_title.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;result_title.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	result_detail=game.label(box,"",16);result_detail.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	result_next_button=game.button(box,"下一关",func():game.next_campaign_chapter())
 	result_restart_button=game.button(box,"重新开始  F5",func():game.reset_range())
 	game.button(box,"返回战役章节",func():game.show_campaign_chapters())
 	game.button(box,"返回联合演武场",func():game.start_training())
+	game.ui.resized.connect(layout_result);layout_result()
 	result_panel.hide();sync_mode();rebuild_world()
 
 func sync_mode():
@@ -203,3 +204,7 @@ static func configure_equipment_heading(heading: Label) -> void:
 	heading.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	heading.custom_minimum_size.x=265
 	heading.size_flags_horizontal=Control.SIZE_EXPAND_FILL
+
+func layout_result():
+	var width=minf(500,maxf(250,game.ui.size.x-32))
+	result_panel.offset_left=-width*.5;result_panel.offset_right=width*.5

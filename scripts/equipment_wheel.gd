@@ -2,9 +2,10 @@ extends Control
 ## A single CanvasItem overlay: no extra world viewport or camera.
 const Equipment=preload("res://scripts/quick_equipment.gd")
 const MountedIcon=preload("res://scripts/mounted_weapon_icon.gd")
-const INK=Color("e9e5d9")
-const MUTED=Color("9b9ba5")
-const ACCENT=Color("d7bc81")
+const Tactical=preload("res://scripts/tactical_ui.gd")
+const INK=Tactical.INK
+const MUTED=Tactical.MUTED
+const ACCENT=Tactical.ACCENT
 var game
 var active=false
 var hovered=-1
@@ -18,6 +19,7 @@ var saved_time_scale=1.0
 var icons: Dictionary={}
 
 func _ready():
+	Tactical.apply(self)
 	name="EquipmentWheel";z_index=30;mouse_filter=Control.MOUSE_FILTER_STOP
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);hide()
 
@@ -139,8 +141,8 @@ func _draw():
 		var angle=-PI*.5+float(i)*TAU/6;var polygon=PackedVector2Array()
 		for n in range(33):polygon.append(Vector2.from_angle(angle-PI/6+.025+(PI/3-.05)*n/32.0)*260)
 		for n in range(32,-1,-1):polygon.append(Vector2.from_angle(angle-PI/6+.025+(PI/3-.05)*n/32.0)*98)
-		draw_colored_polygon(polygon,Color(.30,.285,.245,.97) if hovered==i else Color(.09,.10,.13,.96))
-		polygon.append(polygon[0]);draw_polyline(polygon,ACCENT if hovered==i else Color(.42,.43,.47,.7),2 if hovered==i else 1,true)
+		draw_colored_polygon(polygon,Tactical.HOVER if hovered==i else Tactical.PANEL)
+		polygon.append(polygon[0]);draw_polyline(polygon,ACCENT if hovered==i else Tactical.BORDER,2 if hovered==i else 1,true)
 		var at=Vector2.from_angle(angle)*184;var slot=Equipment.slot_for_sector(i)
 		var id=selected_tactical if i==2 else Equipment.slot_weapon(u,slot) if slot>=0 else ""
 		if slot>=0:
@@ -158,7 +160,7 @@ func _draw():
 			var values: Array=Equipment.options(u,game.catalog.weapons) if i==2 else Equipment.MEDICAL_IDS
 			var selected=selected_tactical if i==2 else selected_medical
 			if values.size()>1:text_center(at+Vector2(0,60),"‹  %d / %d  ›"%[values.find(selected)+1,values.size()],12,ACCENT if hovered==i else MUTED)
-	draw_circle(Vector2.ZERO,88,Color(.075,.08,.10,.97))
+	draw_circle(Vector2.ZERO,88,Tactical.BACKGROUND)
 	var selected_id=selected_tactical if hovered==2 else Equipment.slot_weapon(u,Equipment.slot_for_sector(hovered))
 	var title="快捷装备";var detail="G"
 	if hovered==4:title=str(Equipment.MEDICINE[selected_medical].name);detail="+%d HP · %.1f s"%[Equipment.MEDICINE[selected_medical].heal,Equipment.MEDICINE[selected_medical].seconds]
@@ -185,15 +187,15 @@ func draw_mounted(slots: Array):
 		var segments=maxi(32,128/count)
 		for n in range(segments+1):polygon.append(Vector2.from_angle(angle-half+.025+(half*2-.05)*n/segments)*260)
 		for n in range(segments,-1,-1):polygon.append(Vector2.from_angle(angle-half+.025+(half*2-.05)*n/segments)*98)
-		draw_colored_polygon(polygon,Color(.30,.285,.245,.97) if hovered==i else Color(.09,.10,.13,.96))
-		polygon.append(polygon[0]);draw_polyline(polygon,ACCENT if hovered==i else Color(.42,.43,.47,.7),2 if hovered==i else 1,true)
+		draw_colored_polygon(polygon,Tactical.HOVER if hovered==i else Tactical.PANEL)
+		polygon.append(polygon[0]);draw_polyline(polygon,ACCENT if hovered==i else Tactical.BORDER,2 if hovered==i else 1,true)
 		var entry: Dictionary=slots[i];var at=Vector2.from_angle(angle)*184
 		text_center(at+Vector2(0,-30),str(entry.index+1),15,ACCENT)
 		MountedIcon.draw(self,entry.weapon,at,Vector2(106,35),INK)
 		text_center(at+Vector2(0,36),str(entry.weapon.get("label","武器")),14,INK,175)
 		text_center(at+Vector2(0,57),"%d / %d"%[entry.state.ammo,entry.state.reserve],13,MUTED)
 		if entry.selected:draw_line(at+Vector2(-30,66),at+Vector2(30,66),ACCENT,2,true)
-	draw_circle(Vector2.ZERO,88,Color(.075,.08,.10,.97))
+	draw_circle(Vector2.ZERO,88,Tactical.BACKGROUND)
 	var title="快捷装备";var detail="G"
 	if hovered>=0 and hovered<count:
 		var entry: Dictionary=slots[hovered]

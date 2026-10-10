@@ -1,12 +1,13 @@
 extends Control
 
-## Native port of the original Pixi HomeScreen; LAN opens the running campaign.
-const GROUND=Color("a5b4cc")
-const INK=Color("f1f5fb")
-const FINE=Color("c1ccd9")
-const PANEL=Color("263747")
-const BUTTON=Color("1c3045")
-const BUTTON_HOVER=Color("365c8a")
+## Native menus share the tactical UI; no world rendering changes.
+const Tactical=preload("res://scripts/tactical_ui.gd")
+const GROUND=Tactical.BACKGROUND
+const INK=Tactical.INK
+const FINE=Tactical.MUTED
+const PANEL=Tactical.PANEL
+const BUTTON=Tactical.SURFACE
+const BUTTON_HOVER=Tactical.HOVER
 
 var game
 var overlay: ColorRect
@@ -21,7 +22,10 @@ var chapter_start: Button
 var chapter_resume: Button
 var selected_chapter=1
 var lan_view: Control
-var logo: TextureRect
+var logo: Label
+var page_scroll: ScrollContainer
+var page_canvas: Control
+var recording: CheckButton
 var play_button: Button
 var status: Label
 var address: LineEdit
@@ -38,6 +42,7 @@ var last_status=""
 
 func setup(host,show_immediately: bool=false):
 	game=host
+	Tactical.apply(self)
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	z_index=60
 	mouse_filter=Control.MOUSE_FILTER_IGNORE
@@ -45,28 +50,26 @@ func setup(host,show_immediately: bool=false):
 	corner.anchor_left=1;corner.anchor_right=1;corner.offset_left=-240;corner.offset_right=-110;corner.offset_top=16;corner.offset_bottom=50
 	overlay=ColorRect.new();overlay.color=GROUND;overlay.mouse_filter=Control.MOUSE_FILTER_STOP
 	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);add_child(overlay)
-	for index in range(1,20):
-		var line=ColorRect.new();line.color=Color(0.075,0.157,0.302,0.06);line.mouse_filter=Control.MOUSE_FILTER_IGNORE
-		line.anchor_left=float(index)/20.0;line.anchor_right=line.anchor_left;line.anchor_bottom=1.0;line.offset_right=1.0;overlay.add_child(line)
-	for index in range(1,13):
-		var line=ColorRect.new();line.color=Color(0.075,0.157,0.302,0.06);line.mouse_filter=Control.MOUSE_FILTER_IGNORE
-		line.anchor_top=float(index)/13.0;line.anchor_bottom=line.anchor_top;line.anchor_right=1.0;line.offset_bottom=1.0;overlay.add_child(line)
 	shell=Panel.new();shell.clip_contents=true;overlay.add_child(shell)
-	var shell_style=StyleBoxFlat.new();shell_style.bg_color=PANEL;shell_style.border_color=Color("c4d4e2");shell_style.set_border_width_all(2);shell_style.set_corner_radius_all(2)
-	shell.add_theme_stylebox_override("panel",shell_style)
-	var texture=TextureRect.new();texture.texture=preload("res://assets/ui/home/frost-clouds-v2.png");texture.modulate.a=0.78
-	texture.expand_mode=TextureRect.EXPAND_IGNORE_SIZE
-	texture.stretch_mode=TextureRect.STRETCH_SCALE;texture.mouse_filter=Control.MOUSE_FILTER_IGNORE
-	texture.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);shell.add_child(texture)
-	main_view=Control.new();main_view.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);shell.add_child(main_view)
-	logo=TextureRect.new();logo.texture=preload("res://assets/ui/home/logo_title.png")
-	logo.expand_mode=TextureRect.EXPAND_IGNORE_SIZE;logo.stretch_mode=TextureRect.STRETCH_KEEP_ASPECT_CENTERED
-	logo.mouse_filter=Control.MOUSE_FILTER_IGNORE;main_view.add_child(logo)
+	page_scroll=ScrollContainer.new();shell.add_child(page_scroll)
+	page_scroll.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+	page_scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED
+	page_canvas=Control.new();page_canvas.size_flags_horizontal=Control.SIZE_EXPAND_FILL;page_scroll.add_child(page_canvas)
+	main_view=Control.new();main_view.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);page_canvas.add_child(main_view)
+	logo=make_label(main_view,"小小战地",46,INK)
+	logo.name="Title";logo.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
+	var subtitle=make_label(main_view,"战役行动 / 联合作战",16,FINE);subtitle.name="HomeSubtitle"
+	recording=CheckButton.new();recording.name="PlayRecording";recording.text="录制游玩日志";main_view.add_child(recording)
+	if game.has_signal("play_recording_changed"):
+		recording.set_pressed_no_signal(game.play_recording)
+		game.play_recording_changed.connect(func(enabled):recording.set_pressed_no_signal(enabled))
+	recording.toggled.connect(func(enabled):
+		if game.has_method("set_play_recording"):game.set_play_recording(enabled))
 	play_button=make_button(main_view,"战役",run_campaign,24)
 	make_button(main_view,"局域网协作",open_lan,24).name="JoinCampaign"
 	make_button(main_view,"联合演武场",run_training,24).name="Training"
 	build_campaign_view()
-	lan_view=Control.new();lan_view.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);shell.add_child(lan_view)
+	lan_view=Control.new();lan_view.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);page_canvas.add_child(lan_view)
 	make_label(lan_view,"局域网协作",36,INK).name="LanTitle"
 	make_label(lan_view,"同一场战役 · 战斗中随时加入",16,FINE).name="LanSubtitle"
 	host_button=make_button(lan_view,"开放当前战役给队友",host_campaign,21)
@@ -74,11 +77,6 @@ func setup(host,show_immediately: bool=false):
 	make_label(lan_view,"发现的局域网房间",18,INK).name="RoomTitle"
 	make_button(lan_view,"刷新",func():room_state.text="正在重新搜索局域网房间…";game.lan.discovery.remember_host(address.text);game.lan.discovery.refresh_scan(),15).name="RefreshRooms"
 	room_list=ItemList.new();room_list.select_mode=ItemList.SELECT_SINGLE;room_list.allow_reselect=true;lan_view.add_child(room_list)
-	var room_panel=StyleBoxFlat.new();room_panel.bg_color=BUTTON;room_panel.border_color=FINE;room_panel.set_border_width_all(1)
-	room_list.add_theme_stylebox_override("panel",room_panel)
-	var room_selected=StyleBoxFlat.new();room_selected.bg_color=BUTTON_HOVER
-	room_list.add_theme_stylebox_override("selected",room_selected)
-	room_list.add_theme_color_override("font_color",INK);room_list.add_theme_color_override("font_selected_color",INK)
 	room_list.add_theme_font_size_override("font_size",16)
 	room_list.item_selected.connect(func(_index):update_room_selection())
 	room_list.item_activated.connect(func(_index):join_selected_room())
@@ -91,8 +89,8 @@ func setup(host,show_immediately: bool=false):
 	status=make_label(lan_view,"",15,FINE);status.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	leave_button=make_button(lan_view,"离开局域网协作",leave_lan,16)
 	make_button(lan_view,"‹  返回首页",back_home,16).name="BackButton"
-	footer=make_label(overlay,"v%s · 启动 %s"%[game.BUILD_VERSION,game.launch_stamp],12,Color("3e567c"))
-	footer.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT
+	footer=make_label(overlay,"v%s · 启动 %s"%[game.BUILD_VERSION,game.launch_stamp],12,FINE)
+	footer.horizontal_alignment=HORIZONTAL_ALIGNMENT_RIGHT;footer.autowrap_mode=TextServer.AUTOWRAP_OFF;footer.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS
 	game.lan.status_changed.connect(func(message):last_status=message;refresh())
 	game.lan.discovery.rooms_changed.connect(update_rooms)
 	game.lan.discovery.scan_failed.connect(func(reason):last_status=reason;refresh())
@@ -102,7 +100,7 @@ func setup(host,show_immediately: bool=false):
 	call_deferred("layout")
 
 func build_campaign_view():
-	campaign_view=Control.new();campaign_view.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);shell.add_child(campaign_view)
+	campaign_view=Control.new();campaign_view.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);page_canvas.add_child(campaign_view)
 	chapter_title=make_label(campaign_view,"十章战役",30,INK)
 	for chapter in preload("res://scripts/campaign_catalog.gd").chapters():
 		var number=int(chapter.id)
@@ -110,7 +108,7 @@ func build_campaign_view():
 		chapter_buttons.append(entry)
 	chapter_brief=make_label(campaign_view,"",16,INK);chapter_brief.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	chapter_brief.horizontal_alignment=HORIZONTAL_ALIGNMENT_LEFT
-	chapter_tactics=OptionButton.new();campaign_view.add_child(chapter_tactics);chapter_tactics.focus_mode=Control.FOCUS_NONE
+	chapter_tactics=OptionButton.new();campaign_view.add_child(chapter_tactics);chapter_tactics.focus_mode=Control.FOCUS_ALL;chapter_tactics.fit_to_longest_item=false;chapter_tactics.clip_text=true
 	chapter_tactics.add_theme_font_size_override("font_size",17)
 	chapter_start=make_button(campaign_view,"进入关卡",func():
 		var tactic=str(chapter_tactics.get_item_metadata(chapter_tactics.selected))
@@ -148,77 +146,70 @@ func refresh_chapters():
 func make_label(parent: Control,caption: String,font_size: int,color: Color) -> Label:
 	var result=Label.new();result.text=caption;result.horizontal_alignment=HORIZONTAL_ALIGNMENT_CENTER;result.vertical_alignment=VERTICAL_ALIGNMENT_CENTER
 	result.add_theme_font_size_override("font_size",font_size);result.add_theme_color_override("font_color",color)
-	result.mouse_filter=Control.MOUSE_FILTER_IGNORE;parent.add_child(result);return result
+	result.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART;result.mouse_filter=Control.MOUSE_FILTER_IGNORE;parent.add_child(result);return result
 
 func make_button(parent: Control,caption: String,callback: Callable,font_size: int) -> Button:
-	var result=Button.new();result.text=caption;result.focus_mode=Control.FOCUS_NONE;parent.add_child(result)
+	var result=Button.new();result.text=caption;result.focus_mode=Control.FOCUS_ALL;result.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS;result.clip_text=true;result.tooltip_text=caption;parent.add_child(result)
 	style_button(result,font_size);result.pressed.connect(callback);return result
 
 func style_button(target: Button,font_size: int):
-	for state in ["normal","hover","pressed","disabled","focus"]:
-		var style=StyleBoxFlat.new();style.bg_color=BUTTON_HOVER if state in ["hover","pressed"] else BUTTON
-		style.border_color=Color("8ebeff") if state in ["hover","pressed"] else Color("d6e0eb")
-		style.set_border_width_all(2 if state in ["hover","pressed"] else 1);style.set_corner_radius_all(2)
-		style.content_margin_left=12;style.content_margin_right=12;style.content_margin_top=5;style.content_margin_bottom=5
-		target.add_theme_stylebox_override(state,style)
-	target.add_theme_color_override("font_color",INK);target.add_theme_color_override("font_hover_color",INK)
-	target.add_theme_color_override("font_pressed_color",INK);target.add_theme_font_size_override("font_size",font_size)
+	target.add_theme_font_size_override("font_size",font_size)
 	target.mouse_default_cursor_shape=Control.CURSOR_POINTING_HAND
 
 func style_address(target: LineEdit):
-	for state in ["normal","focus","read_only"]:
-		var style=StyleBoxFlat.new();style.bg_color=BUTTON;style.border_color=FINE;style.set_border_width_all(1)
-		style.content_margin_left=12;style.content_margin_right=12;style.content_margin_top=8;style.content_margin_bottom=8
-		target.add_theme_stylebox_override(state,style)
-	target.add_theme_color_override("font_color",INK);target.add_theme_color_override("font_placeholder_color",FINE)
-	target.add_theme_color_override("caret_color",INK);target.add_theme_font_size_override("font_size",16)
+	target.add_theme_font_size_override("font_size",16)
+
+# Measure native controls after theme/font resolution, never assume requested height wins.
+func place(control: Control,x: float,y: float,width: float,height: float) -> float:
+	control.position=Vector2(x,y)
+	control.size=Vector2(width,maxf(height,control.get_combined_minimum_size().y))
+	return control.position.y+control.size.y+10.0
 
 func layout():
 	if shell==null:return
 	var viewport_size=overlay.size
-	var width=minf(660.0,viewport_size.x-32.0)
-	var height=minf(750.0,viewport_size.y-32.0)
-	shell.position=(viewport_size-Vector2(width,height))*0.5;shell.size=Vector2(width,height)
-	var button_width=minf(420.0,width-86.0)
-	var button_height=clampf(height*0.1125,50.0,72.0)
-	var button_x=(width-button_width)*0.5
-	var button_y=minf(height*0.417,height-3.0*button_height-72.0)
-	var logo_width=minf(383.0,width*0.70)
-	var logo_height=logo_width*298.0/558.0
-	logo.position=Vector2((width-logo_width)*0.5,40)
-	logo.size=Vector2(logo_width,logo_height)
-	var main_buttons=[play_button,main_view.get_node("JoinCampaign"),main_view.get_node("Training")]
-	for index in main_buttons.size():
-		main_buttons[index].position=Vector2(button_x,button_y+index*(button_height+14.0))
-		main_buttons[index].size=Vector2(button_width,button_height)
-	chapter_title.position=Vector2(28,18);chapter_title.size=Vector2(width-56,48)
-	var chapter_width=(width-76)/2.0
-	var chapter_height=clampf((height-401)/5.0,31,49)
+	var width=maxf(260,minf(660,viewport_size.x-32))
+	var height=maxf(160,minf(790,viewport_size.y-58))
+	shell.position=Vector2((viewport_size.x-width)*.5,16);shell.size=Vector2(width,height)
+	# Reserve scrollbar width even before its visibility settles.
+	width-=18
+	var x=22.0;var inner=width-44.0;var y=24.0
+	y=place(logo,x,y,inner,100)
+	y=place(main_view.get_node("HomeSubtitle"),x,y,inner,30)+24
+	for control in [play_button,main_view.get_node("JoinCampaign"),main_view.get_node("Training")]:y=place(control,x,y,inner,62)
+	y=place(recording,x,y+10,inner,42)
+	var home_height=y+24
+	y=place(chapter_title,x,18,inner,50)
+	var columns=1 if width<470 else 2
+	var chapter_width=(inner-10*(columns-1))/columns
 	for index in range(chapter_buttons.size()):
-		chapter_buttons[index].position=Vector2(28+(index%2)*(chapter_width+20),78+int(index/2)*(chapter_height+8))
-		chapter_buttons[index].size=Vector2(chapter_width,chapter_height)
-	var chapters_bottom=78+5*(chapter_height+8)
-	chapter_brief.position=Vector2(34,chapters_bottom+4);chapter_brief.size=Vector2(width-68,80)
-	chapter_tactics.position=Vector2(34,chapters_bottom+89);chapter_tactics.size=Vector2(width-68,36)
-	chapter_start.position=Vector2(34,chapters_bottom+133);chapter_start.size=Vector2(width-68,44)
-	chapter_resume.position=Vector2(34,height-98);chapter_resume.size=Vector2(width-68,34)
-	campaign_view.get_node("CampaignBack").position=Vector2(34,height-55);campaign_view.get_node("CampaignBack").size=Vector2(width-68,34)
-	lan_view.get_node("LanTitle").position=Vector2(36,18);lan_view.get_node("LanTitle").size=Vector2(width-72,56)
-	lan_view.get_node("LanSubtitle").position=Vector2(36,76);lan_view.get_node("LanSubtitle").size=Vector2(width-72,28)
-	host_button.position=Vector2(button_x,111);host_button.size=Vector2(button_width,52)
-	host_address.position=Vector2(42,169);host_address.size=Vector2(width-84,40)
-	lan_view.get_node("RoomTitle").position=Vector2(button_x,217);lan_view.get_node("RoomTitle").size=Vector2(button_width-80,30)
-	lan_view.get_node("RefreshRooms").position=Vector2(button_x+button_width-76,217);lan_view.get_node("RefreshRooms").size=Vector2(76,30)
-	room_list.position=Vector2(button_x,253);room_list.size=Vector2(button_width,155)
-	room_state.position=Vector2(button_x,410);room_state.size=Vector2(button_width,28)
-	join_room_button.position=Vector2(button_x,443);join_room_button.size=Vector2(button_width,42)
-	lan_view.get_node("JoinTitle").position=Vector2(button_x,497);lan_view.get_node("JoinTitle").size=Vector2(button_width,28)
-	address.position=Vector2(button_x,529);address.size=Vector2(button_width-92,43)
-	lan_view.get_node("JoinButton").position=Vector2(button_x+button_width-84,529);lan_view.get_node("JoinButton").size=Vector2(84,43)
-	status.position=Vector2(38,579);status.size=Vector2(width-76,45)
-	leave_button.position=Vector2(button_x,632);leave_button.size=Vector2(button_width,38)
-	lan_view.get_node("BackButton").position=Vector2(button_x,height-60);lan_view.get_node("BackButton").size=Vector2(button_width,40)
-	footer.position=Vector2(maxf(10.0,viewport_size.x-500.0),viewport_size.y-29.0);footer.size=Vector2(minf(480.0,viewport_size.x-20.0),22)
+		var control: Button=chapter_buttons[index]
+		place(control,x+(index%columns)*(chapter_width+10),y,chapter_width,42)
+		if index%columns==columns-1 or index==chapter_buttons.size()-1:y+=maxf(42,control.get_combined_minimum_size().y)+10
+	y=place(chapter_brief,x,y+6,inner,90)
+	y=place(chapter_tactics,x,y,inner,42)
+	y=place(chapter_start,x,y,inner,48)
+	if chapter_resume.visible:y=place(chapter_resume,x,y,inner,40)
+	y=place(campaign_view.get_node("CampaignBack"),x,y,inner,40)
+	var campaign_height=y+18
+	y=place(lan_view.get_node("LanTitle"),x,18,inner,55)
+	y=place(lan_view.get_node("LanSubtitle"),x,y,inner,30)
+	y=place(host_button,x,y,inner,50)
+	y=place(host_address,x,y,inner,50)
+	var refresh_button: Button=lan_view.get_node("RefreshRooms")
+	var row_bottom=place(refresh_button,x+inner-78,y,78,30)
+	y=maxf(row_bottom,place(lan_view.get_node("RoomTitle"),x,y,inner-88,30))
+	y=place(room_list,x,y,inner,155)
+	y=place(room_state,x,y,inner,44)
+	y=place(join_room_button,x,y,inner,42)
+	y=place(lan_view.get_node("JoinTitle"),x,y,inner,28)
+	row_bottom=place(address,x,y,inner-90,43)
+	y=maxf(row_bottom,place(lan_view.get_node("JoinButton"),x+inner-80,y,80,43))
+	y=place(status,x,y,inner,45)
+	if leave_button.visible:y=place(leave_button,x,y,inner,40)
+	y=place(lan_view.get_node("BackButton"),x,y,inner,40)
+	page_canvas.custom_minimum_size=Vector2(0,home_height if page=="home" else campaign_height if page=="campaign" else y+18)
+	footer.position=Vector2(10,viewport_size.y-29);footer.size=Vector2(maxf(1,viewport_size.x-20),22)
 
 func open_lan():
 	game.show_lan()
@@ -288,7 +279,7 @@ func leave_lan():
 
 func show_menu(target_page: String="home"):
 	if target_page=="home":game.lan.discovery.stop_scan()
-	page=target_page;refresh();overlay.show();Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
+	page=target_page;page_scroll.scroll_vertical=0;refresh();overlay.show();Input.mouse_mode=Input.MOUSE_MODE_VISIBLE
 	game.trigger_pressed=false;game.jump_pressed=false
 	if game.scope_view!=null:game.scope_view.cancel()
 	if game.equipment_wheel!=null:game.equipment_wheel.close(false)

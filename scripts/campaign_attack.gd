@@ -16,18 +16,13 @@ static func entry_priority(units: Array,point: Dictionary) -> bool:
 	return false
 
 static func checkpoint(q: Dictionary,units: Array,point: Dictionary,now: float) -> bool:
-	var previous: Dictionary=q.get("attack_progress",{});var progressed=false;var snapshot={}
+	var previous: Dictionary=q.get("attack_progress",{});var snapshot={};var stalled=[]
 	for u in units:
 		if not u.alive or u.mounted>=0:continue
-		var epoch=int(u.get("spawn_epoch",0));var old: Dictionary=previous.get(u.id,{})
-		var next: Vector2=u.path[0] if not u.get("path",[]).is_empty() else u.get("ai_goal",point.position)
-		if not old.is_empty() and int(old.epoch)==epoch:
-			var moved: Vector2=u.position-old.position
-			progressed=progressed or (moved.length()>.6 and moved.dot((Vector2(old.next)-Vector2(old.position)).normalized())>.35)
-			if not progressed and moved.length()<=.6:snapshot[u.id]=old;continue
-		snapshot[u.id]={"epoch":epoch,"position":u.position,"next":next}
-	q.attack_progress=snapshot
-	if not q.has("attack_progress_at") or progressed or foothold(units,point):q.attack_progress_at=now
-	if now-float(q.attack_progress_at)<=10 or now<float(q.get("attack_retry_at",0)):return false
-	q.attack_progress_at=now;q.attack_retry_at=now+6
-	return true
+		var record=preload("res://scripts/campaign_member_progress.gd").sample(u,previous.get(u.id,{}),u.get("ai_order",{}).get("goal",point.position),now)
+		snapshot[u.id]=record
+		if Zone.contains(point,u.position,u.elevation):continue
+		if now-float(record.at)>10 and now>=float(record.retry_at):
+			stalled.append(u.id);record.retry_at=now+6
+	q.attack_progress=snapshot;q.attack_stalled_ids=stalled
+	return not stalled.is_empty()

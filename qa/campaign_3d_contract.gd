@@ -11,7 +11,7 @@ func check(ok: bool,label: String):
 	if not ok:failures+=1;push_error(label)
 func _initialize():run.call_deferred()
 func soldier(id: int,at: Vector2) -> Dictionary:
-	return {"id":id,"team":0,"alive":true,"player":false,"mounted":-1,"spawn_epoch":0,"recruit_cohort":-1,"position":at,"ammo":30,"reload":0.0,"ai_stress":.1,"grounded":true,"ai_target":8,"ai_contacts":{8:{"source":"vision","position":Vector2(0,-5),"observed_at":10.0,"confidence":1.0}},"ai_support_ready":true,"ai_support_checked_at":10.0,"ai_last_shot_at":10.0}
+	return {"id":id,"team":0,"alive":true,"player":false,"mounted":-1,"spawn_epoch":0,"recruit_cohort":-1,"position":at,"ammo":30,"reload":0.0,"ai_stress":.1,"grounded":true,"ai_target":8,"ai_contacts":{8:{"id":8,"spawn_epoch":0,"source":"vision","position":Vector2(0,-5),"observed_at":10.0,"confidence":1.0}},"ai_support_ready":true,"ai_support_checked_at":10.0,"ai_last_shot_at":10.0,"ai_last_shot_target":8,"ai_last_shot_epoch":0,"ai_last_shot_target_epoch":0,"ai_fire_clear":true,"ai_support_ray_clear":true}
 func run():
 	check(Roster.cohort(0)==Roster.cohort(2) and Roster.cohort(3)==Roster.cohort(5),"wave and recruit group are separate")
 	var units=[soldier(0,Vector2.ZERO),soldier(1,Vector2(1,0)),soldier(2,Vector2(2,0)),soldier(3,Vector2(30,0))]

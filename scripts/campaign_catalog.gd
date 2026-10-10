@@ -15,28 +15,17 @@ static func chapter(number: int) -> Dictionary:
 static func plan(catalog,number: int,tactic: String="T01") -> Dictionary:
 	var entry=chapter(number)
 	if entry.is_empty():return {}
-	var result: Dictionary={}
-	if number==1:
-		result=preload("res://scripts/orchard_level.gd").plan(catalog)
-	else:
-		for source in catalog.scenes:
-			if str(source.id)==str(entry.sourceSceneId):result=source.duplicate(true);break
-		if result.is_empty():push_error("Missing campaign scene: "+str(entry.sourceSceneId));return {}
-		result.id="campaign-chapter-%02d"%number
-		result.godot3d={"campaign":true,"range":false,"sourceSceneId":entry.sourceSceneId,"source_scale":40}
-		for mount in result.get("emplacements",[]):mount.aiControlled=true
-		result.campaignRules={"captureTime":7,"replacementWaveSeconds":.5,"replacementWaveSize":5,"handoffSeconds":1.18}
-		preload("res://scripts/campaign_source_adapter.gd").apply_loadouts(result)
-		result.campaignMission={"stages":entry.stages.duplicate(true),"eliminationCompletes":true}
-		apply_stage(result,0)
+	var result=preload("res://scripts/campaign_source_layout.gd").plan(catalog,entry)
+	if result.is_empty():push_error("Missing campaign scene: "+str(entry.sourceSceneId));return {}
+	apply_stage(result,0)
 	result.title="第 %02d 关 · %s"%[number,entry.title]
 	result.levelId=number
 	result.godot3d.campaign_chapter=number
 	result.godot3d.campaign_offline=true
 	result.godot3d.campaign_tactic=tactic if tactic in ["T01","T02","T03"] else "T01"
-	result.godot3d.campaign_briefing=entry.briefing
+	result.godot3d.campaign_briefing=entry.briefing if number>1 else "原版石墙果园：从南侧部署区推进，夺取果园据点。"
 	if number>1:result.godot3d.campaign_briefing+="\n配装暂用已核对的首关武器池；原版逐关运行时未包含在导入文件中。"
-	result.godot3d.campaign_tactic_names=entry.tacticNames if number>1 else preload("res://scripts/campaign_plan.gd").NAMES.duplicate()
+	result.godot3d.campaign_tactic_names=entry.tacticNames.duplicate()
 	return result
 
 static func apply_stage(target: Dictionary,index: int) -> bool:

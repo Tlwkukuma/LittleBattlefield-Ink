@@ -13,6 +13,7 @@ var signature=""
 var icons: Dictionary={}
 
 func _ready():
+	preload("res://scripts/tactical_ui.gd").apply(self)
 	name="LootPanel";z_index=40;mouse_filter=Control.MOUSE_FILTER_STOP
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	var shade=ColorRect.new();shade.color=Color(0,0,0,.42);shade.mouse_filter=Control.MOUSE_FILTER_IGNORE;add_child(shade);shade.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
@@ -37,6 +38,7 @@ func _ready():
 	assignment=OptionButton.new();assignment.focus_mode=Control.FOCUS_NONE;loadout.add_child(assignment)
 	for i in range(3):assignment.add_item("武器位 %d"%(i+1))
 	carried=scroll_list(right)
+	resized.connect(layout_panel);layout_panel()
 	hide()
 
 func scroll_list(parent: Control) -> VBoxContainer:
@@ -67,7 +69,7 @@ func _input(event: InputEvent):
 
 func _process(delta: float):
 	if not visible:return
-	var area=get_viewport_rect().size;panel.size=Vector2(minf(940,area.x-40),minf(560,area.y-140));panel.position=(area-panel.size)*.5
+	layout_panel()
 	refresh_clock-=delta
 	if refresh_clock>0:return
 	refresh_clock=.15
@@ -120,3 +122,8 @@ func refresh_rows():
 	for id in u.medical_stock:
 		if int(u.medical_stock[id])>0:item_row(carried,id,str(Equipment.MEDICINE[id].name)+" × %d"%int(u.medical_stock[id]),"","使用",func():
 			close();game.world.player.medical_selected=id;game.use_quick_medicine())
+
+func layout_panel():
+	if panel==null:return
+	var area=get_viewport_rect().size
+	panel.size=Vector2(minf(940,area.x-40),minf(560,area.y-140));panel.position=(area-panel.size)*.5

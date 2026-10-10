@@ -3,7 +3,7 @@ extends RefCounted
 ## Appends to CombatActionHUD's existing shape/text batches, no extra draw pass.
 const BLUE=Color("628ab0")
 const RED=Color("bd6968")
-const PAPER=Color("eae6d6")
+const PAPER=preload("res://scripts/tactical_ui.gd").INK
 const BACK=Color(.09,.12,.14,.82)
 const VehicleStatus=preload("res://scripts/vehicle_status_hud.gd")
 

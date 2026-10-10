@@ -7,10 +7,11 @@ const Handling=preload("res://scripts/weapon_handling.gd")
 const Equipment=preload("res://scripts/quick_equipment.gd")
 const MountedIcon=preload("res://scripts/mounted_weapon_icon.gd")
 const ProgressRing=preload("res://scripts/action_progress_ring.gd")
-const INK=Color("eee8d8")
-const MUTED=Color("aba99f")
+const Tactical=preload("res://scripts/tactical_ui.gd")
+const INK=Tactical.INK
+const MUTED=Tactical.MUTED
 const GOLD=Color("e5bf79")
-const FOCUS=Color("afd1c1")
+const FOCUS=Tactical.ACCENT
 const DANGER=Color("e8957d")
 const KEY_FONT_SIZE=14
 const MODE_FONT_SIZE=14
@@ -24,9 +25,9 @@ var icon: Texture2D
 var icon_id=""
 var quick_icons: Dictionary={}
 var quick_slots: Array=[]
-var card_style=StyleBoxFlat.new()
-var chip_style=StyleBoxFlat.new()
-var prompt_style=StyleBoxFlat.new()
+var card_style=Tactical.panel_style("panel")
+var chip_style=Tactical.panel_style("chip")
+var prompt_style=Tactical.panel_style("panel")
 var text_commands: Array=[]
 var icon_commands: Array=[]
 var mounted_commands: Array=[]
@@ -43,11 +44,7 @@ func _ready():
 	set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	# Above the scope mask, below interactive panels. All drawing ignores input.
 	z_index=-1
-	card_style.bg_color=Color(.10,.105,.12,.90);card_style.border_color=Color(.64,.63,.57,.43)
-	card_style.set_border_width_all(1);card_style.set_corner_radius_all(5)
-	chip_style.bg_color=Color(.26,.27,.28,.9);chip_style.border_color=Color(.72,.72,.65,.58)
-	chip_style.set_border_width_all(1);chip_style.set_corner_radius_all(3)
-	prompt_style.bg_color=Color(.08,.09,.10,.84);prompt_style.set_corner_radius_all(4)
+	Tactical.apply(self)
 	reload_ring=ProgressRing.new();add_child(reload_ring);reload_ring.hide()
 	# Compile the same quad shader while the original entry is preparing, before
 	# the user's first reload. Opacity is a shader uniform, so this draws invisibly.

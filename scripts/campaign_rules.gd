@@ -17,29 +17,44 @@ var world_ref: WeakRef
 var stage_index=0
 var hold_elapsed=0.0
 var mission: Dictionary={}
+const Placement=preload("res://scripts/campaign_placement.gd")
+var placement_report: Dictionary={}
+var last_spawn_failure: Dictionary={}
+var pending_spawn_placement: Dictionary={}
 
-func configure(world) -> void:
-	world_ref=weakref(world);active=true;phase="playing";rules=world.plan.get("campaignRules",{})
+
+func configure(world) -> bool:
+	world_ref=weakref(world);active=false;phase="playing";rules=world.plan.get("campaignRules",{})
 	stage_index=0;hold_elapsed=0.0;mission=world.plan.get("campaignMission",{})
+	reserves=[0,0];maximum=[0,0];deployed=[0,0];casualties=[0,0]
+	replacement_cursor=[0,0];recruit_anchors=[{},{}];wave_clock=0;takeover_wait=0;reason="";last_spawn_failure={};pending_spawn_placement={}
 	build_points(world)
+	placement_report=Placement.initial(world)
+	if not placement_report.ok:
+		phase="placement_failed";reason="初始部署无法在原坐标附近合法放置全部人员"
+		last_spawn_failure={"stage":"initial","reason":reason,"failures":placement_report.failures.duplicate(true)}
+		return false
+	# Commit the entire validated roster once. Never drop a failed soldier or
+	# install an unchecked source position merely to make loading look successful.
+	active=true
+	for record in placement_report.placements:
+		var team=int(record.team);var slot=int(record.slot);var controlled=bool(record.controlled)
+		var spec: Dictionary=record.spec
+		var unit=world.add_unit(record.position,controlled);unit.team=team;unit.campaign_slot=slot;unit.campaign_source=spec.duplicate(true)
+		unit.campaign_source_id=record.source_id;unit.spawn_placement=record.duplicate(true)
+		unit.spawn_epoch=0;unit.recruit_cohort=-1;unit.recruit_at=0.0
+		if controlled:world.player=unit
+		apply_loadout(world,unit,spec.get("loadout",["M416","P92","Army Knife","HE Grenade"]))
+		var source_layout=bool(world.plan.get("godot3d",{}).get("source_layout",false)) or int(world.plan.get("godot3d",{}).get("campaign_chapter",1))>1
+		unit.facing=Vector2.from_angle(float(spec.get("angle",0))) if source_layout else Vector2(0,-1) if team==0 else Vector2(0,1)
+		unit.guard_until=3.0+float(slot%5)*.65 if team==1 else 0.0
+		deployed[team]+=1
 	for team in range(2):
-		var key="blue" if team==0 else "red";var deployment: Dictionary=world.plan.deployment[key]
-		maximum[team]=maxi(1,int(deployment.get("maxActive",30)))
-		var count=mini(maximum[team],int(deployment.get("initialCount",30)))
-		var specs: Array=world.plan.get("units",{}).get(key,[])
-		for slot in range(count):
-			var controlled=team==0 and slot==0
-			var spec: Dictionary=world.plan.deployment.player if controlled else specs[(slot-1 if team==0 else slot)%maxi(1,specs.size())] if not specs.is_empty() else deployment.spawnPoints[slot%deployment.spawnPoints.size()]
-			var at=world.catalog.position(spec,world.plan)
-			at=clear_position(world,at,team,false)
-			var unit=world.add_unit(at,controlled);unit.team=team;unit.campaign_slot=slot;unit.campaign_source=spec.duplicate(true)
-			unit.spawn_epoch=0;unit.recruit_cohort=-1;unit.recruit_at=0.0
-			if controlled:world.player=unit
-			apply_loadout(world,unit,spec.get("loadout",["M416","P92","Army Knife","HE Grenade"]))
-			unit.facing=Vector2.from_angle(float(spec.get("angle",0))) if int(world.plan.get("godot3d",{}).get("campaign_chapter",1))>1 else Vector2(0,-1) if team==0 else Vector2(0,1)
-			unit.guard_until=3.0+float(slot%5)*.65 if team==1 else 0.0
-			deployed[team]+=1
-		reserves[team]=maxi(0,int(deployment.get("totalForce",120))-deployed[team])
+		var deployment: Dictionary=world.plan.deployment["blue" if team==0 else "red"]
+		maximum[team]=int(deployment.get("maxActive",30))
+		reserves[team]=int(deployment.get("totalForce",120))-deployed[team]
+	placement_report.actual_counts=deployed.duplicate()
+	return true
 
 func build_points(world) -> void:
 	points.clear()
@@ -81,7 +96,7 @@ func active_counts() -> Array:
 	return counts
 
 func summary() -> Dictionary:
-	return {"active":active,"phase":phase,"points":points,"reserves":reserves.duplicate(),"counts":active_counts(),"deployed":deployed.duplicate(),"casualties":casualties.duplicate(),"takeover_wait":takeover_wait,"reason":reason,"stage_index":stage_index,"stage_count":maxi(1,mission.get("stages",[]).size()),"hold_elapsed":hold_elapsed}
+	return {"active":active,"phase":phase,"points":points,"reserves":reserves.duplicate(),"counts":active_counts(),"deployed":deployed.duplicate(),"casualties":casualties.duplicate(),"takeover_wait":takeover_wait,"reason":reason,"stage_index":stage_index,"stage_count":maxi(1,mission.get("stages",[]).size()),"hold_elapsed":hold_elapsed,"last_spawn_failure":last_spawn_failure.duplicate(true)}
 
 func tick(delta: float) -> void:
 	if not active or phase!="playing":return
@@ -187,9 +202,26 @@ func reinforce(world,team: int,budget: int,allow_join_reinforcement: bool=false)
 			var anchor=world.player.position
 			for ally in world.units:
 				if ally.alive and ally.team==team:anchor=ally.position;break
-			at=clear_position(world,anchor+Vector2.RIGHT*2.0,team,true)
-		if not at.is_finite():continue
+			var fallback_origin=anchor+Vector2.RIGHT*2.0
+			var fallback=Placement.resolve(world,fallback_origin)
+			at=fallback.position
+			if fallback.ok:
+				pending_spawn_placement=fallback.duplicate(true)
+				pending_spawn_placement.source_position=fallback_origin
+				pending_spawn_placement.anchor_id="lan_join_near_ally"
+				pending_spawn_placement.anchor_index=-1
+				pending_spawn_placement.anchor_source={}
+		if not at.is_finite():
+			# No reserve, cohort, identity, equipment or life-state changes on failure.
+			if last_spawn_failure.is_empty():report_spawn_failure(world,team,"no_legal_reinforcement_position",[])
+			break
+		last_spawn_failure={};world.last_spawn_failure={}
 		unit.spawn_epoch=int(unit.get("spawn_epoch",0))+1
+		unit.spawn_placement=pending_spawn_placement.duplicate(true)
+		unit.spawn_placement.merge({"stage":"reinforcement","unit_id":unit.id,"source_id":unit.get("campaign_source_id",unit.campaign_source.get("id","")),"spawn_epoch":unit.spawn_epoch,"source_angle":float(unit.campaign_source.get("angle",0))})
+		placement_report.last_reinforcement=unit.spawn_placement.duplicate(true)
+		if bool(world.plan.get("godot3d",{}).get("source_layout",false)) or int(world.plan.get("godot3d",{}).get("campaign_chapter",1))>1:
+			unit.facing=Vector2.from_angle(float(unit.campaign_source.get("angle",0)))
 		unit.erase("deployed_mortar")
 		unit.recruit_cohort=preload("res://scripts/campaign_roster.gd").cohort(int(replacement_cursor[team]))
 		unit.recruit_at=world.time;unit.cohort_route=int(recruit_anchors[team].get("route",0))
@@ -209,26 +241,48 @@ func reinforce(world,team: int,budget: int,allow_join_reinforcement: bool=false)
 	return first_reinforced
 
 func spawn_position(world,team: int,deployment: Dictionary) -> Vector2:
+	pending_spawn_placement={}
 	var spawns: Array=deployment.get("spawnPoints",[])
-	if spawns.is_empty():return Vector2.INF
+	if spawns.is_empty():
+		report_spawn_failure(world,team,"missing_spawn_anchors",[]);return Vector2.INF
+	var attempts=[]
 	var cohort=preload("res://scripts/campaign_roster.gd").cohort(int(replacement_cursor[team]))
 	var batch: Dictionary=recruit_anchors[team]
 	if int(batch.get("id",-1))==cohort:
-		var neighbor=clear_position(world,batch.anchor,team,true)
-		if spawn_valid(world,team,neighbor):return neighbor
+		# Search from the original selected anchor, not the last correction, so
+		# repeated cohort members cannot accumulate unbounded positional drift.
+		var origin: Vector2=batch.get("source_position",batch.anchor)
+		var neighbor=Placement.resolve(world,origin)
+		if neighbor.ok and spawn_valid(world,team,neighbor.position):
+			pending_spawn_placement=neighbor.duplicate(true)
+			pending_spawn_placement.merge({"source_position":origin,"anchor_id":batch.get("anchor_id","cohort"),"anchor_index":batch.get("anchor_index",-1),"anchor_source":batch.get("anchor_source",{}).duplicate(true)})
+			return neighbor.position
+		attempts.append({"anchor":"cohort","reason":neighbor.reason if not neighbor.ok else "unreachable_or_enemy_nearby"})
 	for i in range(spawns.size()):
 		var index=(i+cohort)%spawns.size()
-		var at=clear_position(world,world.catalog.position(spawns[index],world.plan),team,true)
-		if not spawn_valid(world,team,at):continue
+		var resolved=Placement.resolve(world,world.catalog.position(spawns[index],world.plan))
+		var at: Vector2=resolved.position
+		if not resolved.ok or not spawn_valid(world,team,at):
+			attempts.append({"anchor":index,"reason":resolved.reason if not resolved.ok else "unreachable_or_enemy_nearby"});continue
 		var route=0;var distance=INF
 		for r in range(world.campaign_ai.routes[team].size()):
 			var path: Array=world.campaign_ai.routes[team][r]
 			if path.is_empty():continue
 			var d: float=at.distance_squared_to(path[0])
 			if d<distance:distance=d;route=r
-		recruit_anchors[team]={"id":cohort,"anchor":at,"route":route}
+		var anchor: Dictionary=spawns[index]
+		var origin: Vector2=world.catalog.position(anchor,world.plan)
+		recruit_anchors[team]={"id":cohort,"anchor":at,"route":route,"source_position":origin,"anchor_id":str(anchor.get("id",index)),"anchor_index":index,"anchor_source":anchor.duplicate(true)}
+		pending_spawn_placement=resolved.duplicate(true)
+		pending_spawn_placement.merge({"source_position":origin,"anchor_id":str(anchor.get("id",index)),"anchor_index":index,"anchor_source":anchor.duplicate(true)})
 		return at
+	report_spawn_failure(world,team,"no_legal_reinforcement_position",attempts)
 	return Vector2.INF
+
+func report_spawn_failure(world,team: int,code: String,attempts: Array) -> void:
+	last_spawn_failure={"stage":"reinforcement","team":team,"reason":code,"attempts":attempts,"replacement_cursor":replacement_cursor[team],"reserves":reserves[team],"time":world.time}
+	world.last_spawn_failure=last_spawn_failure.duplicate(true)
+	world.event.emit({"type":"spawn_failed","failure":last_spawn_failure.duplicate(true)})
 
 static func spawn_valid(world,team: int,at: Vector2) -> bool:
 	if not at.is_finite() or not world.campaign_ai.capture_goal(at).is_finite():return false
@@ -237,17 +291,9 @@ static func spawn_valid(world,team: int,at: Vector2) -> bool:
 		if enemy.alive and enemy.team!=team and at.distance_squared_to(enemy.position)<36:return false
 	return true
 
-static func clear_position(world,origin: Vector2,_team: int,strict: bool) -> Vector2:
-	for attempt in range(49):
-		var radius=0.0 if attempt==0 else .72*(1+int((attempt-1)/12))
-		var at=origin+Vector2.from_angle(float(attempt%12)*TAU/12)*radius
-		var base=world.terrain.height(at)
-		if world.terrain.grade(at)>.75 or world.blocked(at,.31,1.95,-1,base):continue
-		var occupied=false
-		for other in world.units:
-			if other.alive and at.distance_squared_to(other.position)<.72*.72:occupied=true;break
-		if not occupied:return at
-	return Vector2.INF if strict else origin
+static func clear_position(world,origin: Vector2,_team: int,_strict: bool=true) -> Vector2:
+	# Retained API for LAN join callers; failure always remains explicit.
+	return Placement.resolve(world,origin).position
 
 func finish(result: String,description: String) -> void:
 	if phase!="playing":return

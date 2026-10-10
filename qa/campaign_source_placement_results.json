@@ -1,0 +1,555 @@
+{
+	"chapters": [
+		{
+			"anchors": [
+				10,
+				10
+			],
+			"bounds": [
+				41.25,
+				26.25
+			],
+			"chapter": 1,
+			"corrections": [
+				{
+					"actual_m": [
+						22.8850002288818,
+						-1.125
+					],
+					"attempts": 2,
+					"distance_m": 0.360000610351562,
+					"reason": "physical_collision",
+					"source_id": "red-unit-020",
+					"source_m": [
+						22.5249996185303,
+						-1.125
+					],
+					"source_pixels": [
+						2551.0,
+						1005.0
+					],
+					"team": 1
+				},
+				{
+					"actual_m": [
+						20.4704418182373,
+						-3.82044124603271
+					],
+					"attempts": 11,
+					"distance_m": 0.360000163316727,
+					"reason": "physical_collision",
+					"source_id": "red-unit-022",
+					"source_m": [
+						20.7250003814697,
+						-4.07499980926514
+					],
+					"source_pixels": [
+						2479.0,
+						887.0
+					],
+					"team": 1
+				}
+			],
+			"counts": [
+				30,
+				30
+			]
+		},
+		{
+			"anchors": [
+				10,
+				10
+			],
+			"bounds": [
+				51.25,
+				31.25
+			],
+			"chapter": 2,
+			"corrections": [],
+			"counts": [
+				30,
+				30
+			]
+		},
+		{
+			"anchors": [
+				10,
+				10
+			],
+			"bounds": [
+				43.75,
+				26.875
+			],
+			"chapter": 3,
+			"corrections": [
+				{
+					"actual_m": [
+						-33.1300010681152,
+						-16.2382297515869
+					],
+					"attempts": 10,
+					"distance_m": 0.360000431537628,
+					"reason": "physical_collision",
+					"source_id": "blue-unit-013",
+					"source_m": [
+						-32.9500007629395,
+						-16.5499992370605
+					],
+					"source_pixels": [
+						432.0,
+						413.0
+					],
+					"team": 0
+				}
+			],
+			"counts": [
+				30,
+				30
+			]
+		},
+		{
+			"anchors": [
+				10,
+				10
+			],
+			"bounds": [
+				50.0,
+				30.0
+			],
+			"chapter": 4,
+			"corrections": [],
+			"counts": [
+				30,
+				50
+			]
+		},
+		{
+			"anchors": [
+				10,
+				12
+			],
+			"bounds": [
+				47.5,
+				30.0
+			],
+			"chapter": 5,
+			"corrections": [
+				{
+					"actual_m": [
+						-35.7908821105957,
+						28.3341178894043
+					],
+					"attempts": 29,
+					"distance_m": 0.720000326633453,
+					"reason": "occupied_by_deployment",
+					"source_id": "blue-unit-011",
+					"source_m": [
+						-36.2999992370605,
+						27.8250007629395
+					],
+					"source_pixels": [
+						448.0,
+						2313.0
+					],
+					"team": 0
+				}
+			],
+			"counts": [
+				30,
+				30
+			]
+		},
+		{
+			"anchors": [
+				5,
+				5
+			],
+			"bounds": [
+				52.5,
+				32.5
+			],
+			"chapter": 6,
+			"corrections": [
+				{
+					"actual_m": [
+						-1.68634974956512,
+						26.8954677581787
+					],
+					"attempts": 33,
+					"distance_m": 0.720000386238098,
+					"reason": "physical_collision",
+					"source_id": "blue-unit-010",
+					"source_m": [
+						-1.5,
+						26.2000007629395
+					],
+					"source_pixels": [
+						2040.0,
+						2348.0
+					],
+					"team": 0
+				},
+				{
+					"actual_m": [
+						2.33823084831238,
+						29.0949993133545
+					],
+					"attempts": 16,
+					"distance_m": 0.360000222921371,
+					"reason": "occupied_by_deployment",
+					"source_id": "blue-unit-023",
+					"source_m": [
+						2.65000009536743,
+						29.2749996185303
+					],
+					"source_pixels": [
+						2206.0,
+						2471.0
+					],
+					"team": 0
+				},
+				{
+					"actual_m": [
+						3.01000022888184,
+						26.0499992370605
+					],
+					"attempts": 2,
+					"distance_m": 0.360000133514404,
+					"reason": "physical_collision",
+					"source_id": "blue-unit-024",
+					"source_m": [
+						2.65000009536743,
+						26.0499992370605
+					],
+					"source_pixels": [
+						2206.0,
+						2342.0
+					],
+					"team": 0
+				}
+			],
+			"counts": [
+				30,
+				30
+			]
+		},
+		{
+			"anchors": [
+				14,
+				12
+			],
+			"bounds": [
+				42.5,
+				26.25
+			],
+			"chapter": 7,
+			"corrections": [
+				{
+					"actual_m": [
+						-4.1399998664856,
+						21.7000007629395
+					],
+					"attempts": 2,
+					"distance_m": 0.360000133514404,
+					"reason": "physical_collision",
+					"source_id": "blue-unit-016",
+					"source_m": [
+						-4.5,
+						21.7000007629395
+					],
+					"source_pixels": [
+						1520.0,
+						1918.0
+					],
+					"team": 0
+				},
+				{
+					"actual_m": [
+						-20.8636493682861,
+						21.3704662322998
+					],
+					"attempts": 31,
+					"distance_m": 0.720000445842743,
+					"reason": "physical_collision",
+					"source_id": "blue-unit-023",
+					"source_m": [
+						-21.0499992370605,
+						20.6749992370605
+					],
+					"source_pixels": [
+						858.0,
+						1877.0
+					],
+					"team": 0
+				},
+				{
+					"actual_m": [
+						15.8841171264648,
+						20.6341171264648
+					],
+					"attempts": 29,
+					"distance_m": 0.720000326633453,
+					"reason": "physical_collision",
+					"source_id": "blue-unit-027",
+					"source_m": [
+						15.375,
+						20.125
+					],
+					"source_pixels": [
+						2315.0,
+						1855.0
+					],
+					"team": 0
+				},
+				{
+					"actual_m": [
+						18.3350009918213,
+						20.5735397338867
+					],
+					"attempts": 30,
+					"distance_m": 0.720000863075256,
+					"reason": "physical_collision",
+					"source_id": "blue-unit-028",
+					"source_m": [
+						17.9750003814697,
+						19.9500007629395
+					],
+					"source_pixels": [
+						2419.0,
+						1848.0
+					],
+					"team": 0
+				},
+				{
+					"actual_m": [
+						-23.4068260192871,
+						-8.80226612091064
+					],
+					"attempts": 7,
+					"distance_m": 0.35999995470047,
+					"reason": "physical_collision",
+					"source_id": "red-unit-034",
+					"source_m": [
+						-23.5,
+						-9.14999961853027
+					],
+					"source_pixels": [
+						760.0,
+						684.0
+					],
+					"team": 1
+				},
+				{
+					"actual_m": [
+						-21.4727325439453,
+						-10.9818248748779
+					],
+					"attempts": 13,
+					"distance_m": 0.359999299049377,
+					"reason": "physical_collision",
+					"source_id": "red-unit-035",
+					"source_m": [
+						-21.125,
+						-11.0749998092651
+					],
+					"source_pixels": [
+						855.0,
+						607.0
+					],
+					"team": 1
+				}
+			],
+			"counts": [
+				30,
+				50
+			]
+		},
+		{
+			"anchors": [
+				9,
+				11
+			],
+			"bounds": [
+				50.0,
+				31.25
+			],
+			"chapter": 8,
+			"corrections": [],
+			"counts": [
+				30,
+				50
+			]
+		},
+		{
+			"anchors": [
+				6,
+				10
+			],
+			"bounds": [
+				42.5,
+				26.875
+			],
+			"chapter": 9,
+			"corrections": [
+				{
+					"actual_m": [
+						-2.25,
+						25.185001373291
+					],
+					"attempts": 8,
+					"distance_m": 0.360000610351562,
+					"reason": "physical_collision",
+					"source_id": "player",
+					"source_m": [
+						-2.25,
+						24.8250007629395
+					],
+					"source_pixels": [
+						1610.0,
+						2068.0
+					],
+					"team": 0
+				},
+				{
+					"actual_m": [
+						20.9099998474121,
+						22.5750007629395
+					],
+					"attempts": 2,
+					"distance_m": 0.360000610351562,
+					"reason": "occupied_by_deployment",
+					"source_id": "blue-unit-006",
+					"source_m": [
+						20.5499992370605,
+						22.5750007629395
+					],
+					"source_pixels": [
+						2522.0,
+						1978.0
+					],
+					"team": 0
+				},
+				{
+					"actual_m": [
+						19.4841175079346,
+						21.1591167449951
+					],
+					"attempts": 29,
+					"distance_m": 0.720000326633453,
+					"reason": "physical_collision",
+					"source_id": "blue-unit-008",
+					"source_m": [
+						18.9750003814697,
+						20.6499996185303
+					],
+					"source_pixels": [
+						2459.0,
+						1901.0
+					],
+					"team": 0
+				},
+				{
+					"actual_m": [
+						-0.290883123874664,
+						25.3341178894043
+					],
+					"attempts": 29,
+					"distance_m": 0.720000147819519,
+					"reason": "physical_collision",
+					"source_id": "blue-unit-013",
+					"source_m": [
+						-0.800000011920929,
+						24.8250007629395
+					],
+					"source_pixels": [
+						1668.0,
+						2068.0
+					],
+					"team": 0
+				},
+				{
+					"actual_m": [
+						0.235000014305115,
+						23.125
+					],
+					"attempts": 2,
+					"distance_m": 0.360000014305115,
+					"reason": "physical_collision",
+					"source_id": "blue-unit-015",
+					"source_m": [
+						-0.125,
+						23.125
+					],
+					"source_pixels": [
+						1695.0,
+						2000.0
+					],
+					"team": 0
+				},
+				{
+					"actual_m": [
+						17.2199993133545,
+						23.3367691040039
+					],
+					"attempts": 10,
+					"distance_m": 0.360000431537628,
+					"reason": "occupied_by_deployment",
+					"source_id": "blue-unit-029",
+					"source_m": [
+						17.3999996185303,
+						23.0249996185303
+					],
+					"source_pixels": [
+						2396.0,
+						1996.0
+					],
+					"team": 0
+				}
+			],
+			"counts": [
+				30,
+				30
+			]
+		},
+		{
+			"anchors": [
+				10,
+				10
+			],
+			"bounds": [
+				48.75,
+				30.75
+			],
+			"chapter": 10,
+			"corrections": [
+				{
+					"actual_m": [
+						46.1100006103516,
+						22.2000007629395
+					],
+					"attempts": 2,
+					"distance_m": 0.360000610351562,
+					"reason": "occupied_by_deployment",
+					"source_id": "blue-unit-028",
+					"source_m": [
+						45.75,
+						22.2000007629395
+					],
+					"source_pixels": [
+						3780.0,
+						2118.0
+					],
+					"team": 0
+				}
+			],
+			"counts": [
+				30,
+				50
+			]
+		}
+	],
+	"checks": 29607,
+	"failures": 0,
+	"max_correction_m": 4.32,
+	"simulation_ticks": 0
+}

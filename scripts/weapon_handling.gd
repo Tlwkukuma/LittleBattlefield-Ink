@@ -56,10 +56,27 @@ static func profile(w: Dictionary) -> Dictionary:
 		p.hip=.0030 if fixed else .0040;p.ads=.0018 if fixed else .0025
 		p.bloom=.00018;p.max_bloom=.0025;p.spread_return=.05;p.move=.003;p.settle=.12
 		p.scope=false;p.visual=.35
+	# Orthographic carried firearms: keep the selected aim elevation; recoil is an
+	# aim-relative shoulder deflection, shared by the rig and physical shot axis.
+	p.topdown=is_topdown(w)
+	if p.topdown:
+		p.pitch*=.10
+		p.yaw*=3.0
+		p.max_pitch=clampf(p.pitch*3.0,.003,.007)
+		p.max_yaw=clampf(p.yaw*18.0,.035,.085)
+		p.shoulder_sign=-1.0 if posmod(id.hash(),2)==0 else 1.0
+		p.vertical_spread=.004
+		p.vertical_pellet=.006
 	profiles[id]=p;return p
 
+static func is_topdown(w: Dictionary) -> bool:
+	return not w.has("mounted_fire_key") and str(w.get("kind","")) in ["bullet","hitscan","shotgun"]
+
 static func braced(w: Dictionary,u: Dictionary) -> bool:
-	return bool(profile(w).bipod) and int(u.get("mounted",-1))<0 and int(u.get("stance",0))==2 and float(u.get("stance_blend",0))>=1.95 and u.get("grounded",false) and Vector2(u.get("velocity",Vector2.ZERO)).length_squared()<.0144 and u.get("vault",{}).is_empty() and u.get("ladder",{}).is_empty()
+	return _braced(profile(w),u)
+
+static func _braced(p: Dictionary,u: Dictionary) -> bool:
+	return bool(p.bipod) and int(u.get("mounted",-1))<0 and int(u.get("stance",0))==2 and float(u.get("stance_blend",0))>=1.95 and u.get("grounded",false) and Vector2(u.get("velocity",Vector2.ZERO)).length_squared()<.0144 and u.get("vault",{}).is_empty() and u.get("ladder",{}).is_empty()
 
 static func support(w: Dictionary,u: Dictionary) -> float:
 	return float(u.get("bipod_support",0)) if braced(w,u) else 0.0
@@ -72,27 +89,63 @@ static func reset(state: Dictionary):
 static func tick(state: Dictionary,w: Dictionary,delta: float):
 	var p=profile(w)
 	if state.get("handling_weapon","")!=p.id:reset(state);state.handling_weapon=p.id
-	state.bipod_support=move_toward(float(state.get("bipod_support",0)),1.0 if braced(w,state) else 0.0,delta*3.5)
+	# Tick-local only: eligibility can change with movement, stance or traversal.
+	var brace=_braced(p,state)
+	state.bipod_support=move_toward(float(state.get("bipod_support",0)),1.0 if brace else 0.0,delta*3.5)
+	var supported=float(state.bipod_support) if brace else 0.0
+	var previous_age=float(state.shot_age)
 	state.shot_age+=delta
 	var interval=60.0/FireControl.rpm(w,state);var delay=maxf(float(p.recover_delay),minf(.18,interval*1.35))
-	# Unsupported guns retain climb; a planted bipod or mount damps it during fire.
-	if state.shot_age>delay:
-		state.recoil_target=Vector2(state.recoil_target)*exp(-float(p.return)*delta)
-		state.bloom=move_toward(float(state.bloom),0,float(p.spread_return)*delta)
+	if p.topdown:
+		# Split exactly at the recovery boundary; do not apply a whole frame of
+		# recovery when only part of it occurred after the last-shot delay.
+		var sustain_time=clampf(delay-previous_age,0,delta)
+		var damping=maxf(float(p.sustain_return),supported*2.4)
+		_follow_decaying_target(state,sustain_time,damping)
+		if damping>0:state.bloom=move_toward(float(state.bloom),0,float(p.spread_return)*sustain_time*.35)
+		var recovery_time=delta-sustain_time
+		_follow_decaying_target(state,recovery_time,float(p.return))
+		state.bloom=move_toward(float(state.bloom),0,float(p.spread_return)*recovery_time)
 	else:
-		# Ground support and a mount absorb climb even while the trigger is held.
-		var damping=maxf(float(p.sustain_return),support(w,state)*2.4)
-		if damping>0:
-			state.recoil_target=Vector2(state.recoil_target)*exp(-damping*delta)
-			state.bloom=move_toward(float(state.bloom),0,float(p.spread_return)*delta*.35)
-	var omega=55.0;var error=Vector2(state.kick_angle)-Vector2(state.recoil_target)
-	var change=(Vector2(state.kick_velocity)+error*omega)*delta;var decay=exp(-omega*delta)
-	state.kick_angle=Vector2(state.recoil_target)+(error+change)*decay
-	state.kick_velocity=(Vector2(state.kick_velocity)-change*omega)*decay
+		# Preserve mounted and indirect-fire handling exactly.
+		if state.shot_age>delay:
+			state.recoil_target=Vector2(state.recoil_target)*exp(-float(p.return)*delta)
+			state.bloom=move_toward(float(state.bloom),0,float(p.spread_return)*delta)
+		else:
+			var damping=maxf(float(p.sustain_return),supported*2.4)
+			if damping>0:
+				state.recoil_target=Vector2(state.recoil_target)*exp(-damping*delta)
+				state.bloom=move_toward(float(state.bloom),0,float(p.spread_return)*delta*.35)
+		_follow_target(state,delta)
 	if state.shot_age>maxf(.28,interval*1.8):state.burst=0
 	state.aim_time=float(state.aim_time)+delta if state.get("aiming",false) else 0.0
 	var movement=clampf((Vector2(state.get("velocity",Vector2.ZERO)).length()-.08)/3.32,0,1.7)
 	state.motion_inaccuracy=lerpf(float(state.motion_inaccuracy),movement,1-exp(-delta*(18 if movement>state.motion_inaccuracy else 7)))
+
+# Exact critically damped response to an exponentially recovering target. This
+# separates the true aim line (owned by the rig) from the recovery angle.
+static func _follow_decaying_target(state: Dictionary,delta: float,rate: float):
+	if delta<=0:return
+	if rate==0:
+		_follow_target(state,delta);return
+	var omega=55.0
+	var target=Vector2(state.recoil_target)
+	var particular=target*(omega*omega/((omega-rate)*(omega-rate)))
+	var initial=Vector2(state.kick_angle)-particular
+	var coefficient=Vector2(state.kick_velocity)+particular*rate+initial*omega
+	var spring_decay=exp(-omega*delta);var target_decay=exp(-rate*delta)
+	state.kick_angle=(initial+coefficient*delta)*spring_decay+particular*target_decay
+	state.kick_velocity=(coefficient-(initial+coefficient*delta)*omega)*spring_decay-particular*(rate*target_decay)
+	state.recoil_target=target*target_decay
+
+static func _follow_target(state: Dictionary,delta: float):
+	# All three must be exactly zero: velocity alone can restart the spring.
+	if Vector2(state.recoil_target)==Vector2.ZERO and Vector2(state.kick_angle)==Vector2.ZERO and Vector2(state.kick_velocity)==Vector2.ZERO:
+		state.kick_velocity=Vector2.ZERO;return
+	var omega=55.0;var error=Vector2(state.kick_angle)-Vector2(state.recoil_target)
+	var change=(Vector2(state.kick_velocity)+error*omega)*delta;var decay=exp(-omega*delta)
+	state.kick_angle=Vector2(state.recoil_target)+(error+change)*decay
+	state.kick_velocity=(Vector2(state.kick_velocity)-change*omega)*decay
 
 static func aim_spread(w: Dictionary,state: Dictionary,u: Dictionary) -> float:
 	if w.kind=="melee":return 0.0
@@ -132,17 +185,29 @@ static func fired(state: Dictionary,w: Dictionary,u: Dictionary,random_sample: f
 	state.burst+=1;state.shot_age=0.0
 	var sustained=smoothstep(2,9,float(state.burst))
 	var horizontal=(sin(float(state.burst)*.58+float(p.pattern))*.75+random_sample*.25)*float(p.yaw)*lerpf(.35,1.0,sustained)
+	if p.topdown:
+		# A stable per-weapon shoulder direction; the old oscillation could cancel
+		# consecutive shots. Pattern/rate/yaw still differ between source weapons.
+		horizontal=float(p.shoulder_sign)*float(p.yaw)*lerpf(.35,1.0,sustained)*(1.0+.15*sin(float(state.burst)*.58+float(p.pattern))+.08*random_sample)
 	var vertical=float(p.pitch)*(float(p.first) if state.burst==1 else lerpf(1.0,.80,sustained))*(1+random_sample*.06)
-	var max_pitch=lerpf(float(p.max_pitch),.030,supported);var max_yaw=lerpf(float(p.max_yaw),.020,supported)
+	var max_pitch=lerpf(float(p.max_pitch),minf(float(p.max_pitch),.003) if p.topdown else .030,supported);var max_yaw=lerpf(float(p.max_yaw),.020,supported)
 	state.recoil_target=Vector2(clampf(state.recoil_target.x+horizontal*control,-max_yaw,max_yaw),minf(max_pitch,state.recoil_target.y+vertical*control))
 	state.bloom=minf(float(p.max_bloom),float(state.bloom)+float(p.bloom)*lerpf(1.0,.35,supported))
 
-static func cone_direction(forward: Vector3,spread_angle: float,azimuth: float,radius: float) -> Vector3:
+static func cone_direction(forward: Vector3,spread_angle: float,azimuth: float,radius: float,vertical_angle: float=-1.0) -> Vector3:
 	var basis=Basis.looking_at(forward.normalized(),Vector3.UP if absf(forward.normalized().y)<.98 else Vector3.FORWARD)
 	var disk=Vector2(cos(azimuth),sin(azimuth))*tan(spread_angle)*sqrt(clampf(radius,0,1))
+	if vertical_angle>=0:disk.y=sin(azimuth)*tan(vertical_angle)*sqrt(clampf(radius,0,1))
 	return (basis*Vector3(disk.x,disk.y,-1)).normalized()
 
-static func shot_direction(forward: Vector3,spread_angle: float,azimuth: float,sample: float) -> Vector3:
+static func shot_direction(forward: Vector3,spread_angle: float,azimuth: float,sample: float,vertical_angle: float=-1.0) -> Vector3:
 	# Bounded 2D Gaussian: dense centre with occasional edge shots.
 	var radius=sqrt(-2*log(maxf(.0001,1-sample*(1-exp(-4.5)))))/3
-	return cone_direction(forward,spread_angle,azimuth,radius*radius)
+	return cone_direction(forward,spread_angle,azimuth,radius*radius,vertical_angle)
+
+# Cap only the vertical semi-axis, once, at the emission boundary. Horizontal
+# source dispersion remains untouched. Pellets have their own shell envelope.
+static func vertical_spread(w: Dictionary,angle: float,pellet: bool=false) -> float:
+	var p=profile(w)
+	if not p.topdown:return -1.0
+	return minf(angle,float(p.vertical_pellet if pellet else p.vertical_spread))

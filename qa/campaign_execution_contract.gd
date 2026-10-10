@@ -25,9 +25,9 @@ func _initialize():
 	world.time=7;ai.perception.tick(blue,.1)
 	check(blue.ai_contacts.is_empty(),"old visual memory expires")
 	ai.perception.emit_sound(red.position,red.elevation+1.3,1,red.id,32,.65)
-	check(blue.ai_contacts.has(red.id) and blue.ai_contacts[red.id].source=="hearing","audible shot produces hearing report")
-	check(blue.ai_contacts[red.id].position.distance_to(red.position)>.1,"hearing position has nonzero uncertainty")
-	check(blue.ai_contacts[red.id].confidence<=.45,"hearing confidence is bounded")
+	check(blue.ai_hearing_contacts.has(red.id) and blue.ai_hearing_contacts[red.id].source=="hearing","audible shot produces hearing report")
+	check(blue.ai_hearing_contacts[red.id].position.distance_to(red.position)>.1,"hearing position has nonzero uncertainty")
+	check(blue.ai_hearing_contacts[red.id].confidence<=.45,"hearing confidence is bounded")
 	blue.ai_order={"task":"attack","goal":point,"route_index":2,"direct":false}
 	check(ai.objective_goal(world,blue)==point,"near-point assault never returns to deep trench route")
 	blue.position=Vector2(20,8);blue.ai_order={"task":"attack","goal":point,"route_index":0,"direct":false};blue.erase("ai_route_selected");blue.erase("ai_route_index");blue.ai_route_done=false

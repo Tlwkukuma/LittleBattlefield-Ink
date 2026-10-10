@@ -13,6 +13,7 @@ static func stopped(world,origin: Vector3,target: Vector3,budget: float=75.0) ->
 	return not bool(Penetration.response(estimate,hit,(target-origin).normalized(),budget).get("pass",false))
 
 static func muzzle_clear(world,u: Dictionary,contact: Dictionary,weapon: Dictionary,stance: int=-1,point: Vector2=Vector2.INF) -> bool:
+	if stance<0 and not point.is_finite():u.ai_support_ray_clear=false
 	if contact.is_empty():return false
 	var at: Vector2=u.position if not point.is_finite() else point
 	var elevation=float(u.elevation) if not point.is_finite() else world.terrain.height(at)
@@ -25,7 +26,9 @@ static func muzzle_clear(world,u: Dictionary,contact: Dictionary,weapon: Diction
 	if not line(world,body,muzzle,weapon).is_empty():return false
 	var target=Vector3(contact.position.x,float(contact.get("elevation",0))+[.96,.68,.30][clampi(int(contact.get("stance",0)),0,2)],contact.position.y)
 	var hit=line(world,muzzle,target,weapon)
-	if hit.is_empty():return true
+	if hit.is_empty():
+		if stance<0 and not point.is_finite():u.ai_support_ray_clear=true
+		return true
 	return bool(Penetration.response(weapon,hit,(target-muzzle).normalized(),float(weapon.get("cover_ammo",{}).get("penetration",0))).get("pass",false))
 
 static func pose(world,u: Dictionary,contact: Dictionary,weapon: Dictionary,shelter: bool,support: bool) -> int:

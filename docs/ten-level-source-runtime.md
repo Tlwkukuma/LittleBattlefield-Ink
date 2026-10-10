@@ -19,7 +19,7 @@ All first ten imported chapters specify one initially neutral control point and 
 | 09 芦苇湿地 | 30 / 120 | 30 / 120 | 2 / 2 | 3 / 3 |
 | 10 谷仓村落 | 30 / 120 | 50 / 200 | 0 / 0 | 4 / 3 |
 
-Chapter 1 preserves the previously approved Godot orchard adaptation, including its exact exported runtime rules, modified courtyard, terrain and existing equipment AI. For chapters 2–10, source layout, dimensions, object/vehicle positions, unit/spawn coordinates, starting angles, objective identity/center/radius and force counts are retained. Chapter 4's original capture center (2038,1181) remains unchanged; an optional display-only mast position (2000,1200) avoids visually placing the mast through an obstacle. Capture geometry and boundary remain centered on the source point.
+As of the 2026-10-10 rebuild, all ten offline chapters retain source layout, dimensions, object/vehicle positions, unit/spawn coordinates, starting angles, objective identity/center/radius and force counts. Chapter 1 now uses the original 3300 × 2100 source map and its ten spawn anchors per side, rather than overlaying source deployment onto the separate modified OrchardLevel map. The verified first-chapter export supplies equipment/rules only. LAN and the legacy orchard training entry still use the previously approved orchard adaptation. Actual initial bodies are validated before committing the complete roster; every necessary bounded correction is reported, and an unplaceable roster fails initialization instead of losing soldiers or accepting illegal points. See [the rebuilt source-placement contract](source-placement-rebuild-20261010.md). Chapter 4's original capture center (2038,1181) remains unchanged; an optional display-only mast position (2000,1200) avoids visually placing the mast through an obstacle. Capture geometry and boundary remain centered on the source point.
 
 ## Missing original runtime and compatibility behavior
 
@@ -27,7 +27,7 @@ The upload includes scene-plan data but not the original Pixi JavaScript runtime
 
 For chapters 2–10, `campaign_source_adapter.gd` uses the verified first-chapter blue/red ordinary weapon pools only where source loadouts are absent. It preserves finite initial/total counts and each source side's specified portable-mortar count. Mortars are spaced through the finite reserve list; the exact original scheduling and per-chapter ordinary weapon composition are not claimed. Briefings disclose this compatibility fallback. No RPG/anti-tank primary specialists or invented weapon difficulty curve are added.
 
-The current native tactical adapter uses public objective/spawn geometry, existing local perception, squads, cover, suppression and navigation. The three native tactic choices are not represented as an exact reconstruction of unavailable Pixi tactic code. Source spawn→objective route anchors are advisory; they do not force units to backtrack to a spawn. Orchard T03 keeps its approved mandatory trench approach. Fixed weapons are enabled for the native bounded crew AI; mobile vehicles retain source placement/ownership and remain player-operable until an explicit physical route is verified for AI.
+The current native tactical adapter uses public objective/spawn geometry, existing local perception, squads, cover, suppression and navigation. The three native tactic choices are not represented as an exact reconstruction of unavailable Pixi tactic code. Source spawn→objective route anchors are advisory; they do not force units to backtrack to a spawn. Legacy Orchard T03 keeps its approved mandatory trench approach; the restored source chapter 1 uses only its own source routes. Fixed weapons are enabled for the native bounded crew AI; mobile vehicles retain source placement/ownership and remain player-operable until an explicit physical route is verified for AI.
 
 ## Source water and bridges
 
@@ -42,6 +42,8 @@ Home → 十章战役 → unlocked chapter opens a frozen equipment/tactics brie
 Direct native review: `godot --path <project> res://proving_ground.tscn -- --campaign-chapter=N --briefing --startup-watch`. The chapter flag always opens a frozen briefing. Directly opening a still-locked chapter allows same-chapter retry but cannot save an unlock or offer the next chapter. Normal menu progression is unchanged.
 
 ## Evidence and limits
+
+The evidence below is the earlier 2026-10-09 checkpoint and describes the then-modified orchard chapter 1. It is not fresh validation of the 2026-10-10 source-map restoration. New actual-placement evidence is recorded separately in the rebuild document linked above.
 
 - `qa/campaign_source_data_contract.gd`: 11,332 source/layout/force/weapon/special-count/angle/identity checks passed at 14:48 UTC
 - `qa/campaign_progress_contract.gd`: 61 checks passed, including wrong JSON types, failed-save retry and interrupted-replacement recovery

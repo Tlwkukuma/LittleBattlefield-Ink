@@ -29,12 +29,13 @@ func build():
 	game.label(editor_page,"从「测试工具」打开场景工坊。第一关中不提供编辑。",14).name="EditorHint"
 	game.hud=game.label(overview,"",14);game.hud.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	game.campaign_ui.controls=game.label(overview,"",13);game.campaign_ui.controls.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
-	recording=CheckBox.new();recording.text="详细 CPU / GPU 计时写入日志（仅此页打开期间）";overview.add_child(recording)
+	recording=CheckBox.new();recording.clip_text=true;recording.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS;recording.text="详细 CPU / GPU 计时写入日志（仅此页打开期间）";overview.add_child(recording)
 	recording.button_pressed="--performance-log" in OS.get_cmdline_user_args()
 	recording.toggled.connect(func(_on):sync_sampling())
 	game.notice=game.label(tools_box,"",14);game.notice.autowrap_mode=TextServer.AUTOWRAP_WORD_SMART
 	tabs.tab_changed.connect(func(_tab):sync_sampling())
 	game.button(box,"关闭  Esc",func():set_open(false))
+	game.ui.resized.connect(layout);layout()
 
 func page(title: String) -> VBoxContainer:
 	var scroll=ScrollContainer.new();scroll.name=title;scroll.horizontal_scroll_mode=ScrollContainer.SCROLL_MODE_DISABLED;tabs.add_child(scroll)
@@ -84,3 +85,7 @@ func refresh(delta: float):
 	if tabs.current_tab==0:
 		game.refresh_debug_status();game.campaign_ui.sync_controls()
 	game.notice.visible=not game.notice.text.is_empty()
+
+func layout():
+	var width=minf(630,maxf(260,game.ui.size.x-32))
+	panel.offset_left=-width-16;panel.offset_right=-16

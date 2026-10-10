@@ -118,12 +118,17 @@ func friendly_count(team: int,point: Vector2,radius: float) -> int:
 
 func contacts(team: int) -> Array:
 	var world=world_ref.get_ref();var known={}
-	for unit in world.units:
-		if not unit.alive or unit.team!=team:continue
-		for id in unit.get("ai_contacts",{}):
-			var report: Dictionary=unit.ai_contacts[id]
-			if world.time-float(report.get("observed_at",-100))>6 or float(report.get("confidence",0))<.2:continue
-			if not known.has(id) or float(report.observed_at)>float(known[id].observed_at):known[id]=report
+	# Aggregate exact observed vision first; independent uncertain hearing can
+	# inform mission awareness but can never replace a living visual report.
+	for source in ["vision","hearing"]:
+		for unit in world.units:
+			if not unit.alive or unit.team!=team:continue
+			var reports: Dictionary=unit.get("ai_contacts" if source=="vision" else "ai_hearing_contacts",{})
+			for id in reports:
+				var report: Dictionary=reports[id]
+				if report.get("source","")!=source or world.time-float(report.get("observed_at",-100))>=(6.0 if source=="vision" else 2.8) or float(report.get("confidence",0))<.2:continue
+				if known.has(id) and known[id].source=="vision" and source=="hearing":continue
+				if not known.has(id) or float(report.observed_at)>float(known[id].observed_at):known[id]=report
 	return known.values()
 
 func counts(team: int) -> Dictionary:
@@ -196,16 +201,21 @@ func assign_orders(team_filter: int=-1):
 			var breach=plan_executor.update_breach(group) if team==0 and not enabled else {}
 			var members=[]
 			for member_id in group.members:members.append(world.units[member_id])
-			var entry=task=="attack" and (Attack.entry_priority(members,point) or world.time<float(group.get("attack_retry_at",0)))
+			var entry=task=="attack" and (Attack.entry_priority(members,point))
 			var stalled=task=="attack" and Attack.checkpoint(group,members,point,world.time)
 			if stalled:
 				for unit in members:
+					if unit.id not in group.get("attack_stalled_ids",[]):continue
+					var commitment: Dictionary=group.get("bound_state",{})
+					if protected_commitment(int(unit.id),commitment):continue
+					unit.ai_attack_retry_until=world.time+6
+					world.campaign_ai.capture_reservations.claims.erase(unit.id)
 					unit.path=[];unit.repath=0;unit.ai_route_done=true
 					for key in ["ai_tactic","ai_cover_key","ai_cover_search","ai_bound_candidate_at"]:unit.erase(key)
 				world.event.emit({"type":"ai_attack_replan","squad_id":group.id,"at":world.time})
 			var previous_bound: Dictionary=group.get("bound_state",{})
 			var bound={"phase":"idle","cover_id":-1}
-			if task=="attack" and state.maneuver=="bounding" and not entry and not stalled:
+			if task=="attack" and state.maneuver=="bounding" and not entry:
 				bound=Maneuver.advance(previous_bound,members,world.time)
 				if bound.get("phase","")=="handoff" and previous_bound.get("phase","")!="handoff":
 					for mover_id in bound.goals:
@@ -222,13 +232,13 @@ func assign_orders(team_filter: int=-1):
 			for index in range(group.members.size()):
 				var unit: Dictionary=world.units[group.members[index]]
 				var spread=Vector2.from_angle(float(index)*2.39996+float(group.slot))*(.65 if task=="attack" else 1.0)
-				var destination=world.campaign_ai.capture_goal(unit.position,int(group.slot)*3+index) if task in ["attack","hold"] else world.campaign_ai.connected_goal(unit.position,goal+spread)
+				var destination=world.campaign_ai.capture_goal(unit.position,int(group.slot)*3+index,0,Vector2.INF,int(unit.id),task+":"+str(group.revision)) if task in ["attack","hold"] else world.campaign_ai.connected_goal(unit.position,goal+spread)
 				if team==1 and world.time<float(group.get("watch_until",0)):
-					destination=world.campaign_ai.capture_goal(unit.position,int(group.slot)*3+index,0,group.watch_goal)
+					destination=world.campaign_ai.capture_goal(unit.position,int(group.slot)*3+index,0,group.watch_goal,int(unit.id),task+":"+str(group.revision))
 				if not destination.is_finite():
 					var previous: Vector2=unit.get("ai_order",{}).get("goal",unit.position)
 					var node=world.campaign_ai.point_cell(previous)
-					destination=previous if node>=0 and not world.campaign_ai.graph.is_point_disabled(node) else unit.position
+					destination=previous if node>=0 and not world.campaign_ai.graph.is_point_disabled(node) and world.campaign_ai.capture_reservations.available(previous,int(unit.id)) else unit.position
 				var is_thrower=false
 				if not breach.is_empty():
 					if breach.get("open",false):destination=breach.goal
@@ -244,12 +254,13 @@ func assign_orders(team_filter: int=-1):
 					elif bound.get("goals",{}).has(unit.id):role="move"
 					elif phase=="deploy" and unit.position.distance_squared_to(world.units[bound.cover_id].position)<49:role="wait"
 				if role.is_empty():world.campaign_ai.tactics.standpoints.erase(unit.id)
+				if task not in ["attack","hold"] and world.time>=float(unit.get("ai_support_resume_until",0)):world.campaign_ai.capture_reservations.claims.erase(unit.id)
 				unit.task=task;unit.ai_order={"task":task,"goal":destination,"route_index":int(group.route),"squad_id":group.id,"squad_size":int(state.size),"posture":state.posture,
 					"lane":group.get("plan_lane","defense"),
 					"watch_goal":group.get("watch_goal",destination),"watch_until":group.get("watch_until",0),
 					"maneuver":state.maneuver,"approach":state.approach,"source":group.source,"issued_at":group.issued_at,"revision":group.revision,"direct":not breach.is_empty() or state.approach=="rapid-counterattack" or (task!="attack" and team==1),
 					"mandatory_route":team==0 and plan_executor.tactic_id=="T03" and group.get("plan_lane","")=="main" and plan_executor.mandatory_approach(world.plan),
-					"capture_commit":entry or stalled or (task=="attack" and world.time<float(group.get("attack_retry_at",0))),
+					"capture_commit":entry or (task=="attack" and world.time<float(unit.get("ai_attack_retry_until",0))),
 					"breach_thrower":is_thrower,"breach_open":bool(breach.get("open",false)),"bound_role":role,"bound_phase":phase,"bound_goal":bound.get("goals",{}).get(unit.id,destination),"bound_cover":role=="cover"}
 
 func accept_breach_report():
@@ -422,3 +433,6 @@ func status_text() -> String:
 	if model>0:return "蓝军指挥：Laya · %d / %d 小队已受令"%[model,total]
 	if int(teams[0].accepted)>0:return "蓝军指挥：Laya 战术 · 小队沿用规则任务"
 	return "蓝军指挥：规则策略 · 等待 Laya 决策"
+
+static func protected_commitment(unit_id: int,bound: Dictionary) -> bool:
+	return bound.get("phase","") in ["bound","handoff"] and (int(bound.get("cover_id",-1))==unit_id or bound.get("goals",{}).has(unit_id))

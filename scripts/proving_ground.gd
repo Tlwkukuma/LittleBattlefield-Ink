@@ -1,5 +1,5 @@
 extends Node3D
-const BUILD_VERSION="2026.10.10.3"
+const BUILD_VERSION="2026.10.10.4"
 const MOUNTED_VIEW_SIZES={"armedJeep":30.0,"scoutCar":34.0,"apc":32.0,"ifv":36.0,"lightTank":36.0,"tank":40.0,"heavyTank":42.0,"hmg":32.0,"fieldGun":38.0}
 @export var start_in_style_range=false
 const StyleRange=preload("res://scripts/style_range.gd")
@@ -59,7 +59,7 @@ var interactions: Array=[]
 var interaction_hint: Label
 var interaction_age=0.0
 var catalog=Catalog.new()
-var world=World.new()
+var world
 var plan: Dictionary
 var compiled: Dictionary
 var stage: Node3D
@@ -135,6 +135,19 @@ var launch_stamp=""
 var launch_time=""
 var startup_chapter=0
 var pose_cursor=0
+var loading_ui
+var loading_active=false
+var loading_snapshot: Dictionary={}
+var loading_generation=0
+var loading_chapter=0
+var loading_tactic="T01"
+var loading_return_home=false
+var world_ready=false
+signal play_recording_changed(enabled: bool)
+var play_recording=false
+var debug_profiling_requested=false
+const LOADING_FIELDS=["world","stage","plan","compiled","actors","object_views","vehicle_views","projectile_views","roof_views","pending_rebuild","damage_labels","fx","loot_visual","damage_number_batch","bullet_flight_batch","static_prop_batches","wall_batches","crowd_batches","rigid_batches","weapon_batches","vehicle_part_batches","flash_batches","player_occlusion","grenade_preview","crosshair","selection_ring","interactions","class_showcase","player_class","campaign_result_recorded","campaign_save_attempt_at","paused","editing","close_view","roof_mode","zoom","aim","weapon_input_latched"]
+
 
 func _ready():
 	# Official release templates disable command-line scene path overrides.
@@ -158,15 +171,40 @@ func _ready():
 		if arg.begins_with("--capture="):capture_path=arg.trim_prefix("--capture=");qa_mode=true
 		if arg=="--qa":qa_mode=true
 		if arg.begins_with("--campaign-chapter="):startup_chapter=clampi(int(arg.trim_prefix("--campaign-chapter=")),1,10)
-		# Profiling is armed in Debug and only runs while its performance page is open.
+		# Debug profiling and explicit user-play recording are separate opt-ins.
 	var environment=WorldEnvironment.new();var setting=Environment.new();setting.background_mode=Environment.BG_COLOR;setting.background_color=Color("c0bbcc");setting.ambient_light_source=Environment.AMBIENT_SOURCE_COLOR;setting.ambient_light_color=Color.WHITE;setting.ambient_light_energy=.8;environment.environment=setting;scene_environment=setting;add_child(environment)
 	camera=Camera3D.new();camera.projection=Camera3D.PROJECTION_ORTHOGONAL;camera.size=zoom;camera.near=.05;camera.far=300;add_child(camera);camera.current=true
 	ui=Control.new();ui.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT);ui.mouse_filter=Control.MOUSE_FILTER_IGNORE
 	var layer=CanvasLayer.new();add_child(layer);layer.add_child(ui);build_theme()
+	_ensure_loading_ui();loading_active=true;loading_generation+=1
+	loading_ui.begin("正在准备场景")
+	# No complete world/menu exists yet. Never disguise a reload as "home".
+	loading_ui.home_button.hide();loading_ui.retry_button.text="重新加载场景"
+	var startup_generation=loading_generation
+	get_tree().create_timer(121.0).timeout.connect(func():
+		if loading_active and startup_generation==loading_generation:
+			loading_generation+=1;loading_active=false;world_ready=false
+			loading_ui.fail("初始化超时，请重试"))
+	await get_tree().process_frame
+	if DisplayServer.get_name()!="headless":await RenderingServer.frame_post_draw
+	if startup_generation!=loading_generation:return
+	if not _loading_valid(startup_generation):
+		loading_active=false;world_ready=false
+		loading_ui.fail(loading_ui.failure if not loading_ui.failure.is_empty() else "初始化已取消，请重试")
+		return
+	loading_ui.drawn=DisplayServer.get_name()!="headless"
 	atlas=load("res://assets/original/weapon_atlas.png")
 	plan=CampaignCatalog.plan(catalog,startup_chapter) if startup_chapter>0 else StyleRange.plan(catalog) if start_in_style_range or "--range2" in OS.get_cmdline_user_args() else load(ORCHARD_LEVEL_PATH).plan(catalog) if "--level01" in OS.get_cmdline_user_args() else TerrainShowcase.plan(catalog) if "--terrain" in OS.get_cmdline_user_args() else catalog.range_plan()
 	if startup_chapter>0:plan.godot3d.campaign_checkpoint=campaign_progress.can_play(startup_chapter)
-	rebuild(plan);build_ui()
+	var startup_ok=await rebuild(plan,true)
+	if startup_generation!=loading_generation:return
+	loading_active=false
+	if not startup_ok:
+		world_ready=false
+		loading_ui.fail(loading_ui.failure if not loading_ui.failure.is_empty() else "初始化已取消，请重试")
+		return
+	stage.process_mode=Node.PROCESS_MODE_INHERIT;loading_ui.finish()
+	build_ui()
 	lan=LanSession.new();lan.name="LanSession";add_child(lan);lan.setup(self)
 	home_ui=HomeScreen.new();ui.add_child(home_ui);home_ui.setup(self)
 	scope_view=Scope.new();scope_view.game=self;ui.add_child(scope_view)
@@ -322,26 +360,7 @@ func add_network_vehicle_view(vehicle: Dictionary):
 	if rigid_batches!=null:rigid_batches.register_tree(view.root)
 
 func build_theme():
-	if ui.theme!=null and theme_uses_graphic==is_style_range():return
-	theme_uses_graphic=is_style_range()
-	var theme=Theme.new();theme.default_font_size=15
-	# One CJK/Latin atlas shared across text sizes avoids a draw split at every
-	# Chinese/Latin fallback boundary. Uses the installed font, no copied asset.
-	var font=ui.theme.default_font if ui.theme!=null else SystemFont.new();font.font_names=PackedStringArray(["Microsoft YaHei UI","Microsoft YaHei","Noto Sans CJK SC","PingFang SC"])
-	font.multichannel_signed_distance_field=false;theme.default_font=font
-	var panel_style=StyleBoxFlat.new();panel_style.bg_color=Color("292737");panel_style.border_color=Color("646076");panel_style.set_border_width_all(1);panel_style.set_corner_radius_all(7);panel_style.content_margin_left=14;panel_style.content_margin_right=14;panel_style.content_margin_top=12;panel_style.content_margin_bottom=12
-	theme.set_stylebox("panel","PanelContainer",panel_style)
-	for state in ["normal","hover","pressed","disabled","focus"]:
-		var style=StyleBoxFlat.new();style.bg_color=Color("4b465e") if state=="normal" else Color("655d79");style.set_corner_radius_all(4);style.content_margin_left=10;style.content_margin_right=10;style.content_margin_top=6;style.content_margin_bottom=6
-		theme.set_stylebox(state,"Button",style);theme.set_stylebox(state,"OptionButton",style)
-	theme.set_color("font_color","Label",Color("eee7f5"));theme.set_color("font_color","Button",Color("eee7f5"));theme.set_color("font_color","OptionButton",Color("eee7f5"))
-	ui.theme=theme
-	if is_style_range():
-		panel_style.bg_color=Color("202b35");panel_style.border_color=Color("b18b47");panel_style.set_corner_radius_all(2)
-		for state in ["normal","hover","pressed","disabled","focus"]:
-			var style=theme.get_stylebox(state,"Button") as StyleBoxFlat
-			style.bg_color=Color("44505a") if state=="normal" else Color("79613c");style.set_corner_radius_all(2)
-		for control in ["Label","Button","OptionButton"]:theme.set_color("font_color",control,Color("f0e3c3"))
+	preload("res://scripts/tactical_ui.gd").apply(ui)
 	if hud_batches!=null:hud_batches.previous_shapes="";hud_batches.previous="";hud_batches.dirty=true
 
 func make_panel(parent: Control,at: Vector2,size: Vector2,right: bool=false) -> PanelContainer:
@@ -352,7 +371,7 @@ func make_panel(parent: Control,at: Vector2,size: Vector2,right: bool=false) -> 
 func label(parent: Node,text: String,font_size: int=15) -> Label:
 	var result=Label.new();result.text=text;result.add_theme_font_size_override("font_size",font_size);parent.add_child(result);return result
 func button(parent: Node,text: String,callback: Callable) -> Button:
-	var result=Button.new();result.text=text;result.focus_mode=Control.FOCUS_NONE;parent.add_child(result);result.pressed.connect(callback);return result
+	var result=Button.new();result.text=text;result.tooltip_text=text;result.clip_text=true;result.text_overrun_behavior=TextServer.OVERRUN_TRIM_ELLIPSIS;result.focus_mode=Control.FOCUS_ALL;parent.add_child(result);result.pressed.connect(callback);return result
 
 func build_ui():
 	campaign_ui=CampaignPresentation.new()
@@ -429,13 +448,32 @@ func debug_open() -> bool:
 	return debug_ui!=null and debug_ui.panel.visible
 
 func set_debug_profiling(enabled: bool):
+	debug_profiling_requested=enabled
+	_sync_performance_logging()
+
+func set_play_recording(enabled: bool):
+	if play_recording==enabled:return
+	play_recording=enabled
+	play_recording_changed.emit(enabled)
+	_sync_performance_logging()
+	if performance_log!=null:
+		if enabled:
+			if not performance_log.start_session():
+				var reason=performance_log.log_error
+				set_play_recording(false)
+				if notice!=null:message(reason)
+		else:performance_log.stop_session()
+
+func _sync_performance_logging():
+	var enabled=debug_profiling_requested or play_recording
 	if enabled and performance_log==null:
 		performance_log=preload("res://scripts/runtime_performance.gd").new()
 		performance_log.measure_viewport(get_viewport().get_viewport_rid())
 	elif not enabled and performance_log!=null:
+		performance_log.stop_session()
 		RenderingServer.viewport_set_measure_render_time(get_viewport().get_viewport_rid(),false)
 		performance_log=null
-	world.profile_ai=enabled
+	if world!=null:world.profile_ai=enabled
 
 func refresh_class_detail():
 	if class_list==null:return
@@ -631,7 +669,11 @@ func trial_vehicle():
 		message(("已就位 " if v.emplacement else "已进入 ")+VehicleLivery.label(int(v.team))+" · "+str(v.profile.get("label","载具"))+(" · 鼠标转向，左键开火，R 装填，F 离开" if v.emplacement else " · W/S 前后，A/D 转向，Shift 加速，空格手刹漂移，F 离开"))
 	else:message("装备已损毁或操作位置被挡住；请修复或清理周围空间")
 
-func rebuild(source: Dictionary):
+func rebuild(source: Dictionary,sliced: bool=false):
+	if performance_log!=null:performance_log.boundary("rebuild")
+	world_ready=false
+	if world==null:world=World.new()
+	var generation=loading_generation
 	if home_ui!=null:home_ui_dirty=true
 	var was_style_range=is_style_range()
 	if loot_panel!=null:loot_panel.close()
@@ -645,9 +687,18 @@ func rebuild(source: Dictionary):
 	if ui!=null:build_theme()
 	rigid_batches=null;player_occlusion=null;weapon_batches=null
 	flash_batches=null;vehicle_part_batches=null
-	if stage!=null:remove_child(stage);stage.queue_free()
+	if stage!=null and not sliced:remove_child(stage);stage.queue_free()
 	stage=Node3D.new();add_child(stage);actors=[];object_views={};vehicle_views=[];projectile_views={};roof_views=[];pending_rebuild={};damage_labels=[]
+	if sliced:
+		stage.process_mode=Node.PROCESS_MODE_DISABLED
+		loading_ui.update_stage("初始化地形与世界（整段作业）",0,0)
+		await get_tree().process_frame
+		if not _loading_valid(generation):return false
 	compiled=world.setup(plan,catalog)
+	if sliced and world.campaign.phase=="placement_failed":
+		loading_ui.failure=str(world.campaign.reason)
+		return false
+	if sliced and not _loading_valid(generation):return false
 	if is_style_range():
 		for object in world.objects:object.range2_family=preload("res://scripts/range2_materials.gd").family(object)
 	var batched=world.campaign_active() or is_style_range()
@@ -666,15 +717,36 @@ func rebuild(source: Dictionary):
 	damage_number_batch=preload("res://scripts/damage_number_batch.gd").new();damage_number_batch.game=self;stage.add_child(damage_number_batch)
 	bullet_flight_batch=preload("res://scripts/bullet_flight_batch.gd").new()
 	bullet_flight_batch.bounds=AABB(Vector3(-world.bounds.x-8,-64,-world.bounds.y-8),Vector3(world.bounds.x*2+16,256,world.bounds.y*2+16));stage.add_child(bullet_flight_batch)
+	if sliced:
+		loading_ui.update_stage("构建地形网格（整段作业）",0,0)
+		await get_tree().process_frame
+		if not _loading_valid(generation):return false
 	build_ground()
-	for o in world.objects:object_views[o.id]=Props.object(stage,o)
+	var built=0
+	for o in world.objects:
+		object_views[o.id]=Props.object(stage,o);built+=1
+		if sliced:
+			loading_ui.update_stage("构建物件",built,world.objects.size())
+			if loading_ui.should_yield():
+				await get_tree().process_frame
+				if not _loading_valid(generation):return false
+				loading_ui.slice_started=Time.get_ticks_usec()
 	static_prop_batches=preload("res://scripts/static_prop_batches.gd").new();stage.add_child(static_prop_batches)
 	if not batched:static_prop_batches.configure(world.objects,object_views)
 	wall_batches=null
 	if batched:
 		wall_batches=preload("res://scripts/wall_batches.gd").new();stage.add_child(wall_batches);wall_batches.configure(world.objects,object_views)
 	if "--startup-watch" in OS.get_cmdline_user_args():print("STATIC_PROP_BATCHES "+JSON.stringify(static_prop_batches.stats()))
-	for v in world.vehicles:vehicle_views.append(Props.vehicle(stage,v))
+	built=0
+	for v in world.vehicles:
+		vehicle_views.append(Props.vehicle(stage,v));built+=1
+		if sliced:
+			loading_ui.update_stage("构建载具",built,world.vehicles.size())
+			if loading_ui.should_yield():
+				await get_tree().process_frame
+				if not _loading_valid(generation):return false
+				loading_ui.slice_started=Time.get_ticks_usec()
+	built=0
 	for u in world.units:
 		var view=Art.soldier(stage,u.team,u.player and not world.campaign_active(),u.player)
 		if batched:
@@ -683,6 +755,17 @@ func rebuild(source: Dictionary):
 		view.ground_markers=[]
 		for child in view.root.get_children():
 			if child is Node3D and child!=view.body:view.ground_markers.append({"node":child,"height":child.position.y})
+		built+=1
+		if sliced:
+			loading_ui.update_stage("构建人员",built,world.units.size())
+			if loading_ui.should_yield():
+				await get_tree().process_frame
+				if not _loading_valid(generation):return false
+				loading_ui.slice_started=Time.get_ticks_usec()
+	if sliced:
+		loading_ui.update_stage("配置批次与效果（整段作业）",0,0)
+		await get_tree().process_frame
+		if not _loading_valid(generation):return false
 	fx.actor_views=actors
 	crowd_batches=null
 	if batched:
@@ -721,6 +804,10 @@ func rebuild(source: Dictionary):
 	if style_button!=null:style_button.visible=is_style_range()
 	if was_style_range or is_style_range():set_game_title("小小战地 · "+str(plan.get("title","联合演武场")))
 	for key in training_switches:training_switches[key].set_pressed_no_signal(bool(world.get(key)))
+	if sliced and not _loading_valid(generation):return false
+	world.profile_ai=performance_log!=null
+	world_ready=true
+	return true
 
 func replace_weapon(view: Dictionary,w: Dictionary):
 	for child in view.rifle.get_children():
@@ -859,6 +946,7 @@ func over_ui() -> bool:
 	var control=get_viewport().gui_get_hovered_control();return control!=null and control!=ui
 
 func _physics_process(delta: float):
+	if loading_active or not world_ready:return
 	if lan!=null and lan.mode=="connecting":return
 	if not is_node_ready() or editing or (paused and (lan==null or not lan.active())) or (world.campaign_active() and world.campaign.phase!="playing") or (armory.visible and (lan==null or not lan.active())) or (home_open() and (lan==null or not lan.active())):
 		world.cancel_firing();jump_pressed=false;trigger_pressed=false;return
@@ -882,6 +970,7 @@ func _physics_process(delta: float):
 	if performance_log!=null:performance_log.record_physics(started,world)
 
 func _process(delta: float):
+	if loading_active or not world_ready:return
 	if not is_node_ready():return
 	var started=Time.get_ticks_usec() if performance_log!=null else 0
 	frames_per_second=wall_fps_counter.sample(Time.get_ticks_usec())
@@ -939,7 +1028,9 @@ func _process(delta: float):
 	else:selection_ring.hide()
 	if performance_log!=null:
 		performance_log.last_frame.render_batches={"crowd_ms":crowd_batches.last_ms if is_instance_valid(crowd_batches) else 0,"parts_ms":vehicle_part_batches.last_ms if is_instance_valid(vehicle_part_batches) else 0,"rigid_ms":rigid_batches.last_ms if is_instance_valid(rigid_batches) else 0,"weapons_ms":weapon_batches.last_ms if is_instance_valid(weapon_batches) else 0,"flash_ms":flash_batches.last_ms if is_instance_valid(flash_batches) else 0,"hud_ms":hud_batches.last_ms,"combat_draw_ms":combat_hud.last_draw_ms}
-		performance_log.record_frame(started,delta,world,not editing and not paused and not armory.visible and (not world.campaign_active() or world.campaign.phase=="playing"))
+		performance_log.record_frame(started,delta,world,not home_open() and not editing and not paused and not armory.visible and (not world.campaign_active() or world.campaign.phase=="playing"))
+		if play_recording and not performance_log.recording and not performance_log.log_error.is_empty():
+			var reason=performance_log.log_error;set_play_recording(false);message(reason)
 
 func refresh_debug_status():
 	var mount=""
@@ -1210,6 +1301,7 @@ func cycle_roof():
 	roof_mode=(roof_mode+1)%3;message(["房顶：进入房间自动隐藏","房顶：始终隐藏","房顶：进入房间半透明"][roof_mode])
 
 func _unhandled_input(event: InputEvent):
+	if loading_active or not world_ready:return
 	if home_open():
 		if event is InputEventKey and event.pressed and event.keycode==KEY_ESCAPE:home_ui.hide_menu()
 		get_viewport().set_input_as_handled();return
@@ -1224,7 +1316,7 @@ func _unhandled_input(event: InputEvent):
 		if equipment_wheel!=null and equipment_wheel.open():get_viewport().set_input_as_handled()
 		return
 	if event is InputEventMouseMotion and not editing and not paused and not has_text_focus() and not over_ui():
-		if world.player.aiming or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		if not Handling.is_topdown(world.active_weapon()) and (world.player.aiming or Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT)):
 			var magnification=1.0/scope_view.view_ratio if scope_view!=null else 1.0
 			Handling.compensate(world.active_state(),maxf(0,event.relative.y)*.0018/magnification)
 	if event is InputEventKey and event.pressed and not event.echo:
@@ -1344,17 +1436,31 @@ func holster_weapon():
 		if scope_view!=null:scope_view.cancel()
 
 func start_campaign_chapter(number: int,tactic: String="T01"):
+	if loading_active:return
 	var direct_retry=number==startup_chapter and int(plan.get("godot3d",{}).get("campaign_chapter",0))==number
 	if not campaign_progress.can_play(number) and not direct_retry:message("请先完成前一关");return
 	if lan!=null and lan.active():lan.stop()
+	loading_chapter=number;loading_tactic=tactic
+	_start_loading("正在准备第 %02d 关"%number)
+	var generation=loading_generation
+	# The loading canvas must be presented before plan construction or world setup.
+	await get_tree().process_frame
+	if DisplayServer.get_name()!="headless":await RenderingServer.frame_post_draw
+	if not _loading_valid(generation):_finish_loading(false,generation);return
+	loading_ui.drawn=DisplayServer.get_name()!="headless"
+	loading_ui.update_stage("读取关卡资料",0,0)
 	var chapter_plan=CampaignCatalog.plan(catalog,number,tactic)
-	if chapter_plan.is_empty():message("关卡资料无法载入");return
+	if chapter_plan.is_empty():loading_ui.failure="关卡资料无法载入";_finish_loading(false,generation);return
 	chapter_plan.godot3d.campaign_checkpoint=campaign_progress.can_play(number)
-	if chapter_plan.godot3d.campaign_checkpoint:campaign_progress.begin_chapter(number,tactic)
 	if debug_ui!=null:debug_ui.set_open(false)
 	paused=false;editing=false;close_view=false;roof_mode=0;zoom=25;armory.hide()
 	if editor!=null:editor.panel.hide()
-	rebuild(chapter_plan)
+	world=World.new()
+	var success=await rebuild(chapter_plan,true)
+	if generation!=loading_generation:return
+	_finish_loading(success,generation)
+	if not success:return
+	if chapter_plan.godot3d.campaign_checkpoint:campaign_progress.begin_chapter(number,tactic)
 	trigger_pressed=false;jump_pressed=false;weapon_input_latched=true
 	if editor!=null:editor.plan=plan.duplicate(true);editor.undo_stack.clear();editor.redo_stack.clear();editor.selected="";editor.palette_id=""
 	aim=world.player.position+Vector2.UP*12;update_camera(0)
@@ -1364,6 +1470,79 @@ func start_campaign_chapter(number: int,tactic: String="T01"):
 	armory.show();campaign_ui.refresh()
 	message(str(plan.title)+"已准备 · 选择战术，按 Tab 或“继续战斗”开始")
 	if not campaign_progress.last_error.is_empty():message(campaign_progress.last_error)
+
+func _ensure_loading_ui():
+	if loading_ui!=null:return
+	loading_ui=preload("res://scripts/campaign_loading.gd").new();add_child(loading_ui)
+	loading_ui.retry_requested.connect(func():
+		if not world_ready:get_tree().reload_current_scene()
+		else:loading_ui.hide();start_campaign_chapter(loading_chapter,loading_tactic))
+	loading_ui.home_requested.connect(func():
+		if loading_active:loading_ui.cancelled=true;loading_return_home=true
+		elif home_ui!=null:loading_ui.hide();show_home()
+		# Startup has no home menu; its home button is hidden.
+	)
+	loading_ui.exit_requested.connect(func():get_tree().quit())
+
+func _start_loading(title_text: String):
+	_ensure_loading_ui()
+	loading_generation+=1;loading_active=true;loading_return_home=false;loading_snapshot.clear()
+	for field in LOADING_FIELDS:loading_snapshot[field]=get(field)
+	loading_snapshot.window_title=get_window().title
+	loading_snapshot.engine_physics_hz=Engine.physics_ticks_per_second
+	loading_snapshot.engine_jitter_fix=Engine.physics_jitter_fix
+	loading_snapshot.engine_max_steps=Engine.max_physics_steps_per_frame
+	loading_snapshot.ui_mode=ui.process_mode
+	loading_snapshot.editor_visible=editor.panel.visible if editor!=null else false
+	loading_snapshot.style_visible=style_button.visible if style_button!=null else false
+	loading_snapshot.ui_visible=ui.visible
+	loading_snapshot.armory_visible=armory.visible if armory!=null else false
+	loading_snapshot.stage_mode=stage.process_mode if stage!=null else Node.PROCESS_MODE_INHERIT
+	if stage!=null:stage.process_mode=Node.PROCESS_MODE_DISABLED;stage.hide()
+	ui.hide();ui.process_mode=Node.PROCESS_MODE_DISABLED
+	if performance_log!=null:performance_log.boundary("loading_start")
+	loading_ui.begin(title_text)
+	var generation=loading_generation
+	get_tree().create_timer(121.0).timeout.connect(func():
+		if loading_active and generation==loading_generation:
+			loading_ui.failure="加载超时，请重试";_finish_loading(false,generation);loading_generation+=1)
+
+func _loading_valid(generation: int) -> bool:
+	return loading_active and generation==loading_generation and loading_ui.valid()
+
+func _finish_loading(success: bool,expected_generation: int=-1):
+	if expected_generation>=0 and expected_generation!=loading_generation:return
+	if not loading_active:return
+	if success:
+		var old_stage=loading_snapshot.get("stage")
+		if is_instance_valid(old_stage):remove_child(old_stage);old_stage.queue_free()
+		world.event.connect(on_world_event)
+		stage.process_mode=Node.PROCESS_MODE_INHERIT;stage.show();loading_ui.finish()
+	else:
+		if stage!=loading_snapshot.get("stage") and is_instance_valid(stage):remove_child(stage);stage.queue_free()
+		for field in LOADING_FIELDS:set(field,loading_snapshot[field])
+		if stage!=null:stage.process_mode=loading_snapshot.stage_mode;stage.show()
+		preload("res://scripts/campaign_background.gd").apply(scene_environment,plan)
+		RenderingServer.global_shader_parameter_set("range2_enabled",is_style_range() and graphic_style)
+		Engine.physics_ticks_per_second=loading_snapshot.engine_physics_hz
+		Engine.physics_jitter_fix=loading_snapshot.engine_jitter_fix
+		Engine.max_physics_steps_per_frame=loading_snapshot.engine_max_steps
+		build_theme();get_window().title=loading_snapshot.window_title
+		if campaign_ui!=null:
+			campaign_ui.cached_equipment=""
+			campaign_ui.sync_mode();campaign_ui.rebuild_world()
+		if vehicle_list!=null:refresh_vehicles();update_weapon_details()
+		refresh_class_detail()
+		if editor!=null:editor.panel.visible=loading_snapshot.editor_visible
+		if style_button!=null:style_button.visible=loading_snapshot.style_visible
+		for key in training_switches:training_switches[key].set_pressed_no_signal(bool(world.get(key)))
+		if armory!=null:armory.visible=loading_snapshot.armory_visible
+		loading_ui.fail(loading_ui.failure if not loading_ui.failure.is_empty() else "已返回上一个完整场景")
+	world_ready=world!=null and not world.player.is_empty()
+	loading_active=false;ui.process_mode=loading_snapshot.ui_mode;ui.visible=loading_snapshot.ui_visible
+	loading_snapshot.clear()
+	if loading_return_home and home_ui!=null:loading_ui.hide();show_home()
+	if performance_log!=null:performance_log.boundary("loading_ready" if success else "loading_rollback")
 
 func record_campaign_result():
 	if lan!=null and lan.active():return
@@ -1436,4 +1615,5 @@ func capture():
 	print("CAPTURE ",capture_path);get_tree().quit()
 
 func _exit_tree():
+	if performance_log!=null:performance_log.stop_session()
 	Input.mouse_mode=Input.MOUSE_MODE_VISIBLE

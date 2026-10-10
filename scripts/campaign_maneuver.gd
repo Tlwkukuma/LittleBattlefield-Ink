@@ -8,7 +8,7 @@ static func usable(u: Dictionary) -> bool:
 	return u.get("alive",false) and not u.get("player",false) and int(u.get("mounted",-1))<0 and float(u.get("ai_stress",0))<.62
 
 static func fire_ready(u: Dictionary,now: float) -> bool:
-	return usable(u) and bool(u.get("ai_support_capable",true)) and int(u.get("ammo",0))>0 and float(u.get("reload",0))<=0 and bool(u.get("ai_support_ready",false)) and now-float(u.get("ai_support_checked_at",-100))<.85 and not contact(u,now).is_empty()
+	return usable(u) and bool(u.get("ai_support_capable",true)) and int(u.get("ammo",0))>0 and float(u.get("reload",0))<=0 and bool(u.get("ai_support_ready",false)) and now-float(u.get("ai_support_checked_at",-100))<.85 and preload("res://scripts/campaign_support_wait.gd").effective(u,contact(u,now),now)
 
 static func contact(u: Dictionary,now: float) -> Dictionary:
 	var report: Dictionary=u.get("ai_contacts",{}).get(int(u.get("ai_target",-1)),{})

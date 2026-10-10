@@ -16,11 +16,11 @@ func configure(world):
 	find_breach_site()
 
 func generic_chapter() -> bool:
-	return int(world_ref.get_ref().plan.godot3d.get("campaign_chapter",1))>1
+	return bool(world_ref.get_ref().plan.godot3d.get("source_layout",false)) or int(world_ref.get_ref().plan.godot3d.get("campaign_chapter",1))>1
 
 static func mandatory_approach(plan: Dictionary) -> bool:
 	var settings: Dictionary=plan.get("godot3d",{})
-	return int(settings.get("campaign_chapter",1))<=1 or bool(settings.get("campaign_tactics",{}).get("mandatory_approach",false))
+	return (not bool(settings.get("source_layout",false)) and int(settings.get("campaign_chapter",1))<=1) or bool(settings.get("campaign_tactics",{}).get("mandatory_approach",false))
 
 static func names_for(plan: Dictionary) -> Dictionary:
 	return plan.get("godot3d",{}).get("campaign_tactic_names",NAMES)

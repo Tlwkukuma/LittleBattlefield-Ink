@@ -1,0 +1,113 @@
+{
+  "date_utc": "2026-10-10",
+  "engine": "Godot 4.6.3.stable.official.7d41c59c4",
+  "baseline": "6b3a0e446ddf8d29e260b286b67ae4e71bea61d2",
+  "scope": "pure state, frozen geometry and actual initialization; no battle simulation, no automatic movement or firing",
+  "environment": {
+    "HOME": "/tmp/ai-restore-home",
+    "XDG_DATA_HOME": "/tmp/ai-restore-data",
+    "XDG_CACHE_HOME": "/tmp/ai-restore-cache",
+    "XDG_CONFIG_HOME": "/tmp/ai-restore-config"
+  },
+  "import": {
+    "command": "godot --headless --path . --editor --import --quit",
+    "exit_code": 0,
+    "parse_errors": 0
+  },
+  "checks": 41314,
+  "failures": 0,
+  "results": [
+    {
+      "test": "ai_restored_continuity_contract",
+      "command": "godot --headless --path . --script qa/ai_restored_continuity_contract.gd",
+      "checks": 44,
+      "failures": 0,
+      "exit_code": 0,
+      "log_sha256": "155a553e2794a6ad2417c531ee45714085c023b0599f67968b646542938f5523",
+      "result": "AI_RESTORED_CONTINUITY checks=44 failures=0; scalar state only, no simulation"
+    },
+    {
+      "test": "ai_cover_context_contract",
+      "command": "godot --headless --path . --script qa/ai_cover_context_contract.gd",
+      "checks": 12,
+      "failures": 0,
+      "exit_code": 0,
+      "log_sha256": "0493621907c82e43790d0cf1ffe24219bccdcac761367ca22a581d6d2fb01773",
+      "result": "AI_COVER_CONTEXT checks=12 failures=0; cache math only"
+    },
+    {
+      "test": "ai_fire_context_contract",
+      "command": "godot --headless --path . --script qa/ai_fire_context_contract.gd",
+      "checks": 19,
+      "failures": 0,
+      "exit_code": 0,
+      "log_sha256": "df828959f2c106bcfff386a4e6cd05f86d6b8f34e4895b54853ad70c4da80f6a",
+      "result": "AI_FIRE_CONTEXT checks=19 failures=0; scalar state only"
+    },
+    {
+      "test": "ai_recovery_commit_contract",
+      "command": "godot --headless --path . --script qa/ai_recovery_commit_contract.gd",
+      "checks": 11,
+      "failures": 0,
+      "exit_code": 0,
+      "log_sha256": "a6d494804bc9c84b210b83f09366c88f9aa9c6d8f81f16cf69562995556da49a",
+      "result": "AI_RECOVERY_COMMIT checks=11 failures=0; scalar state only"
+    },
+    {
+      "test": "campaign_bounding_contract",
+      "command": "godot --headless --path . --script qa/campaign_bounding_contract.gd",
+      "checks": 8,
+      "failures": 0,
+      "exit_code": 0,
+      "log_sha256": "4b1f5252df9d4a68246cb7ff35d06e2a83ba3bfe87409ef225dcadf2f3454cb5",
+      "result": "CAMPAIGN_BOUNDING_CONTRACT checks=8 failures=0"
+    },
+    {
+      "test": "campaign_execution_contract",
+      "command": "godot --headless --path . --script qa/campaign_execution_contract.gd",
+      "checks": 14,
+      "failures": 0,
+      "exit_code": 0,
+      "log_sha256": "bfe0f426695d891b2aedb1a9fc5be99b8274e70cfb7f5832e8da418f4ecefaac",
+      "result": "EXECUTION_CONTRACT checks=14 failures=0; no battle steps or model requests"
+    },
+    {
+      "test": "campaign_3d_contract",
+      "command": "godot --headless --path . --script qa/campaign_3d_contract.gd",
+      "checks": 174,
+      "failures": 0,
+      "exit_code": 0,
+      "log_sha256": "a03b8ccd02652616bff1434e0510d13be02de40d2e51dd1da51d3f25036b8926",
+      "result": "CAMPAIGN_3D_CONTRACT checks=174 failures=0"
+    },
+    {
+      "test": "campaign_asset_contract",
+      "command": "godot --headless --path . --script qa/campaign_asset_contract.gd",
+      "checks": 93,
+      "failures": 0,
+      "exit_code": 0,
+      "log_sha256": "2b496de9bf7634954841eedd4554a1f8fd3e66bb6f9c873f9b670465bfb7f238",
+      "result": "CAMPAIGN_ASSET_CONTRACT checks=93 failures=0"
+    },
+    {
+      "test": "campaign_source_data_contract",
+      "command": "godot --headless --path . --script qa/campaign_source_data_contract.gd",
+      "checks": 11332,
+      "failures": 0,
+      "exit_code": 0,
+      "log_sha256": "5b637fc1957f25e0605132b0cec9d7fa29040bfda0f2a9101bf2b977c5414818",
+      "result": "campaign_source_data_contract: 11332 checks, 0 failures"
+    },
+    {
+      "test": "campaign_source_placement_contract",
+      "command": "godot --headless --path . --script qa/campaign_source_placement_contract.gd",
+      "checks": 29607,
+      "failures": 0,
+      "exit_code": 0,
+      "log_sha256": "0d7428a18451d7aa6dcd11ae39b36b7b3742e44376d1b42efd7fa60d895d0812",
+      "result": "campaign_source_placement_contract: 29607 checks, 0 failures; zero simulation ticks"
+    }
+  ],
+  "resolved_regression": "Initial 1.2m reservation spacing exhausted two Orchard capture slots; restored 1m navigation-cell spacing, retaining distinct physically clear endpoints; 174 checks rerun passed.",
+  "placement_report": "qa/campaign_source_placement_results.json"
+}

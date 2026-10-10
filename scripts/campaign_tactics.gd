@@ -22,8 +22,17 @@ func take_budget(cover: bool) -> bool:
 
 func configure(world,navigation) -> void:world_ref=weakref(world);navigation_ref=weakref(navigation);standpoints.clear()
 
+func prune_positions() -> void:
+	var world=world_ref.get_ref()
+	for id in standpoints.keys():
+		var claim: Dictionary=standpoints[id]
+		if int(id)<0 or int(id)>=world.units.size():standpoints.erase(id);continue
+		var owner: Dictionary=world.units[int(id)]
+		if not owner.alive or owner.get("player",false) or int(owner.get("network_peer_id",0))>0 or int(owner.get("mounted",-1))>=0 or int(owner.get("spawn_epoch",0))!=int(claim.epoch) or world.time>=float(claim.until) or int(owner.get("ai_order",{}).get("revision",0))!=int(claim.get("revision",0)):standpoints.erase(id)
+
 func position_available(point: Vector2,unit_id: int) -> bool:
 	var world=world_ref.get_ref()
+	prune_positions()
 	for id in standpoints:
 		if int(id)==unit_id:continue
 		var claim: Dictionary=standpoints[id];var owner: Dictionary=world.units[int(id)]
@@ -34,15 +43,40 @@ func position_available(point: Vector2,unit_id: int) -> bool:
 func reserve_position(unit_id: int,point: Vector2,seconds: float) -> bool:
 	if not position_available(point,unit_id):return false
 	var world=world_ref.get_ref()
-	standpoints[unit_id]={"point":point,"epoch":int(world.units[unit_id].get("spawn_epoch",0)),"until":world.time+seconds}
+	standpoints[unit_id]={"point":point,"epoch":int(world.units[unit_id].get("spawn_epoch",0)),"until":world.time+seconds,"revision":int(world.units[unit_id].get("ai_order",{}).get("revision",0))}
 	return true
 
 func decide(unit: Dictionary,goal: Vector2,contact: Dictionary,visible: bool) -> Dictionary:
+	var result=decide_action(unit,goal,contact,visible)
+	var world=world_ref.get_ref();var order: Dictionary=unit.get("ai_order",{})
+	# Existing finite bounding commitments own their members until the coordinator
+	# releases them. Unrelated support retries cannot cancel a healthy crossing.
+	if str(order.get("bound_phase","")) in ["deploy","bound","handoff"] and not str(order.get("bound_role","")).is_empty():return result
+	var waiting=(bool(result.hold) and str(result.state) in ["support","peek","screen"]) or (str(unit.get("ai_task",""))=="support" and unit.position.distance_to(goal)<.85)
+	if preload("res://scripts/campaign_support_wait.gd").resume(unit,contact,waiting,world.time):
+		unit.ai_support_ready=false
+		var window=float(unit.ai_support_resume_until)
+		if float(unit.get("ai_support_mission_window",-1))!=window:
+			var mission_goal=goal
+			if unit.position.distance_to(goal)<1.0:mission_goal=navigation_ref.get_ref().capture_goal(unit.position,int(unit.id),0,Vector2.INF,int(unit.id),preload("res://scripts/campaign_goal_reservations.gd").mission(order))
+			unit.ai_support_mission_goal=mission_goal if mission_goal.is_finite() else goal;unit.ai_support_mission_window=window
+		var destination: Vector2=unit.ai_support_mission_goal
+		var reservations=navigation_ref.get_ref().capture_reservations
+		if reservations.available(destination,int(unit.id)):reservations.reserve(unit,destination,preload("res://scripts/campaign_goal_reservations.gd").mission(order),world.time)
+		if float(unit.get("ai_support_escape_window",-1))!=window:
+			var escape=recover(unit,destination)
+			if not unit.has("ai_recovery_search"):
+				unit.ai_support_escape_window=window;unit.ai_support_escape=escape;unit.ai_support_escape_until=world.time+1.5
+		if world.time<float(unit.get("ai_support_escape_until",0)) and unit.position.distance_to(unit.ai_support_escape)>.35:destination=unit.ai_support_escape
+		result={"goal":destination,"state":"support-resume","stance":0,"hold":false}
+	return result
+
+func decide_action(unit: Dictionary,goal: Vector2,contact: Dictionary,visible: bool) -> Dictionary:
 	var world=world_ref.get_ref();var task=str(unit.get("ai_task","attack"));var order: Dictionary=unit.get("ai_order",{})
 	var stress=float(unit.get("ai_stress",0));var assault=task=="attack";var distance=unit.position.distance_to(goal)
 	var result={"goal":goal,"state":"advance","stance":0,"hold":false}
 	unit.ai_support_ready=false;unit.ai_support_checked_at=world.time
-	unit.ai_fire_clear=false
+	unit.ai_fire_clear=false;unit.ai_support_ray_clear=false
 	if order.get("breach_thrower",false) and float(unit.get("ai_stress",0))<.62:
 		result.goal=order.goal;result.hold=unit.position.distance_to(order.goal)<.5;result.state="breach-stage"
 		return result
@@ -50,7 +84,7 @@ func decide(unit: Dictionary,goal: Vector2,contact: Dictionary,visible: bool) ->
 		if distance<.85:result.state="hold" if task in ["hold","reserve"] else "screen" if task=="control" else "support" if task=="support" else "capture";result.hold=true
 		return result
 	var old=world.time-float(contact.get("observed_at",0))>2.6
-	if old or float(contact.get("confidence",0))<.24:return result
+	if old or float(contact.get("confidence",0))<.24 or contact.get("source","")!="vision":return result
 	var weapon: Dictionary=world.weapon_for(unit)
 	unit.ai_fire_clear=Cover.muzzle_clear(world,unit,contact,weapon) and not Cover.friendly_masked(world,unit,contact.position)
 	preload("res://scripts/campaign_directional_aim.gd").cache_fire_context(unit,contact,weapon)
@@ -108,7 +142,7 @@ func decide(unit: Dictionary,goal: Vector2,contact: Dictionary,visible: bool) ->
 	return result
 
 func mark_support(unit: Dictionary,result: Dictionary,world) -> void:
-	unit.ai_support_ready=bool(result.hold) and bool(unit.get("ai_fire_clear",false)) and unit.reload<=0 and unit.ammo>0 and float(unit.get("ai_stress",0))<.62 and absf(float(unit.stance_blend)-float(result.stance))<.08
+	unit.ai_support_ready=bool(result.hold) and bool(unit.get("ai_fire_clear",false)) and bool(unit.get("ai_support_ray_clear",false)) and unit.reload<=0 and unit.ammo>0 and float(unit.get("ai_stress",0))<.62 and absf(float(unit.stance_blend)-float(result.stance))<.08
 	unit.ai_support_checked_at=world.time
 
 func prepare_bound(unit: Dictionary,goal: Vector2,contact: Dictionary) -> void:
@@ -195,6 +229,7 @@ func recover(unit: Dictionary,goal: Vector2) -> Vector2:
 		var index=int(search.next);search.next=index+1
 		var radius=.8 if index<8 else 1.5;var offset=float([0.0,.7,-.7,1.4,-1.4,2.1,-2.1,PI][index%8])
 		var point: Vector2=search.origin+Vector2.from_angle(search.facing+offset)*radius
+		if not position_available(point,int(unit.id)) or not ai.capture_reservations.available(point,int(unit.id)):continue
 		if not ai.traversable(world,unit.position,point):continue
 		var node=ai.graph.get_closest_point(point)
 		if node<0:continue
