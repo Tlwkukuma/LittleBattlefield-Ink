@@ -1,0 +1,341 @@
+{
+  "types": [
+    {
+      "fields": [
+        "currentGun",
+        "preferedBulletToReload"
+      ],
+      "methods": [
+        {
+          "name": "GetProgress",
+          "references": [
+            "ItemAgent_Gun CA_Reload::currentGun",
+            "System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)",
+            "Duckov.Progress ItemAgent_Gun::GetReloadProgress()",
+            "System.Boolean Duckov.Progress::inProgress"
+          ]
+        }
+      ],
+      "type": "CA_Reload"
+    },
+    {
+      "fields": [
+        "selfPrefab",
+        "hideNormalCrosshair",
+        "parentAimMarker",
+        "aimMarkerUI",
+        "followUI",
+        "canvasGroup",
+        "followSpeed",
+        "followMaxDistance",
+        "adsValue",
+        "canvasAlpha",
+        "adsAlphaRemap",
+        "proceduralImages",
+        "proceduralImageCanvasGroups",
+        "shootPunchReceivers",
+        "crosshairs",
+        "sniperRoundRenderer",
+        "followSniperRoundRenderer",
+        "scatter",
+        "minScatter",
+        "selfRect",
+        "gun",
+        "camera",
+        "sniperCenterShaderHash"
+      ],
+      "methods": [
+        {
+          "name": "LateUpdate",
+          "references": [
+            "UnityEngine.RectTransform ADSAimMarker::selfRect",
+            "System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_one()",
+            "System.Void UnityEngine.Transform::set_localScale(UnityEngine.Vector3)",
+            "System.Boolean ADSAimMarker::LockTraceTarget()",
+            "UnityEngine.RectTransform ADSAimMarker::followUI",
+            "UnityEngine.Vector3 UnityEngine.Transform::get_position()",
+            "UnityEngine.RectTransform ADSAimMarker::aimMarkerUI",
+            "System.Single UnityEngine.Time::get_deltaTime()",
+            "System.Single ADSAimMarker::followSpeed",
+            "UnityEngine.Vector3 UnityEngine.Vector3::Lerp(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)",
+            "System.Void UnityEngine.Transform::set_position(UnityEngine.Vector3)",
+            "System.Single UnityEngine.Vector3::Distance(UnityEngine.Vector3,UnityEngine.Vector3)",
+            "System.Single ADSAimMarker::followMaxDistance",
+            "UnityEngine.Vector3 UnityEngine.Vector3::MoveTowards(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)",
+            "System.Collections.Generic.List`1<SingleCrosshair> ADSAimMarker::crosshairs",
+            "System.Collections.Generic.List`1/Enumerator<!0> System.Collections.Generic.List`1<SingleCrosshair>::GetEnumerator()",
+            "!0 System.Collections.Generic.List`1/Enumerator<SingleCrosshair>::get_Current()",
+            "System.Single ADSAimMarker::scatter",
+            "System.Void SingleCrosshair::UpdateScatter(System.Single)",
+            "System.Boolean System.Collections.Generic.List`1/Enumerator<SingleCrosshair>::MoveNext()",
+            "System.Void System.IDisposable::Dispose()",
+            "System.Void ADSAimMarker::SetSniperRenderer()"
+          ]
+        },
+        {
+          "name": "SetScatter",
+          "references": [
+            "System.Single ADSAimMarker::scatter",
+            "System.Single ADSAimMarker::minScatter"
+          ]
+        },
+        {
+          "name": "SetAdsValue",
+          "references": [
+            "System.Single ADSAimMarker::adsValue",
+            "System.Single ADSAimMarker::canvasAlpha",
+            "System.Single UnityEngine.Vector2::y",
+            "System.Single UnityEngine.Vector2::x",
+            "System.Single UnityEngine.Mathf::Clamp01(System.Single)",
+            "UnityEngine.CanvasGroup ADSAimMarker::canvasGroup",
+            "System.Void UnityEngine.CanvasGroup::set_alpha(System.Single)",
+            "System.Collections.Generic.List`1<UnityEngine.UI.ProceduralImage.ProceduralImage> ADSAimMarker::proceduralImages",
+            "!0 System.Collections.Generic.List`1<UnityEngine.UI.ProceduralImage.ProceduralImage>::get_Item(System.Int32)",
+            "System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)",
+            "System.Single ADSAimMarker::scatter",
+            "System.Single ADSAimMarker::minScatter",
+            "System.Single UnityEngine.Mathf::Clamp(System.Single,System.Single,System.Single)",
+            "System.Single UnityEngine.Mathf::Lerp(System.Single,System.Single,System.Single)",
+            "System.Void UnityEngine.UI.ProceduralImage.ProceduralImage::set_FalloffDistance(System.Single)",
+            "System.Collections.Generic.List`1<UnityEngine.CanvasGroup> ADSAimMarker::proceduralImageCanvasGroups",
+            "!0 System.Collections.Generic.List`1<UnityEngine.CanvasGroup>::get_Item(System.Int32)",
+            "System.Int32 System.Collections.Generic.List`1<UnityEngine.UI.ProceduralImage.ProceduralImage>::get_Count()"
+          ]
+        }
+      ],
+      "type": "ADSAimMarker"
+    },
+    {
+      "fields": [
+        "aimMarkerUI",
+        "aimMarkerImages",
+        "left",
+        "right",
+        "up",
+        "down",
+        "scatter",
+        "minScatter",
+        "rootCanvasGroup",
+        "normalAimCanvasGroup",
+        "aimMarkerAnimator",
+        "reloadProgressBar",
+        "onShoot",
+        "currentAdsAimMarker",
+        "defaultAdsAimMarker",
+        "inProgressHash",
+        "killMarkerHash",
+        "distanceText",
+        "distanceGlow",
+        "distanceTextColorFull",
+        "distanceTextColorHalf",
+        "distanceTextColorOver",
+        "adsValue",
+        "killMarkerTime",
+        "killMarkerTimer",
+        "_cam"
+      ],
+      "methods": [
+        {
+          "name": "Update",
+          "references": [
+            "UnityEngine.Animator AimMarker::aimMarkerAnimator",
+            "System.Int32 AimMarker::inProgressHash",
+            "ActionProgressHUD AimMarker::reloadProgressBar",
+            "System.Boolean ActionProgressHUD::get_InProgress()",
+            "System.Void UnityEngine.Animator::SetBool(System.Int32,System.Boolean)",
+            "System.Single AimMarker::killMarkerTimer",
+            "System.Single UnityEngine.Time::get_deltaTime()",
+            "System.Int32 AimMarker::killMarkerHash",
+            "CharacterMainControl CharacterMainControl::get_Main()",
+            "System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)",
+            "Health CharacterMainControl::get_Health()",
+            "System.Boolean Health::get_IsDead()",
+            "UnityEngine.CanvasGroup AimMarker::rootCanvasGroup",
+            "System.Void UnityEngine.CanvasGroup::set_alpha(System.Single)",
+            "LevelManager LevelManager::get_Instance()",
+            "InputManager LevelManager::get_InputManager()",
+            "UnityEngine.Vector3 InputManager::get_InputAimPoint()",
+            "UnityEngine.Camera AimMarker::get_MainCam()",
+            "UnityEngine.Vector3 UnityEngine.Camera::WorldToScreenPoint(UnityEngine.Vector3)",
+            "UnityEngine.Vector2 InputManager::get_AimScreenPoint()",
+            "UnityEngine.Vector3 UnityEngine.Vector2::op_Implicit(UnityEngine.Vector2)",
+            "System.Void AimMarker::SetAimMarkerPosScreenSpace(UnityEngine.Vector3)"
+          ]
+        },
+        {
+          "name": "LateUpdate",
+          "references": [
+            "CharacterMainControl CharacterMainControl::get_Main()",
+            "System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)",
+            "LevelManager LevelManager::get_Instance()",
+            "InputManager LevelManager::get_InputManager()",
+            "UnityEngine.Vector3 InputManager::get_InputAimPoint()",
+            "ItemAgent_Gun CharacterMainControl::GetGun()",
+            "UnityEngine.Color AimMarker::distanceTextColorFull",
+            "System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)",
+            "System.Single AimMarker::adsValue",
+            "System.Single ItemAgent_Gun::get_AdsValue()",
+            "System.Void AimMarker::OnStartAdsWithGun(ItemAgent_Gun)",
+            "System.Single AimMarker::scatter",
+            "System.Single ItemAgent_Gun::get_CurrentScatter()",
+            "System.Single UnityEngine.Time::get_deltaTime()",
+            "System.Single UnityEngine.Mathf::MoveTowards(System.Single,System.Single,System.Single)",
+            "System.Single AimMarker::minScatter",
+            "System.Single ItemAgent_Gun::get_MinScatter()",
+            "UnityEngine.RectTransform AimMarker::left",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_left()",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Multiply(UnityEngine.Vector3,System.Single)",
+            "UnityEngine.Vector2 UnityEngine.Vector2::op_Implicit(UnityEngine.Vector3)",
+            "System.Void UnityEngine.RectTransform::set_anchoredPosition(UnityEngine.Vector2)",
+            "UnityEngine.RectTransform AimMarker::right",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_right()",
+            "UnityEngine.RectTransform AimMarker::up",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_up()",
+            "UnityEngine.RectTransform AimMarker::down",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_down()",
+            "UnityEngine.Transform ItemAgent_Gun::get_muzzle()",
+            "UnityEngine.Vector3 UnityEngine.Transform::get_position()",
+            "System.Single UnityEngine.Vector3::Distance(UnityEngine.Vector3,UnityEngine.Vector3)",
+            "System.Single ItemAgent_Gun::get_BulletDistance()",
+            "UnityEngine.Color AimMarker::distanceTextColorHalf",
+            "UnityEngine.Color AimMarker::distanceTextColorOver",
+            "UnityEngine.Transform UnityEngine.Component::get_transform()",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Addition(UnityEngine.Vector3,UnityEngine.Vector3)",
+            "System.Single UnityEngine.Mathf::Clamp01(System.Single)",
+            "ADSAimMarker AimMarker::currentAdsAimMarker",
+            "System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)",
+            "System.Void ADSAimMarker::SetScatter(System.Single,System.Single)",
+            "System.Void ADSAimMarker::SetAdsValue(System.Single)",
+            "System.Boolean ADSAimMarker::hideNormalCrosshair",
+            "UnityEngine.CanvasGroup AimMarker::normalAimCanvasGroup",
+            "System.Void UnityEngine.CanvasGroup::set_alpha(System.Single)",
+            "TMPro.TextMeshProUGUI AimMarker::distanceText",
+            "00",
+            "System.String System.Single::ToString(System.String)",
+            " M",
+            "System.String System.String::Concat(System.String,System.String)",
+            "System.Void TMPro.TMP_Text::set_text(System.String)",
+            "System.Void UnityEngine.UI.Graphic::set_color(UnityEngine.Color)",
+            "LeTai.TrueShadow.TrueShadow AimMarker::distanceGlow",
+            "System.Void LeTai.TrueShadow.TrueShadow::set_Color(UnityEngine.Color)"
+          ]
+        }
+      ],
+      "type": "AimMarker"
+    },
+    {
+      "fields": [
+        "specificActionType",
+        "fillImage",
+        "SliderCanvasGroup",
+        "cancleCanvasGroup",
+        "characterMainControl",
+        "currentProgressInterface",
+        "targetAlpha",
+        "inProgress",
+        "OnFinishEvent",
+        "stopIndicator"
+      ],
+      "methods": [
+        {
+          "name": "Update",
+          "references": [
+            "CharacterMainControl ActionProgressHUD::characterMainControl",
+            "System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)",
+            "LevelManager LevelManager::get_Instance()",
+            "CharacterMainControl LevelManager::get_MainCharacter()",
+            "System.Void CharacterMainControl::add_OnActionStartEvent(System.Action`1<CharacterActionBase>)",
+            "System.Void CharacterMainControl::add_OnActionProgressFinishEvent(System.Action`1<CharacterActionBase>)",
+            "System.Boolean ActionProgressHUD::inProgress",
+            "Duckov.IProgress ActionProgressHUD::currentProgressInterface",
+            "System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)",
+            "Duckov.Progress Duckov.IProgress::GetProgress()",
+            "System.Boolean Duckov.Progress::inProgress",
+            "System.Single Duckov.Progress::get_progress()",
+            "System.Single ActionProgressHUD::targetAlpha",
+            "UnityEngine.UI.ProceduralImage.ProceduralImage ActionProgressHUD::fillImage",
+            "System.Void UnityEngine.UI.Image::set_fillAmount(System.Single)",
+            "UnityEngine.CanvasGroup ActionProgressHUD::SliderCanvasGroup",
+            "System.Single UnityEngine.CanvasGroup::get_alpha()",
+            "System.Single UnityEngine.Time::get_deltaTime()",
+            "System.Single UnityEngine.Mathf::MoveTowards(System.Single,System.Single,System.Single)",
+            "System.Void UnityEngine.CanvasGroup::set_alpha(System.Single)",
+            "UnityEngine.CanvasGroup ActionProgressHUD::cancleCanvasGroup",
+            "UnityEngine.GameObject ActionProgressHUD::stopIndicator",
+            "CharacterActionBase CharacterMainControl::get_CurrentAction()",
+            "System.Boolean CharacterActionBase::get_Running()",
+            "System.Boolean CharacterActionBase::IsStopable()",
+            "System.Boolean UnityEngine.GameObject::get_activeSelf()",
+            "System.Void UnityEngine.GameObject::SetActive(System.Boolean)"
+          ]
+        },
+        {
+          "name": "OnActionStart",
+          "references": [
+            "Duckov.IProgress ActionProgressHUD::currentProgressInterface",
+            "CharacterActionBase/ActionPriorities ActionProgressHUD::specificActionType",
+            "CharacterActionBase/ActionPriorities CharacterActionBase::ActionPriority()",
+            "System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)",
+            "System.Boolean CharacterActionBase::progressHUD"
+          ]
+        },
+        {
+          "name": "OnActionFinish",
+          "references": [
+            "UnityEngine.Events.UnityEvent ActionProgressHUD::OnFinishEvent",
+            "System.Void UnityEngine.Events.UnityEvent::Invoke()",
+            "UnityEngine.UI.ProceduralImage.ProceduralImage ActionProgressHUD::fillImage",
+            "System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)",
+            "System.Void UnityEngine.UI.Image::set_fillAmount(System.Single)"
+          ]
+        }
+      ],
+      "type": "ActionProgressHUD"
+    },
+    {
+      "fields": [
+        "characterMainControl",
+        "button",
+        "reloadable",
+        "OnShowEvent",
+        "OnHideEvent",
+        "frame"
+      ],
+      "methods": [
+        {
+          "name": "Update",
+          "references": [
+            "CharacterMainControl ReloadHUD::characterMainControl",
+            "System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)",
+            "LevelManager LevelManager::get_Instance()",
+            "CharacterMainControl LevelManager::get_MainCharacter()",
+            "UnityEngine.UI.Button ReloadHUD::button",
+            "UnityEngine.UI.Button/ButtonClickedEvent UnityEngine.UI.Button::get_onClick()",
+            "System.Void UnityEngine.Events.UnityEvent::AddListener(UnityEngine.Events.UnityAction)",
+            "System.Boolean CharacterMainControl::GetGunReloadable()",
+            "System.Boolean ReloadHUD::reloadable",
+            "System.Boolean UnityEngine.UI.Selectable::get_interactable()",
+            "System.Void UnityEngine.UI.Selectable::set_interactable(System.Boolean)",
+            "UnityEngine.Events.UnityEvent ReloadHUD::OnShowEvent",
+            "System.Void UnityEngine.Events.UnityEvent::Invoke()",
+            "UnityEngine.Events.UnityEvent ReloadHUD::OnHideEvent",
+            "System.Int32 ReloadHUD::frame"
+          ]
+        },
+        {
+          "name": "Reload",
+          "references": [
+            "CharacterMainControl ReloadHUD::characterMainControl",
+            "System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)",
+            "System.Boolean CharacterMainControl::TryToReload(ItemStatsSystem.Item)"
+          ]
+        }
+      ],
+      "type": "ReloadHUD"
+    }
+  ],
+  "sha256": "298D5D5885427632D5A94B2F3CE587F8EBC9528EC71E575A475158C326ECAE8F",
+  "source": "F:\\steam\\steamapps\\common\\Escape from Duckov\\Duckov_Data\\Managed\\TeamSoda.Duckov.Core.dll",
+  "note": "Read-only symbols and call references, not measured screen appearance or input bindings."
+}

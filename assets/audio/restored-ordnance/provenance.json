@@ -1,0 +1,12 @@
+{
+  "reason": "User requested pre-free-palette explosions and ordnance launch sounds. Ordinary firearms stay free recordings.",
+  "source_directory": "assets/audio/combat",
+  "sha256": {
+    "Explosion": "9273d18d06770e35aae6001736401a69bac2840a02e6f91572781b0e44c847aa",
+    "rocket": "e99ee1851fc51c9c7d7d4b2b220ff96a30c8fc581bde9309fd4a63e51bc978b2",
+    "grenade_launcher": "f528240227c7e7561699a07003b63f42a74b80c345b6314d96ac0a06428bf38f",
+    "cannon_shot": "9d2ea2e99af61b0dfe5a5b4f4908c75a3c4075c0199287c368802102670246a2",
+    "macrophage_shot": "c499a21ecc5251dfc310be73803922f75d9ad8a3aeca13cfdb833c0f522ee98d",
+    "shotgun": "c6145a6e7cf7f8c082eb93753613e9a01d41cba81421bf276cd62fc7cc2d02d9"
+  }
+}

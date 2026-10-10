@@ -1,0 +1,10 @@
+Godot Engine 4.6.3 stable
+Engine source notices, retrieved from the official 4.6.3-stable tag:
+https://raw.githubusercontent.com/godotengine/godot/4.6.3-stable/LICENSE.txt
+https://raw.githubusercontent.com/godotengine/godot/4.6.3-stable/COPYRIGHT.txt
+
+Distribution guidance:
+https://docs.godotengine.org/en/4.6/about/complying_with_licenses.html
+
+These notices concern Godot Engine and its dependencies. The project's audio,
+models, textures and other assets retain their own notices and provenance.

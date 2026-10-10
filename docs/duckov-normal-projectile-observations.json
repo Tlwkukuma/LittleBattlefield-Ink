@@ -1,0 +1,323 @@
+[
+  {
+    "name": "BulletSMG",
+    "active": true,
+    "components": [
+      "Transform",
+      "MonoBehaviour"
+    ],
+    "scale": "Vector3f(1.0, 1.0, 1.0)",
+    "children": [
+      {
+        "name": "SodaPointLight",
+        "active": true,
+        "components": [
+          "Transform",
+          "MeshFilter",
+          "MeshRenderer",
+          "MonoBehaviour"
+        ],
+        "MeshRenderer": {
+          "enabled": true,
+          "materials": [
+            "ZeroPoint"
+          ]
+        },
+        "scale": "Vector3f(1.0511367321014404, 1.1640625, 1.7839394807815552)",
+        "children": []
+      },
+      {
+        "name": "Trail",
+        "active": true,
+        "components": [
+          "Transform",
+          "TrailRenderer"
+        ],
+        "TrailRenderer": {
+          "enabled": true,
+          "materials": [
+            "BulletTrail"
+          ],
+          "m_Time": 0.05999999865889549,
+          "m_Emitting": true,
+          "m_MinVertexDistance": 0.10000000149011612,
+          "m_Parameters": {
+            "widthMultiplier": 0.11999999731779099,
+            "widthCurve": {
+              "m_Curve": [
+                {
+                  "time": 0.0,
+                  "value": 1.0,
+                  "inSlope": 0.0,
+                  "outSlope": 0.0,
+                  "weightedMode": 0,
+                  "inWeight": 0.3333333432674408,
+                  "outWeight": 0.28996601700782776
+                },
+                {
+                  "time": 0.17635293304920197,
+                  "value": 1.0,
+                  "inSlope": 0.0,
+                  "outSlope": 0.0,
+                  "weightedMode": 0,
+                  "inWeight": 0.3333333432674408,
+                  "outWeight": 0.3333333432674408
+                },
+                {
+                  "time": 0.6825652122497559,
+                  "value": 1.0,
+                  "inSlope": 0.0,
+                  "outSlope": 0.0,
+                  "weightedMode": 0,
+                  "inWeight": 0.3333333432674408,
+                  "outWeight": 0.3333333432674408
+                },
+                {
+                  "time": 1.0,
+                  "value": 1.0,
+                  "inSlope": 0.0,
+                  "outSlope": 0.0,
+                  "weightedMode": 0,
+                  "inWeight": 0.3132355809211731,
+                  "outWeight": 0.0
+                }
+              ],
+              "m_PreInfinity": 2,
+              "m_PostInfinity": 2,
+              "m_RotationOrder": 4
+            },
+            "colorGradient": {
+              "key0": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "key1": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.0
+              },
+              "key2": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "key3": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "key4": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "key5": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "key6": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "key7": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "ctime0": 0,
+              "ctime1": 65535,
+              "ctime2": 0,
+              "ctime3": 0,
+              "ctime4": 0,
+              "ctime5": 0,
+              "ctime6": 0,
+              "ctime7": 0,
+              "atime0": 0,
+              "atime1": 65535,
+              "atime2": 0,
+              "atime3": 0,
+              "atime4": 0,
+              "atime5": 0,
+              "atime6": 0,
+              "atime7": 0,
+              "m_Mode": 0,
+              "m_ColorSpace": 0,
+              "m_NumColorKeys": 2,
+              "m_NumAlphaKeys": 2
+            },
+            "numCornerVertices": 2,
+            "numCapVertices": 1,
+            "alignment": 0,
+            "textureMode": 0,
+            "textureScale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "shadowBias": 0.5,
+            "generateLightingData": false
+          }
+        },
+        "scale": "Vector3f(1.0, 1.0, 1.0)",
+        "children": []
+      }
+    ]
+  },
+  {
+    "name": "BulletNormal",
+    "active": true,
+    "components": [
+      "Transform",
+      "MonoBehaviour"
+    ],
+    "scale": "Vector3f(1.0, 1.0, 1.0)",
+    "children": [
+      {
+        "name": "Trail",
+        "active": true,
+        "components": [
+          "Transform",
+          "TrailRenderer"
+        ],
+        "TrailRenderer": {
+          "enabled": true,
+          "materials": [
+            "BulletTrail"
+          ],
+          "m_Time": 0.03999999910593033,
+          "m_Emitting": true,
+          "m_MinVertexDistance": 0.10000000149011612,
+          "m_Parameters": {
+            "widthMultiplier": 0.1899999976158142,
+            "widthCurve": {
+              "m_Curve": [
+                {
+                  "time": 0.0,
+                  "value": 1.0,
+                  "inSlope": 0.0,
+                  "outSlope": 0.0,
+                  "weightedMode": 0,
+                  "inWeight": 0.3333333432674408,
+                  "outWeight": 0.3333333432674408
+                }
+              ],
+              "m_PreInfinity": 2,
+              "m_PostInfinity": 2,
+              "m_RotationOrder": 4
+            },
+            "colorGradient": {
+              "key0": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 1.0
+              },
+              "key1": {
+                "r": 1.0,
+                "g": 1.0,
+                "b": 1.0,
+                "a": 0.4882625937461853
+              },
+              "key2": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.21176469326019287
+              },
+              "key3": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "key4": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "key5": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "key6": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "key7": {
+                "r": 0.0,
+                "g": 0.0,
+                "b": 0.0,
+                "a": 0.0
+              },
+              "ctime0": 0,
+              "ctime1": 65535,
+              "ctime2": 0,
+              "ctime3": 0,
+              "ctime4": 0,
+              "ctime5": 0,
+              "ctime6": 0,
+              "ctime7": 0,
+              "atime0": 0,
+              "atime1": 7517,
+              "atime2": 33731,
+              "atime3": 65535,
+              "atime4": 0,
+              "atime5": 0,
+              "atime6": 0,
+              "atime7": 0,
+              "m_Mode": 0,
+              "m_ColorSpace": 0,
+              "m_NumColorKeys": 2,
+              "m_NumAlphaKeys": 4
+            },
+            "numCornerVertices": 1,
+            "numCapVertices": 2,
+            "alignment": 0,
+            "textureMode": 0,
+            "textureScale": {
+              "x": 1.0,
+              "y": 1.0
+            },
+            "shadowBias": 0.5,
+            "generateLightingData": false
+          }
+        },
+        "scale": "Vector3f(1.0, 1.0, 1.0)",
+        "children": []
+      },
+      {
+        "name": "SodaPointLight",
+        "active": true,
+        "components": [
+          "Transform",
+          "MeshFilter",
+          "MeshRenderer",
+          "MonoBehaviour"
+        ],
+        "MeshRenderer": {
+          "enabled": true,
+          "materials": [
+            "ZeroPoint"
+          ]
+        },
+        "scale": "Vector3f(1.422818660736084, 1.5756750106811523, 2.414740562438965)",
+        "children": []
+      }
+    ]
+  }
+]

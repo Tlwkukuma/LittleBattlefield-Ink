@@ -1,0 +1,12 @@
+{
+  "id": "M416",
+  "source": "Pixi-Battlefield1-Blue/src/pubgWeapons.js: PUBG_WEAPON_PROFILES.M416",
+  "mag": 30,
+  "reserve": 180,
+  "rpm": 700,
+  "reload": 2.1,
+  "damage": 28,
+  "spread": 0.0257,
+  "prototype_range": 30,
+  "note": "Player mag, reserve, cadence, reload, damage and spread copied from the existing project; world scale and AI balance are prototype-specific."
+}

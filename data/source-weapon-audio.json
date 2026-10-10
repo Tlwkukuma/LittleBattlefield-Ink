@@ -1,0 +1,264 @@
+{
+  "source": "Pixi-Battlefield1-Blue/src/audio.js",
+  "source_sha256": "81f40dd6416f1f54c648610dc30f399bfbcff3c4d3b9377d5a08c14183c378ac",
+  "master_gain": 0.22,
+  "aliases": {
+    "rifle": "assaultRifle",
+    "mg": "lightMachineGun",
+    "rocket": "rocketLauncher"
+  },
+  "profiles": {
+    "pistol": {
+      "sample": "pistol",
+      "group": "smallarms",
+      "gain": 0.72,
+      "lowpass": 6500
+    },
+    "machinePistol": {
+      "sample": "machine_pistol",
+      "group": "smallarms",
+      "gain": 0.6,
+      "lowpass": 7000
+    },
+    "smg": {
+      "sample": "gun_shot",
+      "group": "smallarms",
+      "gain": 0.64,
+      "lowpass": 6100
+    },
+    "assaultRifle": {
+      "sample": "gun_shot",
+      "group": "smallarms",
+      "gain": 0.78,
+      "lowpass": 5700
+    },
+    "marksmanRifle": {
+      "sample": "sniper_shot",
+      "group": "heavyarms",
+      "gain": 0.82,
+      "lowpass": 5000
+    },
+    "shotgun": {
+      "sample": "shotgun",
+      "group": "heavyarms",
+      "gain": 0.76,
+      "lowpass": 3200
+    },
+    "lightMachineGun": {
+      "sample": "gun_shot",
+      "group": "machineguns",
+      "gain": 0.67,
+      "lowpass": 4400
+    },
+    "heavyMachineGun": {
+      "sample": "macrophage_shot",
+      "group": "machineguns",
+      "gain": 0.76,
+      "lowpass": 3900
+    },
+    "minigun": {
+      "sample": "gun_shot",
+      "group": "machineguns",
+      "gain": 0.54,
+      "lowpass": 5200
+    },
+    "sniper": {
+      "sample": "sniper_shot",
+      "group": "heavyarms",
+      "gain": 0.78,
+      "lowpass": 5000
+    },
+    "antimaterial": {
+      "sample": "sniper_shot",
+      "group": "heavyarms",
+      "gain": 0.98,
+      "lowpass": 4200
+    },
+    "rocketLauncher": {
+      "sample": "rocket",
+      "group": "explosives",
+      "gain": 0.82,
+      "lowpass": 3000
+    },
+    "grenadeLauncher": {
+      "sample": "grenade_launcher",
+      "group": "explosives",
+      "gain": 0.64,
+      "lowpass": 3900
+    },
+    "grenadeLauncherAuto": {
+      "sample": "grenade_launcher",
+      "group": "explosives",
+      "gain": 0.58,
+      "lowpass": 4300
+    },
+    "mortar": {
+      "sample": "cannon_shot",
+      "group": "artillery",
+      "gain": 0.58,
+      "lowpass": 2300
+    },
+    "fieldGun": {
+      "sample": "cannon_shot",
+      "group": "artillery",
+      "gain": 0.78,
+      "lowpass": 2500
+    },
+    "tankCannon": {
+      "sample": "cannon_shot",
+      "group": "artillery",
+      "gain": 0.84,
+      "lowpass": 2200
+    },
+    "heavyCannon": {
+      "sample": "cannon_shot",
+      "group": "artillery",
+      "gain": 1.0,
+      "lowpass": 1850
+    },
+    "autocannon": {
+      "sample": "macrophage_shot",
+      "group": "vehicleGuns",
+      "gain": 0.63,
+      "lowpass": 4000
+    },
+    "vehicleMg": {
+      "sample": "gun_shot",
+      "group": "vehicleGuns",
+      "gain": 0.79,
+      "lowpass": 3900
+    },
+    "fixedHmg": {
+      "sample": "macrophage_shot",
+      "group": "vehicleGuns",
+      "gain": 0.82,
+      "lowpass": 3300
+    },
+    "vehicleCanister": {
+      "sample": "shotgun",
+      "group": "vehicleGuns",
+      "gain": 0.84,
+      "lowpass": 2900
+    },
+    "vehicleGrenade": {
+      "sample": "grenade_launcher",
+      "group": "vehicleGuns",
+      "gain": 0.62,
+      "lowpass": 3400
+    },
+    "vehicleMortar": {
+      "sample": "cannon_shot",
+      "group": "artillery",
+      "gain": 0.65,
+      "lowpass": 2050
+    },
+    "flame": {
+      "sample": "flamethrower",
+      "group": "flame",
+      "gain": 0.55,
+      "lowpass": 1600
+    },
+    "flare": {
+      "sample": "gun_shot",
+      "group": "smallarms",
+      "gain": 0.62,
+      "lowpass": 4800
+    },
+    "napalm": {
+      "sample": "grenade_launcher",
+      "group": "explosives",
+      "gain": 0.72,
+      "lowpass": 2700
+    },
+    "gauss": {
+      "sample": "laser_shot",
+      "group": "energy",
+      "gain": 0.6,
+      "lowpass": 6800
+    },
+    "tesla": {
+      "sample": "lightning",
+      "group": "energy",
+      "gain": 0.64,
+      "lowpass": 7600
+    },
+    "energy": {
+      "sample": "antibody_shot",
+      "group": "energy",
+      "gain": 0.52,
+      "lowpass": 7200
+    },
+    "rifleSpecial": {
+      "sample": "gun_shot",
+      "group": "smallarms",
+      "gain": 0.72,
+      "lowpass": 5500
+    },
+    "throw": {
+      "sample": "grenade_launcher",
+      "group": "handling",
+      "gain": 0.22,
+      "lowpass": 4200
+    },
+    "melee": {
+      "sample": "",
+      "group": "melee",
+      "gain": 0.0,
+      "lowpass": 20000
+    }
+  },
+  "assets": {
+    "pistol.wav": {
+      "source": "ESM_GW_gun_one_shot_pistol_hi_tech_type_short_laser_tech_small_arm_short_4_long_deep.wav",
+      "sha256": "0de11c73a9c47d20bf78e824c9e26faeb6763b9ea847f34df3368661edda3899"
+    },
+    "machine_pistol.wav": {
+      "source": "ESM_GW_gun_one_shot_pistol_hi_tech_type_short_laser_tech_small_arm_short_5_long_deep.wav",
+      "sha256": "7e5a1407d187cdb5d0cd581c2d22a9092ce9f3fbc4642a33f90479eef95cfd1b"
+    },
+    "gun_shot.wav": {
+      "source": "gun_shot.wav",
+      "sha256": "d58860a6ec17cf00db9ded544eae642b61cd50c79a32bc324324622f7c8c2ac4"
+    },
+    "sniper_shot.wav": {
+      "source": "sniper_shot.wav",
+      "sha256": "e21c12eb7e515dbc0c4587e6bd53d9a26e3d2b9bcec1e8c01dc91295b1aef78b"
+    },
+    "shotgun.wav": {
+      "source": "shotgun.wav",
+      "sha256": "c6145a6e7cf7f8c082eb93753613e9a01d41cba81421bf276cd62fc7cc2d02d9"
+    },
+    "macrophage_shot.wav": {
+      "source": "macrophage_shot.wav",
+      "sha256": "c499a21ecc5251dfc310be73803922f75d9ad8a3aeca13cfdb833c0f522ee98d"
+    },
+    "rocket.wav": {
+      "source": "ESM_SFSG_cinematic_fx_science_fiction_weapon_firearm_launcher_buzz_smooth_recoil_01.wav",
+      "sha256": "e99ee1851fc51c9c7d7d4b2b220ff96a30c8fc581bde9309fd4a63e51bc978b2"
+    },
+    "grenade_launcher.wav": {
+      "source": "grenade_launcher.wav",
+      "sha256": "f528240227c7e7561699a07003b63f42a74b80c345b6314d96ac0a06428bf38f"
+    },
+    "cannon_shot.wav": {
+      "source": "cannon_shot.wav",
+      "sha256": "9d2ea2e99af61b0dfe5a5b4f4908c75a3c4075c0199287c368802102670246a2"
+    },
+    "flamethrower.wav": {
+      "source": "flamethrower.wav",
+      "sha256": "73e959db504e6b6bd26fc29fa3e48888f4ac2d014585f69dc8ee24343b1a29f1"
+    },
+    "laser_shot.wav": {
+      "source": "laser_shot.wav",
+      "sha256": "d0ac70b93e38b5c8624f437c4d4500c859a7a3f2fa14c221648fbe584e7ad5bd"
+    },
+    "lightning.wav": {
+      "source": "lightning.wav",
+      "sha256": "9f67811d156d525ab12888263a201c16d5064592d03167ccdd2c7a3634d10cc9"
+    },
+    "antibody_shot.wav": {
+      "source": "antibody_shot.wav",
+      "sha256": "c118a4b73c586e4c1d3964b815918f5bbf1725ec8d80dc21dfea13c43c51ebd2"
+    }
+  }
+}

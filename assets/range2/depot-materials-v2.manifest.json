@@ -1,0 +1,32 @@
+{
+  "asset": "res://assets/range2/depot-materials-v2.png",
+  "created": "2026-09-29",
+  "generator": "built-in image_gen",
+  "original_art": true,
+  "source_game_assets_copied": false,
+  "dimensions": [
+    1536,
+    1024
+  ],
+  "layout": {
+    "columns": 3,
+    "rows": 2,
+    "tile_pixels": 512
+  },
+  "tiles": [
+    "sandstone",
+    "concrete",
+    "painted metal",
+    "wood",
+    "soil and gravel",
+    "canvas"
+  ],
+  "sampling": {
+    "mipmaps": true,
+    "compression": "S3TC",
+    "projection": "dominant axis",
+    "tile_wrapping": "mirrored with 2.4% inset",
+    "color_role": "vertex alpha in opaque material"
+  },
+  "prompt": "Create an ORIGINAL game-ready hand-painted material atlas for a stylized desert scrapyard shooter, inspired by Borderlands 3's hand-inked materials, without logos or recognizable game assets. Output one landscape image with a strict 3-column by 2-row grid of SIX equal square texture tiles filling the entire image, no margins, no gaps, no text, no labels, no perspective, no objects. Each tile is an orthographic flat albedo texture, evenly lit, no cast shadows or baked directional lighting, intended to repeat. Top row left: warm dusty ochre sandstone, broad angular sediment bands, sparse charcoal hand-drawn cracks, beautiful quiet areas. Top middle: aged warm gray concrete, broad chipped patches and irregular dark cracks with fine pale edge highlights, not a grid. Top right: painted desaturated petrol teal industrial sheet steel with sparse exposed dark steel chipped edges, thin black hand-inked irregular scratches and pale worn highlights, quiet central areas, no large panels or rivets. Bottom row left: sun-bleached weathered brown wooden planks, long hand-drawn grain and thin irregular dark seams, no object border. Bottom middle: dusty desert gravel and packed soil, low contrast ochre sand, sparse small angular flat stones with hand-inked edges, irregular broken tracks, NOT densely noisy. Bottom right: desaturated warm khaki rugged woven canvas, subtle weave and small creases, sparse charcoal linework, no seams spanning entire tile, no buttons. Keep each tile's marks local within its own tile, no cross-grid marks. Mature graphic novel art, deliberately authored ink, muted middle values, strong material distinction, detailed enough for close-up yet clean at top-down gameplay scale. No orange saturation, no pure white background, no extra tiles, no captions. 1536 by 1024 or larger with same 3:2 ratio."
+}

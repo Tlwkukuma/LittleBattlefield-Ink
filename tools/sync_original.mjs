@@ -1,0 +1,37 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import {fileURLToPath,pathToFileURL} from 'node:url';
+import {createHash} from 'node:crypto';
+const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
+const source=path.resolve(root,'../../web/Pixi-Battlefield1-Blue');
+const load=relative=>import(pathToFileURL(path.join(source,relative)).href);
+const read=relative=>JSON.parse(fs.readFileSync(path.join(source,relative),'utf8'));
+const {WEAPONS,EQUIPMENT,TEMP_DISABLED_WEAPON_NAMES}=await load('src/weapons.js');
+const {VEHICLE_PROFILES,EMPLACEMENT_PROFILES}=await load('src/equipmentProfiles.js');
+const {firearmShapes}=await load('src/firearmShapes.js');
+const {weaponMechanics}=await load('src/weaponMechanics.js');
+const {infantryShotPresentation}=await load('src/weaponPresentation.js');
+const {vehicleEffectProfile}=await load('src/vehicleEffectProfiles.js');
+const {CampaignRuleKernel}=await load('src/campaignCombat.generated.js');
+const {assembleScenePlan}=await load('src/map-kit/scenePlan.js');
+const components=read('src/map-kit/components.json');
+const prefabs=read('src/map-kit/prefabs.json');
+const scenes=read('src/map-kit/scenes.json');
+const library={components:components.components,prefabs:prefabs.prefabs};
+const kernel=new CampaignRuleKernel();
+const materialRules={};
+for(const kind of ['sandbag','barrier','wreck','ruin','jungle','tree','concrete','building','compound','bunker','waterBlock','bridgeRail','door','roadEdge','ridge']) materialRules[kind]=kernel.wallConfig(kind);
+const sourceFiles=['src/weapons.js','src/pubgWeapons.js','src/csgoWeapons.js','src/equipmentProfiles.js','src/firearmShapes.js','src/weaponMechanics.js','src/weaponPresentation.js','src/vehicleDynamics.js','src/campaignCombat.generated.js','src/map-kit/prefabs.json','src/map-kit/components.json','src/map-kit/scenes.json'];
+const hashes=Object.fromEntries(sourceFiles.map(name=>[name,createHash('sha256').update(fs.readFileSync(path.join(source,name))).digest('hex')]));
+const catalog={format:'little-battlefield-source-catalog',version:1,source:'Pixi-Battlefield1-Blue',pixels_per_metre:40,source_hashes:hashes,
+ weapons:[...WEAPONS,...EQUIPMENT].map(w=>({...w,source_disabled:TEMP_DISABLED_WEAPON_NAMES.includes(w.name),shapes:firearmShapes(w.name),mechanics:weaponMechanics(w),presentation:infantryShotPresentation(w)})),
+ vehicles:Object.fromEntries(Object.entries(VEHICLE_PROFILES).map(([id,v])=>[id,{...v,effects:vehicleEffectProfile(id)}])),emplacements:EMPLACEMENT_PROFILES,materials:materialRules};
+const out=path.join(root,'data/original');fs.mkdirSync(out,{recursive:true});
+const write=(name,data)=>fs.writeFileSync(path.join(out,name),JSON.stringify(data));
+write('catalog.json',catalog);write('components.json',components);write('prefabs.json',prefabs);write('scenes.json',scenes);
+write('compiled-prefabs.json',Object.fromEntries(prefabs.prefabs.map(p=>[p.id,assembleScenePlan({}, {world:{w:4000,h:3000},instances:[{id:'template',prefabId:p.id,x:0,y:0,rotation:0,scale:1}],deployment:{blue:{initialCount:1},red:{initialCount:0}}},library)])));
+write('compiled-scenes.json',scenes.scenes.map(s=>assembleScenePlan({},s,library)));
+fs.mkdirSync(path.join(root,'assets/original'),{recursive:true});
+fs.copyFileSync(path.join(source,'public/assets/weapons/weapon_atlas.png'),path.join(root,'assets/original/weapon_atlas.png'));
+write('weapon-atlas.json',read('public/assets/weapons/weapon_atlas.json'));
+console.log(JSON.stringify({weapons:catalog.weapons.length,vehicles:Object.keys(catalog.vehicles).length,emplacements:Object.keys(catalog.emplacements).length,prefabs:prefabs.prefabs.length,components:components.components.length,scenes:scenes.scenes.length,shapeOps:[...new Set(catalog.weapons.flatMap(w=>(w.shapes??[]).map(s=>s.op)))]}));

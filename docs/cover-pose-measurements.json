@@ -1,0 +1,1953 @@
+{
+  "aim_distance_m": 20,
+  "aim_target_height_m": 1.35,
+  "animation_time_s": 1,
+  "feet_y": 0,
+  "registered_components": [
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 68.0,
+        "thickness": 32.0
+      },
+      "id": "access.ladder",
+      "material": "ground",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.36,
+      "defaults": {
+        "length": 160,
+        "thickness": 36
+      },
+      "id": "defense.trench-firing-step",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 1.1,
+      "defaults": {
+        "length": 160,
+        "thickness": 36
+      },
+      "id": "defense.trench-revetment",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 2.25,
+      "defaults": {
+        "length": 126.0,
+        "thickness": 20.0
+      },
+      "id": "door.double",
+      "material": "wood",
+      "role": "opening",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "cutsHostWall": true,
+        "damageable": true,
+        "kind": "door",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 2.25,
+      "defaults": {
+        "length": 210.0,
+        "thickness": 22.0
+      },
+      "id": "door.gate",
+      "material": "metal",
+      "role": "opening",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "cutsHostWall": true,
+        "damageable": true,
+        "kind": "door",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 2.25,
+      "defaults": {
+        "length": 86.0,
+        "thickness": 28.0
+      },
+      "id": "door.reinforced",
+      "material": "reinforced-metal",
+      "role": "opening",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "cutsHostWall": true,
+        "damageable": true,
+        "kind": "door",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 2.25,
+      "defaults": {
+        "length": 74.0,
+        "thickness": 18.0
+      },
+      "id": "door.single",
+      "material": "wood",
+      "role": "opening",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "cutsHostWall": true,
+        "damageable": true,
+        "kind": "door",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 1.0,
+      "defaults": {
+        "length": 75.9999990463257,
+        "thickness": 90.0
+      },
+      "id": "furniture.bed",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "furniture"
+      }
+    },
+    {
+      "default_height_m": 1.01999998092651,
+      "defaults": {
+        "length": 22.4000000953674,
+        "thickness": 24.0000009536743
+      },
+      "id": "furniture.chair",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "furniture"
+      }
+    },
+    {
+      "default_height_m": 0.46000000834465,
+      "defaults": {
+        "length": 48.0000019073486,
+        "thickness": 27.9999995231628
+      },
+      "id": "furniture.coffee-table",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "furniture"
+      }
+    },
+    {
+      "default_height_m": 0.939999997615814,
+      "defaults": {
+        "length": 111.999998092651,
+        "thickness": 27.9999995231628
+      },
+      "id": "furniture.counter",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "furniture"
+      }
+    },
+    {
+      "default_height_m": 0.819999992847443,
+      "defaults": {
+        "length": 68.0000019073486,
+        "thickness": 32.0000004768372
+      },
+      "id": "furniture.desk",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "furniture"
+      }
+    },
+    {
+      "default_height_m": 0.879999995231628,
+      "defaults": {
+        "length": 50.0,
+        "thickness": 23.199999332428
+      },
+      "id": "furniture.dresser",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "furniture"
+      }
+    },
+    {
+      "default_height_m": 1.85000002384186,
+      "defaults": {
+        "length": 31.1999988555908,
+        "thickness": 30.3999996185303
+      },
+      "id": "furniture.fridge",
+      "material": "metal",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "furniture"
+      }
+    },
+    {
+      "default_height_m": 0.899999976158142,
+      "defaults": {
+        "length": 20.0,
+        "thickness": 20.0
+      },
+      "id": "furniture.plant",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "furniture"
+      }
+    },
+    {
+      "default_height_m": 1.89999997615814,
+      "defaults": {
+        "length": 51.9999980926514,
+        "thickness": 16.7999994754791
+      },
+      "id": "furniture.shelf",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "furniture"
+      }
+    },
+    {
+      "default_height_m": 1.0,
+      "defaults": {
+        "length": 108.000001907349,
+        "thickness": 41.9999980926514
+      },
+      "id": "furniture.sofa",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "furniture"
+      }
+    },
+    {
+      "default_height_m": 0.800000011920929,
+      "defaults": {
+        "length": 88.0000019073486,
+        "thickness": 45.9999990463257
+      },
+      "id": "furniture.table",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "furniture"
+      }
+    },
+    {
+      "default_height_m": 2.15000009536743,
+      "defaults": {
+        "length": 60.0,
+        "thickness": 25.9999990463257
+      },
+      "id": "furniture.wardrobe",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "furniture"
+      }
+    },
+    {
+      "default_height_m": 0.0,
+      "defaults": {
+        "length": 800,
+        "thickness": 800
+      },
+      "id": "landform.level-pad",
+      "material": "ground",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 1.5,
+      "defaults": {
+        "length": 800,
+        "thickness": 800
+      },
+      "id": "landform.low-hill",
+      "material": "ground",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 3.4,
+      "defaults": {
+        "length": 800,
+        "thickness": 720
+      },
+      "id": "landform.mountain",
+      "material": "ground",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 1.65,
+      "defaults": {
+        "length": 560,
+        "thickness": 240
+      },
+      "id": "landform.trench",
+      "material": "ground",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 1.3,
+      "defaults": {
+        "length": 800,
+        "thickness": 800
+      },
+      "id": "landform.trench-network",
+      "material": "ground",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.85,
+      "defaults": {
+        "length": 192.000007629395,
+        "thickness": 48.0000019073486
+      },
+      "id": "nature.fallen-log",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 0.9,
+      "defaults": {
+        "length": 60.0,
+        "thickness": 55.9999990463257
+      },
+      "id": "nature.root-stump",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 1.1,
+      "defaults": {
+        "length": 220.0,
+        "thickness": 48.0
+      },
+      "id": "obstacle.concrete-barrier",
+      "material": "precast-concrete",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 320.0,
+        "thickness": 76.0
+      },
+      "id": "obstacle.earth-berm",
+      "material": "packed-earth",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "ridge",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 86.0,
+        "thickness": 86.0
+      },
+      "id": "obstacle.hedgehog",
+      "material": "steel",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 260.0,
+        "thickness": 42.0
+      },
+      "id": "obstacle.log",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 168.0,
+        "thickness": 148.0
+      },
+      "id": "obstacle.rock-large",
+      "material": "rock",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "ridge",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 72.0,
+        "thickness": 60.0
+      },
+      "id": "obstacle.rock-small",
+      "material": "rock",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "ridge",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 300.0,
+        "thickness": 22.0
+      },
+      "id": "obstacle.wire",
+      "material": "steel-wire",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 190.0,
+        "thickness": 94.0
+      },
+      "id": "obstacle.wreck",
+      "material": "wreck-metal",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "wreck",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 520.0,
+        "thickness": 92.0
+      },
+      "id": "path.boardwalk",
+      "material": "timber",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "kind": "ground",
+        "output": "ground",
+        "surface": "track"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 620.0,
+        "thickness": 108.0
+      },
+      "id": "path.cobble-road",
+      "material": "cobblestone",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "kind": "ground",
+        "output": "ground",
+        "surface": "road"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 640.0,
+        "thickness": 92.0
+      },
+      "id": "path.dirt-road",
+      "material": "dirt",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "kind": "ground",
+        "output": "ground",
+        "surface": "track"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 760.0,
+        "thickness": 180.0
+      },
+      "id": "path.dry-creek",
+      "material": "gravel",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "kind": "ground",
+        "output": "ground",
+        "surface": "dry-creek"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 760.0,
+        "thickness": 70.0
+      },
+      "id": "path.rail",
+      "material": "rail-steel",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "kind": "ground",
+        "output": "ground",
+        "surface": "track"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 700.0,
+        "thickness": 120.0
+      },
+      "id": "path.road",
+      "material": "asphalt",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "kind": "ground",
+        "output": "ground",
+        "surface": "road"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 520.0,
+        "thickness": 58.0
+      },
+      "id": "path.trail",
+      "material": "soil",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "kind": "ground",
+        "output": "ground",
+        "surface": "track"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 420.0,
+        "thickness": 74.0
+      },
+      "id": "path.trench",
+      "material": "earth",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "ditch",
+        "kind": "ground",
+        "moveScale": 0.82,
+        "output": "ground",
+        "surface": "track"
+      }
+    },
+    {
+      "default_height_m": 0.95,
+      "defaults": {
+        "length": 48.0,
+        "thickness": 48.0
+      },
+      "id": "prop.barrel",
+      "material": "metal",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 2.6,
+      "defaults": {
+        "length": 300.0,
+        "thickness": 116.0
+      },
+      "id": "prop.container",
+      "material": "corrugated-metal",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "compound",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.8,
+      "defaults": {
+        "length": 62.0,
+        "thickness": 62.0
+      },
+      "id": "prop.crate",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 360.0,
+        "thickness": 150.0
+      },
+      "id": "prop.loading-platform",
+      "material": "concrete",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 180.0,
+        "thickness": 110.0
+      },
+      "id": "prop.market-stall",
+      "material": "wood-canvas",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 44.0,
+        "thickness": 44.0
+      },
+      "id": "prop.pier-bollard",
+      "material": "cast-iron",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 360.0,
+        "thickness": 54.0
+      },
+      "id": "prop.pipe-rack",
+      "material": "industrial-pipe",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 4.0,
+      "defaults": {
+        "length": 34.0,
+        "thickness": 34.0
+      },
+      "id": "prop.road-light",
+      "material": "metal",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 150.0,
+        "thickness": 110.0
+      },
+      "id": "prop.transformer",
+      "material": "industrial-metal",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "compound",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 4.0,
+      "defaults": {
+        "length": 38.0,
+        "thickness": 38.0
+      },
+      "id": "prop.utility-pole",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 3.2,
+      "defaults": {
+        "length": 136.000003814697,
+        "thickness": 111.999998092651
+      },
+      "id": "rock.basalt-columns",
+      "material": "stone",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 2.1,
+      "defaults": {
+        "length": 148.000001907349,
+        "thickness": 120.0
+      },
+      "id": "rock.granite-boulder",
+      "material": "stone",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 0.72,
+      "defaults": {
+        "length": 128.000001907349,
+        "thickness": 103.999996185303
+      },
+      "id": "rock.granite-low",
+      "material": "stone",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 2.2,
+      "defaults": {
+        "length": 167.999992370605,
+        "thickness": 120.0
+      },
+      "id": "rock.red-mesa",
+      "material": "stone",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 3.5,
+      "defaults": {
+        "length": 232.000007629395,
+        "thickness": 91.9999980926514
+      },
+      "id": "rock.sandstone-arch",
+      "material": "stone",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 2.4,
+      "defaults": {
+        "length": 151.999998092651,
+        "thickness": 116.000003814697
+      },
+      "id": "rock.sandstone-layers",
+      "material": "stone",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 0.52,
+      "defaults": {
+        "length": 151.999998092651,
+        "thickness": 111.999998092651
+      },
+      "id": "rock.scree",
+      "material": "stone",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 2.65,
+      "defaults": {
+        "length": 143.999996185303,
+        "thickness": 108.000001907349
+      },
+      "id": "rock.slate-shards",
+      "material": "stone",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 0.22,
+      "defaults": {
+        "length": 80,
+        "thickness": 80
+      },
+      "id": "structure.floor",
+      "material": "concrete",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "structure"
+      }
+    },
+    {
+      "default_height_m": 1.02,
+      "defaults": {
+        "length": 3.6,
+        "thickness": 12.0
+      },
+      "id": "structure.rail",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "structure"
+      }
+    },
+    {
+      "default_height_m": 0.17,
+      "defaults": {
+        "length": 68.0,
+        "thickness": 12.0
+      },
+      "id": "structure.stair",
+      "material": "concrete",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "structure"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 720.0,
+        "thickness": 500.0
+      },
+      "id": "terrain.asphalt",
+      "material": "asphalt",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "road",
+        "kind": "ground",
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 2.3,
+      "defaults": {
+        "length": 640,
+        "thickness": 560
+      },
+      "id": "terrain.desert",
+      "material": "ground",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 600.0,
+        "thickness": 420.0
+      },
+      "id": "terrain.field",
+      "material": "soil-crop",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "field",
+        "kind": "ground",
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 520.0,
+        "thickness": 360.0
+      },
+      "id": "terrain.grass",
+      "material": "grass",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "grass",
+        "kind": "ground",
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 420.0,
+        "thickness": 280.0
+      },
+      "id": "terrain.mud",
+      "material": "mud",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "mud",
+        "kind": "ground",
+        "moveScale": 0.78,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 620.0,
+        "thickness": 420.0
+      },
+      "id": "terrain.packed-earth",
+      "material": "packed-earth",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "yard",
+        "kind": "ground",
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 640,
+        "thickness": 560
+      },
+      "id": "terrain.red-earth",
+      "material": "ground",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 620.0,
+        "thickness": 400.0
+      },
+      "id": "terrain.reed-marsh",
+      "material": "reed-marsh",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "scrub",
+        "kind": "ground",
+        "moveScale": 0.76,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 520.0,
+        "thickness": 360.0
+      },
+      "id": "terrain.rock",
+      "material": "rock",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "rock",
+        "kind": "ground",
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 620.0,
+        "thickness": 420.0
+      },
+      "id": "terrain.sand",
+      "material": "sand",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "sand",
+        "kind": "ground",
+        "moveScale": 0.9,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 560.0,
+        "thickness": 300.0
+      },
+      "id": "terrain.shallow-water",
+      "material": "shallow-water",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "mud",
+        "kind": "ground",
+        "moveScale": 0.72,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 1.6,
+      "defaults": {
+        "length": 620.0,
+        "thickness": 440.0
+      },
+      "id": "terrain.snow",
+      "material": "snow",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "snow",
+        "kind": "ground",
+        "moveScale": 0.88,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 720.0,
+        "thickness": 420.0
+      },
+      "id": "terrain.water-block",
+      "material": "water",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": true,
+        "cover": false,
+        "damageable": false,
+        "featureKind": "water",
+        "kind": "waterBlock",
+        "output": "water",
+        "visible": false
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 520.0,
+        "thickness": 300.0
+      },
+      "id": "terrain.wet-sand",
+      "material": "wet-sand",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "wetSand",
+        "kind": "ground",
+        "moveScale": 0.86,
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 320.0,
+        "thickness": 110.0
+      },
+      "id": "terrain.wood-deck",
+      "material": "timber",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "yard",
+        "kind": "ground",
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 720.0,
+        "thickness": 520.0
+      },
+      "id": "terrain.yard-concrete",
+      "material": "concrete",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "yard",
+        "kind": "ground",
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 6.2,
+      "defaults": {
+        "length": 136.000003814697,
+        "thickness": 120.0
+      },
+      "id": "tree.birch-clump",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 3.65,
+      "defaults": {
+        "length": 150.0,
+        "thickness": 150.0
+      },
+      "id": "tree.broadleaf",
+      "material": "living-wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "tree",
+        "output": "tree",
+        "species": "broadleaf"
+      }
+    },
+    {
+      "default_height_m": 2.45,
+      "defaults": {
+        "length": 82.0,
+        "thickness": 82.0
+      },
+      "id": "tree.broadleaf-small",
+      "material": "living-wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "tree",
+        "output": "tree",
+        "species": "broadleaf"
+      }
+    },
+    {
+      "default_height_m": 3.2,
+      "defaults": {
+        "length": 145.0,
+        "thickness": 145.0
+      },
+      "id": "tree.conifer",
+      "material": "living-wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "tree",
+        "output": "tree",
+        "species": "conifer"
+      }
+    },
+    {
+      "default_height_m": 3.2,
+      "defaults": {
+        "length": 78.0,
+        "thickness": 78.0
+      },
+      "id": "tree.conifer-small",
+      "material": "living-wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "tree",
+        "output": "tree",
+        "species": "conifer"
+      }
+    },
+    {
+      "default_height_m": 4.8,
+      "defaults": {
+        "length": 128.000001907349,
+        "thickness": 111.999998092651
+      },
+      "id": "tree.dead-snag",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 6.8,
+      "defaults": {
+        "length": 192.000007629395,
+        "thickness": 180.0
+      },
+      "id": "tree.desert-palm",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 4.7,
+      "defaults": {
+        "length": 223.999996185303,
+        "thickness": 192.000007629395
+      },
+      "id": "tree.dry-acacia",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 7.5,
+      "defaults": {
+        "length": 163.999996185303,
+        "thickness": 151.999998092651
+      },
+      "id": "tree.fir-tall",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 6.6,
+      "defaults": {
+        "length": 223.999996185303,
+        "thickness": 207.999992370605
+      },
+      "id": "tree.oak-mature",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 3.7,
+      "defaults": {
+        "length": 100.0,
+        "thickness": 96.0000038146973
+      },
+      "id": "tree.oak-young",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 3.2,
+      "defaults": {
+        "length": 140.0,
+        "thickness": 140.0
+      },
+      "id": "tree.palm",
+      "material": "living-wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "tree",
+        "output": "tree",
+        "species": "palm"
+      }
+    },
+    {
+      "default_height_m": 3.2,
+      "defaults": {
+        "length": 76.0,
+        "thickness": 76.0
+      },
+      "id": "tree.palm-small",
+      "material": "living-wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "tree",
+        "output": "tree",
+        "species": "palm"
+      }
+    },
+    {
+      "default_height_m": 8.2,
+      "defaults": {
+        "length": 108.000001907349,
+        "thickness": 100.0
+      },
+      "id": "tree.poplar-tall",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 6.3,
+      "defaults": {
+        "length": 180.0,
+        "thickness": 167.999992370605
+      },
+      "id": "tree.snow-fir",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "natural"
+      }
+    },
+    {
+      "default_height_m": 0.65,
+      "defaults": {
+        "length": 130.0,
+        "thickness": 130.0
+      },
+      "id": "vegetation.shrub",
+      "material": "foliage",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": false,
+        "damageable": false,
+        "featureKind": "scrub",
+        "kind": "ground",
+        "output": "ground"
+      }
+    },
+    {
+      "default_height_m": 2.8,
+      "defaults": {
+        "length": 240.0,
+        "thickness": 30.0
+      },
+      "id": "wall.brick",
+      "material": "brick",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "compound",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 2.8,
+      "defaults": {
+        "length": 220.0,
+        "thickness": 54.0
+      },
+      "id": "wall.bunker",
+      "material": "reinforced-concrete",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "bunker",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 2.8,
+      "defaults": {
+        "length": 280.0,
+        "thickness": 34.0
+      },
+      "id": "wall.compound",
+      "material": "masonry",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "compound",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 2.8,
+      "defaults": {
+        "length": 260.0,
+        "thickness": 38.0
+      },
+      "id": "wall.concrete",
+      "material": "concrete",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 2.8,
+      "defaults": {
+        "length": 420.0,
+        "thickness": 82.0
+      },
+      "id": "wall.fortress",
+      "material": "fortress-concrete",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "bunker",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 1.45,
+      "defaults": {
+        "length": 300.0,
+        "thickness": 54.0
+      },
+      "id": "wall.hedge",
+      "material": "hedge",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": true,
+        "damageable": true,
+        "kind": "jungle",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 1.45,
+      "defaults": {
+        "length": 280.0,
+        "thickness": 16.0
+      },
+      "id": "wall.metal-fence",
+      "material": "metal",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": false,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 1.1,
+      "defaults": {
+        "length": 190.0,
+        "thickness": 42.0
+      },
+      "id": "wall.ruin",
+      "material": "rubble",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "ruin",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 1.1,
+      "defaults": {
+        "length": 220.0,
+        "thickness": 26.0
+      },
+      "id": "wall.sandbag",
+      "material": "sandbag",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "sandbag",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 2.8,
+      "defaults": {
+        "length": 420.0,
+        "thickness": 64.0
+      },
+      "id": "wall.seawall",
+      "material": "weathered-concrete",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "concrete",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 1.1,
+      "defaults": {
+        "length": 260.0,
+        "thickness": 36.0
+      },
+      "id": "wall.stone",
+      "material": "field-stone",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "compound",
+        "output": "obstacle"
+      }
+    },
+    {
+      "default_height_m": 1.45,
+      "defaults": {
+        "length": 260.0,
+        "thickness": 18.0
+      },
+      "id": "wall.wood-fence",
+      "material": "wood",
+      "role": "",
+      "runtime": {
+        "blocksProjectiles": true,
+        "collision": true,
+        "damageable": true,
+        "kind": "barrier",
+        "output": "obstacle"
+      }
+    }
+  ],
+  "samples": [
+    {
+      "body_max_y": 1.5348836183548,
+      "body_min_y": -0.0615951162576675,
+      "collision_height": 1.95,
+      "head_center_y": 1.2848836183548,
+      "head_top_y": 1.5348836183548,
+      "muzzle_y": 1.32504880428314,
+      "stance": 0,
+      "weapon": "m416"
+    },
+    {
+      "body_max_y": 1.19488352537155,
+      "body_min_y": -0.0615953174233436,
+      "collision_height": 1.5,
+      "head_center_y": 0.944883525371552,
+      "head_top_y": 1.19488352537155,
+      "muzzle_y": 0.994619965553284,
+      "stance": 1,
+      "weapon": "m416"
+    },
+    {
+      "body_max_y": 0.61174260020256,
+      "body_min_y": -0.0720579665899277,
+      "collision_height": 0.84,
+      "head_center_y": 0.305013477802277,
+      "head_top_y": 0.555013477802277,
+      "muzzle_y": 0.420978367328644,
+      "stance": 2,
+      "weapon": "m416"
+    },
+    {
+      "body_max_y": 1.5348836183548,
+      "body_min_y": -0.0615951162576675,
+      "collision_height": 1.95,
+      "head_center_y": 1.2848836183548,
+      "head_top_y": 1.5348836183548,
+      "muzzle_y": 1.32519316673279,
+      "stance": 0,
+      "weapon": "akm"
+    },
+    {
+      "body_max_y": 1.19488352537155,
+      "body_min_y": -0.0615953174233436,
+      "collision_height": 1.5,
+      "head_center_y": 0.944883525371552,
+      "head_top_y": 1.19488352537155,
+      "muzzle_y": 0.996676862239838,
+      "stance": 1,
+      "weapon": "akm"
+    },
+    {
+      "body_max_y": 0.61174260020256,
+      "body_min_y": -0.0720579665899277,
+      "collision_height": 0.84,
+      "head_center_y": 0.305013477802277,
+      "head_top_y": 0.555013477802277,
+      "muzzle_y": 0.426504880189896,
+      "stance": 2,
+      "weapon": "akm"
+    },
+    {
+      "body_max_y": 1.53388106822968,
+      "body_min_y": -0.0615951162576675,
+      "collision_height": 1.95,
+      "head_center_y": 1.28388106822968,
+      "head_top_y": 1.53388106822968,
+      "muzzle_y": 1.40140867233276,
+      "stance": 0,
+      "weapon": "awm"
+    },
+    {
+      "body_max_y": 1.19387781620026,
+      "body_min_y": -0.0615953174233436,
+      "collision_height": 1.5,
+      "head_center_y": 0.943877816200256,
+      "head_top_y": 1.19387781620026,
+      "muzzle_y": 1.07642257213593,
+      "stance": 1,
+      "weapon": "awm"
+    },
+    {
+      "body_max_y": 0.606208040714264,
+      "body_min_y": -0.0720579665899277,
+      "collision_height": 0.84,
+      "head_center_y": 0.29433536529541,
+      "head_top_y": 0.54433536529541,
+      "muzzle_y": 0.433813750743866,
+      "stance": 2,
+      "weapon": "awm"
+    }
+  ],
+  "status": "measured_static_pose_not_gameplay_acceptance"
+}

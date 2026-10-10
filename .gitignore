@@ -1,0 +1,12 @@
+# Generated engine/import state and local release output only.
+.godot/
+/build/
+/exports/
+**/__pycache__/
+*.py[cod]
+*.log
+
+# Local machine overrides; source, QA, art, launchers and licenses are deliverables.
+.env
+.env.*
+!.env.example

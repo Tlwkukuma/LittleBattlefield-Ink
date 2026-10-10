@@ -1,0 +1,2090 @@
+{
+  "format": "little-battlefield-campaign-rules",
+  "version": 1,
+  "source": {
+    "sceneId": "level-01",
+    "levelId": 1,
+    "hashes": {
+      "src/levels.js": "c8bcd50505c6225ae6bf9a1cd8ae134e5cda059af695e5458ca641540357eb93",
+      "src/scenePlanLevel.js": "4388d89847ad702f78e7ffa80d3cc74381ab0055d8890c0731d248324e80a5bd",
+      "src/map-kit/scenePlan.js": "bd0f2b834cd7a9d7b21bc687410784819e891a0345ae03f65ad88822e053dd1b",
+      "src/map-kit/scenes.json": "b11dda460f558b7fc8a21d335c4445b2f63c0414209dca8d545e785d23a7099e",
+      "src/assaultRules.js": "6c3dfe8be73e461553134cb45335a33b435995bac75f0d2b7a5c34505c2f21e4",
+      "src/Game.js": "51fe05fdba0b608d6b9068ae8dbdf49302867773ab7181792c2816ce2b085628",
+      "src/objectives.js": "0ac7c80941cb0760729730ac329aa5bf9542210559405f7a7c533fad5e4a793c",
+      "src/specialWeaponMigration.js": "6aabc4488c5678762acc46bc400947fe2da79dfad798bfd9ebe3f0c5e06fb3fe"
+    },
+    "extraction": "LEVELS[0] after applyScenePlans and normalizeControlPoints",
+    "forceComposition": "absent; Game.applyForceComposition leaves loadouts unchanged",
+    "warnings": [
+      [
+        "[Map Kit] Scene level-01 warnings",
+        [
+          {
+            "severity": "warning",
+            "code": "control-point-overlap",
+            "message": "旗帜 新旗帜 压在墙体或障碍物上；旗帜本身不碰撞，但这里仍会被场景元素阻挡",
+            "path": "controlPoints[0]"
+          },
+          {
+            "severity": "warning",
+            "code": "scene-object-overlap",
+            "message": "检测到 7 处视觉交叠：broadleaf-024 ↔ rock-large-001；broadleaf-057 ↔ rock-small-002；broadleaf-074 ↔ compound-left-upper；broadleaf-108 ↔ compound-right……。地图会保持编辑器布局原样同步，此提示不阻止保存或进入游戏。",
+            "path": "instances"
+          }
+        ]
+      ]
+    ],
+    "specialCounts": {
+      "blue": 3,
+      "red": 2
+    }
+  },
+  "rules": {
+    "captureTime": 7,
+    "replacementWaveSeconds": 0.5,
+    "replacementWaveSize": 5,
+    "handoffSeconds": 1.18,
+    "capture": {
+      "soloRate": 1,
+      "multipleRate": 1.18,
+      "contestedBase": 0.48,
+      "contestedBalance": 0.32
+    },
+    "victory": {
+      "allControlPointsBlue": true,
+      "redEliminatedWithReservesExhausted": true
+    },
+    "death": {
+      "handoffNearestLivingAlly": true,
+      "noLivingAllyDefeatEvenWithReserves": true
+    },
+    "blueCapIncludesPlayer": true
+  },
+  "units": {
+    "blue": [
+      {
+        "x": 1411,
+        "y": 2041,
+        "angle": 0,
+        "loadout": [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-001",
+        "label": "步兵"
+      },
+      {
+        "x": 1340,
+        "y": 1953,
+        "angle": 0,
+        "loadout": [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-002",
+        "label": "步兵"
+      },
+      {
+        "x": 1222,
+        "y": 1936,
+        "angle": 0,
+        "loadout": [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-003",
+        "label": "步兵"
+      },
+      {
+        "x": 1411,
+        "y": 1870,
+        "angle": 0,
+        "loadout": [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-004",
+        "label": "步兵"
+      },
+      {
+        "x": 1516,
+        "y": 1914,
+        "angle": 0,
+        "loadout": [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-005",
+        "label": "步兵"
+      },
+      {
+        "x": 1604,
+        "y": 1892,
+        "angle": 0,
+        "loadout": [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-006",
+        "label": "步兵"
+      },
+      {
+        "x": 1485,
+        "y": 1830,
+        "angle": 0,
+        "loadout": [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-007",
+        "label": "步兵"
+      },
+      {
+        "x": 1700,
+        "y": 2054,
+        "angle": 0,
+        "loadout": [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-008",
+        "label": "步兵"
+      },
+      {
+        "x": 1761,
+        "y": 1923,
+        "angle": 0,
+        "loadout": [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-009",
+        "label": "步兵"
+      },
+      {
+        "x": 1889,
+        "y": 1936,
+        "angle": 0,
+        "loadout": [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-010",
+        "label": "步兵"
+      },
+      {
+        "x": 1919,
+        "y": 2045,
+        "angle": 0,
+        "loadout": [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-011",
+        "label": "步兵"
+      },
+      {
+        "x": 2073,
+        "y": 1918,
+        "angle": 0,
+        "loadout": [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-012",
+        "label": "步兵"
+      },
+      {
+        "x": 2081,
+        "y": 2006,
+        "angle": 0,
+        "loadout": [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-013",
+        "label": "步兵"
+      },
+      {
+        "x": 2257,
+        "y": 2006,
+        "angle": 0,
+        "loadout": [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-014",
+        "label": "步兵"
+      },
+      {
+        "x": 2314,
+        "y": 1936,
+        "angle": 0,
+        "loadout": [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-015",
+        "label": "步兵"
+      },
+      {
+        "x": 2450,
+        "y": 2023,
+        "angle": 0,
+        "loadout": [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-016",
+        "label": "步兵"
+      },
+      {
+        "x": 2555,
+        "y": 2041,
+        "angle": 0,
+        "loadout": [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-017",
+        "label": "步兵"
+      },
+      {
+        "x": 2660,
+        "y": 1993,
+        "angle": 0,
+        "loadout": [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-018",
+        "label": "步兵"
+      },
+      {
+        "x": 2717,
+        "y": 1901,
+        "angle": 0,
+        "loadout": [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-019",
+        "label": "步兵"
+      },
+      {
+        "x": 2542,
+        "y": 1839,
+        "angle": 0,
+        "loadout": [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-020",
+        "label": "步兵"
+      },
+      {
+        "x": 2432,
+        "y": 1905,
+        "angle": 0,
+        "loadout": [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-021",
+        "label": "步兵"
+      },
+      {
+        "x": 2283,
+        "y": 1874,
+        "angle": 0,
+        "loadout": [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-022",
+        "label": "步兵"
+      },
+      {
+        "x": 2213,
+        "y": 1980,
+        "angle": 0,
+        "loadout": [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-023",
+        "label": "步兵"
+      },
+      {
+        "x": 2112,
+        "y": 1848,
+        "angle": 0,
+        "loadout": [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-024",
+        "label": "步兵"
+      },
+      {
+        "x": 1976,
+        "y": 1844,
+        "angle": 0,
+        "loadout": [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-025",
+        "label": "步兵"
+      },
+      {
+        "x": 2226,
+        "y": 1844,
+        "angle": 0,
+        "loadout": [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-026",
+        "label": "步兵"
+      },
+      {
+        "x": 2564,
+        "y": 1751,
+        "angle": 0,
+        "loadout": [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-027",
+        "label": "步兵"
+      },
+      {
+        "x": 2682,
+        "y": 1817,
+        "angle": 0,
+        "loadout": [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-028",
+        "label": "步兵"
+      },
+      {
+        "x": 2481,
+        "y": 1804,
+        "angle": 0,
+        "loadout": [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "blue-unit-029",
+        "label": "步兵"
+      }
+    ],
+    "red": [
+      {
+        "x": 955,
+        "y": 725,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-001",
+        "label": "步兵"
+      },
+      {
+        "x": 1069,
+        "y": 739,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-002",
+        "label": "步兵"
+      },
+      {
+        "x": 1165,
+        "y": 739,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-003",
+        "label": "步兵"
+      },
+      {
+        "x": 998,
+        "y": 677,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-004",
+        "label": "步兵"
+      },
+      {
+        "x": 1095,
+        "y": 651,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-005",
+        "label": "步兵"
+      },
+      {
+        "x": 2089.7711278834913,
+        "y": 1041.1290528329969,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-006",
+        "label": "步兵"
+      },
+      {
+        "x": 1502.3156160306155,
+        "y": 607.401296906559,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-007",
+        "label": "步兵"
+      },
+      {
+        "x": 2222.1561603061546,
+        "y": 1072.0704794302117,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-008",
+        "label": "步兵"
+      },
+      {
+        "x": 1384.4761347932392,
+        "y": 606.9414265972149,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-009",
+        "label": "步兵"
+      },
+      {
+        "x": 2050.8025938131177,
+        "y": 1116.0965238652068,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-010",
+        "label": "步兵"
+      },
+      {
+        "x": 1963.1659402572552,
+        "y": 1045.1659402572554,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-011",
+        "label": "步兵"
+      },
+      {
+        "x": 1432.8177952588499,
+        "y": 681.6572764962262,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-012",
+        "label": "步兵"
+      },
+      {
+        "x": 2138.80801530775,
+        "y": 1137.3796109280324,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-013",
+        "label": "步兵"
+      },
+      {
+        "x": 1997.7060699479111,
+        "y": 1160,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-014",
+        "label": "步兵"
+      },
+      {
+        "x": 2524,
+        "y": 708,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-015",
+        "label": "步兵"
+      },
+      {
+        "x": 2814,
+        "y": 717,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-016",
+        "label": "步兵"
+      },
+      {
+        "x": 2766,
+        "y": 1173,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-017",
+        "label": "步兵"
+      },
+      {
+        "x": 2616,
+        "y": 1168,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-018",
+        "label": "步兵"
+      },
+      {
+        "x": 2752,
+        "y": 936,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-019",
+        "label": "步兵"
+      },
+      {
+        "x": 2551,
+        "y": 1005,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-020",
+        "label": "步兵"
+      },
+      {
+        "x": 2576,
+        "y": 923,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-021",
+        "label": "步兵"
+      },
+      {
+        "x": 2479,
+        "y": 887,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-022",
+        "label": "步兵"
+      },
+      {
+        "x": 2482,
+        "y": 1231,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-023",
+        "label": "步兵"
+      },
+      {
+        "x": 2967,
+        "y": 1109,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-024",
+        "label": "步兵"
+      },
+      {
+        "x": 2963,
+        "y": 980,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-025",
+        "label": "步兵"
+      },
+      {
+        "x": 2874,
+        "y": 1012,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-026",
+        "label": "步兵"
+      },
+      {
+        "x": 2325,
+        "y": 348,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-027",
+        "label": "步兵"
+      },
+      {
+        "x": 2500,
+        "y": 396,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-028",
+        "label": "步兵"
+      },
+      {
+        "x": 2667,
+        "y": 445,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-029",
+        "label": "步兵"
+      },
+      {
+        "x": 2816,
+        "y": 467,
+        "angle": 3.141592653589793,
+        "loadout": [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        "id": "red-unit-030",
+        "label": "步兵"
+      }
+    ]
+  },
+  "deployment": {
+    "player": {
+      "x": 1534.9636775017766,
+      "y": 1880.1752140912322,
+      "angle": 0,
+      "loadout": [
+        "M416",
+        "P92",
+        "Army Knife",
+        "HE Grenade"
+      ]
+    },
+    "blue": {
+      "initialCount": 30,
+      "totalForce": 120,
+      "maxActive": 30,
+      "spawnPoints": [
+        {
+          "id": "blue-spawn-001",
+          "x": 2143.19178447586,
+          "y": 2049.6046945852227
+        },
+        {
+          "id": "blue-spawn-002",
+          "x": 1901.5636169645238,
+          "y": 2058.604694585222
+        },
+        {
+          "id": "blue-spawn-003",
+          "x": 786.9903974393173,
+          "y": 2045.5988263536947
+        },
+        {
+          "id": "blue-spawn-004",
+          "x": 2932.424646572419,
+          "y": 2058.407041877834
+        },
+        {
+          "id": "blue-spawn-005",
+          "x": 2687,
+          "y": 2054
+        },
+        {
+          "id": "blue-spawn-006",
+          "x": 1673.185916244332,
+          "y": 2062.80821552414
+        },
+        {
+          "id": "blue-spawn-007",
+          "x": 1392.7436649773272,
+          "y": 2058
+        },
+        {
+          "id": "blue-spawn-008",
+          "x": 1042.5089357161908,
+          "y": 2041.6164310482795
+        },
+        {
+          "id": "blue-spawn-009",
+          "x": 2371.4305148039475,
+          "y": 2072.029341157642
+        },
+        {
+          "id": "blue-spawn-010",
+          "x": 3133.25820218725,
+          "y": 2059.442251267005
+        }
+      ],
+      "specialWeaponPlans": [
+        {
+          "weapon": "Portable Mortar",
+          "count": 3
+        }
+      ],
+      "replacementLoadouts": [
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "Portable Mortar"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "Portable Mortar"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "Portable Mortar"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Tommy Gun",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M416",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "M249",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ]
+      ]
+    },
+    "red": {
+      "initialCount": 30,
+      "totalForce": 120,
+      "maxActive": 30,
+      "spawnPoints": [
+        {
+          "id": "red-spawn-001",
+          "x": 727,
+          "y": 85
+        },
+        {
+          "id": "red-spawn-002",
+          "x": 1067.0665050841976,
+          "y": 59.44711585263609
+        },
+        {
+          "id": "red-spawn-003",
+          "x": 1372.2206172140116,
+          "y": 68.81570528421204
+        },
+        {
+          "id": "red-spawn-004",
+          "x": 1628.0061399122494,
+          "y": 68.95165616491408
+        },
+        {
+          "id": "red-spawn-005",
+          "x": 2345.3727925829535,
+          "y": 58.134834074758146
+        },
+        {
+          "id": "red-spawn-006",
+          "x": 1842.0846663333095,
+          "y": 72.72809823859599
+        },
+        {
+          "id": "red-spawn-007",
+          "x": 2869.8007762856,
+          "y": 55.65577333389302
+        },
+        {
+          "id": "red-spawn-008",
+          "x": 3249.3727925829535,
+          "y": 52.395303704325585
+        },
+        {
+          "id": "red-spawn-009",
+          "x": 2643.5403066560325,
+          "y": 54.95812148173023
+        },
+        {
+          "id": "red-spawn-010",
+          "x": 2044.079642955065,
+          "y": 50.8743644451907
+        }
+      ],
+      "specialWeaponPlans": [
+        {
+          "weapon": "Portable Mortar",
+          "count": 2
+        }
+      ],
+      "replacementLoadouts": [
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "Portable Mortar"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "Portable Mortar"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "AKM",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "MG3",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Vector",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "Dragunov",
+          "P92",
+          "Army Knife",
+          "HE Grenade"
+        ],
+        [
+          "SCAR-L",
+          "R1895",
+          "Army Knife",
+          "HE Grenade"
+        ]
+      ]
+    }
+  },
+  "controlPoints": [
+    {
+      "id": "flag-001",
+      "x": 2498,
+      "y": 949,
+      "r": 180,
+      "label": "新旗帜",
+      "shortLabel": "B",
+      "initialOwner": "neutral",
+      "collision": false,
+      "blocksMovement": false
+    }
+  ],
+  "objective": {
+    "type": "controlPoints",
+    "captureTime": 7,
+    "label": "占领全部旗帜"
+  },
+  "ai": {
+    "blue": {
+      "massAssault": true,
+      "skirmishAssault": true,
+      "progressAxis": "x"
+    },
+    "red": {
+      "massAssault": true,
+      "skirmishAssault": true,
+      "progressAxis": "x"
+    }
+  }
+}

@@ -1,0 +1,4367 @@
+{
+  "root": "F:\\steam\\steamapps\\common\\Borderlands 3",
+  "extensions": {
+    ".dll": 41,
+    ".exe": 2,
+    ".ttf": 13,
+    ".mp4": 47,
+    ".pak": 483,
+    ".bmp": 1,
+    ".html": 4,
+    ".css": 6,
+    ".png": 32,
+    ".js": 32,
+    ".svg": 94,
+    ".json": 11,
+    ".vdf": 1
+  },
+  "paks": [
+    {
+      "name": "pakchunk0-WindowsNoEditor.pak",
+      "file_bytes": 3835570939,
+      "version": 6,
+      "index_offset": 3834051950,
+      "index_bytes": 1518944,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_0_P.pak",
+      "file_bytes": 415114598,
+      "version": 6,
+      "index_offset": 414981017,
+      "index_bytes": 133536,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_10_P.pak",
+      "file_bytes": 484026232,
+      "version": 6,
+      "index_offset": 483864363,
+      "index_bytes": 161824,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_11_P.pak",
+      "file_bytes": 493680360,
+      "version": 6,
+      "index_offset": 493516779,
+      "index_bytes": 163536,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_12_P.pak",
+      "file_bytes": 17111974,
+      "version": 6,
+      "index_offset": 17088969,
+      "index_bytes": 22960,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_13_P.pak",
+      "file_bytes": 494122454,
+      "version": 6,
+      "index_offset": 493959369,
+      "index_bytes": 163040,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_14_P.pak",
+      "file_bytes": 539382511,
+      "version": 6,
+      "index_offset": 539204178,
+      "index_bytes": 178288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_15_P.pak",
+      "file_bytes": 548472248,
+      "version": 6,
+      "index_offset": 547806923,
+      "index_bytes": 665280,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_16_P.pak",
+      "file_bytes": 522132038,
+      "version": 6,
+      "index_offset": 521963545,
+      "index_bytes": 168448,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_17_P.pak",
+      "file_bytes": 8677894,
+      "version": 6,
+      "index_offset": 8664105,
+      "index_bytes": 13744,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_18_P.pak",
+      "file_bytes": 539438374,
+      "version": 6,
+      "index_offset": 539266793,
+      "index_bytes": 171536,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_19_P.pak",
+      "file_bytes": 57591126,
+      "version": 6,
+      "index_offset": 57541865,
+      "index_bytes": 49216,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_1_P.pak",
+      "file_bytes": 424032438,
+      "version": 6,
+      "index_offset": 423896617,
+      "index_bytes": 135776,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_20_P.pak",
+      "file_bytes": 8815734,
+      "version": 6,
+      "index_offset": 8800809,
+      "index_bytes": 14880,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_21_P.pak",
+      "file_bytes": 543966790,
+      "version": 6,
+      "index_offset": 543792025,
+      "index_bytes": 174720,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_22_P.pak",
+      "file_bytes": 549559942,
+      "version": 6,
+      "index_offset": 549385977,
+      "index_bytes": 173920,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_23_P.pak",
+      "file_bytes": 60735494,
+      "version": 6,
+      "index_offset": 60684841,
+      "index_bytes": 50608,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_2_P.pak",
+      "file_bytes": 792064006,
+      "version": 6,
+      "index_offset": 791837097,
+      "index_bytes": 226864,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_3_P.pak",
+      "file_bytes": 438951791,
+      "version": 6,
+      "index_offset": 438807138,
+      "index_bytes": 144608,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_4_P.pak",
+      "file_bytes": 443256198,
+      "version": 6,
+      "index_offset": 443112441,
+      "index_bytes": 143712,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_5_P.pak",
+      "file_bytes": 452495144,
+      "version": 6,
+      "index_offset": 452342971,
+      "index_bytes": 152128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_6_P.pak",
+      "file_bytes": 458814774,
+      "version": 6,
+      "index_offset": 458662793,
+      "index_bytes": 151936,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_7_P.pak",
+      "file_bytes": 476076710,
+      "version": 6,
+      "index_offset": 475920633,
+      "index_bytes": 156032,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_8_P.pak",
+      "file_bytes": 477374520,
+      "version": 6,
+      "index_offset": 477215899,
+      "index_bytes": 158576,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk0-WindowsNoEditor_9_P.pak",
+      "file_bytes": 56082790,
+      "version": 6,
+      "index_offset": 56031657,
+      "index_bytes": 51088,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor.pak",
+      "file_bytes": 3669078742,
+      "version": 6,
+      "index_offset": 3659096793,
+      "index_bytes": 9981904,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_0_P.pak",
+      "file_bytes": 404015,
+      "version": 6,
+      "index_offset": 401858,
+      "index_bytes": 2112,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_10_P.pak",
+      "file_bytes": 258899791,
+      "version": 6,
+      "index_offset": 258491154,
+      "index_bytes": 408592,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_11_P.pak",
+      "file_bytes": 256198095,
+      "version": 6,
+      "index_offset": 255538274,
+      "index_bytes": 659776,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_12_P.pak",
+      "file_bytes": 1959407,
+      "version": 6,
+      "index_offset": 1935650,
+      "index_bytes": 23712,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_13_P.pak",
+      "file_bytes": 493931983,
+      "version": 6,
+      "index_offset": 493612162,
+      "index_bytes": 319776,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_14_P.pak",
+      "file_bytes": 1112294331,
+      "version": 6,
+      "index_offset": 1110865998,
+      "index_bytes": 1428288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_15_P.pak",
+      "file_bytes": 326064367,
+      "version": 6,
+      "index_offset": 325130162,
+      "index_bytes": 934160,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_16_P.pak",
+      "file_bytes": 169328415,
+      "version": 6,
+      "index_offset": 169183026,
+      "index_bytes": 145344,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_17_P.pak",
+      "file_bytes": 3876047,
+      "version": 6,
+      "index_offset": 3873506,
+      "index_bytes": 2496,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_18_P.pak",
+      "file_bytes": 511857330,
+      "version": 6,
+      "index_offset": 511387717,
+      "index_bytes": 469568,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_19_P.pak",
+      "file_bytes": 65435855,
+      "version": 6,
+      "index_offset": 65314738,
+      "index_bytes": 121072,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_1_P.pak",
+      "file_bytes": 335224895,
+      "version": 6,
+      "index_offset": 334795394,
+      "index_bytes": 429456,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_20_P.pak",
+      "file_bytes": 63503947,
+      "version": 6,
+      "index_offset": 63402926,
+      "index_bytes": 100976,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_2_P.pak",
+      "file_bytes": 245124719,
+      "version": 6,
+      "index_offset": 244705090,
+      "index_bytes": 419584,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_3_P.pak",
+      "file_bytes": 785421407,
+      "version": 6,
+      "index_offset": 784391170,
+      "index_bytes": 1030192,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_4_P.pak",
+      "file_bytes": 42768175,
+      "version": 6,
+      "index_offset": 42655490,
+      "index_bytes": 112640,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_5_P.pak",
+      "file_bytes": 342479535,
+      "version": 6,
+      "index_offset": 341730578,
+      "index_bytes": 748912,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_6_P.pak",
+      "file_bytes": 510133999,
+      "version": 6,
+      "index_offset": 509422562,
+      "index_bytes": 711392,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_7_P.pak",
+      "file_bytes": 388778767,
+      "version": 6,
+      "index_offset": 388164578,
+      "index_bytes": 614144,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_8_P.pak",
+      "file_bytes": 315570687,
+      "version": 6,
+      "index_offset": 314863442,
+      "index_bytes": 707200,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk1-WindowsNoEditor_9_P.pak",
+      "file_bytes": 2141887,
+      "version": 6,
+      "index_offset": 2116578,
+      "index_bytes": 25264,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk10-WindowsNoEditor.pak",
+      "file_bytes": 1536767567,
+      "version": 6,
+      "index_offset": 1535061874,
+      "index_bytes": 1705648,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk10-WindowsNoEditor_0_P.pak",
+      "file_bytes": 811919,
+      "version": 6,
+      "index_offset": 808242,
+      "index_bytes": 3632,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk10-WindowsNoEditor_1_P.pak",
+      "file_bytes": 24335,
+      "version": 6,
+      "index_offset": 23442,
+      "index_bytes": 848,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk10-WindowsNoEditor_2_P.pak",
+      "file_bytes": 157615,
+      "version": 6,
+      "index_offset": 156722,
+      "index_bytes": 848,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk10-WindowsNoEditor_3_P.pak",
+      "file_bytes": 42934,
+      "version": 6,
+      "index_offset": 41385,
+      "index_bytes": 1504,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk10-WindowsNoEditor_4_P.pak",
+      "file_bytes": 5455,
+      "version": 6,
+      "index_offset": 5122,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk11-WindowsNoEditor.pak",
+      "file_bytes": 710999458,
+      "version": 6,
+      "index_offset": 710338613,
+      "index_bytes": 660800,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk11-WindowsNoEditor_0_P.pak",
+      "file_bytes": 4943,
+      "version": 6,
+      "index_offset": 4594,
+      "index_bytes": 304,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk11-WindowsNoEditor_1_P.pak",
+      "file_bytes": 4486959,
+      "version": 6,
+      "index_offset": 4484098,
+      "index_bytes": 2816,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor.pak",
+      "file_bytes": 870514534,
+      "version": 6,
+      "index_offset": 868360937,
+      "index_bytes": 2153552,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor_0_P.pak",
+      "file_bytes": 408719,
+      "version": 6,
+      "index_offset": 403346,
+      "index_bytes": 5328,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor_10_P.pak",
+      "file_bytes": 21087,
+      "version": 6,
+      "index_offset": 20738,
+      "index_bytes": 304,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor_11_P.pak",
+      "file_bytes": 16254054,
+      "version": 6,
+      "index_offset": 16245881,
+      "index_bytes": 8128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor_1_P.pak",
+      "file_bytes": 1675071,
+      "version": 6,
+      "index_offset": 1667522,
+      "index_bytes": 7504,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor_2_P.pak",
+      "file_bytes": 28271,
+      "version": 6,
+      "index_offset": 26274,
+      "index_bytes": 1952,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor_3_P.pak",
+      "file_bytes": 16726,
+      "version": 6,
+      "index_offset": 15529,
+      "index_bytes": 1152,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor_4_P.pak",
+      "file_bytes": 26374,
+      "version": 6,
+      "index_offset": 24841,
+      "index_bytes": 1488,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor_5_P.pak",
+      "file_bytes": 59519,
+      "version": 6,
+      "index_offset": 57074,
+      "index_bytes": 2400,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor_6_P.pak",
+      "file_bytes": 548870,
+      "version": 6,
+      "index_offset": 547721,
+      "index_bytes": 1104,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor_7_P.pak",
+      "file_bytes": 510198,
+      "version": 6,
+      "index_offset": 508729,
+      "index_bytes": 1424,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor_8_P.pak",
+      "file_bytes": 61,
+      "version": 6,
+      "index_offset": 0,
+      "index_bytes": 16,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12-WindowsNoEditor_9_P.pak",
+      "file_bytes": 12095,
+      "version": 6,
+      "index_offset": 10514,
+      "index_bytes": 1536,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk12optional-WindowsNoEditor.pak",
+      "file_bytes": 219048502,
+      "version": 6,
+      "index_offset": 218974073,
+      "index_bytes": 74384,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk13-WindowsNoEditor.pak",
+      "file_bytes": 907688,
+      "version": 6,
+      "index_offset": 905003,
+      "index_bytes": 2640,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk13-WindowsNoEditor_0_P.pak",
+      "file_bytes": 412214,
+      "version": 6,
+      "index_offset": 411433,
+      "index_bytes": 736,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk14-WindowsNoEditor.pak",
+      "file_bytes": 10812890,
+      "version": 6,
+      "index_offset": 10800973,
+      "index_bytes": 11872,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk14-WindowsNoEditor_0_P.pak",
+      "file_bytes": 226945,
+      "version": 6,
+      "index_offset": 225284,
+      "index_bytes": 1616,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk15-WindowsNoEditor.pak",
+      "file_bytes": 51714566,
+      "version": 6,
+      "index_offset": 51655625,
+      "index_bytes": 58896,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk15-WindowsNoEditor_0_P.pak",
+      "file_bytes": 66966,
+      "version": 6,
+      "index_offset": 66505,
+      "index_bytes": 416,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk15-WindowsNoEditor_1_P.pak",
+      "file_bytes": 69494,
+      "version": 6,
+      "index_offset": 69033,
+      "index_bytes": 416,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk15-WindowsNoEditor_2_P.pak",
+      "file_bytes": 6002358,
+      "version": 6,
+      "index_offset": 5983177,
+      "index_bytes": 19136,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk16-WindowsNoEditor.pak",
+      "file_bytes": 1046309206,
+      "version": 6,
+      "index_offset": 1045654521,
+      "index_bytes": 654640,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk16-WindowsNoEditor_0_P.pak",
+      "file_bytes": 831,
+      "version": 6,
+      "index_offset": 514,
+      "index_bytes": 272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk16-WindowsNoEditor_1_P.pak",
+      "file_bytes": 486654390,
+      "version": 6,
+      "index_offset": 486290617,
+      "index_bytes": 363728,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk17-WindowsNoEditor.pak",
+      "file_bytes": 32966550,
+      "version": 6,
+      "index_offset": 32945817,
+      "index_bytes": 20688,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk17-WindowsNoEditor_0_P.pak",
+      "file_bytes": 165830,
+      "version": 6,
+      "index_offset": 165209,
+      "index_bytes": 576,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk18-WindowsNoEditor.pak",
+      "file_bytes": 250566006,
+      "version": 6,
+      "index_offset": 250421529,
+      "index_bytes": 144432,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk19-WindowsNoEditor.pak",
+      "file_bytes": 56849126,
+      "version": 6,
+      "index_offset": 56826345,
+      "index_bytes": 22736,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor.pak",
+      "file_bytes": 6477134834,
+      "version": 6,
+      "index_offset": 6475890293,
+      "index_bytes": 1244496,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_0_P.pak",
+      "file_bytes": 244260523,
+      "version": 6,
+      "index_offset": 244194878,
+      "index_bytes": 65600,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_10_P.pak",
+      "file_bytes": 955280642,
+      "version": 6,
+      "index_offset": 955180469,
+      "index_bytes": 100128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_11_P.pak",
+      "file_bytes": 132343474,
+      "version": 6,
+      "index_offset": 132327605,
+      "index_bytes": 15824,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_12_P.pak",
+      "file_bytes": 5720578,
+      "version": 6,
+      "index_offset": 5720341,
+      "index_bytes": 192,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_1_P.pak",
+      "file_bytes": 258097874,
+      "version": 6,
+      "index_offset": 258056613,
+      "index_bytes": 41216,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_2_P.pak",
+      "file_bytes": 47891602,
+      "version": 6,
+      "index_offset": 47875525,
+      "index_bytes": 16032,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_3_P.pak",
+      "file_bytes": 2213154,
+      "version": 6,
+      "index_offset": 2212533,
+      "index_bytes": 576,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_4_P.pak",
+      "file_bytes": 1585242354,
+      "version": 6,
+      "index_offset": 1585094405,
+      "index_bytes": 147904,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_5_P.pak",
+      "file_bytes": 88507714,
+      "version": 6,
+      "index_offset": 88501493,
+      "index_bytes": 6176,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_6_P.pak",
+      "file_bytes": 142994898,
+      "version": 6,
+      "index_offset": 142972277,
+      "index_bytes": 22576,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_7_P.pak",
+      "file_bytes": 1113489202,
+      "version": 6,
+      "index_offset": 1113393525,
+      "index_bytes": 95632,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_8_P.pak",
+      "file_bytes": 729260690,
+      "version": 6,
+      "index_offset": 729149061,
+      "index_bytes": 111584,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk2-WindowsNoEditor_9_P.pak",
+      "file_bytes": 20617170,
+      "version": 6,
+      "index_offset": 20599397,
+      "index_bytes": 17728,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk20-WindowsNoEditor.pak",
+      "file_bytes": 47047862,
+      "version": 6,
+      "index_offset": 47015033,
+      "index_bytes": 32784,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk21-WindowsNoEditor.pak",
+      "file_bytes": 44536998,
+      "version": 6,
+      "index_offset": 44506009,
+      "index_bytes": 30944,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk21-WindowsNoEditor_0_P.pak",
+      "file_bytes": 44276054,
+      "version": 6,
+      "index_offset": 44243513,
+      "index_bytes": 32496,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk22-WindowsNoEditor.pak",
+      "file_bytes": 462396214,
+      "version": 6,
+      "index_offset": 462134345,
+      "index_bytes": 261824,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk22-WindowsNoEditor_0_P.pak",
+      "file_bytes": 460749100,
+      "version": 6,
+      "index_offset": 460485903,
+      "index_bytes": 263152,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk23-WindowsNoEditor.pak",
+      "file_bytes": 29261590,
+      "version": 6,
+      "index_offset": 29232233,
+      "index_bytes": 29312,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk23-WindowsNoEditor_0_P.pak",
+      "file_bytes": 290502,
+      "version": 6,
+      "index_offset": 289897,
+      "index_bytes": 560,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk24-WindowsNoEditor.pak",
+      "file_bytes": 518296422,
+      "version": 6,
+      "index_offset": 517931209,
+      "index_bytes": 365168,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk24-WindowsNoEditor_0_P.pak",
+      "file_bytes": 23334630,
+      "version": 6,
+      "index_offset": 23319161,
+      "index_bytes": 15424,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk25-WindowsNoEditor.pak",
+      "file_bytes": 67737078,
+      "version": 6,
+      "index_offset": 67689593,
+      "index_bytes": 47440,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk25-WindowsNoEditor_0_P.pak",
+      "file_bytes": 64598646,
+      "version": 6,
+      "index_offset": 64555081,
+      "index_bytes": 43520,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk26-WindowsNoEditor.pak",
+      "file_bytes": 742838550,
+      "version": 6,
+      "index_offset": 742384825,
+      "index_bytes": 453680,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk26-WindowsNoEditor_0_P.pak",
+      "file_bytes": 743386294,
+      "version": 6,
+      "index_offset": 742930297,
+      "index_bytes": 455952,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk27-WindowsNoEditor.pak",
+      "file_bytes": 21635990,
+      "version": 6,
+      "index_offset": 21600009,
+      "index_bytes": 35936,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk28-WindowsNoEditor.pak",
+      "file_bytes": 589765798,
+      "version": 6,
+      "index_offset": 589451225,
+      "index_bytes": 314528,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk29-WindowsNoEditor.pak",
+      "file_bytes": 25398582,
+      "version": 6,
+      "index_offset": 25374281,
+      "index_bytes": 24256,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor.pak",
+      "file_bytes": 2118434562,
+      "version": 6,
+      "index_offset": 2115824197,
+      "index_bytes": 2610320,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_0_P.pak",
+      "file_bytes": 485967362,
+      "version": 6,
+      "index_offset": 485335477,
+      "index_bytes": 631840,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_10_P.pak",
+      "file_bytes": 278629602,
+      "version": 6,
+      "index_offset": 278331189,
+      "index_bytes": 298368,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_11_P.pak",
+      "file_bytes": 350002,
+      "version": 6,
+      "index_offset": 349653,
+      "index_bytes": 304,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_12_P.pak",
+      "file_bytes": 265746,
+      "version": 6,
+      "index_offset": 265349,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_13_P.pak",
+      "file_bytes": 91149026,
+      "version": 6,
+      "index_offset": 91023333,
+      "index_bytes": 125648,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_14_P.pak",
+      "file_bytes": 128706,
+      "version": 6,
+      "index_offset": 128373,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_15_P.pak",
+      "file_bytes": 241266,
+      "version": 6,
+      "index_offset": 240933,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_16_P.pak",
+      "file_bytes": 222882,
+      "version": 6,
+      "index_offset": 222629,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_17_P.pak",
+      "file_bytes": 447970,
+      "version": 6,
+      "index_offset": 447653,
+      "index_bytes": 272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_18_P.pak",
+      "file_bytes": 443874,
+      "version": 6,
+      "index_offset": 443557,
+      "index_bytes": 272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_19_P.pak",
+      "file_bytes": 41554,
+      "version": 6,
+      "index_offset": 41365,
+      "index_bytes": 144,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_1_P.pak",
+      "file_bytes": 61371362,
+      "version": 6,
+      "index_offset": 61261765,
+      "index_bytes": 109552,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_20_P.pak",
+      "file_bytes": 373314,
+      "version": 6,
+      "index_offset": 372853,
+      "index_bytes": 416,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_21_P.pak",
+      "file_bytes": 338018,
+      "version": 6,
+      "index_offset": 337621,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_2_P.pak",
+      "file_bytes": 65199186,
+      "version": 6,
+      "index_offset": 65096949,
+      "index_bytes": 102192,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_3_P.pak",
+      "file_bytes": 2518066,
+      "version": 6,
+      "index_offset": 2516309,
+      "index_bytes": 1712,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_4_P.pak",
+      "file_bytes": 776735650,
+      "version": 6,
+      "index_offset": 775905877,
+      "index_bytes": 829728,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_5_P.pak",
+      "file_bytes": 50420082,
+      "version": 6,
+      "index_offset": 50360133,
+      "index_bytes": 59904,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_6_P.pak",
+      "file_bytes": 12850018,
+      "version": 6,
+      "index_offset": 12839061,
+      "index_bytes": 10912,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_7_P.pak",
+      "file_bytes": 58234594,
+      "version": 6,
+      "index_offset": 58176261,
+      "index_bytes": 58288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_8_P.pak",
+      "file_bytes": 418825170,
+      "version": 6,
+      "index_offset": 418427349,
+      "index_bytes": 397776,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk3-WindowsNoEditor_9_P.pak",
+      "file_bytes": 45367122,
+      "version": 6,
+      "index_offset": 45284101,
+      "index_bytes": 82976,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk30-WindowsNoEditor.pak",
+      "file_bytes": 510340790,
+      "version": 6,
+      "index_offset": 510046489,
+      "index_bytes": 294256,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk31-WindowsNoEditor.pak",
+      "file_bytes": 35965574,
+      "version": 6,
+      "index_offset": 35935561,
+      "index_bytes": 29968,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk32-WindowsNoEditor.pak",
+      "file_bytes": 480537974,
+      "version": 6,
+      "index_offset": 480186425,
+      "index_bytes": 351504,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk33-WindowsNoEditor.pak",
+      "file_bytes": 15064262,
+      "version": 6,
+      "index_offset": 15044185,
+      "index_bytes": 20032,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk34-WindowsNoEditor.pak",
+      "file_bytes": 757437158,
+      "version": 6,
+      "index_offset": 757019145,
+      "index_bytes": 417968,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk35-WindowsNoEditor.pak",
+      "file_bytes": 53678742,
+      "version": 6,
+      "index_offset": 53642713,
+      "index_bytes": 35984,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk36-WindowsNoEditor.pak",
+      "file_bytes": 537228198,
+      "version": 6,
+      "index_offset": 536853545,
+      "index_bytes": 374608,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk37-WindowsNoEditor.pak",
+      "file_bytes": 1905350,
+      "version": 6,
+      "index_offset": 1900857,
+      "index_bytes": 4448,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk37-WindowsNoEditor_0_P.pak",
+      "file_bytes": 104438,
+      "version": 6,
+      "index_offset": 104009,
+      "index_bytes": 384,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk37-WindowsNoEditor_1_P.pak",
+      "file_bytes": 104486,
+      "version": 6,
+      "index_offset": 104057,
+      "index_bytes": 384,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk38-WindowsNoEditor.pak",
+      "file_bytes": 57382310,
+      "version": 6,
+      "index_offset": 57326585,
+      "index_bytes": 55680,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk39-WindowsNoEditor.pak",
+      "file_bytes": 83212086,
+      "version": 6,
+      "index_offset": 83160041,
+      "index_bytes": 52000,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor.pak",
+      "file_bytes": 68676927,
+      "version": 6,
+      "index_offset": 63512178,
+      "index_bytes": 5164704,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_0_P.pak",
+      "file_bytes": 1663,
+      "version": 6,
+      "index_offset": 1346,
+      "index_bytes": 272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_10_P.pak",
+      "file_bytes": 1170415,
+      "version": 6,
+      "index_offset": 1094802,
+      "index_bytes": 75568,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_11_P.pak",
+      "file_bytes": 3237023,
+      "version": 6,
+      "index_offset": 3001474,
+      "index_bytes": 235504,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_12_P.pak",
+      "file_bytes": 99695,
+      "version": 6,
+      "index_offset": 94802,
+      "index_bytes": 4848,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_13_P.pak",
+      "file_bytes": 212223,
+      "version": 6,
+      "index_offset": 201106,
+      "index_bytes": 11072,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_14_P.pak",
+      "file_bytes": 3391007,
+      "version": 6,
+      "index_offset": 3206530,
+      "index_bytes": 184432,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_15_P.pak",
+      "file_bytes": 616943,
+      "version": 6,
+      "index_offset": 579010,
+      "index_bytes": 37888,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_16_P.pak",
+      "file_bytes": 864641,
+      "version": 6,
+      "index_offset": 769764,
+      "index_bytes": 94832,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_17_P.pak",
+      "file_bytes": 61,
+      "version": 6,
+      "index_offset": 0,
+      "index_bytes": 16,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_18_P.pak",
+      "file_bytes": 666081,
+      "version": 6,
+      "index_offset": 591300,
+      "index_bytes": 74736,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_19_P.pak",
+      "file_bytes": 30031,
+      "version": 6,
+      "index_offset": 29186,
+      "index_bytes": 800,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_1_P.pak",
+      "file_bytes": 1422559,
+      "version": 6,
+      "index_offset": 1324418,
+      "index_bytes": 98096,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_20_P.pak",
+      "file_bytes": 61,
+      "version": 6,
+      "index_offset": 0,
+      "index_bytes": 16,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_21_P.pak",
+      "file_bytes": 93887,
+      "version": 6,
+      "index_offset": 92930,
+      "index_bytes": 912,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_2_P.pak",
+      "file_bytes": 3123263,
+      "version": 6,
+      "index_offset": 2936674,
+      "index_bytes": 186544,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_3_P.pak",
+      "file_bytes": 4503375,
+      "version": 6,
+      "index_offset": 4156578,
+      "index_bytes": 346752,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_4_P.pak",
+      "file_bytes": 251455,
+      "version": 6,
+      "index_offset": 235618,
+      "index_bytes": 15792,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_5_P.pak",
+      "file_bytes": 1953585,
+      "version": 6,
+      "index_offset": 1826484,
+      "index_bytes": 127056,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_6_P.pak",
+      "file_bytes": 4293615,
+      "version": 6,
+      "index_offset": 4078738,
+      "index_bytes": 214832,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_7_P.pak",
+      "file_bytes": 2172751,
+      "version": 6,
+      "index_offset": 2042274,
+      "index_bytes": 130432,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_8_P.pak",
+      "file_bytes": 1777023,
+      "version": 6,
+      "index_offset": 1643666,
+      "index_bytes": 133312,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk4-WindowsNoEditor_9_P.pak",
+      "file_bytes": 476383,
+      "version": 6,
+      "index_offset": 434674,
+      "index_bytes": 41664,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk40-WindowsNoEditor.pak",
+      "file_bytes": 682521366,
+      "version": 6,
+      "index_offset": 682136905,
+      "index_bytes": 384416,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk41-WindowsNoEditor.pak",
+      "file_bytes": 20926694,
+      "version": 6,
+      "index_offset": 20897401,
+      "index_bytes": 29248,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk42-WindowsNoEditor.pak",
+      "file_bytes": 518541142,
+      "version": 6,
+      "index_offset": 518167945,
+      "index_bytes": 373152,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk43-WindowsNoEditor.pak",
+      "file_bytes": 32265816,
+      "version": 6,
+      "index_offset": 32235483,
+      "index_bytes": 30288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk44-WindowsNoEditor.pak",
+      "file_bytes": 548664662,
+      "version": 6,
+      "index_offset": 548301785,
+      "index_bytes": 362832,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk45-WindowsNoEditor.pak",
+      "file_bytes": 86137846,
+      "version": 6,
+      "index_offset": 86090713,
+      "index_bytes": 47088,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk45-WindowsNoEditor_0_P.pak",
+      "file_bytes": 104998,
+      "version": 6,
+      "index_offset": 104505,
+      "index_bytes": 448,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk45-WindowsNoEditor_1_P.pak",
+      "file_bytes": 85314742,
+      "version": 6,
+      "index_offset": 85268281,
+      "index_bytes": 46416,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk46-WindowsNoEditor.pak",
+      "file_bytes": 766563878,
+      "version": 6,
+      "index_offset": 766081369,
+      "index_bytes": 482464,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk46-WindowsNoEditor_0_P.pak",
+      "file_bytes": 749346006,
+      "version": 6,
+      "index_offset": 748862601,
+      "index_bytes": 483360,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk47-WindowsNoEditor.pak",
+      "file_bytes": 48895718,
+      "version": 6,
+      "index_offset": 48859369,
+      "index_bytes": 36304,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk48-WindowsNoEditor.pak",
+      "file_bytes": 616235814,
+      "version": 6,
+      "index_offset": 615900393,
+      "index_bytes": 335376,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk49-WindowsNoEditor.pak",
+      "file_bytes": 14834390,
+      "version": 6,
+      "index_offset": 14817977,
+      "index_bytes": 16368,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor.pak",
+      "file_bytes": 178076399,
+      "version": 6,
+      "index_offset": 170856610,
+      "index_bytes": 7219744,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_0_P.pak",
+      "file_bytes": 3567,
+      "version": 6,
+      "index_offset": 3250,
+      "index_bytes": 272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_10_P.pak",
+      "file_bytes": 17092481,
+      "version": 6,
+      "index_offset": 16708868,
+      "index_bytes": 383568,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_11_P.pak",
+      "file_bytes": 3722001,
+      "version": 6,
+      "index_offset": 3400932,
+      "index_bytes": 321024,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_12_P.pak",
+      "file_bytes": 19215,
+      "version": 6,
+      "index_offset": 17474,
+      "index_bytes": 1696,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_13_P.pak",
+      "file_bytes": 409055,
+      "version": 6,
+      "index_offset": 384194,
+      "index_bytes": 24816,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_14_P.pak",
+      "file_bytes": 7664511,
+      "version": 6,
+      "index_offset": 7310194,
+      "index_bytes": 354272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_15_P.pak",
+      "file_bytes": 476847,
+      "version": 6,
+      "index_offset": 439202,
+      "index_bytes": 37600,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_16_P.pak",
+      "file_bytes": 662415,
+      "version": 6,
+      "index_offset": 613362,
+      "index_bytes": 49008,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_17_P.pak",
+      "file_bytes": 35183,
+      "version": 6,
+      "index_offset": 34834,
+      "index_bytes": 304,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_18_P.pak",
+      "file_bytes": 1159199,
+      "version": 6,
+      "index_offset": 1070162,
+      "index_bytes": 88992,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_19_P.pak",
+      "file_bytes": 83599,
+      "version": 6,
+      "index_offset": 75586,
+      "index_bytes": 7968,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_1_P.pak",
+      "file_bytes": 1234591,
+      "version": 6,
+      "index_offset": 1097346,
+      "index_bytes": 137200,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_20_P.pak",
+      "file_bytes": 61,
+      "version": 6,
+      "index_offset": 0,
+      "index_bytes": 16,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_21_P.pak",
+      "file_bytes": 429951,
+      "version": 6,
+      "index_offset": 408626,
+      "index_bytes": 21280,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_22_P.pak",
+      "file_bytes": 333951,
+      "version": 6,
+      "index_offset": 320546,
+      "index_bytes": 13360,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_23_P.pak",
+      "file_bytes": 73551,
+      "version": 6,
+      "index_offset": 72946,
+      "index_bytes": 560,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_2_P.pak",
+      "file_bytes": 2482321,
+      "version": 6,
+      "index_offset": 2227268,
+      "index_bytes": 255008,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_3_P.pak",
+      "file_bytes": 26639311,
+      "version": 6,
+      "index_offset": 25858690,
+      "index_bytes": 780576,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_4_P.pak",
+      "file_bytes": 374143,
+      "version": 6,
+      "index_offset": 354978,
+      "index_bytes": 19120,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_5_P.pak",
+      "file_bytes": 36290623,
+      "version": 6,
+      "index_offset": 35711602,
+      "index_bytes": 578976,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_6_P.pak",
+      "file_bytes": 2910289,
+      "version": 6,
+      "index_offset": 2612468,
+      "index_bytes": 297776,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_7_P.pak",
+      "file_bytes": 2013681,
+      "version": 6,
+      "index_offset": 1894116,
+      "index_bytes": 119520,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_8_P.pak",
+      "file_bytes": 50771985,
+      "version": 6,
+      "index_offset": 50105540,
+      "index_bytes": 666400,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk5-WindowsNoEditor_9_P.pak",
+      "file_bytes": 586799,
+      "version": 6,
+      "index_offset": 540642,
+      "index_bytes": 46112,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk50-WindowsNoEditor.pak",
+      "file_bytes": 461490118,
+      "version": 6,
+      "index_offset": 461204761,
+      "index_bytes": 285312,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk51-WindowsNoEditor.pak",
+      "file_bytes": 18950742,
+      "version": 6,
+      "index_offset": 18939145,
+      "index_bytes": 11552,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk51-WindowsNoEditor_0_P.pak",
+      "file_bytes": 18898278,
+      "version": 6,
+      "index_offset": 18887929,
+      "index_bytes": 10304,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk52-WindowsNoEditor.pak",
+      "file_bytes": 86424918,
+      "version": 6,
+      "index_offset": 86349929,
+      "index_bytes": 74944,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk52-WindowsNoEditor_0_P.pak",
+      "file_bytes": 84056150,
+      "version": 6,
+      "index_offset": 83987561,
+      "index_bytes": 68544,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk53-WindowsNoEditor.pak",
+      "file_bytes": 64950870,
+      "version": 6,
+      "index_offset": 64907849,
+      "index_bytes": 42976,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk53-WindowsNoEditor_0_P.pak",
+      "file_bytes": 61416998,
+      "version": 6,
+      "index_offset": 61383129,
+      "index_bytes": 33824,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk54-WindowsNoEditor.pak",
+      "file_bytes": 648656710,
+      "version": 6,
+      "index_offset": 648317241,
+      "index_bytes": 339424,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk54-WindowsNoEditor_0_P.pak",
+      "file_bytes": 863,
+      "version": 6,
+      "index_offset": 530,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk55-WindowsNoEditor.pak",
+      "file_bytes": 85846326,
+      "version": 6,
+      "index_offset": 85798505,
+      "index_bytes": 47776,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk56-WindowsNoEditor.pak",
+      "file_bytes": 416062694,
+      "version": 6,
+      "index_offset": 415854937,
+      "index_bytes": 207712,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk57-WindowsNoEditor.pak",
+      "file_bytes": 23035599,
+      "version": 6,
+      "index_offset": 23012802,
+      "index_bytes": 22752,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk58-WindowsNoEditor.pak",
+      "file_bytes": 222146166,
+      "version": 6,
+      "index_offset": 222022665,
+      "index_bytes": 123456,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk59-WindowsNoEditor.pak",
+      "file_bytes": 7978598,
+      "version": 6,
+      "index_offset": 7966169,
+      "index_bytes": 12384,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor.pak",
+      "file_bytes": 249469839,
+      "version": 6,
+      "index_offset": 243878258,
+      "index_bytes": 5591536,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_0_P.pak",
+      "file_bytes": 8255,
+      "version": 6,
+      "index_offset": 7906,
+      "index_bytes": 304,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_10_P.pak",
+      "file_bytes": 4766767,
+      "version": 6,
+      "index_offset": 4649058,
+      "index_bytes": 117664,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_11_P.pak",
+      "file_bytes": 2827311,
+      "version": 6,
+      "index_offset": 2787058,
+      "index_bytes": 40208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_12_P.pak",
+      "file_bytes": 15421329,
+      "version": 6,
+      "index_offset": 15187172,
+      "index_bytes": 234112,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_13_P.pak",
+      "file_bytes": 14095,
+      "version": 6,
+      "index_offset": 13362,
+      "index_bytes": 688,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_14_P.pak",
+      "file_bytes": 6261007,
+      "version": 6,
+      "index_offset": 6176306,
+      "index_bytes": 84656,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_15_P.pak",
+      "file_bytes": 10697199,
+      "version": 6,
+      "index_offset": 10528258,
+      "index_bytes": 168896,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_16_P.pak",
+      "file_bytes": 6191487,
+      "version": 6,
+      "index_offset": 6101266,
+      "index_bytes": 90176,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_17_P.pak",
+      "file_bytes": 6057007,
+      "version": 6,
+      "index_offset": 5974354,
+      "index_bytes": 82608,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_1_P.pak",
+      "file_bytes": 5312319,
+      "version": 6,
+      "index_offset": 5190946,
+      "index_bytes": 121328,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_2_P.pak",
+      "file_bytes": 4825311,
+      "version": 6,
+      "index_offset": 4704450,
+      "index_bytes": 120816,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_3_P.pak",
+      "file_bytes": 5200943,
+      "version": 6,
+      "index_offset": 5066050,
+      "index_bytes": 134848,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_4_P.pak",
+      "file_bytes": 1427263,
+      "version": 6,
+      "index_offset": 1394786,
+      "index_bytes": 32432,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_5_P.pak",
+      "file_bytes": 4214079,
+      "version": 6,
+      "index_offset": 4102786,
+      "index_bytes": 111248,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_6_P.pak",
+      "file_bytes": 8623183,
+      "version": 6,
+      "index_offset": 8459730,
+      "index_bytes": 163408,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_7_P.pak",
+      "file_bytes": 3644207,
+      "version": 6,
+      "index_offset": 3556674,
+      "index_bytes": 87488,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_8_P.pak",
+      "file_bytes": 2936047,
+      "version": 6,
+      "index_offset": 2885458,
+      "index_bytes": 50544,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk6-WindowsNoEditor_9_P.pak",
+      "file_bytes": 4815551,
+      "version": 6,
+      "index_offset": 4734162,
+      "index_bytes": 81344,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk60-WindowsNoEditor.pak",
+      "file_bytes": 257790022,
+      "version": 6,
+      "index_offset": 257622761,
+      "index_bytes": 167216,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk61-WindowsNoEditor.pak",
+      "file_bytes": 38550790,
+      "version": 6,
+      "index_offset": 38524473,
+      "index_bytes": 26272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk62-WindowsNoEditor.pak",
+      "file_bytes": 512581926,
+      "version": 6,
+      "index_offset": 512281801,
+      "index_bytes": 300080,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk63-WindowsNoEditor.pak",
+      "file_bytes": 72572902,
+      "version": 6,
+      "index_offset": 72533673,
+      "index_bytes": 39184,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk64-WindowsNoEditor.pak",
+      "file_bytes": 446748614,
+      "version": 6,
+      "index_offset": 446506953,
+      "index_bytes": 241616,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk65-WindowsNoEditor.pak",
+      "file_bytes": 37334630,
+      "version": 6,
+      "index_offset": 37308745,
+      "index_bytes": 25840,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk66-WindowsNoEditor.pak",
+      "file_bytes": 551029030,
+      "version": 6,
+      "index_offset": 550715977,
+      "index_bytes": 313008,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk67-WindowsNoEditor.pak",
+      "file_bytes": 3086070,
+      "version": 6,
+      "index_offset": 3080569,
+      "index_bytes": 5456,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk68-WindowsNoEditor.pak",
+      "file_bytes": 112488438,
+      "version": 6,
+      "index_offset": 112403801,
+      "index_bytes": 84592,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk69-WindowsNoEditor.pak",
+      "file_bytes": 54009078,
+      "version": 6,
+      "index_offset": 53971433,
+      "index_bytes": 37600,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor.pak",
+      "file_bytes": 437620591,
+      "version": 6,
+      "index_offset": 432592690,
+      "index_bytes": 5027856,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_0_P.pak",
+      "file_bytes": 2396655,
+      "version": 6,
+      "index_offset": 2382066,
+      "index_bytes": 14544,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_10_P.pak",
+      "file_bytes": 26191,
+      "version": 6,
+      "index_offset": 24930,
+      "index_bytes": 1216,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_11_P.pak",
+      "file_bytes": 1793919,
+      "version": 6,
+      "index_offset": 1781970,
+      "index_bytes": 11904,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_12_P.pak",
+      "file_bytes": 1441419,
+      "version": 6,
+      "index_offset": 1439006,
+      "index_bytes": 2368,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_13_P.pak",
+      "file_bytes": 2305103,
+      "version": 6,
+      "index_offset": 2300978,
+      "index_bytes": 4080,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_1_P.pak",
+      "file_bytes": 1515647,
+      "version": 6,
+      "index_offset": 1497490,
+      "index_bytes": 18112,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_2_P.pak",
+      "file_bytes": 6624463,
+      "version": 6,
+      "index_offset": 6497602,
+      "index_bytes": 126816,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_3_P.pak",
+      "file_bytes": 2318299,
+      "version": 6,
+      "index_offset": 2311982,
+      "index_bytes": 6272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_4_P.pak",
+      "file_bytes": 3629099,
+      "version": 6,
+      "index_offset": 3599102,
+      "index_bytes": 29952,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_5_P.pak",
+      "file_bytes": 4317119,
+      "version": 6,
+      "index_offset": 4275618,
+      "index_bytes": 41456,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_6_P.pak",
+      "file_bytes": 552767,
+      "version": 6,
+      "index_offset": 543538,
+      "index_bytes": 9184,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_7_P.pak",
+      "file_bytes": 460363,
+      "version": 6,
+      "index_offset": 459790,
+      "index_bytes": 528,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_8_P.pak",
+      "file_bytes": 823039,
+      "version": 6,
+      "index_offset": 819202,
+      "index_bytes": 3792,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk7-WindowsNoEditor_9_P.pak",
+      "file_bytes": 5660047,
+      "version": 6,
+      "index_offset": 5535026,
+      "index_bytes": 124976,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk70-WindowsNoEditor.pak",
+      "file_bytes": 455669958,
+      "version": 6,
+      "index_offset": 455361593,
+      "index_bytes": 308320,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk71-WindowsNoEditor.pak",
+      "file_bytes": 48160118,
+      "version": 6,
+      "index_offset": 48129625,
+      "index_bytes": 30448,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk72-WindowsNoEditor.pak",
+      "file_bytes": 415190006,
+      "version": 6,
+      "index_offset": 414912937,
+      "index_bytes": 277024,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk73-WindowsNoEditor.pak",
+      "file_bytes": 15368015,
+      "version": 6,
+      "index_offset": 15353186,
+      "index_bytes": 14784,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk73-WindowsNoEditor_0_P.pak",
+      "file_bytes": 819142,
+      "version": 6,
+      "index_offset": 816809,
+      "index_bytes": 2288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk74-WindowsNoEditor.pak",
+      "file_bytes": 222844678,
+      "version": 6,
+      "index_offset": 222674265,
+      "index_bytes": 170368,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk74-WindowsNoEditor_0_P.pak",
+      "file_bytes": 41615,
+      "version": 6,
+      "index_offset": 41250,
+      "index_bytes": 320,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk75-WindowsNoEditor.pak",
+      "file_bytes": 9098198,
+      "version": 6,
+      "index_offset": 9087497,
+      "index_bytes": 10656,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk76-WindowsNoEditor.pak",
+      "file_bytes": 94457782,
+      "version": 6,
+      "index_offset": 94372697,
+      "index_bytes": 85040,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk77-WindowsNoEditor.pak",
+      "file_bytes": 4002310,
+      "version": 6,
+      "index_offset": 3995609,
+      "index_bytes": 6656,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk78-WindowsNoEditor.pak",
+      "file_bytes": 154019478,
+      "version": 6,
+      "index_offset": 153936425,
+      "index_bytes": 83008,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk79-WindowsNoEditor.pak",
+      "file_bytes": 2970518,
+      "version": 6,
+      "index_offset": 2965097,
+      "index_bytes": 5376,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk79-WindowsNoEditor_0_P.pak",
+      "file_bytes": 2073382,
+      "version": 6,
+      "index_offset": 2070777,
+      "index_bytes": 2560,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk8-WindowsNoEditor.pak",
+      "file_bytes": 2847331302,
+      "version": 6,
+      "index_offset": 2843514185,
+      "index_bytes": 3817072,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk8-WindowsNoEditor_0_P.pak",
+      "file_bytes": 2266431,
+      "version": 6,
+      "index_offset": 2259938,
+      "index_bytes": 6448,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk8-WindowsNoEditor_1_P.pak",
+      "file_bytes": 1704495,
+      "version": 6,
+      "index_offset": 1693106,
+      "index_bytes": 11344,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk8-WindowsNoEditor_2_P.pak",
+      "file_bytes": 53743,
+      "version": 6,
+      "index_offset": 53218,
+      "index_bytes": 480,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk8-WindowsNoEditor_3_P.pak",
+      "file_bytes": 2811238,
+      "version": 6,
+      "index_offset": 2808361,
+      "index_bytes": 2832,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk8-WindowsNoEditor_4_P.pak",
+      "file_bytes": 713327,
+      "version": 6,
+      "index_offset": 707970,
+      "index_bytes": 5312,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk8-WindowsNoEditor_5_P.pak",
+      "file_bytes": 4779935,
+      "version": 6,
+      "index_offset": 4775602,
+      "index_bytes": 4288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk8-WindowsNoEditor_6_P.pak",
+      "file_bytes": 5132991,
+      "version": 6,
+      "index_offset": 5130834,
+      "index_bytes": 2112,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk8-WindowsNoEditor_7_P.pak",
+      "file_bytes": 9890591,
+      "version": 6,
+      "index_offset": 9881394,
+      "index_bytes": 9152,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk8-WindowsNoEditor_8_P.pak",
+      "file_bytes": 7551,
+      "version": 6,
+      "index_offset": 7170,
+      "index_bytes": 336,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk8-WindowsNoEditor_9_P.pak",
+      "file_bytes": 1268594,
+      "version": 6,
+      "index_offset": 1267781,
+      "index_bytes": 768,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk80-WindowsNoEditor.pak",
+      "file_bytes": 144385430,
+      "version": 6,
+      "index_offset": 144274105,
+      "index_bytes": 111280,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk80-WindowsNoEditor_0_P.pak",
+      "file_bytes": 9868079,
+      "version": 6,
+      "index_offset": 9862594,
+      "index_bytes": 5440,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk81-WindowsNoEditor.pak",
+      "file_bytes": 3070902,
+      "version": 6,
+      "index_offset": 3063593,
+      "index_bytes": 7264,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk82-WindowsNoEditor.pak",
+      "file_bytes": 165066843,
+      "version": 6,
+      "index_offset": 164957390,
+      "index_bytes": 109408,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk83-WindowsNoEditor.pak",
+      "file_bytes": 43708646,
+      "version": 6,
+      "index_offset": 43653945,
+      "index_bytes": 54656,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk83-WindowsNoEditor_0_P.pak",
+      "file_bytes": 74793126,
+      "version": 6,
+      "index_offset": 74763545,
+      "index_bytes": 29536,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk83-WindowsNoEditor_1_P.pak",
+      "file_bytes": 302934694,
+      "version": 6,
+      "index_offset": 302839337,
+      "index_bytes": 95312,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk83-WindowsNoEditor_2_P.pak",
+      "file_bytes": 33049414,
+      "version": 6,
+      "index_offset": 33025577,
+      "index_bytes": 23792,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk83-WindowsNoEditor_3_P.pak",
+      "file_bytes": 26519654,
+      "version": 6,
+      "index_offset": 26511961,
+      "index_bytes": 7648,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk83-WindowsNoEditor_4_P.pak",
+      "file_bytes": 61,
+      "version": 6,
+      "index_offset": 0,
+      "index_bytes": 16,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk83-WindowsNoEditor_5_P.pak",
+      "file_bytes": 99024694,
+      "version": 6,
+      "index_offset": 98981593,
+      "index_bytes": 43056,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk83-WindowsNoEditor_6_P.pak",
+      "file_bytes": 122056406,
+      "version": 6,
+      "index_offset": 122007161,
+      "index_bytes": 49200,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk83-WindowsNoEditor_7_P.pak",
+      "file_bytes": 3861206,
+      "version": 6,
+      "index_offset": 3857865,
+      "index_bytes": 3296,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk83-WindowsNoEditor_8_P.pak",
+      "file_bytes": 3861174,
+      "version": 6,
+      "index_offset": 3857833,
+      "index_bytes": 3296,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk84-WindowsNoEditor.pak",
+      "file_bytes": 1045044854,
+      "version": 6,
+      "index_offset": 1044482969,
+      "index_bytes": 561840,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk84-WindowsNoEditor_0_P.pak",
+      "file_bytes": 257079494,
+      "version": 6,
+      "index_offset": 256922825,
+      "index_bytes": 156624,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk84-WindowsNoEditor_1_P.pak",
+      "file_bytes": 267805462,
+      "version": 6,
+      "index_offset": 267573353,
+      "index_bytes": 232064,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk84-WindowsNoEditor_2_P.pak",
+      "file_bytes": 267861206,
+      "version": 6,
+      "index_offset": 267629097,
+      "index_bytes": 232064,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk84-WindowsNoEditor_3_P.pak",
+      "file_bytes": 475529142,
+      "version": 6,
+      "index_offset": 475212185,
+      "index_bytes": 316912,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk84-WindowsNoEditor_4_P.pak",
+      "file_bytes": 305433382,
+      "version": 6,
+      "index_offset": 305099465,
+      "index_bytes": 333872,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor.pak",
+      "file_bytes": 2173178818,
+      "version": 6,
+      "index_offset": 2170684021,
+      "index_bytes": 2494752,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_0_P.pak",
+      "file_bytes": 393181858,
+      "version": 6,
+      "index_offset": 392568645,
+      "index_bytes": 613168,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_10_P.pak",
+      "file_bytes": 297793778,
+      "version": 6,
+      "index_offset": 297498021,
+      "index_bytes": 295712,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_11_P.pak",
+      "file_bytes": 2297458,
+      "version": 6,
+      "index_offset": 2296389,
+      "index_bytes": 1024,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_12_P.pak",
+      "file_bytes": 102514,
+      "version": 6,
+      "index_offset": 102261,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_13_P.pak",
+      "file_bytes": 101173618,
+      "version": 6,
+      "index_offset": 101048053,
+      "index_bytes": 125520,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_14_P.pak",
+      "file_bytes": 125458,
+      "version": 6,
+      "index_offset": 125125,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_15_P.pak",
+      "file_bytes": 127602,
+      "version": 6,
+      "index_offset": 127269,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_16_P.pak",
+      "file_bytes": 91426,
+      "version": 6,
+      "index_offset": 91237,
+      "index_bytes": 144,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_17_P.pak",
+      "file_bytes": 151666,
+      "version": 6,
+      "index_offset": 151413,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_18_P.pak",
+      "file_bytes": 29730,
+      "version": 6,
+      "index_offset": 29541,
+      "index_bytes": 144,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_19_P.pak",
+      "file_bytes": 226530,
+      "version": 6,
+      "index_offset": 226133,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_1_P.pak",
+      "file_bytes": 65123042,
+      "version": 6,
+      "index_offset": 65013685,
+      "index_bytes": 109312,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_20_P.pak",
+      "file_bytes": 273698,
+      "version": 6,
+      "index_offset": 273301,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_21_P.pak",
+      "file_bytes": 661522,
+      "version": 6,
+      "index_offset": 661189,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_22_P.pak",
+      "file_bytes": 512514,
+      "version": 6,
+      "index_offset": 512181,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_2_P.pak",
+      "file_bytes": 86870050,
+      "version": 6,
+      "index_offset": 86761989,
+      "index_bytes": 108016,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_3_P.pak",
+      "file_bytes": 2653442,
+      "version": 6,
+      "index_offset": 2651749,
+      "index_bytes": 1648,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_4_P.pak",
+      "file_bytes": 813412530,
+      "version": 6,
+      "index_offset": 812597685,
+      "index_bytes": 814800,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_5_P.pak",
+      "file_bytes": 57551170,
+      "version": 6,
+      "index_offset": 57491445,
+      "index_bytes": 59680,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_6_P.pak",
+      "file_bytes": 12874594,
+      "version": 6,
+      "index_offset": 12863637,
+      "index_bytes": 10912,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_7_P.pak",
+      "file_bytes": 71374674,
+      "version": 6,
+      "index_offset": 71305621,
+      "index_bytes": 69008,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_8_P.pak",
+      "file_bytes": 509562002,
+      "version": 6,
+      "index_offset": 509107397,
+      "index_bytes": 454560,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk85-WindowsNoEditor_9_P.pak",
+      "file_bytes": 41992674,
+      "version": 6,
+      "index_offset": 41914069,
+      "index_bytes": 78560,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor.pak",
+      "file_bytes": 2261130658,
+      "version": 6,
+      "index_offset": 2258635653,
+      "index_bytes": 2494960,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_0_P.pak",
+      "file_bytes": 418994466,
+      "version": 6,
+      "index_offset": 418381077,
+      "index_bytes": 613344,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_10_P.pak",
+      "file_bytes": 314515826,
+      "version": 6,
+      "index_offset": 314220149,
+      "index_bytes": 295632,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_11_P.pak",
+      "file_bytes": 4290738,
+      "version": 6,
+      "index_offset": 4289317,
+      "index_bytes": 1376,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_12_P.pak",
+      "file_bytes": 126386,
+      "version": 6,
+      "index_offset": 126069,
+      "index_bytes": 272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_13_P.pak",
+      "file_bytes": 100640898,
+      "version": 6,
+      "index_offset": 100515205,
+      "index_bytes": 125648,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_14_P.pak",
+      "file_bytes": 62882,
+      "version": 6,
+      "index_offset": 62709,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_15_P.pak",
+      "file_bytes": 89026,
+      "version": 6,
+      "index_offset": 88773,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_16_P.pak",
+      "file_bytes": 193762,
+      "version": 6,
+      "index_offset": 193509,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_17_P.pak",
+      "file_bytes": 251442,
+      "version": 6,
+      "index_offset": 251125,
+      "index_bytes": 272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_18_P.pak",
+      "file_bytes": 80834,
+      "version": 6,
+      "index_offset": 80581,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_19_P.pak",
+      "file_bytes": 92834,
+      "version": 6,
+      "index_offset": 92661,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_1_P.pak",
+      "file_bytes": 69430882,
+      "version": 6,
+      "index_offset": 69321173,
+      "index_bytes": 109664,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_2_P.pak",
+      "file_bytes": 86715538,
+      "version": 6,
+      "index_offset": 86607573,
+      "index_bytes": 107920,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_3_P.pak",
+      "file_bytes": 2970274,
+      "version": 6,
+      "index_offset": 2968661,
+      "index_bytes": 1568,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_4_P.pak",
+      "file_bytes": 816506098,
+      "version": 6,
+      "index_offset": 815691365,
+      "index_bytes": 814688,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_5_P.pak",
+      "file_bytes": 58687906,
+      "version": 6,
+      "index_offset": 58627973,
+      "index_bytes": 59888,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_6_P.pak",
+      "file_bytes": 14275874,
+      "version": 6,
+      "index_offset": 14264421,
+      "index_bytes": 11408,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_7_P.pak",
+      "file_bytes": 58704322,
+      "version": 6,
+      "index_offset": 58645509,
+      "index_bytes": 58768,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_8_P.pak",
+      "file_bytes": 534022082,
+      "version": 6,
+      "index_offset": 533567461,
+      "index_bytes": 454576,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk86-WindowsNoEditor_9_P.pak",
+      "file_bytes": 39727314,
+      "version": 6,
+      "index_offset": 39648949,
+      "index_bytes": 78320,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor.pak",
+      "file_bytes": 2203240082,
+      "version": 6,
+      "index_offset": 2200745397,
+      "index_bytes": 2494640,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_0_P.pak",
+      "file_bytes": 407704338,
+      "version": 6,
+      "index_offset": 407091765,
+      "index_bytes": 612528,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_10_P.pak",
+      "file_bytes": 304158194,
+      "version": 6,
+      "index_offset": 303862373,
+      "index_bytes": 295776,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_11_P.pak",
+      "file_bytes": 1751250,
+      "version": 6,
+      "index_offset": 1750485,
+      "index_bytes": 720,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_12_P.pak",
+      "file_bytes": 130114,
+      "version": 6,
+      "index_offset": 129861,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_13_P.pak",
+      "file_bytes": 99911186,
+      "version": 6,
+      "index_offset": 99785717,
+      "index_bytes": 125424,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_14_P.pak",
+      "file_bytes": 309570,
+      "version": 6,
+      "index_offset": 309317,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_15_P.pak",
+      "file_bytes": 311218,
+      "version": 6,
+      "index_offset": 310901,
+      "index_bytes": 272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_16_P.pak",
+      "file_bytes": 76786,
+      "version": 6,
+      "index_offset": 76613,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_17_P.pak",
+      "file_bytes": 108466,
+      "version": 6,
+      "index_offset": 108149,
+      "index_bytes": 272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_18_P.pak",
+      "file_bytes": 238802,
+      "version": 6,
+      "index_offset": 238405,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_19_P.pak",
+      "file_bytes": 224610,
+      "version": 6,
+      "index_offset": 224213,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_1_P.pak",
+      "file_bytes": 65401858,
+      "version": 6,
+      "index_offset": 65292629,
+      "index_bytes": 109184,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_20_P.pak",
+      "file_bytes": 51986,
+      "version": 6,
+      "index_offset": 51813,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_21_P.pak",
+      "file_bytes": 30386,
+      "version": 6,
+      "index_offset": 30213,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_22_P.pak",
+      "file_bytes": 30370,
+      "version": 6,
+      "index_offset": 30197,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_2_P.pak",
+      "file_bytes": 87673154,
+      "version": 6,
+      "index_offset": 87564965,
+      "index_bytes": 108144,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_3_P.pak",
+      "file_bytes": 2928178,
+      "version": 6,
+      "index_offset": 2926421,
+      "index_bytes": 1712,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_4_P.pak",
+      "file_bytes": 806078034,
+      "version": 6,
+      "index_offset": 805263253,
+      "index_bytes": 814736,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_5_P.pak",
+      "file_bytes": 57735954,
+      "version": 6,
+      "index_offset": 57676149,
+      "index_bytes": 59760,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_6_P.pak",
+      "file_bytes": 14487042,
+      "version": 6,
+      "index_offset": 14475941,
+      "index_bytes": 11056,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_7_P.pak",
+      "file_bytes": 61395138,
+      "version": 6,
+      "index_offset": 61336613,
+      "index_bytes": 58480,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_8_P.pak",
+      "file_bytes": 467436610,
+      "version": 6,
+      "index_offset": 467042885,
+      "index_bytes": 393680,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk87-WindowsNoEditor_9_P.pak",
+      "file_bytes": 41895842,
+      "version": 6,
+      "index_offset": 41817253,
+      "index_bytes": 78544,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor.pak",
+      "file_bytes": 2283068514,
+      "version": 6,
+      "index_offset": 2280573557,
+      "index_bytes": 2494912,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_0_P.pak",
+      "file_bytes": 416254130,
+      "version": 6,
+      "index_offset": 415640565,
+      "index_bytes": 613520,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_10_P.pak",
+      "file_bytes": 316442018,
+      "version": 6,
+      "index_offset": 316146405,
+      "index_bytes": 295568,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_11_P.pak",
+      "file_bytes": 2947586,
+      "version": 6,
+      "index_offset": 2946517,
+      "index_bytes": 1024,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_12_P.pak",
+      "file_bytes": 183634,
+      "version": 6,
+      "index_offset": 183445,
+      "index_bytes": 144,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_13_P.pak",
+      "file_bytes": 104641202,
+      "version": 6,
+      "index_offset": 104515653,
+      "index_bytes": 125504,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_14_P.pak",
+      "file_bytes": 25842,
+      "version": 6,
+      "index_offset": 25589,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_15_P.pak",
+      "file_bytes": 161282,
+      "version": 6,
+      "index_offset": 160885,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_16_P.pak",
+      "file_bytes": 198290,
+      "version": 6,
+      "index_offset": 197957,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_17_P.pak",
+      "file_bytes": 110914,
+      "version": 6,
+      "index_offset": 110661,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_18_P.pak",
+      "file_bytes": 188050,
+      "version": 6,
+      "index_offset": 187717,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_19_P.pak",
+      "file_bytes": 383442,
+      "version": 6,
+      "index_offset": 383045,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_1_P.pak",
+      "file_bytes": 67320098,
+      "version": 6,
+      "index_offset": 67210517,
+      "index_bytes": 109536,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_20_P.pak",
+      "file_bytes": 290450,
+      "version": 6,
+      "index_offset": 290117,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_21_P.pak",
+      "file_bytes": 63746,
+      "version": 6,
+      "index_offset": 63557,
+      "index_bytes": 144,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_2_P.pak",
+      "file_bytes": 92366018,
+      "version": 6,
+      "index_offset": 92257733,
+      "index_bytes": 108240,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_3_P.pak",
+      "file_bytes": 2948962,
+      "version": 6,
+      "index_offset": 2947269,
+      "index_bytes": 1648,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_4_P.pak",
+      "file_bytes": 839990418,
+      "version": 6,
+      "index_offset": 839175541,
+      "index_bytes": 814832,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_5_P.pak",
+      "file_bytes": 56626658,
+      "version": 6,
+      "index_offset": 56566565,
+      "index_bytes": 60048,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_6_P.pak",
+      "file_bytes": 13377330,
+      "version": 6,
+      "index_offset": 13366165,
+      "index_bytes": 11120,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_7_P.pak",
+      "file_bytes": 58399970,
+      "version": 6,
+      "index_offset": 58341477,
+      "index_bytes": 58448,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_8_P.pak",
+      "file_bytes": 556476898,
+      "version": 6,
+      "index_offset": 556022229,
+      "index_bytes": 454624,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk88-WindowsNoEditor_9_P.pak",
+      "file_bytes": 41783218,
+      "version": 6,
+      "index_offset": 41704773,
+      "index_bytes": 78400,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor.pak",
+      "file_bytes": 2004793170,
+      "version": 6,
+      "index_offset": 2002311397,
+      "index_bytes": 2481728,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_0_P.pak",
+      "file_bytes": 425635826,
+      "version": 6,
+      "index_offset": 425019573,
+      "index_bytes": 616208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_10_P.pak",
+      "file_bytes": 276205394,
+      "version": 6,
+      "index_offset": 275909637,
+      "index_bytes": 295712,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_11_P.pak",
+      "file_bytes": 1724690,
+      "version": 6,
+      "index_offset": 1723925,
+      "index_bytes": 720,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_12_P.pak",
+      "file_bytes": 353670,
+      "version": 6,
+      "index_offset": 353113,
+      "index_bytes": 512,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_13_P.pak",
+      "file_bytes": 92943282,
+      "version": 6,
+      "index_offset": 92817349,
+      "index_bytes": 125888,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_14_P.pak",
+      "file_bytes": 77794,
+      "version": 6,
+      "index_offset": 77541,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_15_P.pak",
+      "file_bytes": 69698,
+      "version": 6,
+      "index_offset": 69525,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_16_P.pak",
+      "file_bytes": 67474,
+      "version": 6,
+      "index_offset": 67301,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_17_P.pak",
+      "file_bytes": 69698,
+      "version": 6,
+      "index_offset": 69525,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_18_P.pak",
+      "file_bytes": 67474,
+      "version": 6,
+      "index_offset": 67301,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_19_P.pak",
+      "file_bytes": 103138,
+      "version": 6,
+      "index_offset": 102885,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_1_P.pak",
+      "file_bytes": 63406946,
+      "version": 6,
+      "index_offset": 63297637,
+      "index_bytes": 109264,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_20_P.pak",
+      "file_bytes": 167810,
+      "version": 6,
+      "index_offset": 167413,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_21_P.pak",
+      "file_bytes": 228242,
+      "version": 6,
+      "index_offset": 227781,
+      "index_bytes": 416,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_22_P.pak",
+      "file_bytes": 182386,
+      "version": 6,
+      "index_offset": 181989,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_2_P.pak",
+      "file_bytes": 79796034,
+      "version": 6,
+      "index_offset": 79688117,
+      "index_bytes": 107872,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_3_P.pak",
+      "file_bytes": 2513170,
+      "version": 6,
+      "index_offset": 2511637,
+      "index_bytes": 1488,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_4_P.pak",
+      "file_bytes": 735174514,
+      "version": 6,
+      "index_offset": 734365861,
+      "index_bytes": 808608,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_5_P.pak",
+      "file_bytes": 52458322,
+      "version": 6,
+      "index_offset": 52398309,
+      "index_bytes": 59968,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_6_P.pak",
+      "file_bytes": 12558546,
+      "version": 6,
+      "index_offset": 12547237,
+      "index_bytes": 11264,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_7_P.pak",
+      "file_bytes": 58484834,
+      "version": 6,
+      "index_offset": 58426277,
+      "index_bytes": 58512,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_8_P.pak",
+      "file_bytes": 485680706,
+      "version": 6,
+      "index_offset": 485226053,
+      "index_bytes": 454608,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk89-WindowsNoEditor_9_P.pak",
+      "file_bytes": 42114818,
+      "version": 6,
+      "index_offset": 42036325,
+      "index_bytes": 78448,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk9-WindowsNoEditor.pak",
+      "file_bytes": 1189169702,
+      "version": 6,
+      "index_offset": 1187745673,
+      "index_bytes": 1423984,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk9-WindowsNoEditor_0_P.pak",
+      "file_bytes": 37313,
+      "version": 6,
+      "index_offset": 36020,
+      "index_bytes": 1248,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk9-WindowsNoEditor_1_P.pak",
+      "file_bytes": 1628367,
+      "version": 6,
+      "index_offset": 1626306,
+      "index_bytes": 2016,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk9-WindowsNoEditor_2_P.pak",
+      "file_bytes": 25905999,
+      "version": 6,
+      "index_offset": 25820114,
+      "index_bytes": 85840,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk9-WindowsNoEditor_3_P.pak",
+      "file_bytes": 1039,
+      "version": 6,
+      "index_offset": 674,
+      "index_bytes": 320,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk9-WindowsNoEditor_4_P.pak",
+      "file_bytes": 10847,
+      "version": 6,
+      "index_offset": 10450,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk9-WindowsNoEditor_5_P.pak",
+      "file_bytes": 516015,
+      "version": 6,
+      "index_offset": 513618,
+      "index_bytes": 2352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor.pak",
+      "file_bytes": 2050271122,
+      "version": 6,
+      "index_offset": 2047786421,
+      "index_bytes": 2484656,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_0_P.pak",
+      "file_bytes": 378810210,
+      "version": 6,
+      "index_offset": 378204933,
+      "index_bytes": 605232,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_10_P.pak",
+      "file_bytes": 283837122,
+      "version": 6,
+      "index_offset": 283541589,
+      "index_bytes": 295488,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_11_P.pak",
+      "file_bytes": 976898,
+      "version": 6,
+      "index_offset": 976341,
+      "index_bytes": 512,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_12_P.pak",
+      "file_bytes": 489010,
+      "version": 6,
+      "index_offset": 488693,
+      "index_bytes": 272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_13_P.pak",
+      "file_bytes": 91584146,
+      "version": 6,
+      "index_offset": 91458309,
+      "index_bytes": 125792,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_14_P.pak",
+      "file_bytes": 100914,
+      "version": 6,
+      "index_offset": 100597,
+      "index_bytes": 272,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_15_P.pak",
+      "file_bytes": 56306,
+      "version": 6,
+      "index_offset": 56053,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_16_P.pak",
+      "file_bytes": 47170,
+      "version": 6,
+      "index_offset": 46997,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_17_P.pak",
+      "file_bytes": 46098,
+      "version": 6,
+      "index_offset": 45925,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_18_P.pak",
+      "file_bytes": 47170,
+      "version": 6,
+      "index_offset": 46997,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_19_P.pak",
+      "file_bytes": 46098,
+      "version": 6,
+      "index_offset": 45925,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_1_P.pak",
+      "file_bytes": 63025570,
+      "version": 6,
+      "index_offset": 62916549,
+      "index_bytes": 108976,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_20_P.pak",
+      "file_bytes": 63538,
+      "version": 6,
+      "index_offset": 63285,
+      "index_bytes": 208,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_21_P.pak",
+      "file_bytes": 16418,
+      "version": 6,
+      "index_offset": 16245,
+      "index_bytes": 128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_2_P.pak",
+      "file_bytes": 77988210,
+      "version": 6,
+      "index_offset": 77880005,
+      "index_bytes": 108160,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_3_P.pak",
+      "file_bytes": 2497586,
+      "version": 6,
+      "index_offset": 2496053,
+      "index_bytes": 1488,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_4_P.pak",
+      "file_bytes": 737267154,
+      "version": 6,
+      "index_offset": 736451285,
+      "index_bytes": 815824,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_5_P.pak",
+      "file_bytes": 53249842,
+      "version": 6,
+      "index_offset": 53189989,
+      "index_bytes": 59808,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_6_P.pak",
+      "file_bytes": 13898562,
+      "version": 6,
+      "index_offset": 13887541,
+      "index_bytes": 10976,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_7_P.pak",
+      "file_bytes": 58461074,
+      "version": 6,
+      "index_offset": 58402453,
+      "index_bytes": 58576,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_8_P.pak",
+      "file_bytes": 494920290,
+      "version": 6,
+      "index_offset": 494465493,
+      "index_bytes": 454752,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk90-WindowsNoEditor_9_P.pak",
+      "file_bytes": 44228818,
+      "version": 6,
+      "index_offset": 44150453,
+      "index_bytes": 78320,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor.pak",
+      "file_bytes": 2044548914,
+      "version": 6,
+      "index_offset": 2042060149,
+      "index_bytes": 2488720,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_0_P.pak",
+      "file_bytes": 374170562,
+      "version": 6,
+      "index_offset": 373558357,
+      "index_bytes": 612160,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_10_P.pak",
+      "file_bytes": 279148626,
+      "version": 6,
+      "index_offset": 278852789,
+      "index_bytes": 295792,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_11_P.pak",
+      "file_bytes": 421762,
+      "version": 6,
+      "index_offset": 421333,
+      "index_bytes": 384,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_12_P.pak",
+      "file_bytes": 148386,
+      "version": 6,
+      "index_offset": 147989,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_13_P.pak",
+      "file_bytes": 121075586,
+      "version": 6,
+      "index_offset": 120921413,
+      "index_bytes": 154128,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_14_P.pak",
+      "file_bytes": 53970,
+      "version": 6,
+      "index_offset": 53781,
+      "index_bytes": 144,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_15_P.pak",
+      "file_bytes": 60466,
+      "version": 6,
+      "index_offset": 60277,
+      "index_bytes": 144,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_16_P.pak",
+      "file_bytes": 38754,
+      "version": 6,
+      "index_offset": 38565,
+      "index_bytes": 144,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_17_P.pak",
+      "file_bytes": 131458,
+      "version": 6,
+      "index_offset": 131061,
+      "index_bytes": 352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_18_P.pak",
+      "file_bytes": 255410,
+      "version": 6,
+      "index_offset": 254789,
+      "index_bytes": 576,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_19_P.pak",
+      "file_bytes": 271138,
+      "version": 6,
+      "index_offset": 270661,
+      "index_bytes": 432,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_1_P.pak",
+      "file_bytes": 62056034,
+      "version": 6,
+      "index_offset": 61946581,
+      "index_bytes": 109408,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_20_P.pak",
+      "file_bytes": 176450,
+      "version": 6,
+      "index_offset": 176117,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_21_P.pak",
+      "file_bytes": 117954,
+      "version": 6,
+      "index_offset": 117621,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_22_P.pak",
+      "file_bytes": 129186,
+      "version": 6,
+      "index_offset": 128853,
+      "index_bytes": 288,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_2_P.pak",
+      "file_bytes": 76042722,
+      "version": 6,
+      "index_offset": 75934501,
+      "index_bytes": 108176,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_3_P.pak",
+      "file_bytes": 2776466,
+      "version": 6,
+      "index_offset": 2774709,
+      "index_bytes": 1712,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_4_P.pak",
+      "file_bytes": 337311442,
+      "version": 6,
+      "index_offset": 336871141,
+      "index_bytes": 440256,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_5_P.pak",
+      "file_bytes": 466499442,
+      "version": 6,
+      "index_offset": 466003349,
+      "index_bytes": 496048,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_6_P.pak",
+      "file_bytes": 12122562,
+      "version": 6,
+      "index_offset": 12111525,
+      "index_bytes": 10992,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_7_P.pak",
+      "file_bytes": 58350466,
+      "version": 6,
+      "index_offset": 58292053,
+      "index_bytes": 58368,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_8_P.pak",
+      "file_bytes": 500289218,
+      "version": 6,
+      "index_offset": 499835349,
+      "index_bytes": 453824,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    },
+    {
+      "name": "pakchunk91-WindowsNoEditor_9_P.pak",
+      "file_bytes": 40837154,
+      "version": 6,
+      "index_offset": 40758757,
+      "index_bytes": 78352,
+      "encrypted_index_byte": 1,
+      "valid_index_extent": true
+    }
+  ]
+}

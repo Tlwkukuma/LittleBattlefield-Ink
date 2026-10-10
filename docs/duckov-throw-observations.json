@@ -1,0 +1,316 @@
+{
+  "source": "F:\\steam\\steamapps\\common\\Escape from Duckov\\Duckov_Data\\Managed\\TeamSoda.Duckov.Core.dll",
+  "sha256": "298D5D5885427632D5A94B2F3CE587F8EBC9528EC71E575A475158C326ECAE8F",
+  "note": "Read-only metadata / method references; not input bindings, serialized prefab values or in-game playtest.",
+  "types": [
+    {
+      "methods": [
+        {
+          "name": "ReleaseSkill",
+          "references": [
+            "System.Boolean CharacterActionBase::get_Running()",
+            "SkillBase CA_Skill::get_CurrentRunningSkill()",
+            "System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)",
+            "System.Boolean CharacterActionBase::StopAction()",
+            "SkillTypes CA_Skill::skillTypeToRelease",
+            "System.Boolean CA_Skill::IsSkillHasEnoughStaminaAndCD(SkillBase)",
+            "System.Single CharacterActionBase::actionTimer",
+            "SkillContext SkillBase::get_SkillContext()",
+            "System.Single SkillContext::skillReadyTime",
+            "CharacterMainControl CharacterActionBase::characterController",
+            "UnityEngine.Vector3 CharacterMainControl::GetCurrentSkillAimPoint()",
+            "UnityEngine.Vector3 SkillReleaseContext::releasePoint",
+            "System.Void SkillBase::ReleaseSkill(SkillReleaseContext,CharacterMainControl)",
+            "CharacterSkillKeeper CA_Skill::currentRunningSkillKeeper"
+          ]
+        }
+      ],
+      "fields": [
+        "holdItemSkillKeeper",
+        "characterSkillKeeper",
+        "skillTypeToRelease",
+        "currentRunningSkillKeeper"
+      ],
+      "type": "CA_Skill"
+    },
+    {
+      "methods": [
+        {
+          "name": "Launch",
+          "references": [
+            "System.Boolean Grenade::canHurtSelf",
+            "System.Int32 UnityEngine.LayerMask::NameToLayer(System.String)",
+            "System.Int32 Grenade::groundLayer",
+            "UnityEngine.Rigidbody Grenade::rb",
+            "System.Void UnityEngine.Rigidbody::set_position(UnityEngine.Vector3)",
+            "UnityEngine.Transform UnityEngine.Component::get_transform()",
+            "System.Void UnityEngine.Transform::set_position(UnityEngine.Vector3)",
+            "System.Void UnityEngine.Rigidbody::set_velocity(UnityEngine.Vector3)",
+            "UnityEngine.Vector3 UnityEngine.Random::get_insideUnitSphere()",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_one()",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Addition(UnityEngine.Vector3,UnityEngine.Vector3)",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Multiply(UnityEngine.Vector3,System.Single)",
+            "System.Single UnityEngine.Vector3::y",
+            "System.Void UnityEngine.Rigidbody::set_angularVelocity(UnityEngine.Vector3)",
+            "System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)",
+            "!!0 UnityEngine.Component::GetComponent<UnityEngine.Collider>()",
+            "Teams CharacterMainControl::get_Team()",
+            "Teams Grenade::selfTeam",
+            "Cysharp.Threading.Tasks.UniTask Grenade::IgnoreCollisionForSeconds(UnityEngine.Collider,UnityEngine.Collider,System.Single)",
+            "System.Void Cysharp.Threading.Tasks.UniTaskExtensions::Forget(Cysharp.Threading.Tasks.UniTask)"
+          ]
+        }
+      ],
+      "fields": [
+        "hasCollideSound",
+        "collideSound",
+        "makeSoundCount",
+        "makeSoundTimeMarker",
+        "damageRange",
+        "isDangerForAi",
+        "isLandmine",
+        "landmineTriggerRange",
+        "landmineActived",
+        "landmineTriggerd",
+        "fxType",
+        "fx",
+        "animator",
+        "rb",
+        "groundLayer",
+        "delayFromCollide",
+        "delayTime",
+        "createExplosion",
+        "explosionShakeStrength",
+        "damageInfo",
+        "bindAgent",
+        "bindedAgent",
+        "lifeTimer",
+        "delayTimer",
+        "selfTeam",
+        "createOnExlode",
+        "destroyDelay",
+        "onExplodeEvent",
+        "exploded",
+        "canHurtSelf",
+        "collide",
+        "destroied"
+      ],
+      "type": "Grenade"
+    },
+    {
+      "methods": [
+        {
+          "name": "LateUpdate",
+          "references": [
+            "CharacterMainControl SkillHud3D::character",
+            "System.Boolean UnityEngine.Object::op_Implicit(UnityEngine.Object)",
+            "LevelManager LevelManager::get_Instance()",
+            "CharacterMainControl LevelManager::get_MainCharacter()",
+            "SkillBase SkillHud3D::currentSkill",
+            "CA_Skill CharacterMainControl::skillAction",
+            "SkillBase CA_Skill::get_CurrentRunningSkill()",
+            "System.Boolean SkillHud3D::aiming",
+            "System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)",
+            "SkillRangeHUD SkillHud3D::skillRangeHUD",
+            "UnityEngine.GameObject UnityEngine.Component::get_gameObject()",
+            "System.Void UnityEngine.GameObject::SetActive(System.Boolean)",
+            "SkillContext SkillBase::get_SkillContext()",
+            "System.Single SkillContext::effectRange",
+            "System.Void SkillRangeHUD::SetRange(System.Single)",
+            "System.Boolean SkillContext::isGrenade",
+            "SkillProjectileLineHUD SkillHud3D::projectileLine",
+            "System.Void SkillHud3D::HideAll()",
+            "UnityEngine.Vector3 CharacterMainControl::GetCurrentSkillAimPoint()",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_one()",
+            "System.Boolean UnityEngine.GameObject::get_activeSelf()",
+            "UnityEngine.Transform CharacterMainControl::get_CurrentUsingAimSocket()",
+            "UnityEngine.Vector3 UnityEngine.Transform::get_position()",
+            "System.Single SkillContext::grenageVerticleSpeed",
+            "System.Boolean SkillProjectileLineHUD::UpdateLine(UnityEngine.Vector3,UnityEngine.Vector3,System.Single,UnityEngine.Vector3&)",
+            "UnityEngine.Transform UnityEngine.Component::get_transform()",
+            "System.Void UnityEngine.Transform::set_position(UnityEngine.Vector3)",
+            "Duckov.Progress CA_Skill::GetProgress()",
+            "System.Single Duckov.Progress::get_progress()",
+            "System.Void SkillRangeHUD::SetProgress(System.Single)"
+          ]
+        }
+      ],
+      "fields": [
+        "character",
+        "aiming",
+        "skillRangeHUD",
+        "projectileLine",
+        "currentSkill"
+      ],
+      "type": "SkillHud3D"
+    },
+    {
+      "methods": [
+        {
+          "name": "UpdateLine",
+          "references": [
+            "UnityEngine.Vector3 UnityEngine.Physics::get_gravity()",
+            "System.Single UnityEngine.Vector3::get_magnitude()",
+            "ShapesSkillLine SkillProjectileLineHUD::line",
+            "UnityEngine.Vector3[] ShapesSkillLine::points",
+            "System.Int32 SkillProjectileLineHUD::fragmentCount",
+            "UnityEngine.Color[] ShapesSkillLine::colors",
+            "System.Single UnityEngine.Vector3::y",
+            "System.Single UnityEngine.Mathf::Sqrt(System.Single)",
+            "System.Single UnityEngine.Vector3::Distance(UnityEngine.Vector3,UnityEngine.Vector3)",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Subtraction(UnityEngine.Vector3,UnityEngine.Vector3)",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_normalized()",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_zero()",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_up()",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Multiply(UnityEngine.Vector3,System.Single)",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Addition(UnityEngine.Vector3,UnityEngine.Vector3)",
+            "System.Boolean SkillProjectileLineHUD::CheckObsticle(UnityEngine.Vector3,UnityEngine.Vector3,UnityEngine.Vector3&)",
+            "UnityEngine.Color SkillProjectileLineHUD::obsticleColor",
+            "UnityEngine.Color SkillProjectileLineHUD::lineColor",
+            "System.Boolean ShapesSkillLine::hitObsticle",
+            "UnityEngine.Vector3 ShapesSkillLine::hitPoint",
+            "System.Void ShapesSkillLine::DrawLine()"
+          ]
+        },
+        {
+          "name": "CheckObsticle",
+          "references": [
+            "UnityEngine.RaycastHit[] SkillProjectileLineHUD::hits",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Subtraction(UnityEngine.Vector3,UnityEngine.Vector3)",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_normalized()",
+            "System.Single UnityEngine.Vector3::get_magnitude()",
+            "UnityEngine.LayerMask SkillProjectileLineHUD::obsticleLayers",
+            "System.Int32 UnityEngine.LayerMask::op_Implicit(UnityEngine.LayerMask)",
+            "System.Int32 UnityEngine.Physics::SphereCastNonAlloc(UnityEngine.Vector3,System.Single,UnityEngine.Vector3,UnityEngine.RaycastHit[],System.Single,System.Int32)",
+            "UnityEngine.Vector3 UnityEngine.RaycastHit::get_point()"
+          ]
+        }
+      ],
+      "fields": [
+        "line",
+        "fragmentCount",
+        "lineColor",
+        "obsticleColor",
+        "obsticleLayers",
+        "hits"
+      ],
+      "type": "SkillProjectileLineHUD"
+    },
+    {
+      "methods": [],
+      "fields": [
+        "castRange",
+        "movableWhileAim",
+        "skillReadyTime",
+        "effectRange",
+        "isGrenade",
+        "grenageVerticleSpeed",
+        "checkObsticle",
+        "releaseOnStartAim"
+      ],
+      "type": "SkillContext"
+    },
+    {
+      "methods": [
+        {
+          "name": "OnRelease",
+          "references": [
+            "CharacterMainControl SkillBase::fromCharacter",
+            "System.Boolean UnityEngine.Object::op_Equality(UnityEngine.Object,UnityEngine.Object)",
+            "UnityEngine.Transform CharacterMainControl::get_CurrentUsingAimSocket()",
+            "UnityEngine.Vector3 UnityEngine.Transform::get_position()",
+            "UnityEngine.Vector3 SkillReleaseContext::releasePoint",
+            "System.Single UnityEngine.Vector3::y",
+            "UnityEngine.Transform UnityEngine.Component::get_transform()",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Subtraction(UnityEngine.Vector3,UnityEngine.Vector3)",
+            "System.Single UnityEngine.Vector3::get_magnitude()",
+            "System.Boolean Skill_Grenade::canControlCastDistance",
+            "System.Single SkillContext::castRange",
+            "System.Void UnityEngine.Vector3::Normalize()",
+            "System.Int32 Skill_Grenade::blastCount",
+            "System.Single Skill_Grenade::blastAngle",
+            "System.String System.String::Format(System.String,System.Object)",
+            "System.Void UnityEngine.Debug::Log(System.Object)",
+            "UnityEngine.Quaternion UnityEngine.Quaternion::Euler(System.Single,System.Single,System.Single)",
+            "UnityEngine.Vector3 UnityEngine.Quaternion::op_Multiply(UnityEngine.Quaternion,UnityEngine.Vector3)",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Multiply(UnityEngine.Vector3,System.Single)",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Addition(UnityEngine.Vector3,UnityEngine.Vector3)",
+            "Grenade Skill_Grenade::grenadePfb",
+            "UnityEngine.Quaternion UnityEngine.Transform::get_rotation()",
+            "!!0 UnityEngine.Object::Instantiate<Grenade>(!!0,UnityEngine.Vector3,UnityEngine.Quaternion)",
+            "CharacterMainControl DamageInfo::fromCharacter",
+            "DamageInfo Skill_Grenade::damageInfo",
+            "DamageInfo Grenade::damageInfo",
+            "System.Single SkillContext::grenageVerticleSpeed",
+            "UnityEngine.Vector3 Skill_Grenade::CalculateVelocity(UnityEngine.Vector3,UnityEngine.Vector3,System.Single)",
+            "System.Boolean Skill_Grenade::createExplosion",
+            "System.Boolean Grenade::createExplosion",
+            "System.Single Skill_Grenade::explosionShakeStrength",
+            "System.Single Grenade::explosionShakeStrength",
+            "System.Single SkillContext::effectRange",
+            "System.Single Grenade::damageRange",
+            "System.Boolean Skill_Grenade::delayFromCollide",
+            "System.Boolean Grenade::delayFromCollide",
+            "System.Single Skill_Grenade::delay",
+            "System.Single Skill_Grenade::blastDelayTimeSpace",
+            "System.Single Grenade::delayTime",
+            "System.Boolean Skill_Grenade::isLandmine",
+            "System.Boolean Grenade::isLandmine",
+            "System.Single Skill_Grenade::landmineTriggerRange",
+            "System.Single Grenade::landmineTriggerRange",
+            "System.Boolean Skill_Grenade::canHurtSelf",
+            "System.Void Grenade::Launch(UnityEngine.Vector3,UnityEngine.Vector3,CharacterMainControl,System.Boolean)",
+            "ItemStatsSystem.Item SkillBase::fromItem",
+            "System.Boolean UnityEngine.Object::op_Inequality(UnityEngine.Object,UnityEngine.Object)",
+            "System.Int32 ItemStatsSystem.Item::get_TypeID()",
+            "System.Void Grenade::SetWeaponIdInfo(System.Int32)",
+            "System.Boolean Skill_Grenade::createPickup",
+            "System.Void ItemStatsSystem.Item::Detach()",
+            "ItemStatsSystem.ItemAgentUtilities ItemStatsSystem.Item::get_AgentUtilities()",
+            "System.Void ItemStatsSystem.ItemAgentUtilities::ReleaseActiveAgent()",
+            "Duckov.Utilities.GameplayDataSettings/PrefabsData Duckov.Utilities.GameplayDataSettings::get_Prefabs()",
+            "DuckovItemAgent Duckov.Utilities.GameplayDataSettings/PrefabsData::get_PickupAgentNoRendererPrefab()",
+            "ItemStatsSystem.ItemAgent ItemStatsSystem.ItemAgentUtilities::CreateAgent(ItemStatsSystem.ItemAgent,ItemStatsSystem.ItemAgent/AgentTypes)",
+            "System.String UnityEngine.Object::get_name()",
+            "System.String System.String::Concat(System.String,System.String)",
+            "System.Void Grenade::BindAgent(ItemStatsSystem.ItemAgent)"
+          ]
+        },
+        {
+          "name": "CalculateVelocity",
+          "references": [
+            "UnityEngine.Vector3 UnityEngine.Physics::get_gravity()",
+            "System.Single UnityEngine.Vector3::get_magnitude()",
+            "System.Single UnityEngine.Vector3::y",
+            "System.Single UnityEngine.Mathf::Abs(System.Single)",
+            "System.Single UnityEngine.Mathf::Sqrt(System.Single)",
+            "System.Single UnityEngine.Vector3::Distance(UnityEngine.Vector3,UnityEngine.Vector3)",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Subtraction(UnityEngine.Vector3,UnityEngine.Vector3)",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_normalized()",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_zero()",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Multiply(UnityEngine.Vector3,System.Single)",
+            "UnityEngine.Vector3 UnityEngine.Vector3::get_up()",
+            "UnityEngine.Vector3 UnityEngine.Vector3::op_Addition(UnityEngine.Vector3,UnityEngine.Vector3)"
+          ]
+        }
+      ],
+      "fields": [
+        "canControlCastDistance",
+        "delay",
+        "delayFromCollide",
+        "grenadePfb",
+        "createPickup",
+        "isLandmine",
+        "landmineTriggerRange",
+        "createExplosion",
+        "canHurtSelf",
+        "explosionShakeStrength",
+        "damageInfo",
+        "blastCount",
+        "blastAngle",
+        "blastDelayTimeSpace"
+      ],
+      "type": "Skill_Grenade"
+    }
+  ]
+}

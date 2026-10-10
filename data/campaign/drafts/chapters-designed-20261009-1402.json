@@ -1,0 +1,2964 @@
+{
+  "format": "little-battlefield-ten-chapter-campaign",
+  "version": 1,
+  "chapters": [
+    {
+      "id": 1,
+      "sourceSceneId": "level-01",
+      "title": "石墙果园",
+      "briefing": "夺取果园指挥所。西门推进、东墙破障或壕沟迂回。",
+      "tacticNames": {
+        "T01": "主路推进 · 双翼支援",
+        "T02": "集中突破 · 近距掩护",
+        "T03": "侧翼迂回 · 分队推进"
+      },
+      "stages": []
+    },
+    {
+      "id": 2,
+      "sourceSceneId": "level-02",
+      "title": "装配厂区",
+      "briefing": "先控制装卸路口，再进入西侧车间夺取通信中继。围栏与车间门洞限制直线冲锋。",
+      "tacticNames": {
+        "T01": "主路推进 · 双翼支援",
+        "T02": "集中突破 · 近距掩护",
+        "T03": "侧翼迂回 · 分队推进"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "chapter-02-stage-1",
+            "x": 3000,
+            "y": 1360,
+            "r": 180,
+            "shortLabel": "A",
+            "label": "装卸路口",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取装卸路口",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  3900,
+                  1360
+                ],
+                [
+                  3450,
+                  1360
+                ],
+                [
+                  3000,
+                  1360
+                ]
+              ],
+              [
+                [
+                  3900,
+                  1800
+                ],
+                [
+                  3500,
+                  1900
+                ],
+                [
+                  2450,
+                  1900
+                ],
+                [
+                  2070,
+                  1600
+                ]
+              ],
+              [
+                [
+                  3890.0,
+                  290.0
+                ],
+                [
+                  3400,
+                  200
+                ],
+                [
+                  2100,
+                  200
+                ],
+                [
+                  2070,
+                  900
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  1903,
+                  72
+                ],
+                [
+                  3000,
+                  1360
+                ]
+              ],
+              [
+                [
+                  93.51000266737798,
+                  1512.8543611629768
+                ],
+                [
+                  3000,
+                  1360
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                2760,
+                1560
+              ],
+              "right": [
+                3240,
+                1560
+              ]
+            },
+            "vehicle_frontage": [
+              3000,
+              1360
+            ]
+          }
+        },
+        {
+          "point": {
+            "id": "chapter-02-stage-2",
+            "x": 1132,
+            "y": 1318,
+            "r": 180,
+            "shortLabel": "B",
+            "label": "车间中继",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取车间中继",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  3000,
+                  1360
+                ],
+                [
+                  1132,
+                  1318
+                ]
+              ],
+              [
+                [
+                  732,
+                  1718
+                ],
+                [
+                  1132,
+                  1318
+                ]
+              ],
+              [
+                [
+                  1532,
+                  1718
+                ],
+                [
+                  1132,
+                  1318
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  1903,
+                  72
+                ],
+                [
+                  1132,
+                  1318
+                ]
+              ],
+              [
+                [
+                  93.51000266737798,
+                  1512.8543611629768
+                ],
+                [
+                  1132,
+                  1318
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                892,
+                1518
+              ],
+              "right": [
+                1372,
+                1518
+              ]
+            },
+            "vehicle_frontage": [
+              1132,
+              1318
+            ]
+          }
+        }
+      ],
+      "forces": {
+        "blue": {
+          "initialCount": 24,
+          "maxActive": 24,
+          "totalForce": 84
+        },
+        "red": {
+          "initialCount": 22,
+          "maxActive": 22,
+          "totalForce": 72
+        }
+      },
+      "loadoutPools": {
+        "blue": [
+          [
+            "UMP",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M416",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SCAR-L",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Tommy Gun",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M249",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ],
+        "red": [
+          [
+            "AKM",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "AKM",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "S12K",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "RPD",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ]
+      },
+      "playerLoadout": [
+        "UMP",
+        "P92",
+        "Army Knife",
+        "HE Grenade"
+      ],
+      "balanceRationale": "较小室内分队，短距离武器较多，降低第二章目标切换学习负担",
+      "geometryCorrections": [
+        {
+          "from": [
+            3900.0,
+            300.0
+          ],
+          "to": [
+            3890.0,
+            290.0
+          ],
+          "distanceMeters": 0.353553384542465,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "sourceSceneId": "level-03",
+      "title": "洪泛草甸",
+      "briefing": "夺取主桥东出口，再守住东岸桥头。桥栏与河道是真实障碍，侧桥提供迂回路线。",
+      "tacticNames": {
+        "T01": "主路推进 · 双翼支援",
+        "T02": "集中突破 · 近距掩护",
+        "T03": "侧翼迂回 · 分队推进"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "chapter-03-stage-1",
+            "x": 2200,
+            "y": 1260,
+            "r": 180,
+            "shortLabel": "A",
+            "label": "主桥东出口",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取主桥东出口",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  300,
+                  1050
+                ],
+                [
+                  1030.0,
+                  1155.0
+                ],
+                [
+                  1500,
+                  1260
+                ],
+                [
+                  2050,
+                  1260
+                ]
+              ],
+              [
+                [
+                  300,
+                  400
+                ],
+                [
+                  590.0,
+                  595.0
+                ],
+                [
+                  650,
+                  850
+                ],
+                [
+                  1200,
+                  1100
+                ],
+                [
+                  1550,
+                  1260
+                ]
+              ],
+              [
+                [
+                  300,
+                  1700
+                ],
+                [
+                  1200,
+                  1800
+                ],
+                [
+                  1850,
+                  1500
+                ],
+                [
+                  2050,
+                  1260
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  2768.13443584956,
+                  2081.679114430515
+                ],
+                [
+                  2200,
+                  1260
+                ]
+              ],
+              [
+                [
+                  3459.339557215257,
+                  553.7276607095225
+                ],
+                [
+                  2200,
+                  1260
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1960,
+                1460
+              ],
+              "right": [
+                2440,
+                1460
+              ]
+            },
+            "vehicle_frontage": [
+              2200,
+              1260
+            ]
+          }
+        },
+        {
+          "point": {
+            "id": "chapter-03-stage-2",
+            "x": 3010,
+            "y": 1036,
+            "r": 180,
+            "shortLabel": "B",
+            "label": "东岸桥头",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "hold",
+          "holdSeconds": 25,
+          "briefing": "夺取并守住东岸桥头，守住 25 秒",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  2200,
+                  1260
+                ],
+                [
+                  3010,
+                  1036
+                ]
+              ],
+              [
+                [
+                  2610,
+                  1436
+                ],
+                [
+                  3010,
+                  1036
+                ]
+              ],
+              [
+                [
+                  3400,
+                  1436
+                ],
+                [
+                  3010,
+                  1036
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  2768.13443584956,
+                  2081.679114430515
+                ],
+                [
+                  3010,
+                  1036
+                ]
+              ],
+              [
+                [
+                  3459.339557215257,
+                  553.7276607095225
+                ],
+                [
+                  3010,
+                  1036
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                2770,
+                1236
+              ],
+              "right": [
+                3250,
+                1236
+              ]
+            },
+            "vehicle_frontage": [
+              3010,
+              1036
+            ]
+          }
+        }
+      ],
+      "forces": {
+        "blue": {
+          "initialCount": 26,
+          "maxActive": 26,
+          "totalForce": 104
+        },
+        "red": {
+          "initialCount": 26,
+          "maxActive": 26,
+          "totalForce": 104
+        }
+      },
+      "loadoutPools": {
+        "blue": [
+          [
+            "SCAR-L",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M416",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M16A4",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M249",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Mini14",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ],
+        "red": [
+          [
+            "AKM",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M416",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Tommy Gun",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "RPD",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Dragunov",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ]
+      },
+      "playerLoadout": [
+        "SCAR-L",
+        "P92",
+        "Army Knife",
+        "HE Grenade"
+      ],
+      "balanceRationale": "桥头长视线加入精确射手；双方兵力相等，25秒守点用于教学",
+      "geometryCorrections": [
+        {
+          "from": [
+            1000.0,
+            1150.0
+          ],
+          "to": [
+            1030.0,
+            1155.0
+          ],
+          "distanceMeters": 0.760345339775085,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        },
+        {
+          "from": [
+            600.0,
+            600.0
+          ],
+          "to": [
+            590.0,
+            595.0
+          ],
+          "distanceMeters": 0.279508501291275,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "sourceSceneId": "level-04",
+      "title": "双街小镇",
+      "briefing": "控制南街交叉口，再夺取中央广场。利用街巷绕开装甲车正面火力。",
+      "tacticNames": {
+        "T01": "主路推进 · 双翼支援",
+        "T02": "集中突破 · 近距掩护",
+        "T03": "侧翼迂回 · 分队推进"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "chapter-04-stage-1",
+            "x": 2650,
+            "y": 1480,
+            "r": 180,
+            "shortLabel": "A",
+            "label": "南街交叉口",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取南街交叉口",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  3650,
+                  1400
+                ],
+                [
+                  3300,
+                  1470
+                ],
+                [
+                  2800,
+                  1480
+                ]
+              ],
+              [
+                [
+                  3700,
+                  850
+                ],
+                [
+                  3100,
+                  820
+                ],
+                [
+                  2650,
+                  820
+                ],
+                [
+                  2050,
+                  950
+                ]
+              ],
+              [
+                [
+                  350,
+                  1350
+                ],
+                [
+                  850,
+                  1500
+                ],
+                [
+                  1400,
+                  1500
+                ],
+                [
+                  1920.0,
+                  1360.0
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  2563.746332355295,
+                  85.66524406508402
+                ],
+                [
+                  2650,
+                  1480
+                ]
+              ],
+              [
+                [
+                  1692.927447319285,
+                  2332
+                ],
+                [
+                  2650,
+                  1480
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                2410,
+                1680
+              ],
+              "right": [
+                2890,
+                1680
+              ]
+            },
+            "vehicle_frontage": [
+              2650,
+              1480
+            ]
+          }
+        },
+        {
+          "point": {
+            "id": "chapter-04-stage-2",
+            "x": 2000.0,
+            "y": 1200.0,
+            "r": 180,
+            "shortLabel": "B",
+            "label": "中央广场",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取中央广场",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  2650,
+                  1480
+                ],
+                [
+                  2000.0,
+                  1200.0
+                ]
+              ],
+              [
+                [
+                  1638,
+                  1581
+                ],
+                [
+                  2000.0,
+                  1200.0
+                ]
+              ],
+              [
+                [
+                  2440.0,
+                  1560.0
+                ],
+                [
+                  2000.0,
+                  1200.0
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  2563.746332355295,
+                  85.66524406508402
+                ],
+                [
+                  2000.0,
+                  1200.0
+                ]
+              ],
+              [
+                [
+                  1692.927447319285,
+                  2332
+                ],
+                [
+                  2000.0,
+                  1200.0
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1798,
+                1381
+              ],
+              "right": [
+                2278,
+                1381
+              ]
+            },
+            "vehicle_frontage": [
+              2000.0,
+              1200.0
+            ]
+          }
+        }
+      ],
+      "forces": {
+        "blue": {
+          "initialCount": 28,
+          "maxActive": 28,
+          "totalForce": 112
+        },
+        "red": {
+          "initialCount": 28,
+          "maxActive": 28,
+          "totalForce": 120
+        }
+      },
+      "loadoutPools": {
+        "blue": [
+          [
+            "M416",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SCAR-L",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "MP5K",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M249",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ],
+        "red": [
+          [
+            "AKM",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Tommy Gun",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Beryl M762",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "S12K",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "RPD",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ]
+      },
+      "playerLoadout": [
+        "M416",
+        "P92",
+        "Army Knife",
+        "HE Grenade"
+      ],
+      "balanceRationale": "城市短巷强化近距交叉火力；少量敌军储备优势增加第二阶段压力",
+      "geometryCorrections": [
+        {
+          "from": [
+            1900.0,
+            1350.0
+          ],
+          "to": [
+            1920.0,
+            1360.0
+          ],
+          "distanceMeters": 0.55901700258255,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        },
+        {
+          "from": [
+            2038.0,
+            1181.0
+          ],
+          "to": [
+            2000.0,
+            1200.0
+          ],
+          "distanceMeters": 1.06213223934174,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        },
+        {
+          "from": [
+            2438.0,
+            1581.0
+          ],
+          "to": [
+            2440.0,
+            1560.0
+          ],
+          "distanceMeters": 0.527375221252441,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "sourceSceneId": "level-05",
+      "title": "干溪通道",
+      "briefing": "控制干溪东侧桥头，再夺取北部通信阵地。中央公路与东便桥形成两种推进路线。",
+      "tacticNames": {
+        "T01": "主路推进 · 双翼支援",
+        "T02": "集中突破 · 近距掩护",
+        "T03": "侧翼迂回 · 分队推进"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "chapter-05-stage-1",
+            "x": 2730,
+            "y": 1350,
+            "r": 180,
+            "shortLabel": "A",
+            "label": "东侧桥头",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取东侧桥头",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  1800,
+                  2200
+                ],
+                [
+                  1800,
+                  1700
+                ],
+                [
+                  2000,
+                  1350
+                ],
+                [
+                  2650,
+                  1350
+                ]
+              ],
+              [
+                [
+                  500,
+                  2200
+                ],
+                [
+                  1200,
+                  1900
+                ],
+                [
+                  1700,
+                  1400
+                ],
+                [
+                  1800,
+                  800
+                ]
+              ],
+              [
+                [
+                  3200,
+                  2200
+                ],
+                [
+                  3200,
+                  1700
+                ],
+                [
+                  2860.0,
+                  1400.0
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  1029.0212222851928,
+                  85.9133949982424
+                ],
+                [
+                  2730,
+                  1350
+                ]
+              ],
+              [
+                [
+                  3720,
+                  1000.8842357962122
+                ],
+                [
+                  2730,
+                  1350
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                2490,
+                1550
+              ],
+              "right": [
+                2970,
+                1550
+              ]
+            },
+            "vehicle_frontage": [
+              2730,
+              1350
+            ]
+          }
+        },
+        {
+          "point": {
+            "id": "chapter-05-stage-2",
+            "x": 3346,
+            "y": 420,
+            "r": 180,
+            "shortLabel": "B",
+            "label": "北部中继",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取北部中继",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  2730,
+                  1350
+                ],
+                [
+                  3346,
+                  420
+                ]
+              ],
+              [
+                [
+                  2946,
+                  820
+                ],
+                [
+                  3346,
+                  420
+                ]
+              ],
+              [
+                [
+                  3700,
+                  820
+                ],
+                [
+                  3346,
+                  420
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  1029.0212222851928,
+                  85.9133949982424
+                ],
+                [
+                  3346,
+                  420
+                ]
+              ],
+              [
+                [
+                  3720,
+                  1000.8842357962122
+                ],
+                [
+                  3346,
+                  420
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                3106,
+                620
+              ],
+              "right": [
+                3586,
+                620
+              ]
+            },
+            "vehicle_frontage": [
+              3346,
+              420
+            ]
+          }
+        }
+      ],
+      "forces": {
+        "blue": {
+          "initialCount": 26,
+          "maxActive": 26,
+          "totalForce": 112
+        },
+        "red": {
+          "initialCount": 28,
+          "maxActive": 28,
+          "totalForce": 120
+        }
+      },
+      "loadoutPools": {
+        "blue": [
+          [
+            "SCAR-L",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M16A4",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M416",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M249",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Mini14",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ],
+        "red": [
+          [
+            "AKM",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M416",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Tommy Gun",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "RPD",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Dragunov",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ]
+      },
+      "playerLoadout": [
+        "SCAR-L",
+        "P92",
+        "Army Knife",
+        "HE Grenade"
+      ],
+      "balanceRationale": "干溪交叉点偏中远距离；保持可机动侧翼，避免仅增加敌军人数",
+      "geometryCorrections": [
+        {
+          "from": [
+            2900.0,
+            1400.0
+          ],
+          "to": [
+            2860.0,
+            1400.0
+          ],
+          "distanceMeters": 1.0,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "sourceSceneId": "level-06",
+      "title": "要塞内院",
+      "briefing": "先控制外庭双通道，再进入北侧指挥所。中轴推进与侧楼穿插互相掩护。",
+      "tacticNames": {
+        "T01": "主路推进 · 双翼支援",
+        "T02": "集中突破 · 近距掩护",
+        "T03": "侧翼迂回 · 分队推进"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "chapter-06-stage-1",
+            "x": 2100,
+            "y": 1450,
+            "r": 180,
+            "shortLabel": "A",
+            "label": "双通道外庭",
+            "initialOwner": "neutral",
+            "captureTime": 9,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取双通道外庭",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  2100.0,
+                  2380.0
+                ],
+                [
+                  1950,
+                  2150
+                ],
+                [
+                  1950,
+                  1750
+                ],
+                [
+                  2100,
+                  1450
+                ]
+              ],
+              [
+                [
+                  1800,
+                  2300
+                ],
+                [
+                  1250,
+                  1900
+                ],
+                [
+                  1100,
+                  1400
+                ],
+                [
+                  1500,
+                  1100
+                ]
+              ],
+              [
+                [
+                  2400,
+                  2300
+                ],
+                [
+                  2800,
+                  2100
+                ],
+                [
+                  2860.0,
+                  1580.0
+                ],
+                [
+                  2850,
+                  1100
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  1797.8098839903535,
+                  60.931558874698545
+                ],
+                [
+                  2100,
+                  1450
+                ]
+              ],
+              [
+                [
+                  2130.4624723075517,
+                  67.96015460128513
+                ],
+                [
+                  2100,
+                  1450
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1860,
+                1650
+              ],
+              "right": [
+                2340,
+                1650
+              ]
+            },
+            "vehicle_frontage": [
+              2100,
+              1450
+            ]
+          }
+        },
+        {
+          "point": {
+            "id": "chapter-06-stage-2",
+            "x": 2084,
+            "y": 687,
+            "r": 180,
+            "shortLabel": "B",
+            "label": "内院指挥所",
+            "initialOwner": "neutral",
+            "captureTime": 9,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取内院指挥所",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  2100,
+                  1450
+                ],
+                [
+                  2084,
+                  687
+                ]
+              ],
+              [
+                [
+                  1684,
+                  1087
+                ],
+                [
+                  2084,
+                  687
+                ]
+              ],
+              [
+                [
+                  2484,
+                  1087
+                ],
+                [
+                  2084,
+                  687
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  1797.8098839903535,
+                  60.931558874698545
+                ],
+                [
+                  2084,
+                  687
+                ]
+              ],
+              [
+                [
+                  2130.4624723075517,
+                  67.96015460128513
+                ],
+                [
+                  2084,
+                  687
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1844,
+                887
+              ],
+              "right": [
+                2324,
+                887
+              ]
+            },
+            "vehicle_frontage": [
+              2084,
+              687
+            ]
+          }
+        }
+      ],
+      "forces": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        },
+        "red": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 132
+        }
+      },
+      "loadoutPools": {
+        "blue": [
+          [
+            "M416",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SCAR-L",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "S12K",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M249",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ],
+        "red": [
+          [
+            "AKM",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Beryl M762",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "S12K",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "RPD",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ]
+      },
+      "playerLoadout": [
+        "M416",
+        "P92",
+        "Army Knife",
+        "HE Grenade"
+      ],
+      "balanceRationale": "要塞双通道与房间要求近距配装；储备差小于一波完整在场兵力",
+      "geometryCorrections": [
+        {
+          "from": [
+            2100.0,
+            2350.0
+          ],
+          "to": [
+            2100.0,
+            2380.0
+          ],
+          "distanceMeters": 0.75,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        },
+        {
+          "from": [
+            2900.0,
+            1600.0
+          ],
+          "to": [
+            2860.0,
+            1580.0
+          ],
+          "distanceMeters": 1.1180340051651,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "sourceSceneId": "level-07",
+      "title": "林间路口",
+      "briefing": "夺取中央路口并持续守住。敌军会争夺道路；清空敌方全部兵力同样可结束战斗。",
+      "tacticNames": {
+        "T01": "主路推进 · 双翼支援",
+        "T02": "集中突破 · 近距掩护",
+        "T03": "侧翼迂回 · 分队推进"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "chapter-07-stage-1",
+            "x": 1625,
+            "y": 1000,
+            "r": 180,
+            "shortLabel": "A",
+            "label": "林间路口",
+            "initialOwner": "neutral",
+            "captureTime": 9,
+            "captureHeight": 1.8
+          },
+          "mode": "hold",
+          "holdSeconds": 40,
+          "briefing": "夺取并守住林间路口，守住 40 秒",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  2900,
+                  1900
+                ],
+                [
+                  2600,
+                  1500
+                ],
+                [
+                  2100,
+                  1050
+                ],
+                [
+                  1625,
+                  1000
+                ]
+              ],
+              [
+                [
+                  2300,
+                  1950
+                ],
+                [
+                  2350,
+                  1720
+                ],
+                [
+                  2100,
+                  1300
+                ],
+                [
+                  1800,
+                  1050
+                ]
+              ],
+              [
+                [
+                  1000,
+                  1900
+                ],
+                [
+                  850,
+                  1700
+                ],
+                [
+                  850,
+                  1200
+                ],
+                [
+                  1400,
+                  1050
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  3358.8108829021076,
+                  683.3419578554281
+                ],
+                [
+                  1625,
+                  1000
+                ]
+              ],
+              [
+                [
+                  1187.2357962123233,
+                  51.88423579621235
+                ],
+                [
+                  1625,
+                  1000
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1385,
+                1200
+              ],
+              "right": [
+                1865,
+                1200
+              ]
+            },
+            "vehicle_frontage": [
+              1625,
+              1000
+            ]
+          }
+        }
+      ],
+      "forces": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 132
+        },
+        "red": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 132
+        }
+      },
+      "loadoutPools": {
+        "blue": [
+          [
+            "M416",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SCAR-L",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M16A4",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M249",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Mini14",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ],
+        "red": [
+          [
+            "AKM",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M416",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "RPD",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Dragunov",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ]
+      },
+      "playerLoadout": [
+        "M416",
+        "P92",
+        "Army Knife",
+        "HE Grenade"
+      ],
+      "balanceRationale": "40秒持续守点；双方总兵力相等，避免持守章节同时承受过大兵力劣势"
+    },
+    {
+      "id": 8,
+      "sourceSceneId": "level-08",
+      "title": "城郊医院区",
+      "briefing": "控制南部道路，再夺取并守住疏散院。院墙、病房与道路转角形成近距离交火空间。",
+      "tacticNames": {
+        "T01": "主路推进 · 双翼支援",
+        "T02": "集中突破 · 近距掩护",
+        "T03": "侧翼迂回 · 分队推进"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "chapter-08-stage-1",
+            "x": 2800,
+            "y": 1510,
+            "r": 180,
+            "shortLabel": "A",
+            "label": "南部道路",
+            "initialOwner": "neutral",
+            "captureTime": 9,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取南部道路",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  2800,
+                  2300
+                ],
+                [
+                  2800,
+                  1900
+                ],
+                [
+                  2800,
+                  1510
+                ]
+              ],
+              [
+                [
+                  1100,
+                  2300
+                ],
+                [
+                  1100,
+                  1600
+                ],
+                [
+                  1480.0,
+                  1490.0
+                ],
+                [
+                  1900,
+                  1250
+                ]
+              ],
+              [
+                [
+                  3500,
+                  2200
+                ],
+                [
+                  3300,
+                  1800
+                ],
+                [
+                  3000,
+                  1500
+                ],
+                [
+                  2500,
+                  1250
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  1564,
+                  116.32622032542012
+                ],
+                [
+                  2800,
+                  1510
+                ]
+              ],
+              [
+                [
+                  2302.65244065084,
+                  94.99573219525207
+                ],
+                [
+                  2800,
+                  1510
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                2560,
+                1710
+              ],
+              "right": [
+                3040,
+                1710
+              ]
+            },
+            "vehicle_frontage": [
+              2800,
+              1510
+            ]
+          }
+        },
+        {
+          "point": {
+            "id": "chapter-08-stage-2",
+            "x": 2026,
+            "y": 1147,
+            "r": 180,
+            "shortLabel": "B",
+            "label": "疏散院",
+            "initialOwner": "neutral",
+            "captureTime": 9,
+            "captureHeight": 1.8
+          },
+          "mode": "hold",
+          "holdSeconds": 30,
+          "briefing": "夺取并守住疏散院，守住 30 秒",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  2800,
+                  1510
+                ],
+                [
+                  2026,
+                  1147
+                ]
+              ],
+              [
+                [
+                  1626,
+                  1547
+                ],
+                [
+                  2026,
+                  1147
+                ]
+              ],
+              [
+                [
+                  2426,
+                  1547
+                ],
+                [
+                  2026,
+                  1147
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  1564,
+                  116.32622032542012
+                ],
+                [
+                  2026,
+                  1147
+                ]
+              ],
+              [
+                [
+                  2302.65244065084,
+                  94.99573219525207
+                ],
+                [
+                  2026,
+                  1147
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1786,
+                1347
+              ],
+              "right": [
+                2266,
+                1347
+              ]
+            },
+            "vehicle_frontage": [
+              2026,
+              1147
+            ]
+          }
+        }
+      ],
+      "forces": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 132
+        },
+        "red": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 144
+        }
+      },
+      "loadoutPools": {
+        "blue": [
+          [
+            "UMP",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M416",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "MP5K",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SCAR-L",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M249",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ],
+        "red": [
+          [
+            "AKM",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Tommy Gun",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "S12K",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "RPD",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ]
+      },
+      "playerLoadout": [
+        "UMP",
+        "P92",
+        "Army Knife",
+        "HE Grenade"
+      ],
+      "balanceRationale": "医院院墙与病房用近距武器；30秒疏散守点比森林稍短",
+      "geometryCorrections": [
+        {
+          "from": [
+            1500.0,
+            1500.0
+          ],
+          "to": [
+            1480.0,
+            1490.0
+          ],
+          "distanceMeters": 0.55901700258255,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "sourceSceneId": "level-09",
+      "title": "芦苇湿地",
+      "briefing": "控制南侧栈道入口，再守住河心高地。水域不可直接横穿，桥头需要有序推进。",
+      "tacticNames": {
+        "T01": "主路推进 · 双翼支援",
+        "T02": "集中突破 · 近距掩护",
+        "T03": "侧翼迂回 · 分队推进"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "chapter-09-stage-1",
+            "x": 1980.0,
+            "y": 1555.0,
+            "r": 150,
+            "shortLabel": "A",
+            "label": "栈道南口",
+            "initialOwner": "neutral",
+            "captureTime": 9,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取栈道南口",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  1800,
+                  2000
+                ],
+                [
+                  1950,
+                  1700
+                ],
+                [
+                  1980.0,
+                  1555.0
+                ]
+              ],
+              [
+                [
+                  2500,
+                  2000
+                ],
+                [
+                  2490,
+                  1550
+                ],
+                [
+                  2490,
+                  1300
+                ],
+                [
+                  2100,
+                  1100
+                ]
+              ],
+              [
+                [
+                  1200,
+                  2000
+                ],
+                [
+                  1700,
+                  1800
+                ],
+                [
+                  1980.0,
+                  1555.0
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  704.0432115230728,
+                  42.77113897039209
+                ],
+                [
+                  1980.0,
+                  1555.0
+                ]
+              ],
+              [
+                [
+                  2626.5015414053364,
+                  71.23131710428406
+                ],
+                [
+                  1980.0,
+                  1555.0
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1755,
+                1770
+              ],
+              "right": [
+                2235,
+                1770
+              ]
+            },
+            "vehicle_frontage": [
+              1980.0,
+              1555.0
+            ]
+          }
+        },
+        {
+          "point": {
+            "id": "chapter-09-stage-2",
+            "x": 1780,
+            "y": 1090,
+            "r": 150,
+            "shortLabel": "B",
+            "label": "河心信号站",
+            "initialOwner": "neutral",
+            "captureTime": 9,
+            "captureHeight": 1.8
+          },
+          "mode": "hold",
+          "holdSeconds": 35,
+          "briefing": "夺取并守住河心信号站，守住 35 秒",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  1980.0,
+                  1555.0
+                ],
+                [
+                  1780,
+                  1090
+                ]
+              ],
+              [
+                [
+                  1380,
+                  1490
+                ],
+                [
+                  1780,
+                  1090
+                ]
+              ],
+              [
+                [
+                  2180,
+                  1490
+                ],
+                [
+                  1780,
+                  1090
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  704.0432115230728,
+                  42.77113897039209
+                ],
+                [
+                  1780,
+                  1090
+                ]
+              ],
+              [
+                [
+                  2626.5015414053364,
+                  71.23131710428406
+                ],
+                [
+                  1780,
+                  1090
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1540,
+                1290
+              ],
+              "right": [
+                2020,
+                1290
+              ]
+            },
+            "vehicle_frontage": [
+              1780,
+              1090
+            ]
+          }
+        }
+      ],
+      "forces": {
+        "blue": {
+          "initialCount": 28,
+          "maxActive": 28,
+          "totalForce": 132
+        },
+        "red": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 144
+        }
+      },
+      "loadoutPools": {
+        "blue": [
+          [
+            "SCAR-L",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M416",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M16A4",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M249",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Mini14",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ],
+        "red": [
+          [
+            "AKM",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M416",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "RPD",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Dragunov",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ]
+      },
+      "playerLoadout": [
+        "SCAR-L",
+        "P92",
+        "Army Knife",
+        "HE Grenade"
+      ],
+      "balanceRationale": "桥口限制同时接敌规模，蓝军略少在场但保留充分有限储备",
+      "geometryCorrections": [
+        {
+          "from": [
+            1995.0,
+            1570.0
+          ],
+          "to": [
+            1980.0,
+            1555.0
+          ],
+          "distanceMeters": 0.530330061912537,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "sourceSceneId": "level-10",
+      "title": "谷仓村落",
+      "briefing": "先建立村口支点，再夺取公共地，最后守住指挥阵地。完成本关结束十章战役。",
+      "tacticNames": {
+        "T01": "主路推进 · 双翼支援",
+        "T02": "集中突破 · 近距掩护",
+        "T03": "侧翼迂回 · 分队推进"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "chapter-10-stage-1",
+            "x": 1250,
+            "y": 910,
+            "r": 180,
+            "shortLabel": "A",
+            "label": "村口支点",
+            "initialOwner": "neutral",
+            "captureTime": 9,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取村口支点",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  400,
+                  550
+                ],
+                [
+                  800,
+                  750
+                ],
+                [
+                  1250,
+                  910
+                ]
+              ],
+              [
+                [
+                  390.0,
+                  230.0
+                ],
+                [
+                  1100,
+                  300
+                ],
+                [
+                  1350,
+                  750
+                ]
+              ],
+              [
+                [
+                  3400,
+                  1900
+                ],
+                [
+                  3100,
+                  1600
+                ],
+                [
+                  2700,
+                  1400
+                ],
+                [
+                  2150,
+                  1200
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  3526.9810602373173,
+                  85.50315662711382
+                ],
+                [
+                  1250,
+                  910
+                ]
+              ],
+              [
+                [
+                  921.2021175122027,
+                  2376.9169767194644
+                ],
+                [
+                  1250,
+                  910
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1010,
+                1110
+              ],
+              "right": [
+                1490,
+                1110
+              ]
+            },
+            "vehicle_frontage": [
+              1250,
+              910
+            ]
+          }
+        },
+        {
+          "point": {
+            "id": "chapter-10-stage-2",
+            "x": 1940,
+            "y": 1130,
+            "r": 180,
+            "shortLabel": "B",
+            "label": "村落公共地",
+            "initialOwner": "neutral",
+            "captureTime": 9,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "夺取村落公共地",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  1250,
+                  910
+                ],
+                [
+                  1940,
+                  1130
+                ]
+              ],
+              [
+                [
+                  1540,
+                  1530
+                ],
+                [
+                  1940,
+                  1130
+                ]
+              ],
+              [
+                [
+                  2350.0,
+                  1510.0
+                ],
+                [
+                  1940,
+                  1130
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  3526.9810602373173,
+                  85.50315662711382
+                ],
+                [
+                  1940,
+                  1130
+                ]
+              ],
+              [
+                [
+                  921.2021175122027,
+                  2376.9169767194644
+                ],
+                [
+                  1940,
+                  1130
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1700,
+                1330
+              ],
+              "right": [
+                2180,
+                1330
+              ]
+            },
+            "vehicle_frontage": [
+              1940,
+              1130
+            ]
+          }
+        },
+        {
+          "point": {
+            "id": "chapter-10-stage-3",
+            "x": 2700,
+            "y": 1400,
+            "r": 180,
+            "shortLabel": "C",
+            "label": "最终指挥阵地",
+            "initialOwner": "neutral",
+            "captureTime": 9,
+            "captureHeight": 1.8
+          },
+          "mode": "hold",
+          "holdSeconds": 45,
+          "briefing": "夺取并守住最终指挥阵地，守住 45 秒",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  1940,
+                  1130
+                ],
+                [
+                  2700,
+                  1400
+                ]
+              ],
+              [
+                [
+                  2310.0,
+                  1830.0
+                ],
+                [
+                  2700,
+                  1400
+                ]
+              ],
+              [
+                [
+                  3100,
+                  1800
+                ],
+                [
+                  2700,
+                  1400
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  3526.9810602373173,
+                  85.50315662711382
+                ],
+                [
+                  2700,
+                  1400
+                ]
+              ],
+              [
+                [
+                  921.2021175122027,
+                  2376.9169767194644
+                ],
+                [
+                  2700,
+                  1400
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                2460,
+                1600
+              ],
+              "right": [
+                2940,
+                1600
+              ]
+            },
+            "vehicle_frontage": [
+              2700,
+              1400
+            ]
+          }
+        }
+      ],
+      "forces": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 150
+        },
+        "red": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 165
+        }
+      },
+      "loadoutPools": {
+        "blue": [
+          [
+            "M416",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SCAR-L",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M16A4",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "M249",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Mini14",
+            "P92",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ],
+        "red": [
+          [
+            "AKM",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Beryl M762",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "UMP",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "SKS",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "RPD",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ],
+          [
+            "Dragunov",
+            "R1895",
+            "Army Knife",
+            "HE Grenade"
+          ]
+        ]
+      },
+      "playerLoadout": [
+        "M416",
+        "P92",
+        "Army Knife",
+        "HE Grenade"
+      ],
+      "balanceRationale": "三阶段终章提供较多有限储备；45秒最终持守，敌军耗尽可提前结束",
+      "geometryCorrections": [
+        {
+          "from": [
+            400.0,
+            200.0
+          ],
+          "to": [
+            390.0,
+            230.0
+          ],
+          "distanceMeters": 0.790569424629211,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        },
+        {
+          "from": [
+            2340.0,
+            1530.0
+          ],
+          "to": [
+            2350.0,
+            1510.0
+          ],
+          "distanceMeters": 0.55901700258255,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        },
+        {
+          "from": [
+            2300.0,
+            1800.0
+          ],
+          "to": [
+            2310.0,
+            1830.0
+          ],
+          "distanceMeters": 0.790569424629211,
+          "reason": "Move authored metadata to nearest body-clear static navigation cell; immutable geometry unchanged"
+        }
+      ]
+    }
+  ]
+}

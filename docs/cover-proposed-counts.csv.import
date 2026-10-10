@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://catqde7len2od"
+
+[deps]
+
+files=["res://docs/cover-proposed-counts.family.translation", "res://docs/cover-proposed-counts.material.translation", "res://docs/cover-proposed-counts.reference.translation", "res://docs/cover-proposed-counts.events.translation", "res://docs/cover-proposed-counts.damage.translation", "res://docs/cover-proposed-counts.intact.translation", "res://docs/cover-proposed-counts.count.translation", "res://docs/cover-proposed-counts.geometry.translation", "res://docs/cover-proposed-counts.status.translation"]
+
+source_file="res://docs/cover-proposed-counts.csv"
+dest_files=["res://docs/cover-proposed-counts.family.translation", "res://docs/cover-proposed-counts.material.translation", "res://docs/cover-proposed-counts.reference.translation", "res://docs/cover-proposed-counts.events.translation", "res://docs/cover-proposed-counts.damage.translation", "res://docs/cover-proposed-counts.intact.translation", "res://docs/cover-proposed-counts.count.translation", "res://docs/cover-proposed-counts.geometry.translation", "res://docs/cover-proposed-counts.status.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

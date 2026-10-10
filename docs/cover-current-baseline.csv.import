@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://g4o3lxk11egj"
+
+[deps]
+
+files=["res://docs/cover-current-baseline.kind.translation", "res://docs/cover-current-baseline.weapon.translation", "res://docs/cover-current-baseline.catalog.translation", "res://docs/cover-current-baseline.damage.translation", "res://docs/cover-current-baseline.projectile.translation", "res://docs/cover-current-baseline.ideal.translation", "res://docs/cover-current-baseline.pellets.translation", "res://docs/cover-current-baseline.scope.translation", "res://docs/cover-current-baseline.conditions.translation"]
+
+source_file="res://docs/cover-current-baseline.csv"
+dest_files=["res://docs/cover-current-baseline.kind.translation", "res://docs/cover-current-baseline.weapon.translation", "res://docs/cover-current-baseline.catalog.translation", "res://docs/cover-current-baseline.damage.translation", "res://docs/cover-current-baseline.projectile.translation", "res://docs/cover-current-baseline.ideal.translation", "res://docs/cover-current-baseline.pellets.translation", "res://docs/cover-current-baseline.scope.translation", "res://docs/cover-current-baseline.conditions.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

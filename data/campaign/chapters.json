@@ -1,0 +1,965 @@
+{
+  "format": "little-battlefield-ten-chapter-campaign",
+  "version": 2,
+  "source": "Imported Pixi scene plans, with explicitly provisional missing-runtime adapter",
+  "sourceScenesSha256": "295e759a0dc60feb9abd242b66e947aba51d5d20e65f2b6ba4d236311a8279d1",
+  "chapters": [
+    {
+      "id": 1,
+      "sourceSceneId": "level-01",
+      "title": "石墙果园",
+      "briefing": "夺取果园指挥所。西门推进、东墙破障或壕沟迂回。",
+      "tacticNames": {
+        "T01": "主路推进 · 双翼支援",
+        "T02": "集中突破 · 近距掩护",
+        "T03": "侧翼迂回 · 分队推进"
+      },
+      "stages": [],
+      "sourceFidelity": "Existing approved Godot orchard adaptation and exact exported level01 rules"
+    },
+    {
+      "id": 2,
+      "sourceSceneId": "level-02",
+      "title": "装配厂区",
+      "briefing": "纵向厂区主路与东侧支路构成非对称T形战线；七处可进入车间、维修房和门卫室提供分层室内掩体。",
+      "sourceFidelity": "Imported objective/forces/spawns/layout preserved; final Pixi loadouts and runtime AI unavailable; Godot local adapter explicitly provisional",
+      "tacticNames": {
+        "T01": "推进目标 · 双翼支援",
+        "T02": "集中推进 · 主路突破",
+        "T03": "分队迂回 · 交替掩护"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "flag-001",
+            "x": 1132,
+            "y": 1318,
+            "r": 180,
+            "label": "新旗帜",
+            "shortLabel": "A",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "占领新旗帜，或耗尽敌方兵力",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  3992,
+                  1207
+                ],
+                [
+                  1132,
+                  1318
+                ]
+              ],
+              [
+                [
+                  4063,
+                  2089
+                ],
+                [
+                  1132,
+                  1318
+                ]
+              ],
+              [
+                [
+                  4058,
+                  411
+                ],
+                [
+                  1132,
+                  1318
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  1903,
+                  72
+                ],
+                [
+                  1132,
+                  1318
+                ]
+              ],
+              [
+                [
+                  93.51000266737798,
+                  1512.8543611629768
+                ],
+                [
+                  1132,
+                  1318
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1389.444,
+                1134.364
+              ],
+              "right": [
+                1394.504,
+                1494.328
+              ]
+            },
+            "vehicle_frontage": [
+              1132,
+              1318
+            ]
+          }
+        }
+      ],
+      "geometryCorrections": []
+    },
+    {
+      "id": 3,
+      "sourceSceneId": "level-03",
+      "title": "洪泛草甸",
+      "briefing": "单一主河由西北斜穿至东南；左侧窄桥与中央主桥构成两条跨河路线，北岸三片牧场和东北配电院分割交战空间。",
+      "sourceFidelity": "Imported objective/forces/spawns/layout preserved; final Pixi loadouts and runtime AI unavailable; Godot local adapter explicitly provisional",
+      "tacticNames": {
+        "T01": "推进目标 · 双翼支援",
+        "T02": "集中推进 · 主路突破",
+        "T03": "分队迂回 · 交替掩护"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "east-bridgehead",
+            "x": 3010.126042105969,
+            "y": 1036.1549281325856,
+            "r": 175,
+            "label": "主桥东岸",
+            "shortLabel": "A",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "占领主桥东岸，或耗尽敌方兵力",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  42.492080365685126,
+                  303.2539598171574
+                ],
+                [
+                  3010.126042105969,
+                  1036.1549281325856
+                ]
+              ],
+              [
+                [
+                  48,
+                  1171
+                ],
+                [
+                  3010.126042105969,
+                  1036.1549281325856
+                ]
+              ],
+              [
+                [
+                  392.87426736779355,
+                  46.13540367080775
+                ],
+                [
+                  3010.126042105969,
+                  1036.1549281325856
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  2768.13443584956,
+                  2081.679114430515
+                ],
+                [
+                  3010.126042105969,
+                  1036.1549281325856
+                ]
+              ],
+              [
+                [
+                  3459.339557215257,
+                  553.7276607095225
+                ],
+                [
+                  3010.126042105969,
+                  1036.1549281325856
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                2728.202,
+                1179.4
+              ],
+              "right": [
+                2776.812,
+                822.697
+              ]
+            },
+            "vehicle_frontage": [
+              3010.126042105969,
+              1036.1549281325856
+            ]
+          }
+        }
+      ],
+      "geometryCorrections": []
+    },
+    {
+      "id": 4,
+      "sourceSceneId": "level-04",
+      "title": "双街小镇",
+      "briefing": "两条错位主街贯穿小镇，三条短巷连接中央街区；上下两排镇屋提供连续室内掩体和多方向穿插路线。",
+      "sourceFidelity": "Imported objective/forces/spawns/layout preserved; final Pixi loadouts and runtime AI unavailable; Godot local adapter explicitly provisional",
+      "tacticNames": {
+        "T01": "推进目标 · 双翼支援",
+        "T02": "集中推进 · 主路突破",
+        "T03": "分队迂回 · 交替掩护"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "flag-001",
+            "x": 2038,
+            "y": 1181,
+            "r": 180,
+            "label": "新旗帜",
+            "shortLabel": "A",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8,
+            "visualPosition": [
+              2000,
+              1200
+            ]
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "占领新旗帜，或耗尽敌方兵力",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  3926.004267804748,
+                  788.9957321952521
+                ],
+                [
+                  2038,
+                  1181
+                ]
+              ],
+              [
+                [
+                  54,
+                  827
+                ],
+                [
+                  2038,
+                  1181
+                ]
+              ],
+              [
+                [
+                  67,
+                  1231
+                ],
+                [
+                  2038,
+                  1181
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  2563.746332355295,
+                  85.66524406508402
+                ],
+                [
+                  2038,
+                  1181
+                ]
+              ],
+              [
+                [
+                  1692.927447319285,
+                  2332
+                ],
+                [
+                  2038,
+                  1181
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1694.618,
+                1117.893
+              ],
+              "right": [
+                1969.358,
+                885.26
+              ]
+            },
+            "vehicle_frontage": [
+              2038,
+              1181
+            ]
+          }
+        }
+      ],
+      "geometryCorrections": [
+        {
+          "from": [
+            2038,
+            1181
+          ],
+          "to": [
+            2000,
+            1200
+          ],
+          "scope": "visual flag mast only; gameplay capture center/radius stay exactly at source [2038,1181]",
+          "reason": "Nearest verified body-clear flag display point"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "sourceSceneId": "level-05",
+      "title": "干溪通道",
+      "briefing": "一条斜向干溪切开战场，中央纵向公路桥与东侧便桥形成两处主要交叉点；左右据点通过短直土路接入中央争夺区。",
+      "sourceFidelity": "Imported objective/forces/spawns/layout preserved; final Pixi loadouts and runtime AI unavailable; Godot local adapter explicitly provisional",
+      "tacticNames": {
+        "T01": "推进目标 · 双翼支援",
+        "T02": "集中推进 · 主路突破",
+        "T03": "分队迂回 · 交替掩护"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "flag-001",
+            "x": 3346,
+            "y": 420,
+            "r": 180,
+            "label": "新旗帜",
+            "shortLabel": "B",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "占领新旗帜，或耗尽敌方兵力",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  1664.0477460656175,
+                  2323.5441451053616
+                ],
+                [
+                  3346,
+                  420
+                ]
+              ],
+              [
+                [
+                  1015.0738863696986,
+                  2338.9522539343825
+                ],
+                [
+                  3346,
+                  420
+                ]
+              ],
+              [
+                [
+                  579.9725260069351,
+                  2323.816217658042
+                ],
+                [
+                  3346,
+                  420
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  1029.0212222851928,
+                  85.9133949982424
+                ],
+                [
+                  3346,
+                  420
+                ]
+              ],
+              [
+                [
+                  3720,
+                  1000.8842357962122
+                ],
+                [
+                  3346,
+                  420
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                3272.64,
+                727.601
+              ],
+              "right": [
+                3032.263,
+                459.61
+              ]
+            },
+            "vehicle_frontage": [
+              3346,
+              420
+            ]
+          }
+        }
+      ],
+      "geometryCorrections": []
+    },
+    {
+      "id": 6,
+      "sourceSceneId": "level-06",
+      "title": "要塞内院",
+      "briefing": "平面要塞内院由上下宽入口、中央双通道和四周十一组房间构成；两军沿中央轴推进，也可借左右建筑群进行近距离穿插。",
+      "sourceFidelity": "Imported objective/forces/spawns/layout preserved; final Pixi loadouts and runtime AI unavailable; Godot local adapter explicitly provisional",
+      "tacticNames": {
+        "T01": "推进目标 · 双翼支援",
+        "T02": "集中推进 · 主路突破",
+        "T03": "分队迂回 · 交替掩护"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "flag-001",
+            "x": 2083.838099287764,
+            "y": 686.514510470926,
+            "r": 180,
+            "label": "新旗帜",
+            "shortLabel": "A",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "占领新旗帜，或耗尽敌方兵力",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  1790.8098839903535,
+                  2562.47908787711
+                ],
+                [
+                  2083.838099287764,
+                  686.514510470926
+                ]
+              ],
+              [
+                [
+                  2402.6774165642423,
+                  2561.5475290024115
+                ],
+                [
+                  2083.838099287764,
+                  686.514510470926
+                ]
+              ],
+              [
+                [
+                  2111.136882250603,
+                  2545.033231139118
+                ],
+                [
+                  2083.838099287764,
+                  686.514510470926
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  1797.8098839903535,
+                  60.931558874698545
+                ],
+                [
+                  2083.838099287764,
+                  686.514510470926
+                ]
+              ],
+              [
+                [
+                  2130.4624723075517,
+                  67.96015460128513
+                ],
+                [
+                  2083.838099287764,
+                  686.514510470926
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                2267.025,
+                944.279
+              ],
+              "right": [
+                1907.052,
+                948.711
+              ]
+            },
+            "vehicle_frontage": [
+              2083.838099287764,
+              686.514510470926
+            ]
+          }
+        }
+      ],
+      "geometryCorrections": []
+    },
+    {
+      "id": 7,
+      "sourceSceneId": "level-07",
+      "title": "林间路口",
+      "briefing": "东西公路贯穿林间平地，北侧林务院、东侧检查站与南侧直排水沟形成三类交战空间；中央路口保持双方距离和侧翼路线均衡。\n桥面狭窄，步兵与小型吉普可利用过桥通道；宽车体宜留在本岸支援，勿强行挤过完整护栏。",
+      "sourceFidelity": "Imported objective/forces/spawns/layout preserved; final Pixi loadouts and runtime AI unavailable; Godot local adapter explicitly provisional",
+      "tacticNames": {
+        "T01": "推进目标 · 双翼支援",
+        "T02": "集中推进 · 主路突破",
+        "T03": "分队迂回 · 交替掩护"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "forest-crossroads",
+            "x": 1677.806278087075,
+            "y": 438.85590582902967,
+            "r": 190,
+            "label": "林间路口",
+            "shortLabel": "A",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "占领林间路口，或耗尽敌方兵力",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  2958.756468391571,
+                  2052.207255268071
+                ],
+                [
+                  1677.806278087075,
+                  438.85590582902967
+                ]
+              ],
+              [
+                [
+                  1122.9343825020005,
+                  2028.2253934382502
+                ],
+                [
+                  1677.806278087075,
+                  438.85590582902967
+                ]
+              ],
+              [
+                [
+                  1756.8108829021073,
+                  2036.1381701787143
+                ],
+                [
+                  1677.806278087075,
+                  438.85590582902967
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  3358.8108829021076,
+                  683.3419578554281
+                ],
+                [
+                  1677.806278087075,
+                  438.85590582902967
+                ]
+              ],
+              [
+                [
+                  1187.2357962123233,
+                  51.88423579621235
+                ],
+                [
+                  1677.806278087075,
+                  438.85590582902967
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1895.239,
+                668.471
+              ],
+              "right": [
+                1539.423,
+                723.197
+              ]
+            },
+            "vehicle_frontage": [
+              1677.806278087075,
+              438.85590582902967
+            ]
+          }
+        }
+      ],
+      "geometryCorrections": []
+    },
+    {
+      "id": 8,
+      "sourceSceneId": "level-08",
+      "title": "城郊医院区",
+      "briefing": "一条简单L形道路穿过城郊医院区，七组平面医疗建筑、带门院墙和分散掩体形成室内外连续交战空间。",
+      "sourceFidelity": "Imported objective/forces/spawns/layout preserved; final Pixi loadouts and runtime AI unavailable; Godot local adapter explicitly provisional",
+      "tacticNames": {
+        "T01": "推进目标 · 双翼支援",
+        "T02": "集中推进 · 主路突破",
+        "T03": "分队迂回 · 交替掩护"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "flag-001",
+            "x": 2026,
+            "y": 1147,
+            "r": 180,
+            "label": "新旗帜",
+            "shortLabel": "A",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "占领新旗帜，或耗尽敌方兵力",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  2251.488396905842,
+                  2460.008535609496
+                ],
+                [
+                  2026,
+                  1147
+                ]
+              ],
+              [
+                [
+                  1212.2920778874366,
+                  2439.0042678047475
+                ],
+                [
+                  2026,
+                  1147
+                ]
+              ],
+              [
+                [
+                  3095.0384102427315,
+                  2433.6780474793277
+                ],
+                [
+                  2026,
+                  1147
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  1564,
+                  116.32622032542012
+                ],
+                [
+                  2026,
+                  1147
+                ]
+              ],
+              [
+                [
+                  2302.65244065084,
+                  94.99573219525207
+                ],
+                [
+                  2026,
+                  1147
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                2201.412,
+                1410.117
+              ],
+              "right": [
+                1841.468,
+                1403.803
+              ]
+            },
+            "vehicle_frontage": [
+              2026,
+              1147
+            ]
+          }
+        }
+      ],
+      "geometryCorrections": []
+    },
+    {
+      "id": 9,
+      "sourceSceneId": "level-09",
+      "title": "芦苇湿地",
+      "briefing": "宽阔曲线河道围出中央高地，西侧木桥连接河心岛，东侧混凝土桥贯通南北岸；三处建筑分别控制岛上与东岸通路。",
+      "sourceFidelity": "Imported objective/forces/spawns/layout preserved; final Pixi loadouts and runtime AI unavailable; Godot local adapter explicitly provisional",
+      "tacticNames": {
+        "T01": "推进目标 · 双翼支援",
+        "T02": "集中推进 · 主路突破",
+        "T03": "分队迂回 · 交替掩护"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "wetland-island-point",
+            "x": 1780,
+            "y": 1090,
+            "r": 155,
+            "label": "河心高地",
+            "shortLabel": "A",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "占领河心高地，或耗尽敌方兵力",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  1543.1787143238196,
+                  2095.069085089357
+                ],
+                [
+                  1780,
+                  1090
+                ]
+              ],
+              [
+                [
+                  2336.116564417178,
+                  2104
+                ],
+                [
+                  1780,
+                  1090
+                ]
+              ],
+              [
+                [
+                  1284.7939297260034,
+                  2099.3582438609546
+                ],
+                [
+                  1780,
+                  1090
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  704.0432115230728,
+                  42.77113897039209
+                ],
+                [
+                  1780,
+                  1090
+                ]
+              ],
+              [
+                [
+                  2626.5015414053364,
+                  71.23131710428406
+                ],
+                [
+                  1780,
+                  1090
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                1999.041,
+                1318.081
+              ],
+              "right": [
+                1643.619,
+                1375.307
+              ]
+            },
+            "vehicle_frontage": [
+              1780,
+              1090
+            ]
+          }
+        }
+      ],
+      "geometryCorrections": []
+    },
+    {
+      "id": 10,
+      "sourceSceneId": "level-10",
+      "title": "谷仓村落",
+      "briefing": "一条轻微斜向的村路贯穿三处开放农家院，七栋平面农舍与谷仓具有房间和门洞，断续石墙与木栅栏提供侧翼掩体。",
+      "sourceFidelity": "Imported objective/forces/spawns/layout preserved; final Pixi loadouts and runtime AI unavailable; Godot local adapter explicitly provisional",
+      "tacticNames": {
+        "T01": "推进目标 · 双翼支援",
+        "T02": "集中推进 · 主路突破",
+        "T03": "分队迂回 · 交替掩护"
+      },
+      "stages": [
+        {
+          "point": {
+            "id": "village-green",
+            "x": 1940,
+            "y": 1130,
+            "r": 195,
+            "label": "村落公共地",
+            "shortLabel": "A",
+            "initialOwner": "neutral",
+            "captureTime": 7,
+            "captureHeight": 1.8
+          },
+          "mode": "capture",
+          "holdSeconds": 0,
+          "briefing": "占领村落公共地，或耗尽敌方兵力",
+          "aiRoutes": {
+            "blue": [
+              [
+                [
+                  269.7105421610771,
+                  65.0441927795936
+                ],
+                [
+                  1940,
+                  1130
+                ]
+              ],
+              [
+                [
+                  3855.490530118658,
+                  1942.0126265084555
+                ],
+                [
+                  1940,
+                  1130
+                ]
+              ],
+              [
+                [
+                  3826.251578313557,
+                  2157.987373491545
+                ],
+                [
+                  1940,
+                  1130
+                ]
+              ]
+            ],
+            "red": [
+              [
+                [
+                  3526.9810602373173,
+                  85.50315662711382
+                ],
+                [
+                  1940,
+                  1130
+                ]
+              ],
+              [
+                [
+                  921.2021175122027,
+                  2376.9169767194644
+                ],
+                [
+                  1940,
+                  1130
+                ]
+              ]
+            ]
+          },
+          "tactics": {
+            "support_posts": {
+              "left": [
+                2204.084,
+                1303.953
+              ],
+              "right": [
+                1870.137,
+                1438.414
+              ]
+            },
+            "vehicle_frontage": [
+              1940,
+              1130
+            ]
+          }
+        }
+      ],
+      "geometryCorrections": []
+    }
+  ]
+}

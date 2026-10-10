@@ -1,0 +1,9 @@
+{
+  "reason": "User requested v.28 material contacts restored, no gunshot restoration.",
+  "source_directory": "assets/audio/combat",
+  "sha256": {
+    "shot_hit": "1facce99ea8fed74737e902d9e3f8a584fd4f10a186e9e2b7dc1192bd6445981",
+    "wall_hit": "7d9006514988fc47d378f0e726e2bbb8e88391ea0f849c1ea1823970335c3223",
+    "deflect_shot": "6e83172af0b7f9b057dd4a5f11ddb43fd0b8d9f4b3e7ffcd75ea02a1077b1674"
+  }
+}

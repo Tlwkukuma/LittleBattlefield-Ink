@@ -1,0 +1,3382 @@
+{
+  "origin": "https://opengameart.org/content/the-free-firearm-sound-library",
+  "license": "CC0-1.0",
+  "mirror_commit": "a19b7458a593598211c95ec46ef4eb4b6d1f94d7",
+  "authors": [
+    "Ben Jaszczak",
+    "Brian Nelson",
+    "Kevin Heras",
+    "Matthew Nanney"
+  ],
+  "processing": "One discharge per clip, selected mono microphone, 55 Hz highpass, 48 kHz PCM16, fade out, -1.72 dBFS peak. No pitch change.",
+  "banks": {
+    "ar15": {
+      "gain": 0.82,
+      "lowpass": 15500,
+      "match": "related weapon/cartridge/role; see mapping notes",
+      "near": [
+        "ar15_near_01",
+        "ar15_near_02"
+      ],
+      "mid": [
+        "ar15_mid_01",
+        "ar15_mid_02"
+      ]
+    },
+    "ak47": {
+      "gain": 0.9,
+      "lowpass": 15000,
+      "match": "related weapon/cartridge/role; see mapping notes",
+      "near": [
+        "ak47_near_01",
+        "ak47_near_02",
+        "ak47_near_03"
+      ],
+      "mid": [
+        "ak47_mid_01",
+        "ak47_mid_02"
+      ]
+    },
+    "smg9": {
+      "gain": 0.68,
+      "lowpass": 15500,
+      "match": "related weapon/cartridge/role; see mapping notes",
+      "near": [
+        "smg9_near_01",
+        "smg9_near_02",
+        "smg9_near_03"
+      ],
+      "mid": [
+        "smg9_mid_01",
+        "smg9_mid_02",
+        "smg9_mid_03"
+      ]
+    },
+    "pistol9": {
+      "gain": 0.7,
+      "lowpass": 16000,
+      "match": "related weapon/cartridge/role; see mapping notes",
+      "near": [
+        "pistol9_near_01",
+        "pistol9_near_02",
+        "pistol9_near_03"
+      ],
+      "mid": [
+        "pistol9_mid_01",
+        "pistol9_mid_02"
+      ]
+    },
+    "pistol45": {
+      "gain": 0.74,
+      "lowpass": 14500,
+      "match": "related weapon/cartridge/role; see mapping notes",
+      "near": [
+        "pistol45_near_01",
+        "pistol45_near_02"
+      ],
+      "mid": [
+        "pistol45_mid_01",
+        "pistol45_mid_02"
+      ]
+    },
+    "shotgun": {
+      "gain": 0.95,
+      "lowpass": 15500,
+      "match": "related weapon/cartridge/role; see mapping notes",
+      "near": [
+        "shotgun_near_01",
+        "shotgun_near_02"
+      ],
+      "mid": [
+        "shotgun_mid_01",
+        "shotgun_mid_02"
+      ]
+    },
+    "pump": {
+      "gain": 0.95,
+      "lowpass": 14500,
+      "match": "related weapon/cartridge/role; see mapping notes",
+      "near": [
+        "pump_near_01",
+        "pump_near_02"
+      ],
+      "mid": [
+        "pump_mid_01",
+        "pump_mid_02",
+        "pump_mid_03"
+      ]
+    },
+    "mosin": {
+      "gain": 0.93,
+      "lowpass": 15000,
+      "match": "related weapon/cartridge/role; see mapping notes",
+      "near": [
+        "mosin_near_01",
+        "mosin_near_02",
+        "mosin_near_03"
+      ],
+      "mid": [
+        "mosin_mid_01",
+        "mosin_mid_02",
+        "mosin_mid_03"
+      ]
+    },
+    "sks": {
+      "gain": 0.86,
+      "lowpass": 15000,
+      "match": "related weapon/cartridge/role; see mapping notes",
+      "near": [
+        "sks_near_01",
+        "sks_near_02",
+        "sks_near_03"
+      ],
+      "mid": [
+        "sks_mid_01",
+        "sks_mid_02",
+        "sks_mid_03"
+      ]
+    },
+    "tikka": {
+      "gain": 1.0,
+      "lowpass": 15000,
+      "match": "related weapon/cartridge/role; see mapping notes",
+      "near": [
+        "tikka_near_01",
+        "tikka_near_02"
+      ],
+      "mid": [
+        "tikka_mid_01",
+        "tikka_mid_02"
+      ]
+    },
+    "lever": {
+      "gain": 0.85,
+      "lowpass": 14500,
+      "match": "related weapon/cartridge/role; see mapping notes",
+      "near": [
+        "lever_near_01",
+        "lever_near_02"
+      ],
+      "mid": [
+        "lever_mid_01",
+        "lever_mid_02"
+      ]
+    },
+    "revolver": {
+      "gain": 0.78,
+      "lowpass": 15500,
+      "match": "related weapon/cartridge/role; see mapping notes",
+      "near": [
+        "revolver_near_01",
+        "revolver_near_02"
+      ],
+      "mid": [
+        "revolver_mid_01",
+        "revolver_mid_02"
+      ]
+    },
+    "suppressed_rifle": {
+      "gain": 0.37,
+      "lowpass": 13000,
+      "match": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "near": [
+        "suppressed_rifle_near_01",
+        "suppressed_rifle_near_02",
+        "suppressed_rifle_near_03"
+      ],
+      "mid": [
+        "suppressed_rifle_mid_01",
+        "suppressed_rifle_mid_02",
+        "suppressed_rifle_mid_03"
+      ]
+    },
+    "suppressed_smg": {
+      "gain": 0.3,
+      "lowpass": 13000,
+      "match": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "near": [
+        "suppressed_smg_near_01",
+        "suppressed_smg_near_02",
+        "suppressed_smg_near_03"
+      ],
+      "mid": [
+        "suppressed_smg_mid_01",
+        "suppressed_smg_mid_02",
+        "suppressed_smg_mid_03"
+      ]
+    },
+    "suppressed_pistol": {
+      "gain": 0.31,
+      "lowpass": 13000,
+      "match": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "near": [
+        "suppressed_pistol_near_01",
+        "suppressed_pistol_near_02",
+        "suppressed_pistol_near_03"
+      ],
+      "mid": [
+        "suppressed_pistol_mid_01",
+        "suppressed_pistol_mid_02",
+        "suppressed_pistol_mid_03"
+      ]
+    },
+    "pdw": {
+      "gain": 0.6,
+      "lowpass": 16000,
+      "match": "Shortened AR-15 transient as small high-velocity PDW substitute; not 4.6/5.7 mm field recording.",
+      "near": [
+        "pdw_near_01",
+        "pdw_near_02",
+        "pdw_near_03"
+      ],
+      "mid": [
+        "pdw_mid_01",
+        "pdw_mid_02",
+        "pdw_mid_03"
+      ]
+    },
+    "antimaterial": {
+      "gain": 1.0,
+      "lowpass": 16000,
+      "match": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "near": [
+        "antimaterial_near_01",
+        "antimaterial_near_02",
+        "antimaterial_near_03"
+      ],
+      "mid": [
+        "antimaterial_mid_01",
+        "antimaterial_mid_02",
+        "antimaterial_mid_03"
+      ]
+    },
+    "heavy_mg": {
+      "gain": 0.88,
+      "lowpass": 16000,
+      "match": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "near": [
+        "heavy_mg_near_01",
+        "heavy_mg_near_02",
+        "heavy_mg_near_03"
+      ],
+      "mid": [
+        "heavy_mg_mid_01",
+        "heavy_mg_mid_02",
+        "heavy_mg_mid_03"
+      ]
+    },
+    "autocannon": {
+      "gain": 0.95,
+      "lowpass": 16000,
+      "match": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "near": [
+        "autocannon_near_01",
+        "autocannon_near_02",
+        "autocannon_near_03"
+      ],
+      "mid": [
+        "autocannon_mid_01",
+        "autocannon_mid_02",
+        "autocannon_mid_03"
+      ]
+    },
+    "cannon_light": {
+      "gain": 1.05,
+      "lowpass": 16000,
+      "match": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "near": [
+        "cannon_light_near_01",
+        "cannon_light_near_02",
+        "cannon_light_near_03"
+      ],
+      "mid": [
+        "cannon_light_mid_01",
+        "cannon_light_mid_02",
+        "cannon_light_mid_03"
+      ]
+    },
+    "cannon_medium": {
+      "gain": 1.1,
+      "lowpass": 16000,
+      "match": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "near": [
+        "cannon_medium_near_01",
+        "cannon_medium_near_02",
+        "cannon_medium_near_03"
+      ],
+      "mid": [
+        "cannon_medium_mid_01",
+        "cannon_medium_mid_02",
+        "cannon_medium_mid_03"
+      ]
+    },
+    "cannon_heavy": {
+      "gain": 1.16,
+      "lowpass": 16000,
+      "match": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "near": [
+        "cannon_heavy_near_01",
+        "cannon_heavy_near_02",
+        "cannon_heavy_near_03"
+      ],
+      "mid": [
+        "cannon_heavy_mid_01",
+        "cannon_heavy_mid_02",
+        "cannon_heavy_mid_03"
+      ]
+    },
+    "mortar": {
+      "gain": 0.9,
+      "lowpass": 16000,
+      "match": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "near": [
+        "mortar_near_01",
+        "mortar_near_02",
+        "mortar_near_03"
+      ],
+      "mid": [
+        "mortar_mid_01",
+        "mortar_mid_02",
+        "mortar_mid_03"
+      ]
+    },
+    "launcher": {
+      "gain": 0.78,
+      "lowpass": 16000,
+      "match": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "near": [
+        "launcher_near_01",
+        "launcher_near_02",
+        "launcher_near_03"
+      ],
+      "mid": [
+        "launcher_mid_01",
+        "launcher_mid_02",
+        "launcher_mid_03"
+      ]
+    },
+    "rocket": {
+      "gain": 0.98,
+      "lowpass": 14000,
+      "match": "Designed short launcher using qubodup CC0 synthetic rocket gas plus free low-pressure launch transient; not RPG field recording.",
+      "near": [
+        "rocket_near_01",
+        "rocket_near_02",
+        "rocket_near_03"
+      ],
+      "mid": [
+        "rocket_mid_01",
+        "rocket_mid_02",
+        "rocket_mid_03"
+      ]
+    },
+    "blast": {
+      "gain": 1,
+      "lowpass": 16000,
+      "match": "Designed detonation: low explosion tail, field-shot attack and stone debris; not a real explosive recording.",
+      "near": [
+        "blast_near_01",
+        "blast_near_02",
+        "blast_near_03"
+      ],
+      "mid": [
+        "blast_near_01",
+        "blast_near_02",
+        "blast_near_03"
+      ]
+    },
+    "flesh": {
+      "gain": 1,
+      "lowpass": 18000,
+      "match": "Kenney CC0 physical impact foley; material/role substitute.",
+      "near": [
+        "flesh_near_01",
+        "flesh_near_02",
+        "flesh_near_03"
+      ],
+      "mid": [
+        "flesh_near_01",
+        "flesh_near_02",
+        "flesh_near_03"
+      ]
+    },
+    "stone": {
+      "gain": 1,
+      "lowpass": 18000,
+      "match": "Kenney CC0 physical impact foley; material/role substitute.",
+      "near": [
+        "stone_near_01",
+        "stone_near_02",
+        "stone_near_03"
+      ],
+      "mid": [
+        "stone_near_01",
+        "stone_near_02",
+        "stone_near_03"
+      ]
+    },
+    "wood": {
+      "gain": 1,
+      "lowpass": 18000,
+      "match": "Kenney CC0 physical impact foley; material/role substitute.",
+      "near": [
+        "wood_near_01",
+        "wood_near_02",
+        "wood_near_03"
+      ],
+      "mid": [
+        "wood_near_01",
+        "wood_near_02",
+        "wood_near_03"
+      ]
+    },
+    "earth": {
+      "gain": 1,
+      "lowpass": 18000,
+      "match": "Kenney CC0 physical impact foley; material/role substitute.",
+      "near": [
+        "earth_near_01",
+        "earth_near_02",
+        "earth_near_03"
+      ],
+      "mid": [
+        "earth_near_01",
+        "earth_near_02",
+        "earth_near_03"
+      ]
+    },
+    "metal": {
+      "gain": 1,
+      "lowpass": 18000,
+      "match": "Kenney CC0 physical impact foley; material/role substitute.",
+      "near": [
+        "metal_near_01",
+        "metal_near_02",
+        "metal_near_03"
+      ],
+      "mid": [
+        "metal_near_01",
+        "metal_near_02",
+        "metal_near_03"
+      ]
+    },
+    "glass": {
+      "gain": 1,
+      "lowpass": 18000,
+      "match": "Kenney CC0 physical impact foley; material/role substitute.",
+      "near": [
+        "glass_near_01",
+        "glass_near_02",
+        "glass_near_03"
+      ],
+      "mid": [
+        "glass_near_01",
+        "glass_near_02",
+        "glass_near_03"
+      ]
+    },
+    "melee": {
+      "gain": 1,
+      "lowpass": 18000,
+      "match": "Kenney CC0 physical impact foley; material/role substitute.",
+      "near": [
+        "melee_near_01",
+        "melee_near_02",
+        "melee_near_03"
+      ],
+      "mid": [
+        "melee_near_01",
+        "melee_near_02",
+        "melee_near_03"
+      ]
+    },
+    "case": {
+      "gain": 1,
+      "lowpass": 18000,
+      "match": "Kenney CC0 physical impact foley; material/role substitute.",
+      "near": [
+        "case_near_01",
+        "case_near_02",
+        "case_near_03"
+      ],
+      "mid": [
+        "case_near_01",
+        "case_near_02",
+        "case_near_03"
+      ]
+    },
+    "case_soft": {
+      "gain": 1,
+      "lowpass": 18000,
+      "match": "Kenney CC0 physical impact foley; material/role substitute.",
+      "near": [
+        "case_soft_near_01",
+        "case_soft_near_02",
+        "case_soft_near_03"
+      ],
+      "mid": [
+        "case_soft_near_01",
+        "case_soft_near_02",
+        "case_soft_near_03"
+      ]
+    },
+    "grenade_contact": {
+      "gain": 1,
+      "lowpass": 18000,
+      "match": "Kenney CC0 physical impact foley; material/role substitute.",
+      "near": [
+        "grenade_contact_near_01",
+        "grenade_contact_near_02",
+        "grenade_contact_near_03"
+      ],
+      "mid": [
+        "grenade_contact_near_01",
+        "grenade_contact_near_02",
+        "grenade_contact_near_03"
+      ]
+    },
+    "swing": {
+      "gain": 1,
+      "lowpass": 18000,
+      "match": "artisticdude CC0 recorded object swish, used for melee and throws.",
+      "near": [
+        "swing_near_01",
+        "swing_near_02",
+        "swing_near_03"
+      ],
+      "mid": [
+        "swing_near_01",
+        "swing_near_02",
+        "swing_near_03"
+      ]
+    }
+  },
+  "weapons": {
+    "m16a4": "ar15",
+    "m416": "ar15",
+    "scar-l": "ar15",
+    "g36c": "ar15",
+    "qbz": "ar15",
+    "k2": "ar15",
+    "aug": "ar15",
+    "famas": "ar15",
+    "mini14": "ar15",
+    "mk12": "ar15",
+    "galil-ar": "ar15",
+    "m4a4": "ar15",
+    "sg-553": "ar15",
+    "m249": "ar15",
+    "negev": "ar15",
+    "akm": "ak47",
+    "beryl-m762": "ak47",
+    "mk47-mutant": "ak47",
+    "groza": "ak47",
+    "ace32": "ak47",
+    "ak-47": "ak47",
+    "rpd": "ak47",
+    "micro-uzi": "smg9",
+    "vector": "smg9",
+    "mp5k": "smg9",
+    "mp9": "smg9",
+    "js9": "smg9",
+    "pp-bizon": "smg9",
+    "p18c": "pistol9",
+    "p92": "pistol9",
+    "skorpion": "pistol9",
+    "glock-18": "pistol9",
+    "p2000": "pistol9",
+    "p250": "pistol9",
+    "tec-9": "pistol9",
+    "cz75-auto": "pistol9",
+    "dual-berettas": "pistol9",
+    "tommy-gun": "pistol45",
+    "ump": "pistol45",
+    "ump-45": "pistol45",
+    "mac-10": "pistol45",
+    "s1897": "shotgun",
+    "nova": "shotgun",
+    "s12k": "shotgun",
+    "o12": "shotgun",
+    "xm1014": "shotgun",
+    "s686": "pump",
+    "dbs": "pump",
+    "sawed-off": "pump",
+    "mag-7": "pump",
+    "kar98k": "mosin",
+    "dragunov": "mosin",
+    "slr": "mosin",
+    "mk14": "mosin",
+    "g3sg1": "mosin",
+    "scar-20": "mosin",
+    "mg3": "mosin",
+    "sks": "sks",
+    "m24": "tikka",
+    "awm": "tikka",
+    "awp": "tikka",
+    "ssg-08": "tikka",
+    "win94": "lever",
+    "r1895": "revolver",
+    "r8-revolver": "revolver",
+    "vss": "suppressed_smg",
+    "m4a1-s": "suppressed_rifle",
+    "mp5-sd": "suppressed_smg",
+    "usp-s": "suppressed_pistol",
+    "p90": "pdw",
+    "mp7": "pdw",
+    "five-seven": "pistol9",
+    "deagle": "pistol45",
+    "lynx-amr": "antimaterial",
+    "minigun": "mosin",
+    "anti-tank-launcher": "rocket",
+    "rpg": "rocket",
+    "grenade-launcher": "launcher",
+    "portable-mortar": "mortar",
+    "he-grenade": "swing",
+    "smoke-grenade": "swing",
+    "army-knife": "swing",
+    "fire-axe": "swing",
+    "katana": "swing"
+  },
+  "assets": {
+    "ar15_near_01": {
+      "key": "ar15_near_01",
+      "path": "res://assets/audio/free-firearms/ar15_near_01.wav",
+      "source": "ar15_D_32P.wav",
+      "source_sha256": "acee9d2106b68fe5956225a19d7aedf943d97793817f9bda9d486a2b74b0a812",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/AR-15/D_32P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 67200,
+      "source_end_sample": 182400,
+      "source_sample_rate": 96000,
+      "source_description": "AR-15, M4, rifle, carbine, semi automatic, assault rifle, .223, 5.56x45, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "5fc78fe7f1bea96156cee590ecc0492d6b9f21d6888c49173546c15c92874c5a",
+      "frames": 57600,
+      "duration": 1.2,
+      "peak": 0.819976806640625,
+      "rms": 0.03584614500563401
+    },
+    "ar15_near_02": {
+      "key": "ar15_near_02",
+      "path": "res://assets/audio/free-firearms/ar15_near_02.wav",
+      "source": "ar15_D_32P.wav",
+      "source_sha256": "acee9d2106b68fe5956225a19d7aedf943d97793817f9bda9d486a2b74b0a812",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/AR-15/D_32P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 541920,
+      "source_end_sample": 657120,
+      "source_sample_rate": 96000,
+      "source_description": "AR-15, M4, rifle, carbine, semi automatic, assault rifle, .223, 5.56x45, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "269f9424a5e932c1bcc99150ae8bf1129ff4c90b8db666a9c266b548604cacd7",
+      "frames": 57600,
+      "duration": 1.2,
+      "peak": 0.819976806640625,
+      "rms": 0.036518793794897024
+    },
+    "ar15_mid_01": {
+      "key": "ar15_mid_01",
+      "path": "res://assets/audio/free-firearms/ar15_mid_01.wav",
+      "source": "ar15_D_24P.wav",
+      "source_sha256": "4c6a54ca0583150bbb32b7f658bc64da9ad9ba42fd3aca769c6120b44af8d3f0",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/AR-15/D_24P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 52441,
+      "source_end_sample": 201240,
+      "source_sample_rate": 96000,
+      "source_description": "AR-15, M4, rifle, carbine, semi automatic, assault rifle, .223, 5.56x45, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "b15f75021de6413e61ccb3b22c2ded41b893c32f02a5326828b05a06eff43bad",
+      "frames": 74400,
+      "duration": 1.55,
+      "peak": 0.819976806640625,
+      "rms": 0.03323195673161319
+    },
+    "ar15_mid_02": {
+      "key": "ar15_mid_02",
+      "path": "res://assets/audio/free-firearms/ar15_mid_02.wav",
+      "source": "ar15_D_24P.wav",
+      "source_sha256": "4c6a54ca0583150bbb32b7f658bc64da9ad9ba42fd3aca769c6120b44af8d3f0",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/AR-15/D_24P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 375102,
+      "source_end_sample": 523901,
+      "source_sample_rate": 96000,
+      "source_description": "AR-15, M4, rifle, carbine, semi automatic, assault rifle, .223, 5.56x45, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "0799bfbf5348c34f13c5748468497353d7664cc4c6d140b53c3f64f1ed21cdf7",
+      "frames": 74400,
+      "duration": 1.55,
+      "peak": 0.819976806640625,
+      "rms": 0.03283125324702413
+    },
+    "ak47_near_01": {
+      "key": "ak47_near_01",
+      "path": "res://assets/audio/free-firearms/ak47_near_01.wav",
+      "source": "ak47_C_28P.wav",
+      "source_sha256": "e0934c1d79192d2216db62fdf6ab57bf9d5d585267af367a1cfb21f0972a537d",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/AK-47/C_28P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 58464,
+      "source_end_sample": 178464,
+      "source_sample_rate": 96000,
+      "source_description": "AK-47, rifle, fully automatic, semi automatic, machine gun, assault rifle, 7.62x39, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "4a7218a6d170241c99ca527a10daa8e616c8785007c11230c2d2d70a9e8dae24",
+      "frames": 60000,
+      "duration": 1.25,
+      "peak": 0.819976806640625,
+      "rms": 0.03412929472431669
+    },
+    "ak47_near_02": {
+      "key": "ak47_near_02",
+      "path": "res://assets/audio/free-firearms/ak47_near_02.wav",
+      "source": "ak47_C_28P.wav",
+      "source_sha256": "e0934c1d79192d2216db62fdf6ab57bf9d5d585267af367a1cfb21f0972a537d",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/AK-47/C_28P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 312597,
+      "source_end_sample": 432597,
+      "source_sample_rate": 96000,
+      "source_description": "AK-47, rifle, fully automatic, semi automatic, machine gun, assault rifle, 7.62x39, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "9df2daf35949414867ac9318ae5b989eac811da2b5abebe27c45b6a5d8d22010",
+      "frames": 60000,
+      "duration": 1.25,
+      "peak": 0.819976806640625,
+      "rms": 0.03158671397085201
+    },
+    "ak47_near_03": {
+      "key": "ak47_near_03",
+      "path": "res://assets/audio/free-firearms/ak47_near_03.wav",
+      "source": "ak47_C_28P.wav",
+      "source_sha256": "e0934c1d79192d2216db62fdf6ab57bf9d5d585267af367a1cfb21f0972a537d",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/AK-47/C_28P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 577728,
+      "source_end_sample": 697728,
+      "source_sample_rate": 96000,
+      "source_description": "AK-47, rifle, fully automatic, semi automatic, machine gun, assault rifle, 7.62x39, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "bccdee65714234d3823b5d9677fc098e74676e68cd243789d465348c62c32163",
+      "frames": 60000,
+      "duration": 1.25,
+      "peak": 0.819976806640625,
+      "rms": 0.030535177553090636
+    },
+    "ak47_mid_01": {
+      "key": "ak47_mid_01",
+      "path": "res://assets/audio/free-firearms/ak47_mid_01.wav",
+      "source": "ak47_C_31P.wav",
+      "source_sha256": "5c3261c3bdd7657fd07c141f1f683bef06c2e03da475f43f3943f755360a4994",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/AK-47/C_31P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 32651,
+      "source_end_sample": 186251,
+      "source_sample_rate": 96000,
+      "source_description": "AK-47, rifle, fully automatic, semi automatic, machine gun, assault rifle, 7.62x39, gunshot, mid distance, front of shooter, forward, back, stereo, last round",
+      "sha256": "708cde787b64c262b4fe67fc79ed6eb28bb35627c52ebd6c0448a5ed9d4f74b7",
+      "frames": 76800,
+      "duration": 1.6,
+      "peak": 0.819976806640625,
+      "rms": 0.02201233699458339
+    },
+    "ak47_mid_02": {
+      "key": "ak47_mid_02",
+      "path": "res://assets/audio/free-firearms/ak47_mid_02.wav",
+      "source": "ak47_C_31P.wav",
+      "source_sha256": "5c3261c3bdd7657fd07c141f1f683bef06c2e03da475f43f3943f755360a4994",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/AK-47/C_31P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 422760,
+      "source_end_sample": 576360,
+      "source_sample_rate": 96000,
+      "source_description": "AK-47, rifle, fully automatic, semi automatic, machine gun, assault rifle, 7.62x39, gunshot, mid distance, front of shooter, forward, back, stereo, last round",
+      "sha256": "e24dcf921c991922c4f2b54f76a724c36833163147eb2abef028a3e113e061ec",
+      "frames": 76800,
+      "duration": 1.6,
+      "peak": 0.819976806640625,
+      "rms": 0.022775045128686142
+    },
+    "smg9_near_01": {
+      "key": "smg9_near_01",
+      "path": "res://assets/audio/free-firearms/smg9_near_01.wav",
+      "source": "smg9_G_31P.wav",
+      "source_sha256": "5982c6c2fa44545b750ba6217ed57797a6a15c02f5c9943ac0e99e5f3ab2b158",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Carl%20Gustav%20M45/G_31P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 29618,
+      "source_end_sample": 130418,
+      "source_sample_rate": 96000,
+      "source_description": "Carl Gustav M45, Swedish K, rifle, fully automatic, machine gun, sub machine gun, 9mm, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "383c169c8e8509995d2bcc1cc7680a4cbe2479aa63551d38ada08416be84aa13",
+      "frames": 50400,
+      "duration": 1.05,
+      "peak": 0.819976806640625,
+      "rms": 0.0327753275608156
+    },
+    "smg9_near_02": {
+      "key": "smg9_near_02",
+      "path": "res://assets/audio/free-firearms/smg9_near_02.wav",
+      "source": "smg9_G_31P.wav",
+      "source_sha256": "5982c6c2fa44545b750ba6217ed57797a6a15c02f5c9943ac0e99e5f3ab2b158",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Carl%20Gustav%20M45/G_31P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 335943,
+      "source_end_sample": 436743,
+      "source_sample_rate": 96000,
+      "source_description": "Carl Gustav M45, Swedish K, rifle, fully automatic, machine gun, sub machine gun, 9mm, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "cd72e583ed0f5bf3285b13aa65e4ed5b2cf3f224cfa72cd7ca626158367f09f8",
+      "frames": 50400,
+      "duration": 1.05,
+      "peak": 0.819976806640625,
+      "rms": 0.03238475092999403
+    },
+    "smg9_near_03": {
+      "key": "smg9_near_03",
+      "path": "res://assets/audio/free-firearms/smg9_near_03.wav",
+      "source": "smg9_G_31P.wav",
+      "source_sha256": "5982c6c2fa44545b750ba6217ed57797a6a15c02f5c9943ac0e99e5f3ab2b158",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Carl%20Gustav%20M45/G_31P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 645701,
+      "source_end_sample": 746501,
+      "source_sample_rate": 96000,
+      "source_description": "Carl Gustav M45, Swedish K, rifle, fully automatic, machine gun, sub machine gun, 9mm, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "299433f798a7f754624f476425d4096d215b2173901740157110c96eb34006df",
+      "frames": 50400,
+      "duration": 1.05,
+      "peak": 0.819976806640625,
+      "rms": 0.031767147255047534
+    },
+    "smg9_mid_01": {
+      "key": "smg9_mid_01",
+      "path": "res://assets/audio/free-firearms/smg9_mid_01.wav",
+      "source": "smg9_G_20P.wav",
+      "source_sha256": "137630298417203c83f885402f1b5d10913c1b96ca0ad31fde50d30314bf3223",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Carl%20Gustav%20M45/G_20P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 33127,
+      "source_end_sample": 167527,
+      "source_sample_rate": 96000,
+      "source_description": "Carl Gustav M45, Swedish K, rifle, fully automatic, machine gun, sub machine gun, 9mm, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "63167a2c0d5f20200aa54205d81f5a0b47b45a82a819841f0a23f5402e8ac70c",
+      "frames": 67200,
+      "duration": 1.4,
+      "peak": 0.819976806640625,
+      "rms": 0.027996688279973227
+    },
+    "smg9_mid_02": {
+      "key": "smg9_mid_02",
+      "path": "res://assets/audio/free-firearms/smg9_mid_02.wav",
+      "source": "smg9_G_20P.wav",
+      "source_sha256": "137630298417203c83f885402f1b5d10913c1b96ca0ad31fde50d30314bf3223",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Carl%20Gustav%20M45/G_20P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 216642,
+      "source_end_sample": 351042,
+      "source_sample_rate": 96000,
+      "source_description": "Carl Gustav M45, Swedish K, rifle, fully automatic, machine gun, sub machine gun, 9mm, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "8346c5068f731ff19925b9eb6e4368cb740da8f1109142eb759801c6baeff1cc",
+      "frames": 67200,
+      "duration": 1.4,
+      "peak": 0.819976806640625,
+      "rms": 0.028403051087987498
+    },
+    "smg9_mid_03": {
+      "key": "smg9_mid_03",
+      "path": "res://assets/audio/free-firearms/smg9_mid_03.wav",
+      "source": "smg9_G_20P.wav",
+      "source_sha256": "137630298417203c83f885402f1b5d10913c1b96ca0ad31fde50d30314bf3223",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Carl%20Gustav%20M45/G_20P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 505248,
+      "source_end_sample": 639648,
+      "source_sample_rate": 96000,
+      "source_description": "Carl Gustav M45, Swedish K, rifle, fully automatic, machine gun, sub machine gun, 9mm, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "93a75082927b13915fa79733b8da7286a7d8dcf1fd8fddc3243950d83a218279",
+      "frames": 67200,
+      "duration": 1.4,
+      "peak": 0.819976806640625,
+      "rms": 0.028915497244688514
+    },
+    "pistol9_near_01": {
+      "key": "pistol9_near_01",
+      "path": "res://assets/audio/free-firearms/pistol9_near_01.wav",
+      "source": "pistol9_X_39P.wav",
+      "source_sha256": "d679a3cd87eae2898d984159f83544392932e6b77526045b672e3aaa9c2dda9f",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Walther%20PPQ/X_39P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 134871,
+      "source_end_sample": 235671,
+      "source_sample_rate": 96000,
+      "source_description": "Walther PPQ, handgun, pistol, semi automatic, striker, 9mm, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "7dc0202356d96682ad667c571af30814fd532d61850c3ab533357d31adce0c0b",
+      "frames": 50400,
+      "duration": 1.05,
+      "peak": 0.819976806640625,
+      "rms": 0.03048323365231715
+    },
+    "pistol9_near_02": {
+      "key": "pistol9_near_02",
+      "path": "res://assets/audio/free-firearms/pistol9_near_02.wav",
+      "source": "pistol9_X_39P.wav",
+      "source_sha256": "d679a3cd87eae2898d984159f83544392932e6b77526045b672e3aaa9c2dda9f",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Walther%20PPQ/X_39P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 618471,
+      "source_end_sample": 719271,
+      "source_sample_rate": 96000,
+      "source_description": "Walther PPQ, handgun, pistol, semi automatic, striker, 9mm, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "9559c0846309b51738c1c29f46dcca18bc948959d43024676de6d55b6ce6700f",
+      "frames": 50400,
+      "duration": 1.05,
+      "peak": 0.819976806640625,
+      "rms": 0.02999872346755297
+    },
+    "pistol9_near_03": {
+      "key": "pistol9_near_03",
+      "path": "res://assets/audio/free-firearms/pistol9_near_03.wav",
+      "source": "pistol9_X_39P.wav",
+      "source_sha256": "d679a3cd87eae2898d984159f83544392932e6b77526045b672e3aaa9c2dda9f",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Walther%20PPQ/X_39P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 1023188,
+      "source_end_sample": 1123988,
+      "source_sample_rate": 96000,
+      "source_description": "Walther PPQ, handgun, pistol, semi automatic, striker, 9mm, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "6f9e3f50973843520c9da7ba97f7173ec5d26ee269ee3279160d551965a5d611",
+      "frames": 50400,
+      "duration": 1.05,
+      "peak": 0.819976806640625,
+      "rms": 0.02926061383618682
+    },
+    "pistol9_mid_01": {
+      "key": "pistol9_mid_01",
+      "path": "res://assets/audio/free-firearms/pistol9_mid_01.wav",
+      "source": "pistol9_X_31P.wav",
+      "source_sha256": "b6439228ca46b37c00463265028094559ae5c9896c796b5d40ea4f33247f149c",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Walther%20PPQ/X_31P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 103939,
+      "source_end_sample": 238339,
+      "source_sample_rate": 96000,
+      "source_description": "Walther PPQ, handgun, pistol, semi automatic, striker, 9mm, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "ed9066097e63b9bc3b8eee01ed7ab7661292b315f784c5af64de07cea30179f8",
+      "frames": 67200,
+      "duration": 1.4,
+      "peak": 0.819976806640625,
+      "rms": 0.026188221673666422
+    },
+    "pistol9_mid_02": {
+      "key": "pistol9_mid_02",
+      "path": "res://assets/audio/free-firearms/pistol9_mid_02.wav",
+      "source": "pistol9_X_31P.wav",
+      "source_sha256": "b6439228ca46b37c00463265028094559ae5c9896c796b5d40ea4f33247f149c",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Walther%20PPQ/X_31P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 503042,
+      "source_end_sample": 637442,
+      "source_sample_rate": 96000,
+      "source_description": "Walther PPQ, handgun, pistol, semi automatic, striker, 9mm, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "f475dd6733cd6a9a64cb52744bf21b2f80a2355b9b3f7c4e937ec229c2eabb41",
+      "frames": 67200,
+      "duration": 1.4,
+      "peak": 0.819976806640625,
+      "rms": 0.027401664797011945
+    },
+    "pistol45_near_01": {
+      "key": "pistol45_near_01",
+      "path": "res://assets/audio/free-firearms/pistol45_near_01.wav",
+      "source": "pistol45_A_42P.wav",
+      "source_sha256": "8e84438e771c157155a6a1ff47a6a7a7d81b6f39b185d41e426c57337a82254a",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/1911/A_42P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 90137,
+      "source_end_sample": 186137,
+      "source_sample_rate": 96000,
+      "source_description": "1911, handgun, pistol, semi automatic, .45, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "ff61150bd2f24d7db54d184439f62356c23c0ee14355386508824375f3aa8823",
+      "frames": 48000,
+      "duration": 1.0,
+      "peak": 0.819976806640625,
+      "rms": 0.04192222278419704
+    },
+    "pistol45_near_02": {
+      "key": "pistol45_near_02",
+      "path": "res://assets/audio/free-firearms/pistol45_near_02.wav",
+      "source": "pistol45_A_42P.wav",
+      "source_sha256": "8e84438e771c157155a6a1ff47a6a7a7d81b6f39b185d41e426c57337a82254a",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/1911/A_42P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 479909,
+      "source_end_sample": 575909,
+      "source_sample_rate": 96000,
+      "source_description": "1911, handgun, pistol, semi automatic, .45, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "3f0999925c536837cd402f34bcadf858d69e6a21e17dff84a0c47d2513c61173",
+      "frames": 48000,
+      "duration": 1.0,
+      "peak": 0.819976806640625,
+      "rms": 0.038417093666577494
+    },
+    "pistol45_mid_01": {
+      "key": "pistol45_mid_01",
+      "path": "res://assets/audio/free-firearms/pistol45_mid_01.wav",
+      "source": "pistol45_A_34P.wav",
+      "source_sha256": "df95fc52049f3d1e4cf0a8c018fc0f0b4abded12de1d615a279422206c415935",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/1911/A_34P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 165504,
+      "source_end_sample": 295104,
+      "source_sample_rate": 96000,
+      "source_description": "1911, handgun, pistol, semi automatic, .45, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "e6e1cb84fc2c03ba4cb1d4ac8194fbbeecc640d7cf30bd9234bfae8f4232a051",
+      "frames": 64800,
+      "duration": 1.35,
+      "peak": 0.819976806640625,
+      "rms": 0.06334398561403909
+    },
+    "pistol45_mid_02": {
+      "key": "pistol45_mid_02",
+      "path": "res://assets/audio/free-firearms/pistol45_mid_02.wav",
+      "source": "pistol45_A_34P.wav",
+      "source_sha256": "df95fc52049f3d1e4cf0a8c018fc0f0b4abded12de1d615a279422206c415935",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/1911/A_34P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 656352,
+      "source_end_sample": 785952,
+      "source_sample_rate": 96000,
+      "source_description": "1911, handgun, pistol, semi automatic, .45, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "72dc758e0cba686d181ba212c285c5d1201c5ac405b2dfbb78c974f20829cc4b",
+      "frames": 64800,
+      "duration": 1.35,
+      "peak": 0.819976806640625,
+      "rms": 0.060889463736206975
+    },
+    "shotgun_near_01": {
+      "key": "shotgun_near_01",
+      "path": "res://assets/audio/free-firearms/shotgun_near_01.wav",
+      "source": "shotgun_O_21P.wav",
+      "source_sha256": "5661d0625e4634f19e6e316c13693b80c8e28cd9f716cf9c75c465153ae40815",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Nova/O_21P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 40895,
+      "source_end_sample": 112895,
+      "source_sample_rate": 96000,
+      "source_description": "Benelli, Nova, shotgun, pump action, 12 gauge, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "c8a962dc194d29583eaeecbb858b1a35c46b7baa22e1f07dadab27c4bcdd8afc",
+      "frames": 36000,
+      "duration": 0.75,
+      "peak": 0.819976806640625,
+      "rms": 0.04471542716314979
+    },
+    "shotgun_near_02": {
+      "key": "shotgun_near_02",
+      "path": "res://assets/audio/free-firearms/shotgun_near_02.wav",
+      "source": "shotgun_O_21P.wav",
+      "source_sha256": "5661d0625e4634f19e6e316c13693b80c8e28cd9f716cf9c75c465153ae40815",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Nova/O_21P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 332296,
+      "source_end_sample": 404296,
+      "source_sample_rate": 96000,
+      "source_description": "Benelli, Nova, shotgun, pump action, 12 gauge, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "00df7104963bf3bb0f3b9a17e330133224a867845cfa287bfb15d24c343bc925",
+      "frames": 36000,
+      "duration": 0.75,
+      "peak": 0.819976806640625,
+      "rms": 0.03969941806151741
+    },
+    "shotgun_mid_01": {
+      "key": "shotgun_mid_01",
+      "path": "res://assets/audio/free-firearms/shotgun_mid_01.wav",
+      "source": "shotgun_O_17P.wav",
+      "source_sha256": "878bdcaaa96ecbf04f7841b75219de57c41e38189f3c8371d52d68026f4e9d2c",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Nova/O_17P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 66207,
+      "source_end_sample": 171807,
+      "source_sample_rate": 96000,
+      "source_description": "Benelli, Nova, shotgun, pump action, 12 gauge, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "18862296b8c7bd388aa94a9eea6237f11f6c8b3d45e8484cb26de970e91f4656",
+      "frames": 52800,
+      "duration": 1.1,
+      "peak": 0.819976806640625,
+      "rms": 0.049034082731861536
+    },
+    "shotgun_mid_02": {
+      "key": "shotgun_mid_02",
+      "path": "res://assets/audio/free-firearms/shotgun_mid_02.wav",
+      "source": "shotgun_O_17P.wav",
+      "source_sha256": "878bdcaaa96ecbf04f7841b75219de57c41e38189f3c8371d52d68026f4e9d2c",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Nova/O_17P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 355662,
+      "source_end_sample": 461262,
+      "source_sample_rate": 96000,
+      "source_description": "Benelli, Nova, shotgun, pump action, 12 gauge, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "3abe187e762849a3f96deef2fbf8a20bd5f2e1fc5f847e0e9ec27463b50597d2",
+      "frames": 52800,
+      "duration": 1.1,
+      "peak": 0.819976806640625,
+      "rms": 0.04546652579911737
+    },
+    "pump_near_01": {
+      "key": "pump_near_01",
+      "path": "res://assets/audio/free-firearms/pump_near_01.wav",
+      "source": "pump_N_30P.wav",
+      "source_sha256": "b5a28243e16f8cb10adfc5225d96e90f108d24393fcfffcaa6dcf203af03634a",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Mossberg/N_30P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 162569,
+      "source_end_sample": 234569,
+      "source_sample_rate": 96000,
+      "source_description": "Mossberg, Model 190, shotgun, bolt action, 12 gauge, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "c43272ba5f88c1681ddb329e28312bba046d86a95f16ac701f9f068910c0c6c7",
+      "frames": 36000,
+      "duration": 0.75,
+      "peak": 0.819976806640625,
+      "rms": 0.04738917098793123
+    },
+    "pump_near_02": {
+      "key": "pump_near_02",
+      "path": "res://assets/audio/free-firearms/pump_near_02.wav",
+      "source": "pump_N_30P.wav",
+      "source_sha256": "b5a28243e16f8cb10adfc5225d96e90f108d24393fcfffcaa6dcf203af03634a",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Mossberg/N_30P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 475884,
+      "source_end_sample": 547884,
+      "source_sample_rate": 96000,
+      "source_description": "Mossberg, Model 190, shotgun, bolt action, 12 gauge, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "d1c388e165a4a00562a715bca922f844fd0de779cc2c6322c2defab6cdf6c7a3",
+      "frames": 36000,
+      "duration": 0.75,
+      "peak": 0.819976806640625,
+      "rms": 0.045229218143178034
+    },
+    "pump_mid_01": {
+      "key": "pump_mid_01",
+      "path": "res://assets/audio/free-firearms/pump_mid_01.wav",
+      "source": "pump_N_26P.wav",
+      "source_sha256": "311a5b016bebc21e7d812ef0756174fbdc77454229512bd5a64101ec055e8807",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Mossberg/N_26P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 75151,
+      "source_end_sample": 180751,
+      "source_sample_rate": 96000,
+      "source_description": "Mossberg, Model 190, shotgun, bolt action, 12 gauge, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "0cc88b8faddc86b255218b5cffa532d0c4fd99e78fe3b811dd4599c40e65f88f",
+      "frames": 52800,
+      "duration": 1.1,
+      "peak": 0.819976806640625,
+      "rms": 0.04858405701709677
+    },
+    "pump_mid_02": {
+      "key": "pump_mid_02",
+      "path": "res://assets/audio/free-firearms/pump_mid_02.wav",
+      "source": "pump_N_26P.wav",
+      "source_sha256": "311a5b016bebc21e7d812ef0756174fbdc77454229512bd5a64101ec055e8807",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Mossberg/N_26P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 438811,
+      "source_end_sample": 544411,
+      "source_sample_rate": 96000,
+      "source_description": "Mossberg, Model 190, shotgun, bolt action, 12 gauge, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "cbada29bd975361a61aaeb8817918d7f08b9a286de60d0c8d44101865b812be0",
+      "frames": 52800,
+      "duration": 1.1,
+      "peak": 0.819976806640625,
+      "rms": 0.04070453426350152
+    },
+    "pump_mid_03": {
+      "key": "pump_mid_03",
+      "path": "res://assets/audio/free-firearms/pump_mid_03.wav",
+      "source": "pump_N_26P.wav",
+      "source_sha256": "311a5b016bebc21e7d812ef0756174fbdc77454229512bd5a64101ec055e8807",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Mossberg/N_26P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 780767,
+      "source_end_sample": 886367,
+      "source_sample_rate": 96000,
+      "source_description": "Mossberg, Model 190, shotgun, bolt action, 12 gauge, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "286d4c2c4aa5d611a867d5f2f1a5a438c834466a68144fe5dd877342a22ecd71",
+      "frames": 52800,
+      "duration": 1.1,
+      "peak": 0.819976806640625,
+      "rms": 0.021870624111702822
+    },
+    "mosin_near_01": {
+      "key": "mosin_near_01",
+      "path": "res://assets/audio/free-firearms/mosin_near_01.wav",
+      "source": "mosin_M_21P.wav",
+      "source_sha256": "970ed2322ba61579dc8afaefb4f25e6ae791a3acb1e6e23372ea948cfe2a97b3",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Mosin%20Nagant/M_21P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 99032,
+      "source_end_sample": 228632,
+      "source_sample_rate": 96000,
+      "source_description": "Mosin Nagant, rifle, bolt action, 7.62x54, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "1545330c4649039e5bc1cfb3290df857572d70a140f73959bf56ff5b94188450",
+      "frames": 64800,
+      "duration": 1.35,
+      "peak": 0.819976806640625,
+      "rms": 0.028393329834172497
+    },
+    "mosin_near_02": {
+      "key": "mosin_near_02",
+      "path": "res://assets/audio/free-firearms/mosin_near_02.wav",
+      "source": "mosin_M_21P.wav",
+      "source_sha256": "970ed2322ba61579dc8afaefb4f25e6ae791a3acb1e6e23372ea948cfe2a97b3",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Mosin%20Nagant/M_21P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 481687,
+      "source_end_sample": 611287,
+      "source_sample_rate": 96000,
+      "source_description": "Mosin Nagant, rifle, bolt action, 7.62x54, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "5f00ed17700654a73959c1a1b16de8f6150d6d0df988b28660983ba18b19705a",
+      "frames": 64800,
+      "duration": 1.35,
+      "peak": 0.819976806640625,
+      "rms": 0.026675392512532918
+    },
+    "mosin_near_03": {
+      "key": "mosin_near_03",
+      "path": "res://assets/audio/free-firearms/mosin_near_03.wav",
+      "source": "mosin_M_21P.wav",
+      "source_sha256": "970ed2322ba61579dc8afaefb4f25e6ae791a3acb1e6e23372ea948cfe2a97b3",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Mosin%20Nagant/M_21P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 878722,
+      "source_end_sample": 1008322,
+      "source_sample_rate": 96000,
+      "source_description": "Mosin Nagant, rifle, bolt action, 7.62x54, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "8e070d4163ddd322b8c5e96962c58a77650448d0b0921c2871412717cd0f9ea3",
+      "frames": 64800,
+      "duration": 1.35,
+      "peak": 0.819976806640625,
+      "rms": 0.0279985799023702
+    },
+    "mosin_mid_01": {
+      "key": "mosin_mid_01",
+      "path": "res://assets/audio/free-firearms/mosin_mid_01.wav",
+      "source": "mosin_M_26P.wav",
+      "source_sha256": "51261c62c8c1dce64cd700e948dda4794473797753457621b480eff54ba30445",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Mosin%20Nagant/M_26P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 108960,
+      "source_end_sample": 272160,
+      "source_sample_rate": 96000,
+      "source_description": "Mosin Nagant, rifle, bolt action, 7.62x54, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "0d3ebab911fa228180a689d36e70b57533f50268b342c3f232eeb71a8899f3f6",
+      "frames": 81600,
+      "duration": 1.7,
+      "peak": 0.819976806640625,
+      "rms": 0.03789394366933066
+    },
+    "mosin_mid_02": {
+      "key": "mosin_mid_02",
+      "path": "res://assets/audio/free-firearms/mosin_mid_02.wav",
+      "source": "mosin_M_26P.wav",
+      "source_sha256": "51261c62c8c1dce64cd700e948dda4794473797753457621b480eff54ba30445",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Mosin%20Nagant/M_26P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 585792,
+      "source_end_sample": 748992,
+      "source_sample_rate": 96000,
+      "source_description": "Mosin Nagant, rifle, bolt action, 7.62x54, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "63f0ee2f4134846114574983b2ca33e1be2a55c5eadd2d61a3a2a66aecae32b4",
+      "frames": 81600,
+      "duration": 1.7,
+      "peak": 0.819976806640625,
+      "rms": 0.0422161281945023
+    },
+    "mosin_mid_03": {
+      "key": "mosin_mid_03",
+      "path": "res://assets/audio/free-firearms/mosin_mid_03.wav",
+      "source": "mosin_M_26P.wav",
+      "source_sha256": "51261c62c8c1dce64cd700e948dda4794473797753457621b480eff54ba30445",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Mosin%20Nagant/M_26P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 1031616,
+      "source_end_sample": 1194816,
+      "source_sample_rate": 96000,
+      "source_description": "Mosin Nagant, rifle, bolt action, 7.62x54, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "3f4a40b250a87860bb3aa0d5cc8f8cec6717e9fd4f9bd376f1f5a37803198f6c",
+      "frames": 81600,
+      "duration": 1.7,
+      "peak": 0.819976806640625,
+      "rms": 0.04003699361108859
+    },
+    "sks_near_01": {
+      "key": "sks_near_01",
+      "path": "res://assets/audio/free-firearms/sks_near_01.wav",
+      "source": "sks_U_14P.wav",
+      "source_sha256": "ad33d11af79d73ec8b7a527a8aed948a086a0d764cec5a54d2e86887351d6c96",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/SKS/U_14P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 343293,
+      "source_end_sample": 458493,
+      "source_sample_rate": 96000,
+      "source_description": "Norinco SKS, rifle, carbine, semi automatic, 7.62x39, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "8a63240f3a7297ad38b63ae297c900fb332b5f712bb07c03c6af3b4e0cb34dc3",
+      "frames": 57600,
+      "duration": 1.2,
+      "peak": 0.819976806640625,
+      "rms": 0.031138785657316516
+    },
+    "sks_near_02": {
+      "key": "sks_near_02",
+      "path": "res://assets/audio/free-firearms/sks_near_02.wav",
+      "source": "sks_U_14P.wav",
+      "source_sha256": "ad33d11af79d73ec8b7a527a8aed948a086a0d764cec5a54d2e86887351d6c96",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/SKS/U_14P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 648375,
+      "source_end_sample": 763575,
+      "source_sample_rate": 96000,
+      "source_description": "Norinco SKS, rifle, carbine, semi automatic, 7.62x39, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "c0574362bcc079ce99f9aa6f42a6b580616c8b87d8829a7211d8500c51c520fd",
+      "frames": 57600,
+      "duration": 1.2,
+      "peak": 0.819976806640625,
+      "rms": 0.029379201844727334
+    },
+    "sks_near_03": {
+      "key": "sks_near_03",
+      "path": "res://assets/audio/free-firearms/sks_near_03.wav",
+      "source": "sks_U_14P.wav",
+      "source_sha256": "ad33d11af79d73ec8b7a527a8aed948a086a0d764cec5a54d2e86887351d6c96",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/SKS/U_14P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 979968,
+      "source_end_sample": 1095168,
+      "source_sample_rate": 96000,
+      "source_description": "Norinco SKS, rifle, carbine, semi automatic, 7.62x39, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "609977729a90f703d5830dd5d37f596d5cdfc2ef527b3e86cae249a8a6446c64",
+      "frames": 57600,
+      "duration": 1.2,
+      "peak": 0.819976806640625,
+      "rms": 0.029249826437437933
+    },
+    "sks_mid_01": {
+      "key": "sks_mid_01",
+      "path": "res://assets/audio/free-firearms/sks_mid_01.wav",
+      "source": "sks_U_19P.wav",
+      "source_sha256": "90078733c0821922073717a0a656919227ba381e794f70a43a35df9cb4f3a445",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/SKS/U_19P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 252192,
+      "source_end_sample": 400991,
+      "source_sample_rate": 96000,
+      "source_description": "Norinco SKS, rifle, carbine, semi automatic, 7.62x39, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "50e0c2fb90282e59582c04db6c132bcc858b8ae555a79cf39e715b239b36ee8a",
+      "frames": 74400,
+      "duration": 1.55,
+      "peak": 0.819976806640625,
+      "rms": 0.03558351876600011
+    },
+    "sks_mid_02": {
+      "key": "sks_mid_02",
+      "path": "res://assets/audio/free-firearms/sks_mid_02.wav",
+      "source": "sks_U_19P.wav",
+      "source_sha256": "90078733c0821922073717a0a656919227ba381e794f70a43a35df9cb4f3a445",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/SKS/U_19P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 769248,
+      "source_end_sample": 918047,
+      "source_sample_rate": 96000,
+      "source_description": "Norinco SKS, rifle, carbine, semi automatic, 7.62x39, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "98c2a9ad325587ed6f2aa7eb1f114b6dfd4d473d37e5bb4af803a9ecca39f852",
+      "frames": 74400,
+      "duration": 1.55,
+      "peak": 0.819976806640625,
+      "rms": 0.036578468914832934
+    },
+    "sks_mid_03": {
+      "key": "sks_mid_03",
+      "path": "res://assets/audio/free-firearms/sks_mid_03.wav",
+      "source": "sks_U_19P.wav",
+      "source_sha256": "90078733c0821922073717a0a656919227ba381e794f70a43a35df9cb4f3a445",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/SKS/U_19P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 1227648,
+      "source_end_sample": 1376447,
+      "source_sample_rate": 96000,
+      "source_description": "Norinco SKS, rifle, carbine, semi automatic, 7.62x39, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "16c6b556b924fca3c7b4f8fdf95a2155d07ed72e3a9444ae6f063231ea20daf0",
+      "frames": 74400,
+      "duration": 1.55,
+      "peak": 0.819976806640625,
+      "rms": 0.03492280488417641
+    },
+    "tikka_near_01": {
+      "key": "tikka_near_01",
+      "path": "res://assets/audio/free-firearms/tikka_near_01.wav",
+      "source": "tikka_W_29P.wav",
+      "source_sha256": "b1ffe3c104391bf8ceb8337aa4d5a2ca47938fb88ccbd051cdd2b2e205d9e72b",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Tikka/W_29P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 55284,
+      "source_end_sample": 184884,
+      "source_sample_rate": 96000,
+      "source_description": "Tikka Model T3, rifle, bolt action, .30-06, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "04f9152e627535772d303ed35cfcf9fec939a8bc8bf2c0c9d4f2ae3f745b13dd",
+      "frames": 64800,
+      "duration": 1.35,
+      "peak": 0.819976806640625,
+      "rms": 0.02930809085196257
+    },
+    "tikka_near_02": {
+      "key": "tikka_near_02",
+      "path": "res://assets/audio/free-firearms/tikka_near_02.wav",
+      "source": "tikka_W_29P.wav",
+      "source_sha256": "b1ffe3c104391bf8ceb8337aa4d5a2ca47938fb88ccbd051cdd2b2e205d9e72b",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Tikka/W_29P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 543708,
+      "source_end_sample": 673308,
+      "source_sample_rate": 96000,
+      "source_description": "Tikka Model T3, rifle, bolt action, .30-06, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "e6d42979facb30b0323d930ca7bd9a04fafb99eab54c8fdd3a72f6a1fea87f0b",
+      "frames": 64800,
+      "duration": 1.35,
+      "peak": 0.819976806640625,
+      "rms": 0.02778683638627095
+    },
+    "tikka_mid_01": {
+      "key": "tikka_mid_01",
+      "path": "res://assets/audio/free-firearms/tikka_mid_01.wav",
+      "source": "tikka_W_24P.wav",
+      "source_sha256": "dceb44954c7308e86b15f5f52608643ca66adb977937794a860a6037de303bb4",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Tikka/W_24P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 72864,
+      "source_end_sample": 236064,
+      "source_sample_rate": 96000,
+      "source_description": "Tikka Model T3, rifle, bolt action, .30-06, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "845e756f7a70327dc8d5cabc182ff5ce9ce0b1f24be8ab1056ffb3c03fa9ab17",
+      "frames": 81600,
+      "duration": 1.7,
+      "peak": 0.819976806640625,
+      "rms": 0.0422919832170181
+    },
+    "tikka_mid_02": {
+      "key": "tikka_mid_02",
+      "path": "res://assets/audio/free-firearms/tikka_mid_02.wav",
+      "source": "tikka_W_24P.wav",
+      "source_sha256": "dceb44954c7308e86b15f5f52608643ca66adb977937794a860a6037de303bb4",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Tikka/W_24P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 527621,
+      "source_end_sample": 690821,
+      "source_sample_rate": 96000,
+      "source_description": "Tikka Model T3, rifle, bolt action, .30-06, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "69d3efa29abc74b3518f00dde58140ce0db21fbd8cbba08923d8bfa77abe600f",
+      "frames": 81600,
+      "duration": 1.7,
+      "peak": 0.819976806640625,
+      "rms": 0.041374274866451614
+    },
+    "lever_near_01": {
+      "key": "lever_near_01",
+      "path": "res://assets/audio/free-firearms/lever_near_01.wav",
+      "source": "lever_L_23P.wav",
+      "source_sha256": "e2309b40f71f419e49566d0048001d3907de509accd5b6722eb5d11fa648ef3c",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Model%201894/L_23P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 54793,
+      "source_end_sample": 169993,
+      "source_sample_rate": 96000,
+      "source_description": "Winchester, Model 1894, rifle, lever action, .32 Winchester Special, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "b5fb36fb7564d06209c036ef4ab1183ed6db1eb75a3544059ccb4e767357d1b0",
+      "frames": 57600,
+      "duration": 1.2,
+      "peak": 0.819976806640625,
+      "rms": 0.03872975801427283
+    },
+    "lever_near_02": {
+      "key": "lever_near_02",
+      "path": "res://assets/audio/free-firearms/lever_near_02.wav",
+      "source": "lever_L_23P.wav",
+      "source_sha256": "e2309b40f71f419e49566d0048001d3907de509accd5b6722eb5d11fa648ef3c",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Model%201894/L_23P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 395518,
+      "source_end_sample": 510718,
+      "source_sample_rate": 96000,
+      "source_description": "Winchester, Model 1894, rifle, lever action, .32 Winchester Special, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "ecc6a1d950ef5ab6f15c16526b866297d08adb3a0fca6db43056b8cfd5d07765",
+      "frames": 57600,
+      "duration": 1.2,
+      "peak": 0.819976806640625,
+      "rms": 0.03686253783286311
+    },
+    "lever_mid_01": {
+      "key": "lever_mid_01",
+      "path": "res://assets/audio/free-firearms/lever_mid_01.wav",
+      "source": "lever_L_17P.wav",
+      "source_sha256": "f2d381043f74967786367d2b23f68a6d5a3fe74c26ff4d3a00002ab05e913117",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Model%201894/L_17P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 56920,
+      "source_end_sample": 205719,
+      "source_sample_rate": 96000,
+      "source_description": "Winchester, Model 1894, rifle, lever action, .32 Winchester Special, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "d2ccdc7e08f12a2aa55edbe466fbd0449f8277987372f8b6d8989e9f48bf00fb",
+      "frames": 74400,
+      "duration": 1.55,
+      "peak": 0.819976806640625,
+      "rms": 0.03404642345170621
+    },
+    "lever_mid_02": {
+      "key": "lever_mid_02",
+      "path": "res://assets/audio/free-firearms/lever_mid_02.wav",
+      "source": "lever_L_17P.wav",
+      "source_sha256": "f2d381043f74967786367d2b23f68a6d5a3fe74c26ff4d3a00002ab05e913117",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Model%201894/L_17P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 418403,
+      "source_end_sample": 567202,
+      "source_sample_rate": 96000,
+      "source_description": "Winchester, Model 1894, rifle, lever action, .32 Winchester Special, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "61084391cf2387499b67b34d95e64b6d4b330101f1d750e21acdb40bb7ba760c",
+      "frames": 74400,
+      "duration": 1.55,
+      "peak": 0.819976806640625,
+      "rms": 0.03199079260247122
+    },
+    "revolver_near_01": {
+      "key": "revolver_near_01",
+      "path": "res://assets/audio/free-firearms/revolver_near_01.wav",
+      "source": "revolver_V_27P.wav",
+      "source_sha256": "dc9a11f7e6544139f38cadccf3373fed733f2e000caca1b2328575293838fc58",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Smith%20%26%20Wesson%20642/V_27P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 77029,
+      "source_end_sample": 177829,
+      "source_sample_rate": 96000,
+      "source_description": "Smith & Wesson 642, handgun, pistol, revolver, double action, .38 Special, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "a905472ec9806733ed57a5aff70a718e871445ff3d4abd40db90477bf565ebf0",
+      "frames": 50400,
+      "duration": 1.05,
+      "peak": 0.819976806640625,
+      "rms": 0.0309120195066635
+    },
+    "revolver_near_02": {
+      "key": "revolver_near_02",
+      "path": "res://assets/audio/free-firearms/revolver_near_02.wav",
+      "source": "revolver_V_27P.wav",
+      "source_sha256": "dc9a11f7e6544139f38cadccf3373fed733f2e000caca1b2328575293838fc58",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Smith%20%26%20Wesson%20642/V_27P.wav",
+      "microphone_channel": 0,
+      "source_start_sample": 596705,
+      "source_end_sample": 697505,
+      "source_sample_rate": 96000,
+      "source_description": "Smith & Wesson 642, handgun, pistol, revolver, double action, .38 Special, gunshot, near distance, front of shooter, left, right, stereo",
+      "sha256": "a55879de84d206136b518e8f0648eb522028f685b71e3a36cb83156c9a3cf846",
+      "frames": 50400,
+      "duration": 1.05,
+      "peak": 0.819976806640625,
+      "rms": 0.03178046700197017
+    },
+    "revolver_mid_01": {
+      "key": "revolver_mid_01",
+      "path": "res://assets/audio/free-firearms/revolver_mid_01.wav",
+      "source": "revolver_V_22P.wav",
+      "source_sha256": "2ddbaff76737abe2b9af2a13eb5f00056364c0a0de170b8c19bddfb5c4058f25",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Smith%20%26%20Wesson%20642/V_22P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 73728,
+      "source_end_sample": 208128,
+      "source_sample_rate": 96000,
+      "source_description": "Smith & Wesson 642, handgun, pistol, revolver, double action, .38 Special, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "81f28f2b9cd94510a0bcd8b2d7bbea6b3bf2464bfdcdafe98df34f486e163569",
+      "frames": 67200,
+      "duration": 1.4,
+      "peak": 0.819976806640625,
+      "rms": 0.06438417495201361
+    },
+    "revolver_mid_02": {
+      "key": "revolver_mid_02",
+      "path": "res://assets/audio/free-firearms/revolver_mid_02.wav",
+      "source": "revolver_V_22P.wav",
+      "source_sha256": "2ddbaff76737abe2b9af2a13eb5f00056364c0a0de170b8c19bddfb5c4058f25",
+      "source_url": "https://raw.githubusercontent.com/petroulacl/fps-asset-kit/a19b7458a593598211c95ec46ef4eb4b6d1f94d7/sfx/firearm_sfx/Prepared%20SFX%20Library/Smith%20%26%20Wesson%20642/V_22P.wav",
+      "microphone_channel": 1,
+      "source_start_sample": 546145,
+      "source_end_sample": 680545,
+      "source_sample_rate": 96000,
+      "source_description": "Smith & Wesson 642, handgun, pistol, revolver, double action, .38 Special, gunshot, mid distance, front of shooter, forward, back, stereo",
+      "sha256": "dbce66170381e854f0a2442224533ff512434798f5179ec7927f17ade864018b",
+      "frames": 67200,
+      "duration": 1.4,
+      "peak": 0.819976806640625,
+      "rms": 0.05159122305468677
+    },
+    "suppressed_rifle_near_01": {
+      "key": "suppressed_rifle_near_01",
+      "path": "res://assets/audio/free-firearms/suppressed_rifle_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "ar15_near_01",
+        "kenney-impact.zip/Audio/impactMetal_light_000.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "c31d2ca8585769b375c92fede97a41e0807b38016dd34528f1f290a2d08b3073",
+      "frames": 18240,
+      "duration": 0.38,
+      "peak": 0.819976806640625
+    },
+    "suppressed_rifle_near_02": {
+      "key": "suppressed_rifle_near_02",
+      "path": "res://assets/audio/free-firearms/suppressed_rifle_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "ar15_near_02",
+        "kenney-impact.zip/Audio/impactMetal_light_001.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "5168809dd6b5508a181617f497da9be0ddf1d4bd2c57e5f6679ce80b48e9c9d2",
+      "frames": 18240,
+      "duration": 0.38,
+      "peak": 0.819976806640625
+    },
+    "suppressed_rifle_near_03": {
+      "key": "suppressed_rifle_near_03",
+      "path": "res://assets/audio/free-firearms/suppressed_rifle_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "ar15_near_01",
+        "kenney-impact.zip/Audio/impactMetal_light_002.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "38bef3ab1a71dbf49a1dcb648ab1acb2a5259ed3a561a6199a64520e4f0593dd",
+      "frames": 18240,
+      "duration": 0.38,
+      "peak": 0.819976806640625
+    },
+    "suppressed_rifle_mid_01": {
+      "key": "suppressed_rifle_mid_01",
+      "path": "res://assets/audio/free-firearms/suppressed_rifle_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "ar15_mid_01",
+        "kenney-impact.zip/Audio/impactMetal_light_000.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "5462011e44b61a73538f48d5824eb6d95a7db56ca7c240c0f772c83f7e2f5c04",
+      "frames": 26400,
+      "duration": 0.55,
+      "peak": 0.819976806640625
+    },
+    "suppressed_rifle_mid_02": {
+      "key": "suppressed_rifle_mid_02",
+      "path": "res://assets/audio/free-firearms/suppressed_rifle_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "ar15_mid_02",
+        "kenney-impact.zip/Audio/impactMetal_light_001.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "74f3c96f16ae86f377622a9334cda49577790657859c0be38480fb1a15418a2c",
+      "frames": 26400,
+      "duration": 0.55,
+      "peak": 0.819976806640625
+    },
+    "suppressed_rifle_mid_03": {
+      "key": "suppressed_rifle_mid_03",
+      "path": "res://assets/audio/free-firearms/suppressed_rifle_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "ar15_mid_01",
+        "kenney-impact.zip/Audio/impactMetal_light_002.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "553016192ff1a424bcb8359a040932d28994e4fb2e85bea997e2acbfbabd8a92",
+      "frames": 26400,
+      "duration": 0.55,
+      "peak": 0.819976806640625
+    },
+    "suppressed_smg_near_01": {
+      "key": "suppressed_smg_near_01",
+      "path": "res://assets/audio/free-firearms/suppressed_smg_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "smg9_near_01",
+        "kenney-impact.zip/Audio/impactMetal_light_000.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "e2087669be45d126b614f416fa079cdb1f0e627328721ad0370c35dae58e764d",
+      "frames": 18240,
+      "duration": 0.38,
+      "peak": 0.819976806640625
+    },
+    "suppressed_smg_near_02": {
+      "key": "suppressed_smg_near_02",
+      "path": "res://assets/audio/free-firearms/suppressed_smg_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "smg9_near_02",
+        "kenney-impact.zip/Audio/impactMetal_light_001.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "7bf98bf963f9c3bdcca7f006aa1919c808e63fee2a399d94477acb03d2a5bbfb",
+      "frames": 18240,
+      "duration": 0.38,
+      "peak": 0.819976806640625
+    },
+    "suppressed_smg_near_03": {
+      "key": "suppressed_smg_near_03",
+      "path": "res://assets/audio/free-firearms/suppressed_smg_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "smg9_near_03",
+        "kenney-impact.zip/Audio/impactMetal_light_002.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "1e9ba07814074c4089d0fc8e7ffcdcdabe9124a17998bebc9e8e88b85bae2fe0",
+      "frames": 18240,
+      "duration": 0.38,
+      "peak": 0.819976806640625
+    },
+    "suppressed_smg_mid_01": {
+      "key": "suppressed_smg_mid_01",
+      "path": "res://assets/audio/free-firearms/suppressed_smg_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "smg9_mid_01",
+        "kenney-impact.zip/Audio/impactMetal_light_000.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "62f8f2bb5cc3210178c57d1ebb759131c186c2d7ff5ac11f0728b1949a644dae",
+      "frames": 26400,
+      "duration": 0.55,
+      "peak": 0.819976806640625
+    },
+    "suppressed_smg_mid_02": {
+      "key": "suppressed_smg_mid_02",
+      "path": "res://assets/audio/free-firearms/suppressed_smg_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "smg9_mid_02",
+        "kenney-impact.zip/Audio/impactMetal_light_001.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "fd9eeb65bec5f52234f9242f923aed25471243001d1dc60a34de4a1b946d8412",
+      "frames": 26400,
+      "duration": 0.55,
+      "peak": 0.819976806640625
+    },
+    "suppressed_smg_mid_03": {
+      "key": "suppressed_smg_mid_03",
+      "path": "res://assets/audio/free-firearms/suppressed_smg_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "smg9_mid_03",
+        "kenney-impact.zip/Audio/impactMetal_light_002.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "fecb1b281cae835b2794a338eff144208383b76d6ae56fe3c339244324ea5b00",
+      "frames": 26400,
+      "duration": 0.55,
+      "peak": 0.819976806640625
+    },
+    "suppressed_pistol_near_01": {
+      "key": "suppressed_pistol_near_01",
+      "path": "res://assets/audio/free-firearms/suppressed_pistol_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "pistol45_near_01",
+        "kenney-impact.zip/Audio/impactMetal_light_000.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "4738aac894bf74768470d8e8ead6635b30a0b200363ba9a2eb85c0a7834a7d47",
+      "frames": 18240,
+      "duration": 0.38,
+      "peak": 0.819976806640625
+    },
+    "suppressed_pistol_near_02": {
+      "key": "suppressed_pistol_near_02",
+      "path": "res://assets/audio/free-firearms/suppressed_pistol_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "pistol45_near_02",
+        "kenney-impact.zip/Audio/impactMetal_light_001.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "3cdcd1d9b947c28aea5d32a9a844afbc3e81b997465e4577ea064550c1c027fb",
+      "frames": 18240,
+      "duration": 0.38,
+      "peak": 0.819976806640625
+    },
+    "suppressed_pistol_near_03": {
+      "key": "suppressed_pistol_near_03",
+      "path": "res://assets/audio/free-firearms/suppressed_pistol_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "pistol45_near_01",
+        "kenney-impact.zip/Audio/impactMetal_light_002.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "b507e39b852e9f6c24de42da24db2a39870636c737e61cfc3325f99c268fc5f3",
+      "frames": 18240,
+      "duration": 0.38,
+      "peak": 0.819976806640625
+    },
+    "suppressed_pistol_mid_01": {
+      "key": "suppressed_pistol_mid_01",
+      "path": "res://assets/audio/free-firearms/suppressed_pistol_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "pistol45_mid_01",
+        "kenney-impact.zip/Audio/impactMetal_light_000.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "d3e8cb7a289cf8a161dfaff0f867e02bac5bcd6cbe953a3f53e651c6545aebc5",
+      "frames": 26400,
+      "duration": 0.55,
+      "peak": 0.819976806640625
+    },
+    "suppressed_pistol_mid_02": {
+      "key": "suppressed_pistol_mid_02",
+      "path": "res://assets/audio/free-firearms/suppressed_pistol_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "pistol45_mid_02",
+        "kenney-impact.zip/Audio/impactMetal_light_001.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "33c5ad3e0d978671c20c1d94d5196fcc841e96e835821f222470f3d02e5c83cf",
+      "frames": 26400,
+      "duration": 0.55,
+      "peak": 0.819976806640625
+    },
+    "suppressed_pistol_mid_03": {
+      "key": "suppressed_pistol_mid_03",
+      "path": "res://assets/audio/free-firearms/suppressed_pistol_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "pistol45_mid_01",
+        "kenney-impact.zip/Audio/impactMetal_light_002.ogg"
+      ],
+      "source_description": "Designed suppressed substitute: filtered field shot, shortened decay and quiet mechanical foley; no exact suppressor recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "cc59d24280aa956adea9b56e060b367ee4ae02396288347705e6512caea1139a",
+      "frames": 26400,
+      "duration": 0.55,
+      "peak": 0.819976806640625
+    },
+    "pdw_near_01": {
+      "key": "pdw_near_01",
+      "path": "res://assets/audio/free-firearms/pdw_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "ar15_near_01"
+      ],
+      "source_description": "Shortened AR-15 transient as small high-velocity PDW substitute; not 4.6/5.7 mm field recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "95fb5d8950751ab52b7ccf51f93a9d664b6722efdaf3cab6be14735fc631f4a5",
+      "frames": 23040,
+      "duration": 0.48,
+      "peak": 0.819976806640625
+    },
+    "pdw_near_02": {
+      "key": "pdw_near_02",
+      "path": "res://assets/audio/free-firearms/pdw_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "ar15_near_02"
+      ],
+      "source_description": "Shortened AR-15 transient as small high-velocity PDW substitute; not 4.6/5.7 mm field recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "215726d2dce4ef9553f8c1fefa4f254d12804d38262b1b60175001918fa366c1",
+      "frames": 23040,
+      "duration": 0.48,
+      "peak": 0.819976806640625
+    },
+    "pdw_near_03": {
+      "key": "pdw_near_03",
+      "path": "res://assets/audio/free-firearms/pdw_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "ar15_near_01"
+      ],
+      "source_description": "Shortened AR-15 transient as small high-velocity PDW substitute; not 4.6/5.7 mm field recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "95fb5d8950751ab52b7ccf51f93a9d664b6722efdaf3cab6be14735fc631f4a5",
+      "frames": 23040,
+      "duration": 0.48,
+      "peak": 0.819976806640625
+    },
+    "pdw_mid_01": {
+      "key": "pdw_mid_01",
+      "path": "res://assets/audio/free-firearms/pdw_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "ar15_mid_01"
+      ],
+      "source_description": "Shortened AR-15 transient as small high-velocity PDW substitute; not 4.6/5.7 mm field recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "bdfc13c1d29a3824ac5c7dcffe8589127687c7377fc750fb3382cf3e605bcf92",
+      "frames": 36000,
+      "duration": 0.75,
+      "peak": 0.819976806640625
+    },
+    "pdw_mid_02": {
+      "key": "pdw_mid_02",
+      "path": "res://assets/audio/free-firearms/pdw_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "ar15_mid_02"
+      ],
+      "source_description": "Shortened AR-15 transient as small high-velocity PDW substitute; not 4.6/5.7 mm field recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "caddc888ab8a1e4425f20b4db175f623775f0b15a8299b82a6ed20ad4e8d07b1",
+      "frames": 36000,
+      "duration": 0.75,
+      "peak": 0.819976806640625
+    },
+    "pdw_mid_03": {
+      "key": "pdw_mid_03",
+      "path": "res://assets/audio/free-firearms/pdw_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "ar15_mid_01"
+      ],
+      "source_description": "Shortened AR-15 transient as small high-velocity PDW substitute; not 4.6/5.7 mm field recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "bdfc13c1d29a3824ac5c7dcffe8589127687c7377fc750fb3382cf3e605bcf92",
+      "frames": 36000,
+      "duration": 0.75,
+      "peak": 0.819976806640625
+    },
+    "antimaterial_near_01": {
+      "key": "antimaterial_near_01",
+      "path": "res://assets/audio/free-firearms/antimaterial_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_near_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "457d59400003c1318ae490f3bc38f70447551dfe5493b0cb270536a7d0c51dbc",
+      "frames": 69600,
+      "duration": 1.45,
+      "peak": 0.819976806640625
+    },
+    "antimaterial_near_02": {
+      "key": "antimaterial_near_02",
+      "path": "res://assets/audio/free-firearms/antimaterial_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_near_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "b14da62adf9a814c59c99c837b1ee8a8b83b7b27d0eff90d757002db56d74b44",
+      "frames": 69600,
+      "duration": 1.45,
+      "peak": 0.819976806640625
+    },
+    "antimaterial_near_03": {
+      "key": "antimaterial_near_03",
+      "path": "res://assets/audio/free-firearms/antimaterial_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_near_03",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "930f9ea5821781ced3f030aeee2140558b78987b304a2283536fb90ce3733330",
+      "frames": 69600,
+      "duration": 1.45,
+      "peak": 0.819976806640625
+    },
+    "antimaterial_mid_01": {
+      "key": "antimaterial_mid_01",
+      "path": "res://assets/audio/free-firearms/antimaterial_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_mid_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "893e2b4533c6da73183839c856c6f88a1dd3a25bdc5a3bce253920be281d57e2",
+      "frames": 76800,
+      "duration": 1.6,
+      "peak": 0.819976806640625
+    },
+    "antimaterial_mid_02": {
+      "key": "antimaterial_mid_02",
+      "path": "res://assets/audio/free-firearms/antimaterial_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_mid_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "b8ab9d8507871fdd51cbce5cbb416fbb51d859c0d8896fcd062d27c552caeae2",
+      "frames": 76800,
+      "duration": 1.6,
+      "peak": 0.819976806640625
+    },
+    "antimaterial_mid_03": {
+      "key": "antimaterial_mid_03",
+      "path": "res://assets/audio/free-firearms/antimaterial_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_mid_03",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "8ae5a50464d7577ac36c41978c19e614ba7661f0d0ebd146e0ef0594a90bb2c9",
+      "frames": 76800,
+      "duration": 1.6,
+      "peak": 0.819976806640625
+    },
+    "heavy_mg_near_01": {
+      "key": "heavy_mg_near_01",
+      "path": "res://assets/audio/free-firearms/heavy_mg_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_near_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "5b7968021fcc7fbbdd2eef328e11c95a1a298e6786e179eb88e8320f43f672da",
+      "frames": 40800,
+      "duration": 0.85,
+      "peak": 0.819976806640625
+    },
+    "heavy_mg_near_02": {
+      "key": "heavy_mg_near_02",
+      "path": "res://assets/audio/free-firearms/heavy_mg_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_near_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "bc8b95915f2b20f63611d8c3e349647a557d9e081d4f554eea335d10892f2628",
+      "frames": 40800,
+      "duration": 0.85,
+      "peak": 0.819976806640625
+    },
+    "heavy_mg_near_03": {
+      "key": "heavy_mg_near_03",
+      "path": "res://assets/audio/free-firearms/heavy_mg_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_near_03",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "488c72b79bbca942743cb1365edfe60379f5d51b051db6776d95703499df32e3",
+      "frames": 40800,
+      "duration": 0.85,
+      "peak": 0.819976806640625
+    },
+    "heavy_mg_mid_01": {
+      "key": "heavy_mg_mid_01",
+      "path": "res://assets/audio/free-firearms/heavy_mg_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_mid_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "e8b2b5f6d6e0749950f8ff525c6541a99403747495767d4647182cadae19cac7",
+      "frames": 48000,
+      "duration": 1.0,
+      "peak": 0.819976806640625
+    },
+    "heavy_mg_mid_02": {
+      "key": "heavy_mg_mid_02",
+      "path": "res://assets/audio/free-firearms/heavy_mg_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_mid_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "f0438da70f6941962d6b11b57282bdddfcd815aff5f78fb1d360b9c153e97b2b",
+      "frames": 48000,
+      "duration": 1.0,
+      "peak": 0.819976806640625
+    },
+    "heavy_mg_mid_03": {
+      "key": "heavy_mg_mid_03",
+      "path": "res://assets/audio/free-firearms/heavy_mg_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_mid_03",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "69977cb6d942a192fd5f0c4635e1c64b35ac62625d77527845eb0adadbb29293",
+      "frames": 48000,
+      "duration": 1.0,
+      "peak": 0.819976806640625
+    },
+    "autocannon_near_01": {
+      "key": "autocannon_near_01",
+      "path": "res://assets/audio/free-firearms/autocannon_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_near_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "bb47f8bda3113d19311024cb422ed57b28113656fe3d8e29f7f3fb6c26c7b211",
+      "frames": 45600,
+      "duration": 0.95,
+      "peak": 0.819976806640625
+    },
+    "autocannon_near_02": {
+      "key": "autocannon_near_02",
+      "path": "res://assets/audio/free-firearms/autocannon_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_near_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "68a6be1fbdba651b2bff12b9963b9d3575a015e8ad24123e70b8aef27798e82e",
+      "frames": 45600,
+      "duration": 0.95,
+      "peak": 0.819976806640625
+    },
+    "autocannon_near_03": {
+      "key": "autocannon_near_03",
+      "path": "res://assets/audio/free-firearms/autocannon_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_near_03",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "47bccb53fd5f17538c13b31b2816d5761152a627a0beab6950273dafc2037fdf",
+      "frames": 45600,
+      "duration": 0.95,
+      "peak": 0.819976806640625
+    },
+    "autocannon_mid_01": {
+      "key": "autocannon_mid_01",
+      "path": "res://assets/audio/free-firearms/autocannon_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_mid_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "d53f0502330516da3ff8c51693bec09720bad799ece09c746ac21f04ba7c3b00",
+      "frames": 52799,
+      "duration": 1.0999791666666667,
+      "peak": 0.819976806640625
+    },
+    "autocannon_mid_02": {
+      "key": "autocannon_mid_02",
+      "path": "res://assets/audio/free-firearms/autocannon_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_mid_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "da14f6543a3ed6cfe4c7dd7d24c617affda8dac7328413a60998c3dbba0958dc",
+      "frames": 52799,
+      "duration": 1.0999791666666667,
+      "peak": 0.819976806640625
+    },
+    "autocannon_mid_03": {
+      "key": "autocannon_mid_03",
+      "path": "res://assets/audio/free-firearms/autocannon_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_mid_03",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "319c4eaf665181854ffd80dad0d5d5df0c2d03af31c439c0e4a3ae908ccae624",
+      "frames": 52799,
+      "duration": 1.0999791666666667,
+      "peak": 0.819976806640625
+    },
+    "cannon_light_near_01": {
+      "key": "cannon_light_near_01",
+      "path": "res://assets/audio/free-firearms/cannon_light_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_near_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "f83face021b9444a430f82419ef952d314bb553240af25386b72bb763b0a387e",
+      "frames": 74400,
+      "duration": 1.55,
+      "peak": 0.819976806640625
+    },
+    "cannon_light_near_02": {
+      "key": "cannon_light_near_02",
+      "path": "res://assets/audio/free-firearms/cannon_light_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_near_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "67e38e7a22daf8283b8f14e60f8f2c3f60259d6319c2dfe760516f1fffb955e2",
+      "frames": 74400,
+      "duration": 1.55,
+      "peak": 0.819976806640625
+    },
+    "cannon_light_near_03": {
+      "key": "cannon_light_near_03",
+      "path": "res://assets/audio/free-firearms/cannon_light_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_near_03",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "88f0788b272e6b0937e204db291876ffdc7d72d18562d520cd76c8d716fc470d",
+      "frames": 74400,
+      "duration": 1.55,
+      "peak": 0.819976806640625
+    },
+    "cannon_light_mid_01": {
+      "key": "cannon_light_mid_01",
+      "path": "res://assets/audio/free-firearms/cannon_light_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_mid_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "d63769a0fcb0c9d4f6a5b3b97beb13659d8ae22b0f0d11b5d0d0c28c99d5ee99",
+      "frames": 81600,
+      "duration": 1.7,
+      "peak": 0.819976806640625
+    },
+    "cannon_light_mid_02": {
+      "key": "cannon_light_mid_02",
+      "path": "res://assets/audio/free-firearms/cannon_light_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_mid_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "1b9d2553237b45b3f4f939b032dbca0fbed8e3aecab7ae9c8d241f32582ef3a9",
+      "frames": 81600,
+      "duration": 1.7,
+      "peak": 0.819976806640625
+    },
+    "cannon_light_mid_03": {
+      "key": "cannon_light_mid_03",
+      "path": "res://assets/audio/free-firearms/cannon_light_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "mosin_mid_03",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "a3c9c067192d16d6b9ec85cb4c261df6e1210ca2ae3d4ee6fa10d7940e1ab63d",
+      "frames": 81600,
+      "duration": 1.7,
+      "peak": 0.819976806640625
+    },
+    "cannon_medium_near_01": {
+      "key": "cannon_medium_near_01",
+      "path": "res://assets/audio/free-firearms/cannon_medium_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "tikka_near_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "38affa29c279be7f9b429fd60e8f26b9647d86f1b72b9e2fd63bd65cc45269eb",
+      "frames": 88800,
+      "duration": 1.85,
+      "peak": 0.819976806640625
+    },
+    "cannon_medium_near_02": {
+      "key": "cannon_medium_near_02",
+      "path": "res://assets/audio/free-firearms/cannon_medium_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "tikka_near_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "5875ef3f194e9edff88c1236da20e8d1265b5ecb09f7b0f83aeaa110f43b76cf",
+      "frames": 88800,
+      "duration": 1.85,
+      "peak": 0.819976806640625
+    },
+    "cannon_medium_near_03": {
+      "key": "cannon_medium_near_03",
+      "path": "res://assets/audio/free-firearms/cannon_medium_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "tikka_near_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "38affa29c279be7f9b429fd60e8f26b9647d86f1b72b9e2fd63bd65cc45269eb",
+      "frames": 88800,
+      "duration": 1.85,
+      "peak": 0.819976806640625
+    },
+    "cannon_medium_mid_01": {
+      "key": "cannon_medium_mid_01",
+      "path": "res://assets/audio/free-firearms/cannon_medium_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "tikka_mid_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "9231c97b9932e0fb7e5666e56f66e07e2bc136de0471fa9a93d44e5f9ebbaba8",
+      "frames": 96000,
+      "duration": 2.0,
+      "peak": 0.819976806640625
+    },
+    "cannon_medium_mid_02": {
+      "key": "cannon_medium_mid_02",
+      "path": "res://assets/audio/free-firearms/cannon_medium_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "tikka_mid_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "3c1838a3d2062dae974181f35e495732475f38530a20a659503b72149e4770ca",
+      "frames": 96000,
+      "duration": 2.0,
+      "peak": 0.819976806640625
+    },
+    "cannon_medium_mid_03": {
+      "key": "cannon_medium_mid_03",
+      "path": "res://assets/audio/free-firearms/cannon_medium_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "tikka_mid_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "9231c97b9932e0fb7e5666e56f66e07e2bc136de0471fa9a93d44e5f9ebbaba8",
+      "frames": 96000,
+      "duration": 2.0,
+      "peak": 0.819976806640625
+    },
+    "cannon_heavy_near_01": {
+      "key": "cannon_heavy_near_01",
+      "path": "res://assets/audio/free-firearms/cannon_heavy_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "tikka_near_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "0983e26d5510387643d6e6853c7ff09e527f80ef4c76a5f006f94898c0127630",
+      "frames": 103200,
+      "duration": 2.15,
+      "peak": 0.819976806640625
+    },
+    "cannon_heavy_near_02": {
+      "key": "cannon_heavy_near_02",
+      "path": "res://assets/audio/free-firearms/cannon_heavy_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "tikka_near_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "a3edde63f99f43717bae447accb69404c006095a490a7081d3a11cd5278c7a62",
+      "frames": 103200,
+      "duration": 2.15,
+      "peak": 0.819976806640625
+    },
+    "cannon_heavy_near_03": {
+      "key": "cannon_heavy_near_03",
+      "path": "res://assets/audio/free-firearms/cannon_heavy_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "tikka_near_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "0983e26d5510387643d6e6853c7ff09e527f80ef4c76a5f006f94898c0127630",
+      "frames": 103200,
+      "duration": 2.15,
+      "peak": 0.819976806640625
+    },
+    "cannon_heavy_mid_01": {
+      "key": "cannon_heavy_mid_01",
+      "path": "res://assets/audio/free-firearms/cannon_heavy_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "tikka_mid_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "5e961b74ebe1a02dce7ddeb540a7cca5c9fb470b7d14d2dd1df14ec4584eeb0b",
+      "frames": 110399,
+      "duration": 2.2999791666666667,
+      "peak": 0.819976806640625
+    },
+    "cannon_heavy_mid_02": {
+      "key": "cannon_heavy_mid_02",
+      "path": "res://assets/audio/free-firearms/cannon_heavy_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "tikka_mid_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "38f60c3a6ca9d87e79a73553dc67fef94757a75f4aaae561b2a7ba002ad8f039",
+      "frames": 110399,
+      "duration": 2.2999791666666667,
+      "peak": 0.819976806640625
+    },
+    "cannon_heavy_mid_03": {
+      "key": "cannon_heavy_mid_03",
+      "path": "res://assets/audio/free-firearms/cannon_heavy_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "tikka_mid_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "5e961b74ebe1a02dce7ddeb540a7cca5c9fb470b7d14d2dd1df14ec4584eeb0b",
+      "frames": 110399,
+      "duration": 2.2999791666666667,
+      "peak": 0.819976806640625
+    },
+    "mortar_near_01": {
+      "key": "mortar_near_01",
+      "path": "res://assets/audio/free-firearms/mortar_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "shotgun_near_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "7d4373244deae9221ffc155dde6c566197b799b970abdb69e672d251f45a15e1",
+      "frames": 34560,
+      "duration": 0.72,
+      "peak": 0.819976806640625
+    },
+    "mortar_near_02": {
+      "key": "mortar_near_02",
+      "path": "res://assets/audio/free-firearms/mortar_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "shotgun_near_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "54143377b3fc4599172dda31f3e0b754bd016c7468002ebe99b89c84351ab761",
+      "frames": 34560,
+      "duration": 0.72,
+      "peak": 0.819976806640625
+    },
+    "mortar_near_03": {
+      "key": "mortar_near_03",
+      "path": "res://assets/audio/free-firearms/mortar_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "shotgun_near_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "7d4373244deae9221ffc155dde6c566197b799b970abdb69e672d251f45a15e1",
+      "frames": 34560,
+      "duration": 0.72,
+      "peak": 0.819976806640625
+    },
+    "mortar_mid_01": {
+      "key": "mortar_mid_01",
+      "path": "res://assets/audio/free-firearms/mortar_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "shotgun_mid_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "afe13a360e605bec36a14fd914700af12c8dfbbaffc2409290e1e29bd1f1f709",
+      "frames": 41760,
+      "duration": 0.87,
+      "peak": 0.819976806640625
+    },
+    "mortar_mid_02": {
+      "key": "mortar_mid_02",
+      "path": "res://assets/audio/free-firearms/mortar_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "shotgun_mid_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "e1d05c951ff89444a685ea1eef3cb44a03f5496d4e2584ff83d8b3ce34507425",
+      "frames": 41760,
+      "duration": 0.87,
+      "peak": 0.819976806640625
+    },
+    "mortar_mid_03": {
+      "key": "mortar_mid_03",
+      "path": "res://assets/audio/free-firearms/mortar_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "shotgun_mid_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "afe13a360e605bec36a14fd914700af12c8dfbbaffc2409290e1e29bd1f1f709",
+      "frames": 41760,
+      "duration": 0.87,
+      "peak": 0.819976806640625
+    },
+    "launcher_near_01": {
+      "key": "launcher_near_01",
+      "path": "res://assets/audio/free-firearms/launcher_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "shotgun_near_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "832d620c712cbd1e4b290a4be42e102344ba3a0674ed3b1a816ba47f859cbf5b",
+      "frames": 22080,
+      "duration": 0.46,
+      "peak": 0.819976806640625
+    },
+    "launcher_near_02": {
+      "key": "launcher_near_02",
+      "path": "res://assets/audio/free-firearms/launcher_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "shotgun_near_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "ef15fc8c6c8faafa2b1b79db205d869a98107b4d4fc89abe76cc979c25842676",
+      "frames": 22080,
+      "duration": 0.46,
+      "peak": 0.819976806640625
+    },
+    "launcher_near_03": {
+      "key": "launcher_near_03",
+      "path": "res://assets/audio/free-firearms/launcher_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "shotgun_near_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "832d620c712cbd1e4b290a4be42e102344ba3a0674ed3b1a816ba47f859cbf5b",
+      "frames": 22080,
+      "duration": 0.46,
+      "peak": 0.819976806640625
+    },
+    "launcher_mid_01": {
+      "key": "launcher_mid_01",
+      "path": "res://assets/audio/free-firearms/launcher_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "shotgun_mid_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "cd505fd9fb814cb3af84120d61211b3cdff9417cfc7999842d41980ea7f82259",
+      "frames": 29280,
+      "duration": 0.61,
+      "peak": 0.819976806640625
+    },
+    "launcher_mid_02": {
+      "key": "launcher_mid_02",
+      "path": "res://assets/audio/free-firearms/launcher_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "shotgun_mid_02",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "f30a9d2c6040e0c415415d5b7772e389120fd53f51942d56bb2b4176adcbcfd6",
+      "frames": 29280,
+      "duration": 0.61,
+      "peak": 0.819976806640625
+    },
+    "launcher_mid_03": {
+      "key": "launcher_mid_03",
+      "path": "res://assets/audio/free-firearms/launcher_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "shotgun_mid_01",
+        "distant-explosion.wav"
+      ],
+      "source_description": "Designed heavy-weapon substitute: free field-shot transient plus NenadSimic low impact tail; not a recording of this cannon/caliber.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "cd505fd9fb814cb3af84120d61211b3cdff9417cfc7999842d41980ea7f82259",
+      "frames": 29280,
+      "duration": 0.61,
+      "peak": 0.819976806640625
+    },
+    "rocket_near_01": {
+      "key": "rocket_near_01",
+      "path": "res://assets/audio/free-firearms/rocket_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "launcher_near_01",
+        "rocket-launch.wav"
+      ],
+      "source_description": "Designed short launcher using qubodup CC0 synthetic rocket gas plus free low-pressure launch transient; not RPG field recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "b49644ecf547983b9c4b80428e722b58fd0497f302017dc63159179dd8bf7450",
+      "frames": 45600,
+      "duration": 0.95,
+      "peak": 0.819976806640625
+    },
+    "rocket_near_02": {
+      "key": "rocket_near_02",
+      "path": "res://assets/audio/free-firearms/rocket_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "launcher_near_02",
+        "rocket-launch.wav"
+      ],
+      "source_description": "Designed short launcher using qubodup CC0 synthetic rocket gas plus free low-pressure launch transient; not RPG field recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "ee82f15e4c222aef252bd29a1976ac4c197a237eeab1c3dc6ef0e20c9ef2d317",
+      "frames": 45600,
+      "duration": 0.95,
+      "peak": 0.819976806640625
+    },
+    "rocket_near_03": {
+      "key": "rocket_near_03",
+      "path": "res://assets/audio/free-firearms/rocket_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "launcher_near_03",
+        "rocket-launch.wav"
+      ],
+      "source_description": "Designed short launcher using qubodup CC0 synthetic rocket gas plus free low-pressure launch transient; not RPG field recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "b9216ef24063fab268b410e704be221f945bde448d1007e1bac7debd208bddfc",
+      "frames": 45600,
+      "duration": 0.95,
+      "peak": 0.819976806640625
+    },
+    "rocket_mid_01": {
+      "key": "rocket_mid_01",
+      "path": "res://assets/audio/free-firearms/rocket_mid_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "launcher_mid_01",
+        "rocket-launch.wav"
+      ],
+      "source_description": "Designed short launcher using qubodup CC0 synthetic rocket gas plus free low-pressure launch transient; not RPG field recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "d5dafd3ecbf149d977ea945eccf9ae3c7d2fae4f5555d2a617df7353d8a21e47",
+      "frames": 45600,
+      "duration": 0.95,
+      "peak": 0.819976806640625
+    },
+    "rocket_mid_02": {
+      "key": "rocket_mid_02",
+      "path": "res://assets/audio/free-firearms/rocket_mid_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "launcher_mid_02",
+        "rocket-launch.wav"
+      ],
+      "source_description": "Designed short launcher using qubodup CC0 synthetic rocket gas plus free low-pressure launch transient; not RPG field recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "01c3d4641bf9854dd6a186d22ba16d235efcd0680beae85a724863dab0a1ee5b",
+      "frames": 45600,
+      "duration": 0.95,
+      "peak": 0.819976806640625
+    },
+    "rocket_mid_03": {
+      "key": "rocket_mid_03",
+      "path": "res://assets/audio/free-firearms/rocket_mid_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "launcher_mid_03",
+        "rocket-launch.wav"
+      ],
+      "source_description": "Designed short launcher using qubodup CC0 synthetic rocket gas plus free low-pressure launch transient; not RPG field recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "83756779d35970bf2ddc8cd749876a709711489137a1e4bd67e9ff3324265fe6",
+      "frames": 45600,
+      "duration": 0.95,
+      "peak": 0.819976806640625
+    },
+    "blast_near_01": {
+      "key": "blast_near_01",
+      "path": "res://assets/audio/free-firearms/blast_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "distant-explosion.wav",
+        "cannon_heavy_near_01",
+        "kenney-impact.zip/Audio/impactMining_000.ogg"
+      ],
+      "source_description": "Designed detonation: low explosion tail, field-shot attack and stone debris; not a real explosive recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "934404c2af22bba5dbbc8aab850ec0cfc484de882fd4d98118e3c6c854f0982e",
+      "frames": 124800,
+      "duration": 2.6,
+      "peak": 0.819976806640625
+    },
+    "blast_near_02": {
+      "key": "blast_near_02",
+      "path": "res://assets/audio/free-firearms/blast_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "distant-explosion.wav",
+        "cannon_heavy_near_02",
+        "kenney-impact.zip/Audio/impactMining_001.ogg"
+      ],
+      "source_description": "Designed detonation: low explosion tail, field-shot attack and stone debris; not a real explosive recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "055de240f99c861d8bea2a111e30df455841d9d7737dd0ddb41ed7c99b74ae6f",
+      "frames": 124800,
+      "duration": 2.6,
+      "peak": 0.819976806640625
+    },
+    "blast_near_03": {
+      "key": "blast_near_03",
+      "path": "res://assets/audio/free-firearms/blast_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "distant-explosion.wav",
+        "cannon_heavy_near_03",
+        "kenney-impact.zip/Audio/impactMining_002.ogg"
+      ],
+      "source_description": "Designed detonation: low explosion tail, field-shot attack and stone debris; not a real explosive recording.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "6435f14556072312420e357c8bc97a70bcb7c93e75441d2d10f06fec5c3e5b8b",
+      "frames": 124800,
+      "duration": 2.6,
+      "peak": 0.819976806640625
+    },
+    "flesh_near_01": {
+      "key": "flesh_near_01",
+      "path": "res://assets/audio/free-firearms/flesh_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactPunch_heavy_000.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "9611b2965aefa2f758a52845f19e73335cbc9be4821a338395dda74b2cc4c264",
+      "frames": 28864,
+      "duration": 0.6013333333333334,
+      "peak": 0.819976806640625
+    },
+    "flesh_near_02": {
+      "key": "flesh_near_02",
+      "path": "res://assets/audio/free-firearms/flesh_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactPunch_heavy_001.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "3a39c2ca9ada3aa544e82cef67ab46d1e0637f796af0805639af7cbf40cfde7a",
+      "frames": 24078,
+      "duration": 0.501625,
+      "peak": 0.819976806640625
+    },
+    "flesh_near_03": {
+      "key": "flesh_near_03",
+      "path": "res://assets/audio/free-firearms/flesh_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactPunch_heavy_002.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "4a21aeb31c13dfb7366bb2e593a29a6e0cb99c6293f5a30b38ddc5daf9c2dd83",
+      "frames": 20800,
+      "duration": 0.43333333333333335,
+      "peak": 0.819976806640625
+    },
+    "stone_near_01": {
+      "key": "stone_near_01",
+      "path": "res://assets/audio/free-firearms/stone_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactMining_000.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "68b844e2f4865c755f598bbfe38e184375b6e79691d5a80e9a15b199b23a71bd",
+      "frames": 36000,
+      "duration": 0.75,
+      "peak": 0.819976806640625
+    },
+    "stone_near_02": {
+      "key": "stone_near_02",
+      "path": "res://assets/audio/free-firearms/stone_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactMining_001.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "870aba1d84c65c7d7c25a6739aef867287af260ba4cc6a903666480e227458c7",
+      "frames": 35970,
+      "duration": 0.749375,
+      "peak": 0.819976806640625
+    },
+    "stone_near_03": {
+      "key": "stone_near_03",
+      "path": "res://assets/audio/free-firearms/stone_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactMining_002.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "e3f9a24adb9767568b9d96f091cfe97cbf428343a54a9373685a0c940a0b18e9",
+      "frames": 36000,
+      "duration": 0.75,
+      "peak": 0.819976806640625
+    },
+    "wood_near_01": {
+      "key": "wood_near_01",
+      "path": "res://assets/audio/free-firearms/wood_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactWood_medium_000.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "814f82b16d1d4e9a24ed0a500f28fb29d1a9afc340ddadf858313013463407b8",
+      "frames": 15969,
+      "duration": 0.3326875,
+      "peak": 0.819976806640625
+    },
+    "wood_near_02": {
+      "key": "wood_near_02",
+      "path": "res://assets/audio/free-firearms/wood_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactWood_medium_001.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "1321994f51f3af4b14b9e07e62b4329c6e6527a8c6f332d0bacb8c71ae89f532",
+      "frames": 15969,
+      "duration": 0.3326875,
+      "peak": 0.819976806640625
+    },
+    "wood_near_03": {
+      "key": "wood_near_03",
+      "path": "res://assets/audio/free-firearms/wood_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactWood_medium_002.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "1ee607e957fa66aa87f330f52583fda53b0120156e70ca466c05c7c5c877f4c5",
+      "frames": 15969,
+      "duration": 0.3326875,
+      "peak": 0.819976806640625
+    },
+    "earth_near_01": {
+      "key": "earth_near_01",
+      "path": "res://assets/audio/free-firearms/earth_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactSoft_medium_000.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "179e4a3ef0dba775ae9b1bbe67df917f1c4a4189433ea33d0052a089fcb06d39",
+      "frames": 5665,
+      "duration": 0.11802083333333334,
+      "peak": 0.819976806640625
+    },
+    "earth_near_02": {
+      "key": "earth_near_02",
+      "path": "res://assets/audio/free-firearms/earth_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactSoft_medium_001.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "228eb97862325b76ca67aa4f40557488d94ecb071dc4807b799b71162dc155f8",
+      "frames": 8798,
+      "duration": 0.18329166666666666,
+      "peak": 0.819976806640625
+    },
+    "earth_near_03": {
+      "key": "earth_near_03",
+      "path": "res://assets/audio/free-firearms/earth_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactSoft_medium_002.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "a72fe760138c4e27d4cc5ab50b069ff63b1b328ec51d7611e5c8893430df54d1",
+      "frames": 6490,
+      "duration": 0.13520833333333335,
+      "peak": 0.819976806640625
+    },
+    "metal_near_01": {
+      "key": "metal_near_01",
+      "path": "res://assets/audio/free-firearms/metal_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactMetal_medium_000.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "eb90c2606d1f5341f04cacf4c149f6d7bb1afec3246cc5e2f13869a5cd7b5e69",
+      "frames": 13045,
+      "duration": 0.27177083333333335,
+      "peak": 0.819976806640625
+    },
+    "metal_near_02": {
+      "key": "metal_near_02",
+      "path": "res://assets/audio/free-firearms/metal_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactMetal_medium_001.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "0e422a16018375bb915f0f6d34e7824f782d371ccac5fe8321ed9283da747e1f",
+      "frames": 6886,
+      "duration": 0.14345833333333333,
+      "peak": 0.819976806640625
+    },
+    "metal_near_03": {
+      "key": "metal_near_03",
+      "path": "res://assets/audio/free-firearms/metal_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactMetal_medium_002.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "4e3ef3f6d73003a29e6a46c43389040ea56ed0d9b3ce1e933fa9063f78a6211a",
+      "frames": 5719,
+      "duration": 0.11914583333333334,
+      "peak": 0.819976806640625
+    },
+    "glass_near_01": {
+      "key": "glass_near_01",
+      "path": "res://assets/audio/free-firearms/glass_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactGlass_light_000.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "e8e539c59fc8ce7354e4e740049810e6ad06860c708bd59d9c9d33ae1403fb82",
+      "frames": 10060,
+      "duration": 0.20958333333333334,
+      "peak": 0.819976806640625
+    },
+    "glass_near_02": {
+      "key": "glass_near_02",
+      "path": "res://assets/audio/free-firearms/glass_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactGlass_light_001.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "2b56984858defff631bbb2edfa35aeb678c276aa6e3153142dcf2eaf4b95c42c",
+      "frames": 10060,
+      "duration": 0.20958333333333334,
+      "peak": 0.819976806640625
+    },
+    "glass_near_03": {
+      "key": "glass_near_03",
+      "path": "res://assets/audio/free-firearms/glass_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactGlass_light_002.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "f2586330a33765aec591c31c3fda433d327374fe5958f93e384667827cc2b02e",
+      "frames": 10060,
+      "duration": 0.20958333333333334,
+      "peak": 0.819976806640625
+    },
+    "melee_near_01": {
+      "key": "melee_near_01",
+      "path": "res://assets/audio/free-firearms/melee_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactPunch_medium_000.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "5aad059c4a8dca7bbdb0b843579a689f7f8766629fd44389487e4ef42c01e346",
+      "frames": 14680,
+      "duration": 0.30583333333333335,
+      "peak": 0.819976806640625
+    },
+    "melee_near_02": {
+      "key": "melee_near_02",
+      "path": "res://assets/audio/free-firearms/melee_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactPunch_medium_001.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "8e0eede306d9a051b7f5c246c25175e66268e041cc191ecd4c17942d2c52d67d",
+      "frames": 14131,
+      "duration": 0.29439583333333336,
+      "peak": 0.819976806640625
+    },
+    "melee_near_03": {
+      "key": "melee_near_03",
+      "path": "res://assets/audio/free-firearms/melee_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactPunch_medium_002.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "cb497f4b56185b14660e6fe6d9a414e5b981d12ffeb52857b5e4212da4481d93",
+      "frames": 17174,
+      "duration": 0.3577916666666667,
+      "peak": 0.819976806640625
+    },
+    "case_near_01": {
+      "key": "case_near_01",
+      "path": "res://assets/audio/free-firearms/case_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactMetal_light_000.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "97678f8c7a97ebe4cd1152cdccc1cc54ec23c79cac5c0d382fdb753d91475b1c",
+      "frames": 6720,
+      "duration": 0.14,
+      "peak": 0.819976806640625
+    },
+    "case_near_02": {
+      "key": "case_near_02",
+      "path": "res://assets/audio/free-firearms/case_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactMetal_light_001.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "af56aec9c9dd7474cd89f077943aa8d7102356ea9d8f066f9cbf17a37408e05d",
+      "frames": 6720,
+      "duration": 0.14,
+      "peak": 0.819976806640625
+    },
+    "case_near_03": {
+      "key": "case_near_03",
+      "path": "res://assets/audio/free-firearms/case_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactMetal_light_002.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "02ed25019848bde6323d78972853683ac1faca5585b04100a3e1e675e1bfaa0b",
+      "frames": 6720,
+      "duration": 0.14,
+      "peak": 0.819976806640625
+    },
+    "case_soft_near_01": {
+      "key": "case_soft_near_01",
+      "path": "res://assets/audio/free-firearms/case_soft_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactSoft_medium_000.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "179e4a3ef0dba775ae9b1bbe67df917f1c4a4189433ea33d0052a089fcb06d39",
+      "frames": 5665,
+      "duration": 0.11802083333333334,
+      "peak": 0.819976806640625
+    },
+    "case_soft_near_02": {
+      "key": "case_soft_near_02",
+      "path": "res://assets/audio/free-firearms/case_soft_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactSoft_medium_001.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "a05be9710ff96c485b6fd200f4813954be70d6f8d1601c4a7ee3634112a6ecf2",
+      "frames": 6720,
+      "duration": 0.14,
+      "peak": 0.819976806640625
+    },
+    "case_soft_near_03": {
+      "key": "case_soft_near_03",
+      "path": "res://assets/audio/free-firearms/case_soft_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactSoft_medium_002.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "a72fe760138c4e27d4cc5ab50b069ff63b1b328ec51d7611e5c8893430df54d1",
+      "frames": 6490,
+      "duration": 0.13520833333333335,
+      "peak": 0.819976806640625
+    },
+    "grenade_contact_near_01": {
+      "key": "grenade_contact_near_01",
+      "path": "res://assets/audio/free-firearms/grenade_contact_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactMetal_heavy_000.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "e4649442dbbc4367dc62513f90f5e8edbc7d84dd2ea6dc8cc1111cd110bb21a9",
+      "frames": 8048,
+      "duration": 0.16766666666666666,
+      "peak": 0.819976806640625
+    },
+    "grenade_contact_near_02": {
+      "key": "grenade_contact_near_02",
+      "path": "res://assets/audio/free-firearms/grenade_contact_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactMetal_heavy_001.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "66657ac5c1b79a0c964d4e5c61b22bc77f204cfb8c16933488005d7aba958155",
+      "frames": 17246,
+      "duration": 0.3592916666666667,
+      "peak": 0.819976806640625
+    },
+    "grenade_contact_near_03": {
+      "key": "grenade_contact_near_03",
+      "path": "res://assets/audio/free-firearms/grenade_contact_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "kenney-impact.zip/Audio/impactMetal_heavy_002.ogg"
+      ],
+      "source_description": "Kenney CC0 physical impact foley; material/role substitute.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "f309b0da08bbe397d0b2b156dc1446651a7ee2024334c894419009ed44e0f129",
+      "frames": 5631,
+      "duration": 0.1173125,
+      "peak": 0.819976806640625
+    },
+    "swing_near_01": {
+      "key": "swing_near_01",
+      "path": "res://assets/audio/free-firearms/swing_near_01.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "swishes.zip/swishes/swish-1.wav"
+      ],
+      "source_description": "artisticdude CC0 recorded object swish, used for melee and throws.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "1174105e67691075a339e43699b7df6a0b2892bd474c2428789a3ab155d0f1d7",
+      "frames": 5468,
+      "duration": 0.11391666666666667,
+      "peak": 0.819976806640625
+    },
+    "swing_near_02": {
+      "key": "swing_near_02",
+      "path": "res://assets/audio/free-firearms/swing_near_02.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "swishes.zip/swishes/swish-2.wav"
+      ],
+      "source_description": "artisticdude CC0 recorded object swish, used for melee and throws.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "85a96d4d91395ab5062923e4b24b507db516081180ba7600f8a1c8569fabca21",
+      "frames": 4082,
+      "duration": 0.08504166666666667,
+      "peak": 0.819976806640625
+    },
+    "swing_near_03": {
+      "key": "swing_near_03",
+      "path": "res://assets/audio/free-firearms/swing_near_03.wav",
+      "license": "CC0-1.0",
+      "parents": [
+        "swishes.zip/swishes/swish-3.wav"
+      ],
+      "source_description": "artisticdude CC0 recorded object swish, used for melee and throws.",
+      "processing": "Offline crop, filter/envelope or mix as described; 48k mono PCM16; no runtime synthesis.",
+      "sha256": "9878f5ad719207760f45ad83d4b36c7e19935156827b402214d02a860729db1d",
+      "frames": 5989,
+      "duration": 0.12477083333333333,
+      "peak": 0.819976806640625
+    }
+  },
+  "additional_sources": {
+    "kenney": {
+      "author": "Kenney",
+      "license": "CC0-1.0",
+      "page": "https://kenney.nl/assets/impact-sounds",
+      "file": "kenney-impact.zip",
+      "url": "https://kenney.nl/media/pages/assets/impact-sounds/87b4ddecda-1677589768/kenney_impact-sounds.zip",
+      "sha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
+      "transfer": "200 149.210.216.123 800850 "
+    },
+    "swishes": {
+      "author": "artisticdude",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/swishes-sound-pack",
+      "file": "swishes.zip",
+      "url": "https://opengameart.org/sites/default/files/swishes.zip",
+      "sha256": "7980215241b739a787dcf26f660ce510bb237900968789395a86911619795693",
+      "transfer": "200 199.180.155.30 385150 "
+    },
+    "distant": {
+      "author": "NenadSimic",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/muffled-distant-explosion",
+      "file": "distant-explosion.wav",
+      "url": "https://opengameart.org/sites/default/files/NenadSimic%20-%20Muffled%20Distant%20Explosion.wav",
+      "sha256": "13a0bf75af94ec6d332bc71cba489b573466e05c4b17288158b3d683b41de39f",
+      "transfer": "200 199.180.155.30 907518 "
+    },
+    "rocket": {
+      "author": "qubodup",
+      "license": "CC0-1.0",
+      "page": "https://opengameart.org/content/rocket-launch",
+      "url": "https://opengameart.org/sites/default/files/launch.7z",
+      "archive_sha256": "83b00f5741714e5d9232a0f7d33e245e408ba2ae9c66fef516e7dcde7e497e9c",
+      "member": "launch/launch.wav",
+      "wav_sha256": "614c232a11243f3e1ee367a928fecbbbd4b1baa4b8f597e4c04ba68f9eff0273",
+      "note": "Original author describes synthetic Audacity noise/normalization/bass processing; not a live military rocket recording."
+    }
+  },
+  "event_only_weapons": [
+    "army-knife",
+    "fire-axe",
+    "katana",
+    "he-grenade",
+    "smoke-grenade"
+  ],
+  "mounted": {
+    "armedJeep/mg": "heavy_mg",
+    "scoutCar/autocannon": "autocannon",
+    "scoutCar/mg": "mosin",
+    "apc/mg": "heavy_mg",
+    "apc/grenade": "launcher",
+    "ifv/autocannon": "autocannon",
+    "ifv/grenade": "launcher",
+    "lightTank/mg": "mosin",
+    "lightTank/cannon": "cannon_light",
+    "tank/cannon": "cannon_medium",
+    "tank/mg": "mosin",
+    "tank/mortar": "mortar",
+    "heavyTank/cannon": "cannon_heavy",
+    "heavyTank/mg": "mosin",
+    "heavyTank/canister": "cannon_light",
+    "hmg/primary": "heavy_mg",
+    "fieldGun/primary": "cannon_medium",
+    "portableMortar/primary": "mortar"
+  },
+  "events": {
+    "blast": "blast",
+    "flesh": "flesh",
+    "stone": "stone",
+    "wood": "wood",
+    "earth": "earth",
+    "metal": "metal",
+    "glass": "glass",
+    "melee": "melee",
+    "swing": "swing",
+    "case": "case",
+    "case_soft": "case_soft",
+    "grenade_contact": "grenade_contact",
+    "throw": "swing",
+    "shot": "ar15",
+    "heavy": "heavy_mg"
+  },
+  "defaults": {
+    "bullet": "ar15",
+    "shell": "cannon_medium",
+    "autocannon": "autocannon",
+    "rocket": "rocket",
+    "mortar": "mortar",
+    "vehicleMortar": "mortar",
+    "vehicleGrenade": "launcher",
+    "grenadeLauncher": "launcher",
+    "canister": "cannon_light",
+    "grenade": "swing",
+    "melee": "swing"
+  },
+  "fallback_weapons": []
+}

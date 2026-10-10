@@ -1,0 +1,19 @@
+[remap]
+
+importer="csv_translation"
+type="Translation"
+uid="uid://b76waqbmuaabm"
+
+[deps]
+
+files=["res://docs/cover-component-coverage.current.translation", "res://docs/cover-component-coverage.proposed.translation", "res://docs/cover-component-coverage.status.translation"]
+
+source_file="res://docs/cover-component-coverage.csv"
+dest_files=["res://docs/cover-component-coverage.current.translation", "res://docs/cover-component-coverage.proposed.translation", "res://docs/cover-component-coverage.status.translation"]
+
+[params]
+
+compress=1
+delimiter=0
+unescape_keys=false
+unescape_translations=true

@@ -1,0 +1,3545 @@
+{
+  "source": "F:\\steam\\steamapps\\common\\Escape from Duckov\\Duckov_Data\\resources.assets",
+  "note": "Serialized bindings only. Local scales are not runtime size. No meshes/textures/sounds exported. The mesh named Shell under IG_Special_SeaShell is a seashell, not an ejected casing.",
+  "materials": {
+    "Bullet": {
+      "_BaseColor": {
+        "r": 1.0,
+        "g": 0.6281256079673767,
+        "b": 0.2783018946647644,
+        "a": 1.0
+      },
+      "_EmissionColor": {
+        "r": 4.0,
+        "g": 1.552512288093567,
+        "b": 0.5471699237823486,
+        "a": 1.0
+      }
+    },
+    "Shell": {
+      "_BaseColor": {
+        "r": 1.0,
+        "g": 0.6794156432151794,
+        "b": 0.2783018946647644,
+        "a": 1.0
+      },
+      "_EmissionColor": {
+        "r": 0.0,
+        "g": 0.0,
+        "b": 0.0,
+        "a": 1.0
+      }
+    },
+    "BulletTrail": {
+      "_BaseColor": {
+        "r": 1.0,
+        "g": 0.6166301965713501,
+        "b": 0.3254716992378235,
+        "a": 1.0
+      },
+      "_EmissionColor": {
+        "r": 4.578912734985352,
+        "g": 1.5250145196914673,
+        "b": 0.0,
+        "a": 1.0
+      }
+    }
+  },
+  "normal_projectiles": [
+    {
+      "name": "BulletSMG",
+      "active": true,
+      "components": [
+        "Transform",
+        "MonoBehaviour"
+      ],
+      "children": [
+        {
+          "name": "SodaPointLight",
+          "active": true,
+          "components": [
+            "Transform",
+            "MeshFilter",
+            "MeshRenderer",
+            "MonoBehaviour"
+          ],
+          "children": []
+        },
+        {
+          "name": "Trail",
+          "active": true,
+          "components": [
+            "Transform",
+            "TrailRenderer"
+          ],
+          "trail": {
+            "time": 0.05999999865889549,
+            "emitting": true,
+            "width": 0.11999999731779099
+          },
+          "children": []
+        }
+      ]
+    },
+    {
+      "name": "BulletNormal",
+      "active": true,
+      "components": [
+        "Transform",
+        "MonoBehaviour"
+      ],
+      "children": [
+        {
+          "name": "Trail",
+          "active": true,
+          "components": [
+            "Transform",
+            "TrailRenderer"
+          ],
+          "trail": {
+            "time": 0.03999999910593033,
+            "emitting": true,
+            "width": 0.1899999976158142
+          },
+          "children": []
+        },
+        {
+          "name": "SodaPointLight",
+          "active": true,
+          "components": [
+            "Transform",
+            "MeshFilter",
+            "MeshRenderer",
+            "MonoBehaviour"
+          ],
+          "children": []
+        }
+      ]
+    }
+  ],
+  "renderers": [
+    {
+      "object": "Capsule",
+      "id": 47784,
+      "renderer": "MeshRenderer",
+      "materials": [
+        "Bullet"
+      ],
+      "local_scale": "Vector3f(0.15590114891529083, 0.20282702147960663, 0.15590114891529083)",
+      "parents": [
+        {
+          "name": "BulletBig_Space",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "Capsule",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.5, 1.0, 0.5))"
+      }
+    },
+    {
+      "object": "Capsule",
+      "id": 47785,
+      "renderer": "MeshRenderer",
+      "materials": [
+        "Bullet"
+      ],
+      "local_scale": "Vector3f(0.15590114891529083, 0.20282702147960663, 0.15590114891529083)",
+      "parents": [
+        {
+          "name": "BulletNormal_Space",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "Capsule",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.5, 1.0, 0.5))"
+      }
+    },
+    {
+      "object": "Capsule",
+      "id": 47786,
+      "renderer": "MeshRenderer",
+      "materials": [
+        "Bullet"
+      ],
+      "local_scale": "Vector3f(0.15590114891529083, 0.20282702147960663, 0.15590114891529083)",
+      "parents": [
+        {
+          "name": "BulletNormal_Poison",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "Capsule",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.5, 1.0, 0.5))"
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53584,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_AK74U",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53585,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_AK74U_Tagilla",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53714,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Gun1_Template",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53882,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Spider_Rifle",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53883,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Storm5",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53884,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Spider_Vehicle",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53885,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_SKS",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53886,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Mp5",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53887,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_ArcadeGun",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53888,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_TT33",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53889,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_TecSniper",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53890,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Glicklow",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53891,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_WaterGun",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53892,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Mp7_Electric",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53893,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_NoGraphic_Zombie",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53894,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_StormBoss_Fire",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53895,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_TOZ66",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53896,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Plant_BR_Scallion",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53897,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Gun2",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53898,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_ASVAL",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53899,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_TOZ106",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53900,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_M16",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53901,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Storm_Space",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53902,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Balett",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53903,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_TecShotBlue",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53904,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_AK47",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53905,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Red",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53906,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Toilet",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53907,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_TecShotRed",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53908,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_AUGA3",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53909,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_PP19Bizon",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53910,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_MingChao_Carlotta",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53911,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_RPK",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53912,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_NoGraphic_Storm",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53913,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_AA12",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53914,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_UZI",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53915,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_VOP136",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53916,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_StormBoss_Elec",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53917,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_NMGun_Elec",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53918,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_MF",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53919,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_QBZ191",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53920,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_M16_Ice",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53922,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_CubeGun",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53923,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_CrossBow",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53924,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_VPO_Deng",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53925,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Blue",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53926,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_NoGraphic",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53927,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_GLick",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53928,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Bow",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53929,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_M1A",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53930,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_PM",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53931,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_MP155M",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53932,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_M14",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53933,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_AHBow",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53934,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Gun_M14",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53935,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_MCXSpear",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53936,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Gun_Mosin",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53937,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_M700",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53938,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Mosin",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53939,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_SR3M",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53941,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Bow_Compound",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53942,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_SnowGun",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53943,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Hand",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53944,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Mp7",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53945,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_GLick",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53946,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_DTDMR762",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53947,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_VPO",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53948,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_StormBoss_Poison",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53949,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Gun_AK47",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53950,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_FireWork",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53951,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Gun_SR3M",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53952,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_DTDMR556",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53953,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_SV98",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53954,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Plant_SHT_Corn",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53955,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_TOZ66_Fire",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53956,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Plant_AR_Carrot",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53957,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Gun_MP155",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53958,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_AHBow_Ice",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53959,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_PPSH",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53960,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_UAK45",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53961,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Vector9",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53962,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_MPX",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53963,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_MK47",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53964,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Magic",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53965,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_MingChao_Lynae",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53966,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_MF_Poison",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53967,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_AK103",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53968,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_GLick_Space",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53969,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_VSS",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53970,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_Desert",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53971,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_ADAR",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53972,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_TOZ106_Ghost",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53973,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "Agent_Handheld_Gun_AUGA3",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53974,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_ToiletBoss",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53975,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_RPD",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53976,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_MP155",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53977,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_SR3M_Ice",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53978,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_AUGA1",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    },
+    {
+      "object": "ShellEmitter",
+      "id": 53979,
+      "renderer": "ParticleSystemRenderer",
+      "materials": [
+        "Shell"
+      ],
+      "local_scale": "Vector3f(1.0, 1.0, 1.0)",
+      "parents": [
+        {
+          "name": "IG_Gun_ASh",
+          "scale": "Vector3f(1.0, 1.0, 1.0)"
+        }
+      ],
+      "mesh": {
+        "name": "ShotgunShell",
+        "local_bounds": "AABB(m_Center=Vector3f(0.0, 0.0, 0.0), m_Extent=Vector3f(0.010661066509783268, 0.010661066509783268, 0.02779754064977169))"
+      },
+      "particle_settings": {
+        "size": 2.5,
+        "size3D": false,
+        "life_min_max": [
+          0.8999999761581421,
+          1.2000000476837158
+        ],
+        "speed_min_max": [
+          5.0,
+          7.0
+        ],
+        "gravity": 3.0,
+        "collision": true,
+        "bounce": 0.6000000238418579
+      }
+    }
+  ]
+}

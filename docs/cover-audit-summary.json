@@ -1,0 +1,27 @@
+{
+  "status": "design_audit_not_runtime_acceptance",
+  "observed_project_build": "2026.09.28.9",
+  "proposal_revision": "cover-rules-draft-1",
+  "weapons": 84,
+  "mounted_modes": 17,
+  "components": 107,
+  "materials": 16,
+  "proposal_rows": 1648,
+  "baseline_rows": 1092,
+  "numeric_checks": 795,
+  "sha256": {
+    "scripts/proving_world.gd": "29dadb76d9ea1c48259f21309f1749ab40d1a58a6012811ea9105c86b044c587",
+    "scripts/source_catalog.gd": "7f5ffd1def76e97050a6bcc59d61bf475bcd2ca8018d3a2626c5ecbdb2b702b0",
+    "scripts/source_rig_motion.gd": "e823ff3092e30f5f4da1c47f94d3006af04efcbbf2334999de892312c4e13fdb",
+    "scripts/campaign_perception.gd": "bc4cd9a04effb6ee4196d0d9ff6cd84e947ee4c1396acf67e5ca66b4b2afa04b",
+    "scripts/campaign_ai.gd": "74f2f9898307a8c503d58fbd4d7ec8bfb9c73f39b06f4ecde5cc370c7bfd0c70",
+    "scripts/campaign_tactics.gd": "2a5d845857d97de8123385d9b9ba25842ffebf66f00bb2a96d514a788f3b7deb",
+    "scripts/terrain_surface.gd": "2743b9b1905fcebffd2bd0354f6a8457075bf5d3655cb37f331f8ea2081f1e08",
+    "scripts/terrain_structure.gd": "8b0cb66c5e8f3a852a971f9ce18550e277a69846320b76c261ecbf83da938815",
+    "scripts/house_prefabs.gd": "7a37163d7289e9c15943c0f811621460fd414d144c34c65ee665c1123cf4bc36",
+    "data/original/catalog.json": "8d5b2b658625e4cfabdfc34fdc636b5448956e744655ba7ece595e760e0ff552",
+    "data/original/components.json": "ca2211db41ba5c90ba584d3a86f57a1979b7104c9950f8c1e8be39532b317ed7",
+    "docs/cover-balance-proposal.json": "5ecb252bc94bf66fd93973923c163313cb8e79c1612e48c56bf27a8ff4bcd124",
+    "docs/cover-pose-measurements.json": "e621c67fbf31b8db721766d39194f63e77ce9c2e3184f42e9333c58bb90a7c9b"
+  }
+}

@@ -1,0 +1,675 @@
+{
+  "status": "current",
+  "updated_utc": "2026-10-09T16:03:00Z",
+  "source_scenes_sha256": "295e759a0dc60feb9abd242b66e947aba51d5d20e65f2b6ba4d236311a8279d1",
+  "source_scope": "Uploaded authored scene data, plus verified final runtime export for chapter01 only",
+  "chapters": [
+    {
+      "chapter": 1,
+      "scene_id": "level-01",
+      "title": "石墙果园",
+      "source_objective": {
+        "type": "controlPoints",
+        "captureTime": 7,
+        "label": "占领全部旗帜"
+      },
+      "source_control_points": [
+        {
+          "id": "flag-001",
+          "x": 2498,
+          "y": 949,
+          "r": 180,
+          "label": "新旗帜",
+          "shortLabel": "B",
+          "initialOwner": "neutral"
+        }
+      ],
+      "source_deployment": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        },
+        "red": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        }
+      },
+      "spawn_counts": {
+        "blue": 10,
+        "red": 10
+      },
+      "source_vehicles": 1,
+      "source_emplacements": 2,
+      "final_loadouts_available": true,
+      "final_ai_settings_available": true,
+      "blocked_water_features": [],
+      "current_status": "approved_native_orchard_retained",
+      "current_objective_count": 1,
+      "current_capture_seconds": 7,
+      "invented_hold_seconds": 0,
+      "current_loadouts": "verified_level01_runtime_export",
+      "current_tactics": "approved orchard native executor",
+      "current_source_force_counts_preserved": true,
+      "current_source_gameplay_point_preserved": false,
+      "current_mobile_ai": "approved orchard support vehicle",
+      "current_fixed_weapon_ai": "approved orchard equipment AI",
+      "source_mortar_counts": {
+        "blue": 3,
+        "red": 2
+      },
+      "current_water": "no new blocked-water adaptation required",
+      "geometry_checks": {
+        "capture_cells": 74,
+        "unreachable_spawn_anchors": 0,
+        "blocked_actual_initial_units": 0,
+        "visual_marker_blocked": false
+      },
+      "documented_exceptions": [
+        "Approved Godot orchard layout, target, terrain and AI are retained; not a raw scene-plan identity claim."
+      ]
+    },
+    {
+      "chapter": 2,
+      "scene_id": "level-02",
+      "title": "装配厂区",
+      "source_objective": {
+        "type": "controlPoints",
+        "captureTime": 7,
+        "label": "占领全部旗帜"
+      },
+      "source_control_points": [
+        {
+          "id": "flag-001",
+          "x": 1132,
+          "y": 1318,
+          "r": 180,
+          "label": "新旗帜",
+          "shortLabel": "A",
+          "initialOwner": "neutral"
+        }
+      ],
+      "source_deployment": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        },
+        "red": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        }
+      },
+      "spawn_counts": {
+        "blue": 10,
+        "red": 10
+      },
+      "source_vehicles": 0,
+      "source_emplacements": 2,
+      "final_loadouts_available": false,
+      "final_ai_settings_available": false,
+      "blocked_water_features": [],
+      "current_status": "supplied_scene_gameplay_fields_restored_with_explicit_native_adapters",
+      "current_objective_count": 1,
+      "current_capture_seconds": 7,
+      "invented_hold_seconds": 0,
+      "current_loadouts": "missing ordinary loadouts filled from verified level01 side-specific pools",
+      "current_tactics": "provisional native executor using public source spawn/objective metadata; not verified Pixi runtime parity",
+      "current_source_force_counts_preserved": true,
+      "current_source_gameplay_point_preserved": true,
+      "current_mobile_ai": "source aiControlled=false retained; manual operation",
+      "current_fixed_weapon_ai": "native bounded crew AI enabled explicitly; original runtime intent unavailable",
+      "source_mortar_counts": {
+        "blue": 2,
+        "red": 3
+      },
+      "current_water": "no new blocked-water adaptation required",
+      "geometry_checks": {
+        "capture_cells": 65,
+        "unreachable_spawn_anchors": 0,
+        "blocked_actual_initial_units": 0,
+        "visual_marker_blocked": false
+      },
+      "documented_exceptions": []
+    },
+    {
+      "chapter": 3,
+      "scene_id": "level-03",
+      "title": "洪泛草甸",
+      "source_objective": {
+        "type": "controlPoints",
+        "captureTime": 7,
+        "label": "占领全部旗帜"
+      },
+      "source_control_points": [
+        {
+          "id": "east-bridgehead",
+          "x": 3010.126042105969,
+          "y": 1036.1549281325856,
+          "r": 175,
+          "label": "主桥东岸",
+          "shortLabel": "A",
+          "initialOwner": "neutral"
+        }
+      ],
+      "source_deployment": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        },
+        "red": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        }
+      },
+      "spawn_counts": {
+        "blue": 10,
+        "red": 10
+      },
+      "source_vehicles": 1,
+      "source_emplacements": 2,
+      "final_loadouts_available": false,
+      "final_ai_settings_available": false,
+      "blocked_water_features": [
+        "main-river"
+      ],
+      "current_status": "supplied_scene_gameplay_fields_restored_with_explicit_native_adapters",
+      "current_objective_count": 1,
+      "current_capture_seconds": 7,
+      "invented_hold_seconds": 0,
+      "current_loadouts": "missing ordinary loadouts filled from verified level01 side-specific pools",
+      "current_tactics": "provisional native executor using public source spawn/objective metadata; not verified Pixi runtime parity",
+      "current_source_force_counts_preserved": true,
+      "current_source_gameplay_point_preserved": true,
+      "current_mobile_ai": "source aiControlled=false retained; manual operation",
+      "current_fixed_weapon_ai": "native bounded crew AI enabled explicitly; original runtime intent unavailable",
+      "source_mortar_counts": {
+        "blue": 2,
+        "red": 2
+      },
+      "current_water": "source blocked water paths, gaps and actual transformed bridge/deck polygons compiled into native collision",
+      "geometry_checks": {
+        "capture_cells": 60,
+        "unreachable_spawn_anchors": 0,
+        "blocked_actual_initial_units": 0,
+        "visual_marker_blocked": false
+      },
+      "documented_exceptions": []
+    },
+    {
+      "chapter": 4,
+      "scene_id": "level-04",
+      "title": "双街小镇",
+      "source_objective": {
+        "type": "controlPoints",
+        "captureTime": 7,
+        "label": "占领全部旗帜"
+      },
+      "source_control_points": [
+        {
+          "id": "flag-001",
+          "x": 2038,
+          "y": 1181,
+          "r": 180,
+          "label": "新旗帜",
+          "shortLabel": "A",
+          "initialOwner": "neutral"
+        }
+      ],
+      "source_deployment": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        },
+        "red": {
+          "initialCount": 50,
+          "maxActive": 50,
+          "totalForce": 200
+        }
+      },
+      "spawn_counts": {
+        "blue": 10,
+        "red": 10
+      },
+      "source_vehicles": 4,
+      "source_emplacements": 5,
+      "final_loadouts_available": false,
+      "final_ai_settings_available": false,
+      "blocked_water_features": [],
+      "current_status": "supplied_scene_gameplay_fields_restored_with_explicit_native_adapters",
+      "current_objective_count": 1,
+      "current_capture_seconds": 7,
+      "invented_hold_seconds": 0,
+      "current_loadouts": "missing ordinary loadouts filled from verified level01 side-specific pools",
+      "current_tactics": "provisional native executor using public source spawn/objective metadata; not verified Pixi runtime parity",
+      "current_source_force_counts_preserved": true,
+      "current_source_gameplay_point_preserved": true,
+      "current_mobile_ai": "source aiControlled=false retained; manual operation",
+      "current_fixed_weapon_ai": "native bounded crew AI enabled explicitly; original runtime intent unavailable",
+      "source_mortar_counts": {
+        "blue": 0,
+        "red": 0
+      },
+      "current_water": "no new blocked-water adaptation required",
+      "geometry_checks": {
+        "capture_cells": 43,
+        "unreachable_spawn_anchors": 0,
+        "blocked_actual_initial_units": 0,
+        "visual_marker_blocked": false
+      },
+      "documented_exceptions": [
+        "Gameplay target stays source2038,1181; visible mast only is offset to2000,1200. Capture perimeter and HUD use original center."
+      ]
+    },
+    {
+      "chapter": 5,
+      "scene_id": "level-05",
+      "title": "干溪通道",
+      "source_objective": {
+        "type": "controlPoints",
+        "captureTime": 7,
+        "label": "占领全部旗帜"
+      },
+      "source_control_points": [
+        {
+          "id": "flag-001",
+          "x": 3346,
+          "y": 420,
+          "r": 180,
+          "label": "新旗帜",
+          "shortLabel": "B",
+          "initialOwner": "neutral"
+        }
+      ],
+      "source_deployment": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        },
+        "red": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        }
+      },
+      "spawn_counts": {
+        "blue": 10,
+        "red": 12
+      },
+      "source_vehicles": 3,
+      "source_emplacements": 2,
+      "final_loadouts_available": false,
+      "final_ai_settings_available": false,
+      "blocked_water_features": [],
+      "current_status": "supplied_scene_gameplay_fields_restored_with_explicit_native_adapters",
+      "current_objective_count": 1,
+      "current_capture_seconds": 7,
+      "invented_hold_seconds": 0,
+      "current_loadouts": "missing ordinary loadouts filled from verified level01 side-specific pools",
+      "current_tactics": "provisional native executor using public source spawn/objective metadata; not verified Pixi runtime parity",
+      "current_source_force_counts_preserved": true,
+      "current_source_gameplay_point_preserved": true,
+      "current_mobile_ai": "source aiControlled=false retained; manual operation",
+      "current_fixed_weapon_ai": "native bounded crew AI enabled explicitly; original runtime intent unavailable",
+      "source_mortar_counts": {
+        "blue": 2,
+        "red": 2
+      },
+      "current_water": "no new blocked-water adaptation required",
+      "geometry_checks": {
+        "capture_cells": 59,
+        "unreachable_spawn_anchors": 0,
+        "blocked_actual_initial_units": 0,
+        "visual_marker_blocked": false
+      },
+      "documented_exceptions": []
+    },
+    {
+      "chapter": 6,
+      "scene_id": "level-06",
+      "title": "要塞内院",
+      "source_objective": {
+        "type": "controlPoints",
+        "captureTime": 7,
+        "label": "占领全部旗帜"
+      },
+      "source_control_points": [
+        {
+          "id": "flag-001",
+          "x": 2083.838099287764,
+          "y": 686.514510470926,
+          "r": 180,
+          "label": "新旗帜",
+          "shortLabel": "A",
+          "initialOwner": "neutral"
+        }
+      ],
+      "source_deployment": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        },
+        "red": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        }
+      },
+      "spawn_counts": {
+        "blue": 5,
+        "red": 5
+      },
+      "source_vehicles": 2,
+      "source_emplacements": 0,
+      "final_loadouts_available": false,
+      "final_ai_settings_available": false,
+      "blocked_water_features": [],
+      "current_status": "supplied_scene_gameplay_fields_restored_with_explicit_native_adapters",
+      "current_objective_count": 1,
+      "current_capture_seconds": 7,
+      "invented_hold_seconds": 0,
+      "current_loadouts": "missing ordinary loadouts filled from verified level01 side-specific pools",
+      "current_tactics": "provisional native executor using public source spawn/objective metadata; not verified Pixi runtime parity",
+      "current_source_force_counts_preserved": true,
+      "current_source_gameplay_point_preserved": true,
+      "current_mobile_ai": "source aiControlled=false retained; manual operation",
+      "current_fixed_weapon_ai": "native bounded crew AI enabled explicitly; original runtime intent unavailable",
+      "source_mortar_counts": {
+        "blue": 2,
+        "red": 2
+      },
+      "current_water": "no new blocked-water adaptation required",
+      "geometry_checks": {
+        "capture_cells": 53,
+        "unreachable_spawn_anchors": 0,
+        "blocked_actual_initial_units": 0,
+        "visual_marker_blocked": false
+      },
+      "documented_exceptions": []
+    },
+    {
+      "chapter": 7,
+      "scene_id": "level-07",
+      "title": "林间路口",
+      "source_objective": {
+        "type": "controlPoints",
+        "captureTime": 7,
+        "label": "占领全部旗帜"
+      },
+      "source_control_points": [
+        {
+          "id": "forest-crossroads",
+          "x": 1677.806278087075,
+          "y": 438.85590582902967,
+          "r": 190,
+          "label": "林间路口",
+          "shortLabel": "A",
+          "initialOwner": "neutral"
+        }
+      ],
+      "source_deployment": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        },
+        "red": {
+          "initialCount": 50,
+          "maxActive": 50,
+          "totalForce": 200
+        }
+      },
+      "spawn_counts": {
+        "blue": 14,
+        "red": 12
+      },
+      "source_vehicles": 3,
+      "source_emplacements": 3,
+      "final_loadouts_available": false,
+      "final_ai_settings_available": false,
+      "blocked_water_features": [
+        "south-drainage-ditch"
+      ],
+      "current_status": "supplied_scene_gameplay_fields_restored_with_explicit_native_adapters",
+      "current_objective_count": 1,
+      "current_capture_seconds": 7,
+      "invented_hold_seconds": 0,
+      "current_loadouts": "missing ordinary loadouts filled from verified level01 side-specific pools",
+      "current_tactics": "provisional native executor using public source spawn/objective metadata; not verified Pixi runtime parity",
+      "current_source_force_counts_preserved": true,
+      "current_source_gameplay_point_preserved": true,
+      "current_mobile_ai": "source aiControlled=false retained; manual operation",
+      "current_fixed_weapon_ai": "native bounded crew AI enabled explicitly; original runtime intent unavailable",
+      "source_mortar_counts": {
+        "blue": 2,
+        "red": 4
+      },
+      "current_water": "source blocked water paths, gaps and actual transformed bridge/deck polygons compiled into native collision",
+      "geometry_checks": {
+        "capture_cells": 53,
+        "unreachable_spawn_anchors": 0,
+        "blocked_actual_initial_units": 0,
+        "visual_marker_blocked": false
+      },
+      "documented_exceptions": [
+        "Native IFV/light-tank footprints exceed intact rail gap; source assets unchanged, no mobile AI enabled. Original Pixi vehicle collision dimensions unavailable."
+      ]
+    },
+    {
+      "chapter": 8,
+      "scene_id": "level-08",
+      "title": "城郊医院区",
+      "source_objective": {
+        "type": "controlPoints",
+        "captureTime": 7,
+        "label": "占领全部旗帜"
+      },
+      "source_control_points": [
+        {
+          "id": "flag-001",
+          "x": 2026,
+          "y": 1147,
+          "r": 180,
+          "label": "新旗帜",
+          "shortLabel": "A",
+          "initialOwner": "neutral"
+        }
+      ],
+      "source_deployment": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        },
+        "red": {
+          "initialCount": 50,
+          "maxActive": 50,
+          "totalForce": 200
+        }
+      },
+      "spawn_counts": {
+        "blue": 9,
+        "red": 11
+      },
+      "source_vehicles": 1,
+      "source_emplacements": 3,
+      "final_loadouts_available": false,
+      "final_ai_settings_available": false,
+      "blocked_water_features": [],
+      "current_status": "supplied_scene_gameplay_fields_restored_with_explicit_native_adapters",
+      "current_objective_count": 1,
+      "current_capture_seconds": 7,
+      "invented_hold_seconds": 0,
+      "current_loadouts": "missing ordinary loadouts filled from verified level01 side-specific pools",
+      "current_tactics": "provisional native executor using public source spawn/objective metadata; not verified Pixi runtime parity",
+      "current_source_force_counts_preserved": true,
+      "current_source_gameplay_point_preserved": true,
+      "current_mobile_ai": "source aiControlled=false retained; manual operation",
+      "current_fixed_weapon_ai": "native bounded crew AI enabled explicitly; original runtime intent unavailable",
+      "source_mortar_counts": {
+        "blue": 3,
+        "red": 0
+      },
+      "current_water": "no new blocked-water adaptation required",
+      "geometry_checks": {
+        "capture_cells": 61,
+        "unreachable_spawn_anchors": 0,
+        "blocked_actual_initial_units": 0,
+        "visual_marker_blocked": false
+      },
+      "documented_exceptions": []
+    },
+    {
+      "chapter": 9,
+      "scene_id": "level-09",
+      "title": "芦苇湿地",
+      "source_objective": {
+        "type": "controlPoints",
+        "captureTime": 7,
+        "label": "占领全部旗帜"
+      },
+      "source_control_points": [
+        {
+          "id": "wetland-island-point",
+          "x": 1780,
+          "y": 1090,
+          "r": 155,
+          "label": "河心高地",
+          "shortLabel": "A",
+          "initialOwner": "neutral"
+        }
+      ],
+      "source_deployment": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        },
+        "red": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        }
+      },
+      "spawn_counts": {
+        "blue": 6,
+        "red": 10
+      },
+      "source_vehicles": 3,
+      "source_emplacements": 3,
+      "final_loadouts_available": false,
+      "final_ai_settings_available": false,
+      "blocked_water_features": [
+        "main-deep-river"
+      ],
+      "current_status": "supplied_scene_gameplay_fields_restored_with_explicit_native_adapters",
+      "current_objective_count": 1,
+      "current_capture_seconds": 7,
+      "invented_hold_seconds": 0,
+      "current_loadouts": "missing ordinary loadouts filled from verified level01 side-specific pools",
+      "current_tactics": "provisional native executor using public source spawn/objective metadata; not verified Pixi runtime parity",
+      "current_source_force_counts_preserved": true,
+      "current_source_gameplay_point_preserved": true,
+      "current_mobile_ai": "source aiControlled=false retained; manual operation",
+      "current_fixed_weapon_ai": "native bounded crew AI enabled explicitly; original runtime intent unavailable",
+      "source_mortar_counts": {
+        "blue": 2,
+        "red": 2
+      },
+      "current_water": "source blocked water paths, gaps and actual transformed bridge/deck polygons compiled into native collision",
+      "geometry_checks": {
+        "capture_cells": 36,
+        "unreachable_spawn_anchors": 0,
+        "blocked_actual_initial_units": 0,
+        "visual_marker_blocked": false
+      },
+      "documented_exceptions": []
+    },
+    {
+      "chapter": 10,
+      "scene_id": "level-10",
+      "title": "谷仓村落",
+      "source_objective": {
+        "type": "controlPoints",
+        "captureTime": 7,
+        "label": "占领全部旗帜"
+      },
+      "source_control_points": [
+        {
+          "id": "village-green",
+          "x": 1940,
+          "y": 1130,
+          "r": 195,
+          "label": "村落公共地",
+          "shortLabel": "A",
+          "initialOwner": "neutral"
+        }
+      ],
+      "source_deployment": {
+        "blue": {
+          "initialCount": 30,
+          "maxActive": 30,
+          "totalForce": 120
+        },
+        "red": {
+          "initialCount": 50,
+          "maxActive": 50,
+          "totalForce": 200
+        }
+      },
+      "spawn_counts": {
+        "blue": 10,
+        "red": 10
+      },
+      "source_vehicles": 4,
+      "source_emplacements": 3,
+      "final_loadouts_available": false,
+      "final_ai_settings_available": false,
+      "blocked_water_features": [],
+      "current_status": "supplied_scene_gameplay_fields_restored_with_explicit_native_adapters",
+      "current_objective_count": 1,
+      "current_capture_seconds": 7,
+      "invented_hold_seconds": 0,
+      "current_loadouts": "missing ordinary loadouts filled from verified level01 side-specific pools",
+      "current_tactics": "provisional native executor using public source spawn/objective metadata; not verified Pixi runtime parity",
+      "current_source_force_counts_preserved": true,
+      "current_source_gameplay_point_preserved": true,
+      "current_mobile_ai": "source aiControlled=false retained; manual operation",
+      "current_fixed_weapon_ai": "native bounded crew AI enabled explicitly; original runtime intent unavailable",
+      "source_mortar_counts": {
+        "blue": 0,
+        "red": 0
+      },
+      "current_water": "no new blocked-water adaptation required",
+      "geometry_checks": {
+        "capture_cells": 74,
+        "unreachable_spawn_anchors": 0,
+        "blocked_actual_initial_units": 0,
+        "visual_marker_blocked": false
+      },
+      "documented_exceptions": []
+    }
+  ],
+  "remaining_gaps": [
+    "Original Pixi runtime JS, final LEVELS and per-chapter tactics/AI settings absent for02–10",
+    "Per-chapter ordinary loadouts and exact finite reserve/special-weapon scheduling are compatibility fallbacks",
+    "Alternate victory/defeat conditions and 2D-to-3D vehicle/water collision semantics are native adaptations, not verified runtime parity",
+    "Not all chapters have completed native human-like combat wins or balance acceptance"
+  ],
+  "verification": {
+    "source_data_contract_checks": 11332,
+    "all_chapter_geometry_checks": 120,
+    "marker_offset_checks": 1030,
+    "progress_checks": 61,
+    "native_flow_checks": 457,
+    "native_chapter04_registration_checks": 446
+  },
+  "historical_draft": "data/campaign/drafts/chapters-designed-20261009-1402.json; not loaded by current campaign"
+}

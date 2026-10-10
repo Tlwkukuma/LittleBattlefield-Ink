@@ -1,0 +1,44 @@
+[
+  {
+    "source": "F:\\steam\\steamapps\\common\\Borderlands 3\\OakGame\\Content\\Movies\\MARCUS_INTRO.mp4",
+    "second": 15,
+    "path": "qa\\references\\bl3-local\\MARCUS_INTRO-15.jpg",
+    "width": 1920,
+    "height": 1088
+  },
+  {
+    "source": "F:\\steam\\steamapps\\common\\Borderlands 3\\OakGame\\Content\\Movies\\MARCUS_INTRO.mp4",
+    "second": 45,
+    "path": "qa\\references\\bl3-local\\MARCUS_INTRO-45.jpg",
+    "width": 1920,
+    "height": 1088
+  },
+  {
+    "source": "F:\\steam\\steamapps\\common\\Borderlands 3\\OakGame\\Content\\Movies\\MARCUS_INTRO.mp4",
+    "second": 90,
+    "path": "qa\\references\\bl3-local\\MARCUS_INTRO-90.jpg",
+    "width": 1920,
+    "height": 1088
+  },
+  {
+    "source": "F:\\steam\\steamapps\\common\\Borderlands 3\\OakGame\\Content\\Movies\\MARCUS_INTRO.mp4",
+    "second": 140,
+    "path": "qa\\references\\bl3-local\\MARCUS_INTRO-140.jpg",
+    "width": 1920,
+    "height": 1088
+  },
+  {
+    "source": "F:\\steam\\steamapps\\common\\Borderlands 3\\OakGame\\Content\\Movies\\Lilith-DEFAULT.mp4",
+    "second": 0.7,
+    "path": "qa\\references\\bl3-local\\Lilith-DEFAULT-0p7.jpg",
+    "width": 960,
+    "height": 540
+  },
+  {
+    "source": "F:\\steam\\steamapps\\common\\Borderlands 3\\OakGame\\Content\\Movies\\VidScreen_ShivsOffice.mp4",
+    "second": 2,
+    "path": "qa\\references\\bl3-local\\VidScreen_ShivsOffice-2.jpg",
+    "width": 320,
+    "height": 180
+  }
+]

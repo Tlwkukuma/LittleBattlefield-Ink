@@ -1,0 +1,6 @@
+LittleBattlefield-Ink 源码交接
+一共 7 个独立 ZIP，每个都要解压到同一个空目录，解压顺序不限；然后用 Godot 4.6.3 导入 project.godot。
+项目版本：2026.10.08.1；主场景：res://proving_ground.tscn。先阅读 AGENTS.md 和 README.md。
+这些文件取自 2026-10-09 本地工作目录，包含未提交修改和新文件。
+已排除 .git、.godot 缓存、build、exports、QA 运行日志及大型中间资料。
+当前 .gitignore 会忽略 docs、art、tools 等资料；建立新 Git 仓库前先调整忽略规则。
